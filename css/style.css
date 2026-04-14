@@ -6915,27 +6915,89 @@ background: var(--bg-dark); }
   }
 
   /* ============================================================= */
-  /* ===== HISTORY SECTION — fix excessive top padding       ===== */
+  /* ===== HISTORY SECTION — MOBILE TIMELINE & PROFILE       ===== */
   /* ============================================================= */
 
   .history-section {
     flex-direction: column;
+    padding-top: 60px !important;
   }
 
   .history-section .history-left-content {
-    padding: 80px 20px 40px !important;
-  }
-
-  .history-right {
-    min-height: 400px;
-  }
-
-  .history-right-bg {
-    right: 0;
+    padding: 40px 20px !important;
   }
 
   .history-title {
-    font-size: clamp(2rem, 7vw, 2.5rem);
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    line-height: 1 !important;
+    margin-bottom: 20px;
+  }
+
+  .history-desc {
+    margin-bottom: 40px !important;
+  }
+
+  /* Force 2 cards side-by-side on mobile */
+  .timeline-track .tl-card {
+    flex: 0 0 50% !important;
+    min-width: 50% !important;
+    padding: 30px 20px !important;
+    min-height: 250px !important;
+  }
+  
+  .tl-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tl-card p {
+    font-size: 0.85rem !important;
+  }
+
+  .tl-controls {
+    flex-direction: row !important; /* Keep buttons side-by-side */
+  }
+
+  .tl-btn {
+    padding: 16px !important;
+    font-size: 0.85rem !important;
+    flex: 1 !important; /* Take equal halves */
+  }
+
+  /* Clean up the right side (Founder Profile) */
+  .history-right {
+    min-height: auto !important;
+    padding: 40px 20px 80px !important;
+  }
+
+  /* Hide the desktop blurry background on mobile */
+  .history-right-bg, .history-overlay {
+    display: none !important;
+  }
+
+  .founder-wrapper {
+    max-width: 100% !important;
+  }
+
+  .founder-photo-box {
+    background: #0a0a0a !important; /* Solid dark background */
+    padding: 20px 20px 0 !important; /* Creates the black frame effect */
+    border: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .founder-photo {
+    height: auto !important;
+    aspect-ratio: 4/5;
+  }
+
+  .founder-info {
+    border-top: none !important;
+    padding: 24px 20px !important;
+  }
+  
+  .founder-info h3 {
+    font-size: 1.4rem !important;
   }
 
   /* ============================================================= */
