@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Innovaition AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+</head>
+<body class="services-page dark-theme">
+
+  <div class="global-grid">
+    <div class="grid-line left"></div>
+    <div class="grid-line right"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="menu-btn mobile-menu-btn">
+        <i class="fa-solid fa-bars"></i> <span>MENU</span>
+      </button>
+    </div>
+ 
+    <div class="nav-center">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2"/>
+          <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="14" r="2" fill="white"/>
+        </svg>
+        Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-avatar"></div>
+      <a href="contact.html" class="nav-cta">BOOK A CALL</a>
+      <a href="contact.html" class="nav-cta-icon">
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="menu-overlay">
+    <div class="menu-grid">
+      <div class="menu-col-left">
+        <ul class="menu-nav-list">
+          <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="about.html">ABOUT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="services.html">SERVICES <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="pricing.html">PRICING <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="blog.html">BLOG <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="contact.html">CONTACT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+        </ul>
+      </div>
+      <div class="menu-col-right">
+        <div class="menu-info-top">
+          <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+          <div class="menu-globe-widget">
+            <i class="fa-solid fa-globe"></i>
+            <span class="coords">62.328° N - 15.845° E</span>
+          </div>
+        </div>
+        <div class="menu-info-bottom">
+          <div class="menu-contact-grid">
+            <div class="location-block">
+              <span class="meta-label">LOCATION</span>
+              <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+              <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+            </div>
+            <div class="contact-block">
+              <span class="meta-label">CONTACT ON</span>
+              <p>+1 (415) 555-0167</p>
+              <a href="mailto:SUPPORT@INNOVAITION.CA" class="menu-email">SUPPORT@INNOVAITION.CA</a>
+            </div>
+          </div>
+          <div class="menu-social-row">
+            <a href="#">X Twitter - X</a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services-pin-wrapper">
+    <section class="services-hero-sec dark-theme">
+      
+      <canvas id="hero-canvas"></canvas>
+      <div class="svc-hero-vignette"></div>
+      
+      <div class="svc-side-menu gs-reveal-up">
+        <div class="menu-icon">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="vertical-text">SERVICES</div>
+      </div>
+
+      <div class="svc-scroll-progress gs-reveal-up">
+        <div class="scroll-text">SCROLL</div>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="section-counter">
+          <span class="section-counter-current">01</span> / 04
+        </div>
+      </div>
+
+      <div class="svc-content-wrapper">
+        
+        <div class="content-section phase-0">
+          <h1 class="hero-title">INNOVATION</h1>
+          <div class="hero-subtitle">
+            <p>Empowering digital transformation,</p>
+            <p>tailored for your business at innovaition.ca</p>
+          </div>
+        </div>
+
+        <div class="content-section phase-1">
+          <h1 class="hero-title">SOLUTIONS</h1>
+          <div class="hero-subtitle">
+            <p>Scalable architectures and intelligent systems,</p>
+            <p>engineered for the future.</p>
+          </div>
+        </div>
+
+        <div class="content-section phase-2">
+          <h1 class="hero-title">EXCELLENCE</h1>
+          <div class="hero-subtitle">
+            <p>Driving measurable growth,</p>
+            <p>through cutting-edge technology.</p>
+          </div>
+        </div>
+
+        <div class="content-section phase-3">
+          <h1 class="hero-title">IMPACT</h1>
+          <div class="hero-subtitle">
+            <p>Transforming complex challenges,</p>
+            <p>into intuitive digital realities.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <section class="why-partner-sec light-theme">
+    
+    <div class="horizontal-divider dark-lines">
+      <div class="line"></div><div class="diamond left"></div><div class="diamond right"></div>
+      <div class="badge" style="width: max-content; padding: 0 24px; white-space: nowrap;">THE ADVANTAGE</div>
+    </div>
+    
+    <div class="why-header gs-reveal-up">
+      <h2 class="section-title">WHY PARTNER WITH<br>INNOVAITION</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>PROVEN ROI</h3>
+        <p>We focus on solutions that deliver measurable business value, optimizing your operations and accelerating revenue growth from day one.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>RAPID DEPLOYMENT</h3>
+        <p>Our agile methodology ensures rapid prototyping and deployment, getting your custom architectures and intelligent systems to market faster.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>FUTURE-READY</h3>
+        <p>We build robust, scalable systems designed to evolve with emerging technologies, ensuring your business stays ahead of the curve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-sec dark-theme">
+    
+    <div class="horizontal-divider light-lines">
+      <div class="line"></div><div class="diamond left"></div><div class="diamond right"></div>
+      <div class="badge" style="width: max-content; padding: 0 24px; white-space: nowrap;">METHODOLOGY</div>
+    </div>
+
+    <div class="approach-grid">
+      
+      <div class="approach-content gs-reveal-up">
+        <span class="small-heading" style="border-color: rgba(255,255,255,0.2); color:#fff;">OUR APPROACH</span>
+        <h2 class="section-title">A PROVEN FRAMEWORK<br>FOR SUCCESS</h2>
+        <p class="approach-desc">We combine strategic foresight with technical excellence to deliver robust, scalable AI architectures that drive sustainable growth.</p>
+
+        <ul class="approach-list">
+          <li>
+            <span class="num">01</span> <span class="text">Discovery & Strategy</span> <i class="fa-solid fa-arrow-right"></i>
+          </li>
+          <li>
+            <span class="num">02</span> <span class="text">Solution Architecture</span> <i class="fa-solid fa-arrow-right"></i>
+          </li>
+          <li>
+            <span class="num">03</span> <span class="text">Implementation & Testing</span> <i class="fa-solid fa-arrow-right"></i>
+          </li>
+          <li>
+            <span class="num">04</span> <span class="text">Optimization & Scaling</span> <i class="fa-solid fa-arrow-right"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div class="approach-globe-wrap gs-reveal-up">
+        <canvas id="d3-globe-canvas"></canvas>
+        <div class="globe-hint">Drag to rotate • Scroll to zoom</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="split-pin-wrapper" class="dark-theme">
+    
+    <div class="horizontal-divider light-lines" style="position: absolute; top: 60px; width: 100%; z-index: 10;">
+      <div class="line"></div><div class="diamond left"></div><div class="diamond right"></div>
+      <div class="badge" style="width: max-content; padding: 0 24px; white-space: nowrap;">CORE CAPABILITIES</div>
+    </div>
+
+    <div class="split-scroll-container">
+      
+      <div class="split-left">
+        <div class="split-text-item">
+          <span class="num">01 / CAPABILITY</span>
+          <h2>PREDICTIVE<br>ANALYTICS</h2>
+          <p>Harness historical data to forecast trends, anticipate market shifts, and make proactive decisions with machine-learning-powered insights.</p>
+        </div>
+        <div class="split-text-item">
+          <span class="num">02 / CAPABILITY</span>
+          <h2>PROCESS<br>AUTOMATION</h2>
+          <p>Eliminate manual tasks and reduce human error by deploying intelligent bots that streamline your core operational workflows automatically.</p>
+        </div>
+        <div class="split-text-item">
+          <span class="num">03 / CAPABILITY</span>
+          <h2>GENERATIVE<br>INTELLIGENCE</h2>
+          <p>Supercharge your creative output and customer communications using state-of-the-art NLP models customized to your unique brand voice.</p>
+        </div>
+        <div class="split-text-item">
+          <span class="num">04 / CAPABILITY</span>
+          <h2>DATA<br>ENGINEERING</h2>
+          <p>Build unshakeable, scalable data pipelines that guarantee your AI models are continuously trained on clean, structured, and secure information.</p>
+        </div>
+      </div>
+
+      <div class="split-right">
+        <div class="split-card-item">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Predictive Analytics">
+        </div>
+        <div class="split-card-item">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="Process Automation">
+        </div>
+        <div class="split-card-item">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop" alt="Generative Intelligence">
+        </div>
+        <div class="split-card-item">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Data Engineering">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-globe-sec dark-theme">
+    
+    <div class="horizontal-divider light-lines" style="position: absolute; top: 60px; width: 100%; z-index: 10;">
+      <div class="line"></div><div class="diamond left"></div><div class="diamond right"></div>
+      <div class="badge" style="width: max-content; padding: 0 24px; white-space: nowrap;">LET'S CONNECT</div>
+    </div>
+
+    <canvas id="cta-globe-canvas"></canvas>
+
+    <div class="glow-orb top-left"></div>
+    <div class="glow-orb bottom-right"></div>
+
+    <div class="cta-globe-content gs-reveal-up">
+      
+      <div class="cta-badge">
+        <div class="ping-dot"></div>
+        <span>AI INNOVATION</span>
+        <div class="ping-dot delayed"></div>
+      </div>
+
+      <h2 class="massive-connect-title">
+        <span class="light-text">Scale with</span>
+        <span class="gradient-text-wrap">
+          <span class="gradient-text">Intelligence</span>
+          <span class="gradient-blur">Intelligence</span>
+          <div class="gradient-underline"></div>
+        </span>
+      </h2>
+
+      <div class="cta-desc-wrap">
+        <p class="cta-desc-main">Transform your operations and drive measurable growth with our <span>custom AI architectures</span></p>
+        <p class="cta-desc-sub">From predictive analytics to process automation, we build intelligent systems designed for the future of your business.</p>
+      </div>
+
+      <div class="cta-btn-group">
+        <a href="contact.html" class="btn-start">
+          <span class="btn-bg-hover"></span>
+          <span class="text">Book a discovery call</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="services.html" class="btn-demo">
+          <div class="btn-bg-hover"></div>
+          <i class="fa-solid fa-bolt"></i>
+          <span class="text">Explore our services</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <div class="footer-watermark">Innovaition®</div>
+    <div class="footer-framed-box gs-reveal-up">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.</p>
+          <div class="book-call-wrap">
+            <span class="book-call-label">BOOK A CALL AND LET'S SEE WHAT WE CAN DO.</span>
+            <a href="contact.html" class="btn-main quote-btn cta-btn" style="background: #fff; color: #000;">
+              <span style="margin-right: 24px;">Book a discovery call</span>
+              <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col links-col">
+          <span class="footer-label">MAIN LINKS</span>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services <i class="fa-solid fa-play" style="font-size: 0.6rem;"></i></a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <span class="footer-label">UTILITY LINKS</span>
+          <ul class="footer-links">
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Instructions</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Error 404</a></li>
+            <li><a href="#">Password Protected</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <span class="footer-label">STAY CONNECTED</span>
+          <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter email address" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bot-col">
+          <span class="footer-label">MAIN</span>
+          <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
+          <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">ADDRESS</span>
+          <p>Innovaition Consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">SOCIAL</span>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      
+        <div class="footer-bot-col">
+          <span class="footer-label">LEGAL</span>
+          <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by <a href="#" style="color: #fff;">Webflow</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

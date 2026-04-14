@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Innovaition AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="pricing-page dark-theme">
+
+  <div class="global-grid">
+    <div class="grid-line left"></div>
+    <div class="grid-line right"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="menu-btn mobile-menu-btn">
+        <i class="fa-solid fa-bars"></i> MENU
+      </button>
+    </div>
+ 
+    <div class="nav-center">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2"/>
+          <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="14" r="2" fill="white"/>
+        </svg>
+        Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-avatar"></div>
+      <a href="contact.html" class="nav-cta">BOOK A CALL</a>
+      <a href="contact.html" class="nav-cta-icon">
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="menu-overlay">
+    <div class="menu-grid">
+      <div class="menu-col-left">
+        <ul class="menu-nav-list">
+          <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="about.html">ABOUT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="services.html">SERVICES <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="pricing.html">PRICING <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="case-studies.html">CASE STUDIES <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="contact.html">CONTACT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+        </ul>
+      </div>
+      <div class="menu-col-right">
+        <div class="menu-info-top">
+          <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+          <div class="menu-globe-widget">
+            <i class="fa-solid fa-globe"></i>
+            <span class="coords">62.328° N - 15.845° E</span>
+          </div>
+        </div>
+        <div class="menu-info-bottom">
+          <div class="menu-contact-grid">
+            <div class="location-block">
+              <span class="meta-label">LOCATION</span>
+              <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+              <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+            </div>
+            <div class="contact-block">
+              <span class="meta-label">CONTACT ON</span>
+              <p>+1 (415) 555-0167</p>
+              <a href="mailto:SUPPORT@INNOVAITION.CA" class="menu-email">SUPPORT@INNOVAITION.CA</a>
+            </div>
+          </div>
+          <div class="menu-social-row">
+            <a href="#">X Twitter - X</a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pricing-hero-sec dark-theme">
+    <div class="pricing-hero-glow"></div>
+    
+    <div class="pricing-hero-content gs-reveal-up">
+      <div class="ph-badge">
+        <i class="fa-solid fa-cube" style="color: #22c55e;"></i> Pricing
+      </div>
+      <h1 class="ph-title">Simple and transparent pricing</h1>
+      <p class="ph-desc">We offer flexible pricing plans to suit your business needs. No hidden fees. Just measurable AI results.</p>
+    </div>
+  </section>
+
+  <section class="pricing-section dark-theme" id="pricing">
+    
+    <div class="horizontal-divider light-lines">
+       <div class="line"></div>
+       <div class="diamond left"></div>
+       <div class="diamond right"></div>
+       <div class="badge">ENGAGEMENT MODELS</div>
+    </div>
+
+    <div class="pricing-header-row gs-reveal-up">
+      <div class="pricing-title-block">
+        <h2 class="section-title">CHOOSE YOUR<br>ENGAGEMENT TIER</h2>
+      </div>
+      
+      <div class="pricing-toggle-container">
+        <input type="checkbox" id="pricingToggle" hidden>
+        <label for="pricingToggle" class="pricing-toggle-switch">
+           <div class="slider-bg"></div>
+           <span class="toggle-label active">MONTHLY</span>
+           <span class="toggle-label">YEARLY</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      
+      <div class="p-card dark p-card-anim" style="border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
+        <div class="p-card-top">
+          <h3 class="p-plan-name">STARTER PLAN</h3>
+          <p class="p-plan-desc">Small to mid-size businesses exploring AI adoption.</p>
+          <div class="price-wrap">
+            <span class="currency">$</span>
+            <span class="amount" data-monthly="1,200" data-yearly="12,500">1,200</span>
+            <span class="period">/Per month</span>
+           </div>
+        </div>
+        
+        <span class="included-title">INCLUDED FEATURES</span>
+        <ul class="p-features">
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> AI readiness and opportunity assessment</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Strategic consultation sessions (up to 3)</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Workflow automation blueprint</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Data preparation guidance</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Basic AI tool recommendations</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> 2-week implementation roadmap</li>
+        </ul>
+        
+        <div class="p-card-bot">
+          <a href="contact.html" class="p-btn-text" style="color: #fff; border-color: rgba(255,255,255,0.2);">Get started</a>
+        </div>
+      </div>
+
+      <div class="p-card light p-card-anim" style="background: #fff; color: #000;">
+         <div class="p-card-top">
+          <h3 class="p-plan-name" style="color: #000;">ENTERPRISE PLAN</h3>
+          <p class="p-plan-desc" style="color: #444;">Established companies needing deep AI integration.</p>
+          <div class="price-wrap">
+            <span class="currency" style="color: #000;">$</span>
+            <span class="amount" data-monthly="3,000" data-yearly="30,000" style="color: #000;">3,000</span>
+            <span class="period" style="color: #666;">/Per month</span>
+          </div>
+        </div>
+        
+        <span class="included-title" style="color: #888;">INCLUDED FEATURES</span>
+        <ul class="p-features">
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> In-depth AI strategy and roadmap design</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Custom AI model and automation development</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Integration with internal tools and systems</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Predictive analytics and dashboard setup</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Continuous performance monitoring</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Team training and onboarding</li>
+          <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Ongoing technical support</li>
+        </ul>
+        
+        <div class="p-card-bot">
+          <a href="contact.html" class="p-btn-text" style="color: #000; border-color: #000;">Request proposal</a>
+        </div>
+       </div>
+
+      <div class="p-card dark custom-plan p-card-anim" style="border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); border-right: none;">
+        <div class="p-card-top">
+          <h3 class="p-plan-name">CUSTOM PLAN</h3>
+          <p class="p-plan-desc" style="min-height: auto; margin-bottom: 20px;">Get a fully tailored AI solution designed around your unique needs.</p>
+        </div>
+        
+        <span class="included-title">INCLUDED FEATURES</span>
+        <ul class="p-features">
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Fully tailored AI setup</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Advanced integrations & workflows</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Priority support & consultation</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Flexible deliverables and pricing</li>
+        </ul>
+        
+        <a href="contact.html" class="btn-custom-quote" style="background: #fff; color: #000;">
+          <span class="text">Get a custom quote</span>
+          <div class="icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+        </a>
+
+        <div class="p-testimonial">
+          <p class="p-testi-text" style="color: rgba(255,255,255,0.8);">"Every business is unique, and your AI solution should reflect that vision perfectly."</p>
+          <div class="p-author">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" alt="Ethan Parker">
+            <div class="p-author-info">
+              <strong>Ethan Parker,</strong>
+              <span style="color: rgba(255,255,255,0.5);">CEO, Innovaition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="compare-section dark-theme">
+    
+    <div class="horizontal-divider light-lines">
+      <div class="line"></div>
+      <div class="diamond left"></div>
+      <div class="diamond right"></div>
+      <div class="badge">COMPARE PLANS</div>
+    </div>
+
+    <div class="compare-container gs-reveal-up">
+      <h2 class="compare-title">FEATURE BREAKDOWN</h2>
+      
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="feature-col-header">FEATURES</th>
+            <th>STARTER</th>
+            <th>ENTERPRISE</th>
+            <th>CUSTOM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name">AI Opportunity Mapping</td>
+            <td><i class="fa-solid fa-check check"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Process Automation</td>
+            <td>Basic Workflows</td>
+            <td>Deep Integration</td>
+            <td>Bespoke Bots</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Custom Model Training</td>
+            <td><i class="fa-solid fa-minus minus"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Dedicated Engineering Pod</td>
+            <td><i class="fa-solid fa-minus minus"></i></td>
+            <td><i class="fa-solid fa-minus minus"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Predictive Dashboards</td>
+            <td><i class="fa-solid fa-minus minus"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+            <td><i class="fa-solid fa-check check"></i></td>
+          </tr>
+          <tr>
+            <td class="feature-name">SLA Support</td>
+            <td>Email Support</td>
+            <td>Priority 24/7</td>
+            <td>Custom SLA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="faq-sec light-theme">
+    
+    <div class="horizontal-divider dark-lines">
+      <div class="line"></div>
+      <div class="diamond left"></div>
+      <div class="diamond right"></div>
+      <div class="badge">FAQS</div>
+    </div>
+    
+    <div class="faq-container">
+      <h2 class="faq-title gs-reveal-up">ANSWERS TO<br>COMMON PRICING QUERIES</h2>
+      
+      <div class="faq-split-layout gs-reveal-up">
+        
+        <div class="faq-left">
+          <div class="faq-row-header">
+            <span>QUESTIONS</span>
+          </div>
+          
+          <div class="faq-question-item active" data-target="ans-1">
+            CAN WE UPGRADE OR DOWNGRADE OUR PLAN? <i class="fa-solid fa-minus"></i>
+          </div>
+          <div class="faq-question-item" data-target="ans-2">
+            ARE THERE ANY HIDDEN SETUP FEES? <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="faq-question-item" data-target="ans-3">
+            HOW DO CUSTOM PLANS WORK? <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="faq-question-item no-border" data-target="ans-4">
+            DO YOU OFFER YEARLY BILLING DISCOUNTS? <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+
+        <div class="faq-right">
+          <div class="faq-row-header desktop-only">
+            <span>ANSWERS</span>
+          </div>
+          
+          <div class="faq-answer-display">
+            <div class="faq-answer-text active" id="ans-1">
+              <p>Yes, our infrastructure is designed to scale alongside you. You can transition between engagement tiers at the start of any new billing cycle to match your current needs.</p>
+            </div>
+            <div class="faq-answer-text" id="ans-2">
+              <p>No. Transparency is one of our core values. The monthly retainer covers all discovery, development, deployment, and ongoing maintenance.</p>
+            </div>
+            <div class="faq-answer-text" id="ans-3">
+              <p>Custom plans begin with a deep-dive architectural review. We then provide a fixed scope of work and a dedicated engineering pod tailored exclusively to your specific goals.</p>
+            </div>
+            <div class="faq-answer-text" id="ans-4">
+              <p>Absolutely. Clients who commit to an annual contract receive a 15% discount on their monthly retainer rate across all standard tiers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-react-translated-sec dark-theme">
+    
+    <div class="horizontal-divider light-lines">
+      <div class="line"></div>
+      <div class="diamond left"></div>
+      <div class="diamond right"></div>
+      <div class="badge">LET'S CONNECT</div>
+    </div>
+
+    <canvas id="cta-liquid-canvas"></canvas>
+
+    <div class="react-glass-card gs-reveal-up">
+      <h1 class="react-title">Innovation is Everything</h1>
+      <p class="react-desc">Unleashing intelligence through bold architectures, seamless automation, and limitless scaling possibilities.</p>
+      
+      <div class="react-ping-badge">
+        <span class="ping-wrapper">
+          <span class="ping-anim"></span>
+          <span class="ping-core"></span>
+        </span>
+        <p>Available for New Projects</p>
+      </div>
+
+      <div class="react-btn-wrap">
+        <a href="contact.html" class="liquid-button">
+          <div class="liquid-button-bg"></div>
+          <div class="liquid-button-glass"></div>
+          <span>Let's Go</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <svg style="position: absolute; width: 0; height: 0; visibility: hidden;">
+    <defs>
+      <filter id="container-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1" result="turbulence" />
+        <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+        <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R" yChannelSelector="B" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+        <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+      </filter>
+    </defs>
+  </svg>
+
+  <footer class="footer-section">
+    <div class="footer-watermark">Innovaition®</div>
+    <div class="footer-framed-box gs-reveal-up">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.</p>
+          <div class="book-call-wrap">
+            <span class="book-call-label">BOOK A CALL AND LET'S SEE WHAT WE CAN DO.</span>
+            <a href="contact.html" class="btn-main quote-btn cta-btn" style="background: #fff; color: #000;">
+              <span style="margin-right: 24px;">Book a discovery call</span>
+              <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col links-col">
+          <span class="footer-label">MAIN LINKS</span>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing <i class="fa-solid fa-play" style="font-size: 0.6rem;"></i></a></li>
+            <li><a href="case-studies.html">Case Study</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <span class="footer-label">UTILITY LINKS</span>
+          <ul class="footer-links">
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Instructions</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Error 404</a></li>
+            <li><a href="#">Password Protected</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <span class="footer-label">STAY CONNECTED</span>
+          <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter email address" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bot-col">
+          <span class="footer-label">MAIN</span>
+          <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
+          <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">ADDRESS</span>
+          <p>Innovaition Consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">SOCIAL</span>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      
+        <div class="footer-bot-col">
+          <span class="footer-label">LEGAL</span>
+          <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by <a href="#" style="color: #fff;">Webflow</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

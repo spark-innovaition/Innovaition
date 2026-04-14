@@ -1,0 +1,764 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - text: MENU
+    - link "Altrion ®" [ref=e7] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e8]
+      - text: Altrion
+      - superscript [ref=e12]: ®
+    - generic [ref=e13]:
+      - link "BOOK A CALL" [ref=e15] [cursor=pointer]:
+        - /url: "#contact"
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e17]: 
+  - generic [ref=e19]:
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "HOME" [ref=e23] [cursor=pointer]:
+          - /url: "#home"
+          - text: HOME
+      - listitem [ref=e24]:
+        - link "ABOUT US" [ref=e25] [cursor=pointer]:
+          - /url: "#journey"
+          - text: ABOUT US
+      - listitem [ref=e26]:
+        - link "CASE STUDIES" [ref=e27] [cursor=pointer]:
+          - /url: "#case-studies"
+          - text: CASE STUDIES
+      - listitem [ref=e28]:
+        - link "BLOG" [ref=e29] [cursor=pointer]:
+          - /url: "#blog"
+          - text: BLOG
+      - listitem [ref=e30]:
+        - link "CONTACT US" [ref=e31] [cursor=pointer]:
+          - /url: "#contact"
+          - text: CONTACT US
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - heading "Discover the vision and values driving Altrion forward" [level=3] [ref=e34]:
+          - text: Discover the vision and
+          - text: values driving Altrion
+          - text: forward
+        - generic [ref=e35]:
+          - generic [ref=e36]: 
+          - generic [ref=e37]: 62.328° N - 15.845° E
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: LOCATION
+            - paragraph [ref=e42]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "02:58:06" [level=2] [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: CONTACT ON
+            - paragraph [ref=e46]: +1 (415) 555-0167
+            - link "SUPPORT@EXAMPLE.COM" [ref=e47] [cursor=pointer]:
+              - /url: mailto:SUPPORT@EXAMPLE.COM
+        - generic [ref=e48]:
+          - link "X Twitter - X" [ref=e49] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e51]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e53]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e55]: 
+            - text: Instagram
+  - banner [ref=e56]:
+    - generic:
+      - generic:
+        - generic:
+          - heading "UNL  CK" [level=1]:
+            - text: UNL
+            - generic: 
+            - text: CK
+          - heading "AI" [level=1]
+        - generic:
+          - heading "POWER" [level=1]
+          - generic: ©Since — 2019
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e66]: "+51"
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: 
+              - generic [ref=e70]: 
+              - generic [ref=e71]: 
+              - generic [ref=e72]: 
+              - generic [ref=e73]: 
+            - generic [ref=e74]: Happy clients
+        - paragraph [ref=e75]:
+          - text: We help businesses use AI to simplify workflows and drive
+          - strong [ref=e76]: smarter, faster, more meaningful results.
+        - generic [ref=e77] [cursor=pointer]:
+          - link "Start Your AI Journey" [ref=e78]:
+            - /url: "#journey"
+          - link "" [ref=e79]:
+            - /url: "#journey"
+            - generic [ref=e80]: 
+      - generic [ref=e81]:
+        - link "" [ref=e82] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e83]: 
+        - link "" [ref=e84] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e85]: 
+        - link "" [ref=e86] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e87]: 
+    - generic [ref=e88]:
+      - generic [ref=e90]: LA, CALIFORNIA
+      - generic [ref=e91]: 02:58:06
+      - generic [ref=e92]: (34.0522° N, 118.2437° W)
+  - generic [ref=e95]:
+    - generic [ref=e96]:
+      - heading "TRANSFORMING IDEAS INTO INTELLIGENT OUTCOMES WITH THE POWER OF AI" [level=2] [ref=e97]:
+        - text: TRANSFORMING
+        - text: IDEAS INTO
+        - text: INTELLIGENT
+        - text: OUTCOMES WITH
+        - text: THE POWER OF AI
+      - paragraph [ref=e98]: Whether it's predictive analytics, automation, or intelligent process design, we focus on building tools that empower your people and elevate your results.
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - img "Amanda Reed" [ref=e103]
+        - generic [ref=e104]:
+          - heading "Amanda Reed" [level=4] [ref=e105]
+          - text: Marketing Director
+      - link "Book a 30-Min Call " [ref=e106] [cursor=pointer]:
+        - /url: "#"
+        - text: Book a 30-Min Call
+        - generic [ref=e108]: 
+    - generic [ref=e109]:
+      - generic [ref=e110]: KEY ADVANTAGES
+      - list [ref=e111]:
+        - listitem [ref=e112]:
+          - generic [ref=e113]: 
+          - text: Smart process automation
+        - listitem [ref=e114]:
+          - generic [ref=e115]: 
+          - text: Predictive data insights
+        - listitem [ref=e116]:
+          - generic [ref=e117]: 
+          - text: Custom AI solutions
+        - listitem [ref=e118]:
+          - generic [ref=e119]: 
+          - text: Seamless system integration
+      - generic [ref=e120]: © 2026 Altrion consulting agency
+  - generic [ref=e125]:
+    - heading "“AI helps people think bigger, move faster, and achieve more.”" [level=3] [ref=e126]:
+      - text: “AI helps people think bigger, move
+      - text: faster, and achieve more.”
+    - paragraph [ref=e127]: CEO & Founder of Altrion
+    - link "Learn more about us " [ref=e128] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e129]: Learn more about us
+      - generic [ref=e131]: 
+  - generic [ref=e132]:
+    - generic [ref=e137]: OUR EXPERTISE
+    - heading "EMPOWERING GROWTH THROUGH AI" [level=2] [ref=e139]:
+      - text: EMPOWERING
+      - text: GROWTH THROUGH AI
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e143]:
+          - heading "01. AI STRATEGY & ROADMAP" [level=3] [ref=e144]
+          - generic [ref=e146]: +
+        - generic [ref=e147]:
+          - paragraph [ref=e148]: We help you identify the most impactful areas for AI adoption and create a scalable roadmap to drive long-term business value.
+          - link "Explore Service " [ref=e149] [cursor=pointer]:
+            - /url: "#"
+            - text: Explore Service
+            - generic [ref=e150]: 
+      - generic [ref=e153] [cursor=pointer]:
+        - heading "02. PROCESS AUTOMATION" [level=3] [ref=e154]
+        - generic [ref=e156]: +
+      - generic [ref=e159] [cursor=pointer]:
+        - heading "03. CUSTOM AI DEVELOPMENT" [level=3] [ref=e160]
+        - generic [ref=e162]: +
+      - generic [ref=e165] [cursor=pointer]:
+        - heading "04. DATA STRATEGY & MANAGEMENT" [level=3] [ref=e166]
+        - generic [ref=e168]: +
+      - generic [ref=e169]:
+        - link "Altrion ®" [ref=e170] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e171]
+          - text: Altrion
+          - superscript [ref=e175]: ®
+        - heading "START YOUR AI JOURNEY WITH US" [level=3] [ref=e176]
+        - link "Let's Talk " [ref=e177] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e178]: Let's Talk
+          - generic [ref=e180]: 
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - paragraph [ref=e183]:
+          - text: Our performance metrics show how
+          - strong [ref=e184]: AI delivers measurable impact.
+        - generic [ref=e185] [cursor=pointer]:
+          - link "Get started now" [ref=e186]:
+            - /url: "#journey"
+          - link "" [ref=e187]:
+            - /url: "#journey"
+            - generic [ref=e188]: 
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - heading "0X" [level=2] [ref=e191]
+          - paragraph [ref=e192]: Faster AI execution
+        - generic [ref=e193]:
+          - heading "0%" [level=2] [ref=e194]
+          - paragraph [ref=e195]: Reliable system uptime
+        - generic [ref=e196]:
+          - heading "0+" [level=2] [ref=e197]
+          - paragraph [ref=e198]: Businesses supported
+  - generic [ref=e199]:
+    - generic [ref=e203]: CASE STUDIES
+    - heading "REAL RESULTS POWERED BY AI INNOVATION" [level=2] [ref=e205]:
+      - text: REAL RESULTS POWERED
+      - text: BY AI INNOVATION
+    - generic [ref=e206]:
+      - generic [ref=e207]:
+        - generic [ref=e208]: oslo.
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - heading "0%" [level=3] [ref=e211]
+            - paragraph [ref=e212]:
+              - text: Increase in fraud
+              - text: detection accuracy
+          - generic [ref=e214]:
+            - heading "0X" [level=3] [ref=e215]
+            - paragraph [ref=e216]:
+              - text: Real-time anomaly
+              - text: scanning
+      - generic [ref=e217]:
+        - generic [ref=e218]: FEATURED
+        - heading "FINANCIAL RISK DETECTION" [level=3] [ref=e219]
+        - paragraph [ref=e220]: A fraud-detection AI built to monitor high-risk transactions, flag anomalies, and protect financial institutions with real-time intelligence.
+        - link "View full case study " [ref=e221] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e222]: View full case study
+          - generic [ref=e224]: 
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - generic [ref=e227]: "Date:"
+            - generic [ref=e228]: November 25, 2025
+          - generic [ref=e229]:
+            - generic [ref=e230]: "Client:"
+            - generic [ref=e231]: SecureBank India
+          - generic [ref=e232]:
+            - generic [ref=e233]: "Industry:"
+            - generic [ref=e234]: FinTech & banking
+          - generic [ref=e235]:
+            - generic [ref=e236]: "Services:"
+            - generic [ref=e237]: Machine Learning, Dashboard Engineering, Security Audits
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]: MORE CASE STUDIES
+          - generic [ref=e241]: YEAR
+        - link "PREDICTIVE FLEET MAINTENANCE AI 2025 " [ref=e242] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e243]: PREDICTIVE FLEET MAINTENANCE AI
+          - generic [ref=e244]:
+            - text: "2025"
+            - generic [ref=e245]: 
+        - link "AI TALENT SCREENING ASSISTANT 2025 " [ref=e246] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e247]: AI TALENT SCREENING ASSISTANT
+          - generic [ref=e248]:
+            - text: "2025"
+            - generic [ref=e249]: 
+        - link "AUTOMATED CUSTOMER SUPPORT 2025 " [ref=e250] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e251]: AUTOMATED CUSTOMER SUPPORT
+          - generic [ref=e252]:
+            - text: "2025"
+            - generic [ref=e253]: 
+        - link "HEALTHCARE DIAGNOSTICS SYSTEM 2025 " [ref=e254] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e255]: HEALTHCARE DIAGNOSTICS SYSTEM
+          - generic [ref=e256]:
+            - text: "2025"
+            - generic [ref=e257]: 
+        - link "AI CONTENT PERSONALIZATION 2025 " [ref=e258] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e259]: AI CONTENT PERSONALIZATION
+          - generic [ref=e260]:
+            - text: "2025"
+            - generic [ref=e261]: 
+        - link "View all case studies" [ref=e262] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e263]:
+        - generic [ref=e264]:
+          - generic [ref=e265]: SINCE (2019-25)
+          - generic [ref=e266]:
+            - img [ref=e267]
+            - text: Altrion®
+        - generic [ref=e272]:
+          - img "Data UI" [ref=e274]
+          - generic [ref=e276]: 
+  - generic [ref=e278]:
+    - generic [ref=e282]:
+      - generic [ref=e283]: How it works
+      - heading "A SIMPLE PROCESS FOR AI DISCOVERY" [level=2] [ref=e284]:
+        - text: A SIMPLE PROCESS FOR AI
+        - text: DISCOVERY
+    - generic [ref=e286]:
+      - img "Discovery Strategy" [ref=e288]
+      - generic [ref=e289]:
+        - heading "DISCOVERY & STRATEGY" [level=3] [ref=e290]
+        - paragraph [ref=e291]: This helps us identify where AI can create the most value.
+        - list [ref=e292]:
+          - listitem [ref=e293]: Business analysis
+          - listitem [ref=e294]: AI opportunity mapping
+          - listitem [ref=e295]: Technical feasibility review
+        - generic [ref=e296]:
+          - generic [ref=e297]: "TIME PERIOD: 1-2 WEEKS"
+          - generic [ref=e298]: "01"
+  - generic [ref=e302]:
+    - generic [ref=e303]:
+      - heading "HELPING" [level=2] [ref=e304]
+      - generic [ref=e305]:
+        - heading "0+" [level=2] [ref=e306]
+        - generic [ref=e307]:
+          - paragraph [ref=e308]:
+            - text: Unlocking business potential through
+            - text: strategy and innovation.
+          - heading "CLIENT" [level=2] [ref=e309]
+      - heading "WORLDWIDE" [level=2] [ref=e310]
+    - generic [ref=e311]:
+      - generic [ref=e312]:
+        - generic [ref=e313]: 
+        - text: Nexter
+      - generic [ref=e314]:
+        - generic [ref=e315]: 
+        - text: Crofty
+      - generic [ref=e316]: oslo.
+      - generic [ref=e317]:
+        - generic [ref=e318]: 
+        - text: MAVNE
+      - generic [ref=e319]: next
+      - generic [ref=e320]:
+        - generic [ref=e321]: 
+        - text: thoro
+      - generic [ref=e322]:
+        - generic [ref=e323]: 
+        - text: TOLET
+      - generic [ref=e324]:
+        - generic [ref=e325]: 
+        - text: Umbrella
+      - generic [ref=e326]:
+        - generic [ref=e327]: 
+        - text: Riel
+      - generic [ref=e328]:
+        - generic [ref=e329]: 
+        - text: London
+      - generic [ref=e330]:
+        - generic [ref=e331]: 
+        - text: Metricx
+      - link "JOIN US " [ref=e332] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e333]: JOIN US
+        - generic [ref=e334]: 
+  - generic [ref=e335]:
+    - generic [ref=e341]: WHY CHOOSE US
+    - heading "SMARTER AI. REAL RESULTS." [level=2] [ref=e343]:
+      - text: SMARTER AI.
+      - text: REAL RESULTS.
+    - generic [ref=e344]:
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - heading "STRATEGIC CUSTOMIZATION" [level=3] [ref=e347]
+          - paragraph [ref=e348]: AI solutions tailored to align perfectly with your business strategy.
+          - list [ref=e349]:
+            - listitem [ref=e350]:
+              - generic [ref=e351]: 
+              - text: Tailored AI solutions
+            - listitem [ref=e352]:
+              - generic [ref=e353]: 
+              - text: Aligned with strategy
+            - listitem [ref=e354]:
+              - generic [ref=e355]: 
+              - text: Custom-Built AI
+            - listitem [ref=e356]:
+              - generic [ref=e357]: 
+              - text: Strategic integration
+        - img "AI Robot"
+        - generic [ref=e358]: © 2026 Altrion Agency
+      - generic [ref=e359]:
+        - generic:
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]: 
+            - text: Altrion®
+          - heading "EXPERT AI TEAM" [level=3] [ref=e363]
+          - paragraph [ref=e364]: Specialists who align technology with your business goals.
+      - generic [ref=e365]:
+        - generic [ref=e366]:
+          - heading "0+" [level=2] [ref=e367]
+          - paragraph [ref=e368]: Happy Clients
+          - generic: 
+        - generic [ref=e369]:
+          - heading "SAFE & RELIABLE" [level=3] [ref=e370]:
+            - text: SAFE &
+            - text: RELIABLE
+          - generic: 
+          - generic [ref=e371]: SINCE 2019
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - heading "SCALABLE FOR GROWTH" [level=3] [ref=e374]
+          - paragraph [ref=e375]: AI systems that grow with your business.
+        - generic [ref=e376]:
+          - generic [ref=e379]: 30%
+          - generic [ref=e382]: 80%
+          - generic [ref=e385]: 50%
+          - paragraph [ref=e386]:
+            - text: 15% more compare
+            - text: to the last month
+      - generic [ref=e387]:
+        - generic [ref=e388]:
+          - heading "REAL TIME SUPPORT" [level=3] [ref=e389]
+          - paragraph [ref=e390]: From planning to launch and beyond.
+        - generic [ref=e391]: 24/7
+  - generic [ref=e392]:
+    - generic [ref=e397]: WHY CHOOSE US
+    - generic [ref=e398]:
+      - generic [ref=e399]:
+        - generic [ref=e400]:
+          - heading "DELIVERING RESULTS OVER TIME" [level=2] [ref=e401]:
+            - text: DELIVERING
+            - text: RESULTS OVER TIME
+          - paragraph [ref=e402]: From our humble beginnings to leading AI innovations, we've consistently driven measurable results for clients.
+        - generic [ref=e403]:
+          - generic [ref=e405]:
+            - generic [ref=e406]:
+              - generic [ref=e407]: "2018"
+              - generic [ref=e408]:
+                - heading "FOUNDATION" [level=3] [ref=e409]
+                - paragraph [ref=e410]: Launched with a vision to bring AI solutions to businesses of all sizes.
+            - generic [ref=e411]:
+              - generic [ref=e412]: "2020"
+              - generic [ref=e413]:
+                - heading "BUILDING EXPERTISE" [level=3] [ref=e414]
+                - paragraph [ref=e415]: Launched enterprise projects to streamline operations with automation and AI.
+            - generic [ref=e416]:
+              - generic [ref=e417]: "2022"
+              - generic [ref=e418]:
+                - heading "EXPANDING HORIZONS" [level=3] [ref=e419]
+                - paragraph [ref=e420]: Expanded globally, supporting key industries like healthcare and finance.
+            - generic [ref=e421]:
+              - generic [ref=e422]: "2025"
+              - generic [ref=e423]:
+                - heading "LEADING WITH INNOVATION" [level=3] [ref=e424]
+                - paragraph [ref=e425]: Started delivering data-driven strategies and consulting for early-stage clients.
+          - generic [ref=e426]:
+            - button " Previous" [ref=e427]:
+              - generic [ref=e428]: 
+              - text: Previous
+            - button "Next " [ref=e429] [cursor=pointer]:
+              - text: Next
+              - generic [ref=e430]: 
+      - generic [ref=e435]:
+        - generic [ref=e436]:
+          - img "Ethan Parker" [ref=e437]
+          - generic [ref=e438]:
+            - img [ref=e439]
+            - text: Altrion
+            - superscript [ref=e443]: ®
+        - generic [ref=e444]:
+          - heading "ETHAN PARKER" [level=3] [ref=e445]
+          - paragraph [ref=e446]: Founder & CEO, GEN-AI Consulting
+  - generic [ref=e447]:
+    - generic [ref=e451]: NO HIDDEN COSTS
+    - generic [ref=e452]:
+      - heading "PRICING PLANS" [level=2] [ref=e454]
+      - generic [ref=e456] [cursor=pointer]:
+        - generic [ref=e458]: MONTHLY
+        - generic [ref=e459]: YEARLY
+    - generic [ref=e460]:
+      - generic [ref=e461]:
+        - generic [ref=e462]:
+          - heading "STARTER PLAN" [level=3] [ref=e463]
+          - paragraph [ref=e464]: Small to mid-size businesses exploring AI adoption.
+          - generic [ref=e465]:
+            - generic [ref=e466]: $
+            - generic [ref=e467]: 1,200
+            - generic [ref=e468]: /Per month
+        - generic [ref=e469]: INCLUDED FEATURES
+        - list [ref=e470]:
+          - listitem [ref=e471]:
+            - generic [ref=e472]: 
+            - text: AI readiness and opportunity assessment
+          - listitem [ref=e473]:
+            - generic [ref=e474]: 
+            - text: Strategic consultation sessions (up to 3)
+          - listitem [ref=e475]:
+            - generic [ref=e476]: 
+            - text: Workflow automation blueprint
+          - listitem [ref=e477]:
+            - generic [ref=e478]: 
+            - text: Data preparation guidance
+          - listitem [ref=e479]:
+            - generic [ref=e480]: 
+            - text: Basic AI tool recommendations
+          - listitem [ref=e481]:
+            - generic [ref=e482]: 
+            - text: 2-week implementation roadmap
+        - link "Get started" [ref=e484] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e485]:
+        - generic [ref=e486]:
+          - heading "ENTERPRISE PLAN" [level=3] [ref=e487]
+          - paragraph [ref=e488]: Small to mid-size businesses exploring AI adoption.
+          - generic [ref=e489]:
+            - generic [ref=e490]: $
+            - generic [ref=e491]: 3,000
+            - generic [ref=e492]: /Per month
+        - generic [ref=e493]: INCLUDED FEATURES
+        - list [ref=e494]:
+          - listitem [ref=e495]:
+            - generic [ref=e496]: 
+            - text: In-depth AI strategy and roadmap design
+          - listitem [ref=e497]:
+            - generic [ref=e498]: 
+            - text: Custom AI model and automation development
+          - listitem [ref=e499]:
+            - generic [ref=e500]: 
+            - text: Integration with internal tools and systems
+          - listitem [ref=e501]:
+            - generic [ref=e502]: 
+            - text: Predictive analytics and dashboard setup
+          - listitem [ref=e503]:
+            - generic [ref=e504]: 
+            - text: Continuous performance monitoring
+          - listitem [ref=e505]:
+            - generic [ref=e506]: 
+            - text: Team training and onboarding
+          - listitem [ref=e507]:
+            - generic [ref=e508]: 
+            - text: Ongoing technical support
+        - link "Request proposal" [ref=e510] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e511]:
+        - generic [ref=e512]:
+          - heading "CUSTOM PLAN" [level=3] [ref=e513]
+          - paragraph [ref=e514]: Get a fully tailored AI solution designed around your unique needs.
+        - generic [ref=e515]: INCLUDED FEATURES
+        - list [ref=e516]:
+          - listitem [ref=e517]:
+            - generic [ref=e518]: 
+            - text: Fully tailored AI setup
+          - listitem [ref=e519]:
+            - generic [ref=e520]: 
+            - text: Advanced integrations & workflows
+          - listitem [ref=e521]:
+            - generic [ref=e522]: 
+            - text: Priority support & consultation
+          - listitem [ref=e523]:
+            - generic [ref=e524]: 
+            - text: Flexible deliverables and pricing
+        - link "Get a custom quote " [ref=e525] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e526]: Get a custom quote
+          - generic [ref=e528]: 
+        - generic [ref=e529]:
+          - paragraph [ref=e530]: Every business is unique, and your AI solution should reflect that vision.
+          - generic [ref=e531]:
+            - img "Caleb Foster" [ref=e532]
+            - generic [ref=e533]:
+              - strong [ref=e534]: Caleb Foster ,
+              - generic [ref=e535]: Director, Meditech Solutions
+  - generic [ref=e538]:
+    - generic [ref=e539]:
+      - heading "7+" [level=2] [ref=e540]
+      - heading "YEARS IN AI EXCELLENCE" [level=3] [ref=e541]:
+        - text: YEARS IN AI
+        - text: EXCELLENCE
+    - generic [ref=e542]:
+      - generic [ref=e543]:
+        - generic [ref=e544]:
+          - generic [ref=e545]: 
+          - text: Altrion®
+        - paragraph [ref=e546]: “AI SHOULD SIMPLIFY DECISIONS, NOT COMPLICATE THEM. OUR MISSION IS TO MAKE INTELLIGENCE PRACTICAL FOR EVERY BUSINESS.”
+      - generic [ref=e547]:
+        - generic [ref=e548]:
+          - heading "0+" [level=4] [ref=e549]
+          - paragraph [ref=e550]:
+            - text: AI models for
+            - text: smarter decisions
+        - generic [ref=e551]:
+          - heading "0%" [level=4] [ref=e552]
+          - paragraph [ref=e553]:
+            - text: Client satisfaction
+            - text: rate
+  - generic [ref=e554]:
+    - generic [ref=e558]: INSIGHTS & UPDATES
+    - generic [ref=e559]:
+      - heading "STAY AHEAD WITH AI KNOWLEDGE" [level=2] [ref=e560]:
+        - text: STAY AHEAD WITH AI
+        - text: KNOWLEDGE
+      - link "View all blogs " [ref=e561] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e562]: View all blogs
+        - generic [ref=e564]: 
+    - generic [ref=e565]:
+      - 'link "AI Decisions FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION November 17, 2025" [ref=e566] [cursor=pointer]':
+        - /url: "#"
+        - img "AI Decisions" [ref=e568]
+        - generic [ref=e569]:
+          - 'heading "FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION" [level=3] [ref=e570]'
+          - text: November 17, 2025
+      - generic [ref=e571]:
+        - 'link "AI Marketing AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS November 17, 2025" [ref=e572] [cursor=pointer]':
+          - /url: "#"
+          - img "AI Marketing" [ref=e574]
+          - generic [ref=e575]:
+            - 'heading "AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS" [level=3] [ref=e576]'
+            - text: November 17, 2025
+        - 'link "AI Future THE FUTURE OF WORK: COLLABORATING WITH AI November 12, 2025" [ref=e577] [cursor=pointer]':
+          - /url: "#"
+          - img "AI Future" [ref=e579]
+          - generic [ref=e580]:
+            - 'heading "THE FUTURE OF WORK: COLLABORATING WITH AI" [level=3] [ref=e581]'
+            - text: November 12, 2025
+  - generic [ref=e585]:
+    - generic [ref=e586]:
+      - generic [ref=e587]: WE'RE HERE TO HELP
+      - heading "LET'S TALK ABOUT YOUR NEXT AI PROJECT" [level=2] [ref=e588]:
+        - text: LET'S TALK ABOUT YOUR
+        - text: NEXT AI PROJECT
+      - generic [ref=e589]:
+        - generic [ref=e590]: HOW DO WE CONNECT?
+        - list [ref=e591]:
+          - listitem [ref=e592]:
+            - generic [ref=e593]: 
+            - text: Smart process automation
+          - listitem [ref=e594]:
+            - generic [ref=e595]: 
+            - text: Direct access to our team — no bots.
+          - listitem [ref=e596]:
+            - generic [ref=e597]: 
+            - text: We ask smart questions fast.
+    - generic [ref=e598]:
+      - heading "START YOUR AI JOURNEY" [level=3] [ref=e599]
+      - generic [ref=e600]:
+        - generic [ref=e601]:
+          - generic [ref=e602]: Name*
+          - textbox "Enter your name" [ref=e603]
+        - generic [ref=e604]:
+          - generic [ref=e605]: Email*
+          - textbox "Enter your email" [ref=e606]
+        - generic [ref=e607]:
+          - generic [ref=e608]: Message
+          - textbox "Message" [ref=e609]
+        - button "Send Message" [ref=e610]
+  - contentinfo [ref=e611]:
+    - generic [ref=e612]:
+      - generic [ref=e613]:
+        - paragraph [ref=e614]: We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.
+        - generic [ref=e615]:
+          - generic [ref=e616]: BOOK A CALL AND LET'S SEE WHAT WE CAN DO.
+          - link "Book a discovery call " [ref=e617] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=e618]: Book a discovery call
+            - generic [ref=e620]: 
+      - generic [ref=e621]:
+        - generic [ref=e622]: MAIN LINKS
+        - list [ref=e623]:
+          - listitem [ref=e624]:
+            - link "Home " [ref=e625] [cursor=pointer]:
+              - /url: "#"
+              - text: Home
+              - generic [ref=e626]: 
+          - listitem [ref=e627]:
+            - link "About Us" [ref=e628] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e629]:
+            - link "Case Study" [ref=e630] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e631]:
+            - link "Contact us" [ref=e632] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e633]:
+            - link "Blog" [ref=e634] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e635]:
+        - generic [ref=e636]: UTILITY LINKS
+        - list [ref=e637]:
+          - listitem [ref=e638]:
+            - link "Style Guide" [ref=e639] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e640]:
+            - link "Instructions" [ref=e641] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e642]:
+            - link "Licenses" [ref=e643] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e644]:
+            - link "Changelog" [ref=e645] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e646]:
+            - link "Error 404" [ref=e647] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e648]:
+            - link "Password Protected" [ref=e649] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e650]:
+        - generic [ref=e651]: STAY CONNECTED
+        - paragraph [ref=e652]: Join our newsletter for tips, updates, and project highlights — only the good stuff.
+        - generic [ref=e653]:
+          - textbox "Enter email address" [ref=e654]
+          - button "" [ref=e655] [cursor=pointer]:
+            - generic [ref=e656]: 
+        - paragraph [ref=e657]:
+          - text: By submitting, you agree to our
+          - link "Privacy Policy" [ref=e658] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e659]:
+      - generic [ref=e660]:
+        - generic [ref=e661]: MAIN
+        - link "+1 (415) 555-0167" [ref=e662] [cursor=pointer]:
+          - /url: tel:+14155550167
+        - link "SUPPORT@EXAMPLE.COM" [ref=e663] [cursor=pointer]:
+          - /url: mailto:SUPPORT@EXAMPLE.COM
+      - generic [ref=e664]:
+        - generic [ref=e665]: ADDRESS
+        - paragraph [ref=e666]:
+          - text: Altrion consulting agency
+          - text: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94123, United States
+      - generic [ref=e667]:
+        - generic [ref=e668]: SOCIAL
+        - generic [ref=e669]:
+          - link "LinkedIn" [ref=e670] [cursor=pointer]:
+            - /url: "#"
+          - link "Facebook" [ref=e671] [cursor=pointer]:
+            - /url: "#"
+          - link "Twitter" [ref=e672] [cursor=pointer]:
+            - /url: "#"
+          - link "Instagram" [ref=e673] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e674]:
+        - generic [ref=e675]: LEGAL
+        - paragraph [ref=e676]:
+          - text: ©2026 Altrion Agency
+          - text: Designed by
+          - link "VictorWork" [ref=e677] [cursor=pointer]:
+            - /url: "#"
+          - text: . Powered by
+          - link "Webflow" [ref=e678] [cursor=pointer]:
+            - /url: "#"
+          - text: .
+    - generic: Altrion®

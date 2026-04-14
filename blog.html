@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Innovaition AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="blog-page light-theme">
+
+  <div class="global-grid">
+    <div class="grid-line left"></div>
+    <div class="grid-line right"></div>
+  </div>
+
+  <nav class="navbar" style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+    <div class="nav-left">
+      <button class="menu-btn mobile-menu-btn" style="color: #000; border-color: rgba(0,0,0,0.2);">
+        <i class="fa-solid fa-bars"></i> MENU
+      </button>
+    </div>
+ 
+    <div class="nav-center">
+      <a href="index.html" class="logo" style="color: #000;">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="#000" stroke-width="2"/>
+          <path d="M10 20L16 10L22 20" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="14" r="2" fill="#000"/>
+        </svg>
+        Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-avatar"></div>
+      <a href="contact.html" class="nav-cta" style="color: #000; border-color: rgba(0,0,0,0.2);">BOOK A CALL</a>
+      <a href="contact.html" class="nav-cta-icon" style="color: #000; border-color: rgba(0,0,0,0.2);">
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="menu-overlay">
+    <div class="menu-grid">
+      <div class="menu-col-left">
+        <ul class="menu-nav-list">
+          <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="about.html">ABOUT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="services.html">SERVICES <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="pricing.html">PRICING <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="blog.html">BLOG <i class="fa-solid fa-arrow-up-right"></i></a></li>
+          <li class="menu-nav-item"><a href="contact.html">CONTACT US <i class="fa-solid fa-arrow-up-right"></i></a></li>
+        </ul>
+      </div>
+      <div class="menu-col-right">
+        <div class="menu-info-top">
+          <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+          <div class="menu-globe-widget">
+            <i class="fa-solid fa-globe"></i>
+            <span class="coords">62.328° N - 15.845° E</span>
+          </div>
+        </div>
+        <div class="menu-info-bottom">
+          <div class="menu-contact-grid">
+            <div class="location-block">
+              <span class="meta-label">LOCATION</span>
+              <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+              <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+            </div>
+            <div class="contact-block">
+              <span class="meta-label">CONTACT ON</span>
+              <p>+1 (415) 555-0167</p>
+              <a href="mailto:SUPPORT@INNOVAITION.CA" class="menu-email">SUPPORT@INNOVAITION.CA</a>
+            </div>
+          </div>
+          <div class="menu-social-row">
+            <a href="#">X Twitter - X</a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="blog-hero-sec">
+    <div class="blog-hero-blur"></div>
+    <div class="blog-hero-content gs-reveal-up">
+      <h1 class="blog-hero-title left">OUR</h1>
+      <h1 class="blog-hero-title right">BLOG</h1>
+    </div>
+  </section>
+
+  <div class="blog-page-wrap">
+    <div class="blog-main-grid gs-reveal-up">
+      
+      <a href="#" class="b-card featured">
+        <div class="b-img-wrap">
+          <div class="featured-badge">FEATURED POST</div>
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Featured AI Image">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">HOW AI IS REDEFINING BUSINESS STRATEGY</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-img-wrap">
+          <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=600&auto=format&fit=crop" alt="AI Insights">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-img-wrap">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop" alt="AI Marketing">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="AI Workflows">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">AUTOMATING WORKFLOWS: THE SMART WAY FORWARD</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-img-wrap">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&auto=format&fit=crop" alt="AI Trust">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">BUILDING TRUST IN AI SYSTEMS</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-img-wrap">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop" alt="AI Experience">
+        </div>
+        <div class="b-meta">
+          <h3 class="b-title">AI IN CUSTOMER EXPERIENCE: THE HUMAN TOUCH, ENHANCED</h3>
+          <span class="b-date">November 17, 2025</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <section class="contact-section dark-theme" id="contact">
+    
+    <canvas id="paper-shader-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; touch-action: none; background: #0a0a0a;"></canvas>
+    
+    <div class="contact-overlay"></div>
+    
+    <div class="contact-grid gs-reveal-up">
+      <div class="contact-info">
+        <h2 class="contact-title" style="margin-bottom: 40px; margin-top: 20px;">
+          LET'S TALK ABOUT YOUR<br>
+          <span class="rotating-wrapper">
+            <span class="rot-text">NEXT AI PROJECT</span>
+            <span class="rot-text">AUTOMATION GOALS</span>
+            <span class="rot-text">DATA STRATEGY</span>
+            <span class="rot-text">BUSINESS GROWTH</span>
+            <span class="rot-text">SMART WORKFLOWS</span>
+          </span>
+        </h2>
+
+        <div class="contact-connect">
+          <span class="connect-label">HOW DO WE CONNECT?</span>
+          <ul class="connect-list">
+            <li><i class="fa-solid fa-play"></i> Smart process automation</li>
+            <li><i class="fa-solid fa-play"></i> Direct access to our team — no bots.</li>
+            <li><i class="fa-solid fa-play"></i> We ask smart questions fast.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrap">
+        <h3 class="form-title">START YOUR AI JOURNEY</h3>
+         <form class="contact-form">
+          <div class="input-group">
+            <label>Name*</label>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-group">
+            <label>Email*</label>
+            <input type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label>Message</label>
+            <textarea placeholder="Message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-main submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section dark-theme" style="background: var(--bg-dark); color: #fff;">
+    <div class="footer-watermark">Innovaition®</div>
+    <div class="footer-framed-box gs-reveal-up">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.</p>
+          <div class="book-call-wrap">
+            <span class="book-call-label">BOOK A CALL AND LET'S SEE WHAT WE CAN DO.</span>
+            <a href="contact.html" class="btn-main quote-btn cta-btn" style="background: #fff; color: #000;">
+              <span style="margin-right: 24px;">Book a discovery call</span>
+              <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col links-col">
+          <span class="footer-label">MAIN LINKS</span>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog <i class="fa-solid fa-play" style="font-size: 0.6rem;"></i></a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <span class="footer-label">UTILITY LINKS</span>
+          <ul class="footer-links">
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Instructions</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Error 404</a></li>
+            <li><a href="#">Password Protected</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <span class="footer-label">STAY CONNECTED</span>
+          <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter email address" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bot-col">
+          <span class="footer-label">MAIN</span>
+          <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
+          <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">ADDRESS</span>
+          <p>Innovaition Consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+        </div>
+        <div class="footer-bot-col">
+          <span class="footer-label">SOCIAL</span>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      
+        <div class="footer-bot-col">
+          <span class="footer-label">LEGAL</span>
+          <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by <a href="#" style="color: #fff;">Webflow</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
