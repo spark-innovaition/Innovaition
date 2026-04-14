@@ -618,21 +618,17 @@ a {
 
 /* ===== ABOUT / TRANSFORMING SECTION ===== */
 .about-section {
-  padding: 140px var(--layout-pad); 
-  position: relative;
-  z-index: 10;
-  border-top: 1px solid var(--border-color);
-  background-color: var(--bg-dark);
-}
+    padding: 60px 20px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(auto, 360px));
-  justify-content: center;
-  gap: clamp(40px, 5vw, 80px); 
-  align-items: center; 
-  padding: 0; 
-}
+.about-grid { 
+    display: flex !important; /* Kills the stubborn grid overflow */
+    flex-direction: column; 
+    gap: 40px; 
+    width: 100%;
+  }
 
 .about-content-left {
   display: flex;
@@ -3188,7 +3184,6 @@ a {
   display: block;
   text-decoration: none;
   color: inherit;
-  group/card; /* For hover styling */
 }
 
 .blog-img-wrap {
@@ -6566,4 +6561,302 @@ background: var(--bg-dark); }
   }
 
   .hero-bottom-bar { display: none; }
-  
+
+  /* ============================================================= */
+  /* ===== PHASE 3: FLOATING CARDS — disable GSAP pinning    ===== */
+  /* ============================================================= */
+
+  #phase3-pin-wrapper {
+    height: auto;
+  }
+
+  .scroll-cards-section {
+    padding: 60px 20px;
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  /* Turn the absolute-positioned card stack into a visible 2×2 grid */
+  .cards-wrapper {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    position: relative;
+  }
+
+  .anim-card {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 180px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .card-center-placeholder {
+    display: none !important;
+  }
+
+  /* Quote section: remove absolute top:100% positioning */
+  .quote-wrapper {
+    position: relative;
+    top: auto;
+    margin: 40px 0 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .quote-text {
+    font-size: 1.1rem;
+  }
+
+  /* ============================================================= */
+  /* ===== SERVICES ACCORDION — vertical stacked layout      ===== */
+  /* ============================================================= */
+
+  .services-accordion-section {
+    padding: 80px 20px 60px !important;
+    gap: 40px;
+  }
+
+  .accordion-wrapper {
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+  }
+
+  .accordion-item {
+    min-height: 70px;
+    padding: 24px 20px;
+    border-radius: 0;
+  }
+
+  .accordion-item.active {
+    flex: none;
+    min-height: 360px;
+  }
+
+  /* Un-rotate the vertical tab title text */
+  .tab-header h3 {
+    writing-mode: horizontal-tb !important;
+    transform: rotate(0deg) !important;
+    font-size: 1rem !important;
+  }
+
+  .accordion-static-cta {
+    flex: none;
+    min-height: 180px;
+    border-radius: 0;
+  }
+
+  /* ============================================================= */
+  /* ===== METRICS BLOCK — single column                     ===== */
+  /* ============================================================= */
+
+  .metrics-block {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .metrics-stats-right {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .metrics-content-left .hero-desc {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  /* ============================================================= */
+  /* ===== CASE STUDIES GRID — single column                ===== */
+  /* ============================================================= */
+
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-feat-image-col {
+    min-height: 260px;
+    border-right: none;
+    border-bottom: 1px solid var(--cs-border);
+  }
+
+  .cs-feat-info-col {
+    padding: 30px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--cs-border);
+  }
+
+  .cs-list-col {
+    border-right: none;
+  }
+
+  .cs-visual-col {
+    display: none;
+  }
+
+  .cs-header-wrapper {
+    padding: 60px 0 30px 0;
+  }
+
+  .cs-section-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  /* ============================================================= */
+  /* ===== PROCESS SECTION — CRITICAL FIX                   ===== */
+  /* ===  Cards have opacity:0/visibility:hidden in CSS;     ===== */
+  /* ===  GSAP only restores them on desktop (≥769px).       ===== */
+  /* ============================================================= */
+
+  #process-pin-wrapper {
+    min-height: auto !important;
+    padding: 60px 20px !important;
+    overflow: visible;
+  }
+
+  .process-cards-container {
+    height: auto !important;
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    max-width: 100%;
+  }
+
+  /* Force every card visible and in normal document flow */
+  .process-card {
+    position: relative !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .process-card:last-child {
+    border-bottom: none;
+  }
+
+  .card-image-col {
+    height: 220px;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .card-info-col {
+    padding: 24px 20px;
+  }
+
+  .process-header {
+    margin-bottom: 40px;
+  }
+
+  .process-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  /* ============================================================= */
+  /* ===== IMPACT SECTION — reduce excessive padding/gap     ===== */
+  /* ============================================================= */
+
+  .impact-section {
+    padding: 80px 0 !important;
+  }
+
+  .impact-container {
+    gap: 50px;
+  }
+
+  /* ============================================================= */
+  /* ===== BENTO SECTION — reduce 150px padding              ===== */
+  /* ============================================================= */
+
+  .bento-section {
+    padding: 80px 20px !important;
+  }
+
+  .bento-header {
+    margin: 30px 0 40px;
+  }
+
+  /* ============================================================= */
+  /* ===== HISTORY SECTION — fix excessive top padding       ===== */
+  /* ============================================================= */
+
+  .history-section {
+    flex-direction: column;
+  }
+
+  .history-section .history-left-content {
+    padding: 80px 20px 40px !important;
+  }
+
+  .history-right {
+    min-height: 400px;
+  }
+
+  .history-right-bg {
+    right: 0;
+  }
+
+  .history-title {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  /* ============================================================= */
+  /* ===== SERVICES.HTML SPLIT SCREEN — fix stacked items    ===== */
+  /* ===  GSAP doesn't run on mobile so all text items sit   ===== */
+  /* ===  at grid-area:1/1, overlapping each other.          ===== */
+  /* ============================================================= */
+
+  #split-pin-wrapper {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .split-scroll-container {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    gap: 0;
+    padding: 0 20px;
+  }
+
+  /* Hide image cards on mobile (text-only vertical list) */
+  .split-right {
+    display: none !important;
+  }
+
+  .split-left {
+    display: block !important;
+    height: auto;
+  }
+
+  /* Un-stack all text items from grid-area:1/1 */
+  .split-text-item {
+    grid-area: auto !important;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .split-text-item:last-child {
+    border-bottom: none;
+  }
+
+  .split-text-item h2 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+  }
+}
