@@ -6846,7 +6846,7 @@ background: var(--bg-dark); }
   /* ============================================================= */
 
   .history-section {
-    flex-direction: column;
+    flex-direction: column !important;
     padding-top: 60px !important;
     padding-left: 20px !important; 
     padding-right: 20px !important;
@@ -6858,14 +6858,24 @@ background: var(--bg-dark); }
   }
 
   .history-grid {
+    display: flex !important; /* Switch to flex prevents grid blowout */
+    flex-direction: column !important;
     width: 100% !important;
-    margin: 0 !important;
     max-width: 100% !important;
+    margin: 0 !important;
     overflow: hidden !important;
     background-color: #f4f4f0 !important; 
     border-left: 1px solid rgba(0,0,0,0.1) !important;
     border-right: 1px solid rgba(0,0,0,0.1) !important;
     border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    box-sizing: border-box !important;
+  }
+
+  .history-left, .history-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important; /* CRITICAL: Stops track from stretching the parent */
+    border-right: none !important;
     box-sizing: border-box !important;
   }
 
@@ -6896,8 +6906,8 @@ background: var(--bg-dark); }
   .history-title {
     font-size: clamp(2rem, 8vw, 2.8rem) !important;
     line-height: 1.1 !important;
-    margin-bottom: 20px;
-    word-break: break-word;
+    margin-bottom: 20px !important;
+    word-wrap: break-word !important;
     color: #111 !important;
   }
 
@@ -6907,15 +6917,28 @@ background: var(--bg-dark); }
     font-size: 1rem !important;
   }
   
-  .timeline-window {
+  .timeline-container, .timeline-window {
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .timeline-window {
     overflow: hidden !important;
+  }
+
+  .timeline-track {
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
   }
 
   /* Force 2 cards side-by-side on mobile */
   .timeline-track .tl-card {
     flex: 0 0 50% !important;
     min-width: 50% !important;
+    max-width: 50% !important;
     padding: 30px 20px !important;
     min-height: 250px !important;
     box-sizing: border-box !important;
@@ -6925,6 +6948,7 @@ background: var(--bg-dark); }
   .tl-card h3 {
     font-size: 1rem !important;
     margin-bottom: 10px !important;
+    word-wrap: break-word !important;
   }
 
   .tl-card p {
@@ -6936,6 +6960,7 @@ background: var(--bg-dark); }
     border-top: 1px solid rgba(0,0,0,0.1) !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
   }
 
   .tl-btn {
@@ -6949,6 +6974,7 @@ background: var(--bg-dark); }
     background: #fff !important;
     color: #111 !important;
     box-sizing: border-box !important;
+    min-width: 0 !important;
   }
 
   .tl-btn.prev {
@@ -6959,8 +6985,6 @@ background: var(--bg-dark); }
   .history-right {
     min-height: auto !important;
     padding: 40px 20px 60px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
     background-color: transparent !important;
   }
 
@@ -6982,6 +7006,7 @@ background: var(--bg-dark); }
     border: none !important;
     backdrop-filter: none !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
@@ -7005,6 +7030,7 @@ background: var(--bg-dark); }
     font-size: 1.4rem !important;
     color: #fff !important;
     margin-bottom: 6px !important;
+    word-wrap: break-word !important;
   }
 
   .founder-info p {
