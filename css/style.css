@@ -6454,38 +6454,41 @@ background: var(--bg-dark); }
     font-size: 1.1rem;
   }
 
-  /* ============================================================= */
+/* ============================================================= */
   /* ===== SERVICES ACCORDION — vertical stacked layout      ===== */
   /* ============================================================= */
 
   .services-accordion-section {
-    padding: 80px 20px 60px !important;
+    padding: 130px 20px 60px !important; /* Pushed down to clear the badge */
     gap: 40px;
+  }
+
+  .services-accordion-section .horizontal-divider {
+    top: 60px; /* Positions the line and badge perfectly above the title */
   }
 
   .accordion-wrapper {
     flex-direction: column;
     height: auto;
-    gap: 0;
+    gap: 24px; /* Added gap to create distinct floating cards */
   }
 
-  /* All items fully expanded on mobile — dark card style */
+  /* All items fully expanded on mobile — premium dark card style */
   .accordion-item {
     flex: none !important;
     min-height: auto;
-    padding: 30px 24px 28px;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 40px 30px 35px; /* Better internal breathing room */
+    border-radius: 16px !important; /* Rounded corners */
+    border: 1px solid rgba(255,255,255,0.15) !important; /* Crisp border */
   }
 
-  .accordion-item:last-of-type {
-    border-bottom: none !important;
-  }
-
-  /* Show background image on every item (not just active) */
-  .accordion-item .bg-image,
+  /* Darker overlay to make text highly readable over busy images */
   .accordion-item::after {
+    opacity: 1 !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.95) 100%) !important;
+  }
+
+  .accordion-item .bg-image {
     opacity: 1 !important;
   }
 
@@ -6502,7 +6505,7 @@ background: var(--bg-dark); }
   .accordion-item .tab-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 10px;
   }
 
   /* Force title colour + orientation */
@@ -6510,7 +6513,7 @@ background: var(--bg-dark); }
     writing-mode: horizontal-tb !important;
     transform: none !important;
     color: #fff !important;
-    font-size: 1.15rem !important;
+    font-size: 1.3rem !important; /* Slightly larger for better hierarchy */
   }
 
   /* Hide the +/× toggle icon on mobile */
