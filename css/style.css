@@ -1258,20 +1258,15 @@ a {
 
 
 /* ==================================================== */
-/* ===== NEW: PROCESS SECTION (PHASE 7) =====           */
+/* ===== REBUILT: PROCESS SECTION                 ===== */
 /* ==================================================== */
 
-#process-pin-wrapper {
+.process-section {
   position: relative;
   width: 100%;
-  height: 100vh; /* Locked to viewport height to guarantee perfect centering */
   background-color: var(--bg-dark);
   color: var(--text-white);
-  padding: 0 var(--layout-pad); /* Removed padding so flexbox can center it */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Absolutely center the content vertically */
-  align-items: center;
+  padding: 120px 0;
   overflow: hidden;
   z-index: 10;
 }
@@ -1283,26 +1278,14 @@ a {
   right: var(--layout-pad);
   height: 1px;
 }
-.process-top-divider .line {
-  width: 100%; height: 1px; background: var(--border-color);
-}
-.process-top-divider .diamond {
-  position: absolute;
-  top: -2px; width: 5px;
-  height: 5px;
-  background-color: var(--border-color);
-  transform: rotate(45deg);
-}
+.process-top-divider .line { width: 100%; height: 1px; background: var(--border-color); }
+.process-top-divider .diamond { position: absolute; top: -2px; width: 5px; height: 5px; background-color: var(--border-color); transform: rotate(45deg); }
 .process-top-divider .diamond.left { left: -2px; }
-.process-top-divider .diamond.right { right: -2px;
-}
+.process-top-divider .diamond.right { right: -2px; }
 
 .process-header {
-  text-align: center;
-  margin-bottom: 40px; /* Reduced to pull cards up for laptop screens */
-  position: relative;
-  z-index: 20; 
-  flex-shrink: 0; 
+  padding: 0 var(--layout-pad);
+  margin-bottom: 60px;
 }
 
 .process-title {
@@ -1316,37 +1299,29 @@ a {
   margin-top: 16px;
 }
 
-.process-cards-container {
-  position: relative;
+.process-slider-container {
   width: 100%;
-  max-width: 900px;
-  height: 400px; /* Shrunk height to ensure it fits perfectly on 13" laptops */
-  margin: 0 auto;
-  flex-shrink: 0; 
+  /* Removed padding from the container to allow full track movement */
+}
+
+.process-track {
+  display: flex;
+  gap: 30px;
+  width: max-content; /* Critical for horizontal scroll */
+  padding-left: var(--layout-pad);
+  padding-right: var(--layout-pad);
 }
 
 .process-card {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 800px; /* Fixed width for desktop */
+  min-height: 420px;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   background: #111;
   border: 1px solid var(--border-color);
-  opacity: 0;
-  visibility: hidden;
-  will-change: transform, opacity;
-  overflow: hidden; 
-}
-
-@media (max-width: 768px) {
-  .process-card {
-    grid-template-columns: 1fr;
-  }
-  .process-cards-container {
-    height: 600px;
-  }
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .card-image-col {
@@ -1365,7 +1340,7 @@ a {
 }
 
 .card-info-col {
-  padding: 30px 40px; /* Tighter vertical padding to squeeze content safely */
+  padding: 40px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1387,11 +1362,7 @@ a {
   margin-bottom: 24px;
 }
 
-.process-list {
-  list-style: none;
-  margin-bottom: auto; /* Push footer down */
-}
-
+.process-list { list-style: none; margin-bottom: auto; }
 .process-list li {
   font-size: 0.9rem;
   color: #ccc;
@@ -1400,7 +1371,6 @@ a {
   align-items: center;
   gap: 12px;
 }
-
 .process-list li::before {
   content: '';
   display: block;
@@ -1427,12 +1397,50 @@ a {
 
 .card-footer .number {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 0.8;
   color: rgba(255,255,255,0.05);
   position: absolute;
   bottom: 20px; right: 30px;
+}
+
+/* Tablet / Mobile Overrides */
+@media (max-width: 1024px) {
+  .process-card {
+    width: 600px;
+    grid-template-columns: 1fr;
+  }
+  .card-image-col { height: 240px; border-right: none; border-bottom: 1px solid var(--border-color); }
+}
+
+@media (max-width: 768px) {
+  .process-section { padding: 80px 0; }
+  .process-header { margin-bottom: 30px; padding: 0 20px; }
+  .process-slider-container { padding-left: 0; }
+  .process-track { 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .process-track::-webkit-scrollbar { display: none; }
+  .process-card { width: 85vw; scroll-snap-align: center; }
+  
+  .process-header::after {
+    content: 'SWIPE \2192'; 
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 50px;
+  }
 }
 
 /* ==================================================== */
@@ -6651,156 +6659,6 @@ background: var(--bg-dark); }
     color: #888;
     max-width: 100%;
     margin-top: 8px;
-  }
-
-/* ============================================================= */
-  /* ===== PROCESS SECTION — MOBILE HORIZONTAL CAROUSEL      ===== */
-  /* ============================================================= */
-
-  #process-pin-wrapper {
-    min-height: auto !important;
-    padding: 80px 0 40px !important; /* Removed side padding for full bleed */
-    overflow: hidden !important;
-  }
-
-  .process-header {
-    margin-bottom: 40px;
-    padding: 0 20px !important; /* Add padding back to header */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .process-title {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  /* Injects a subtle, animated swipe hint below the title */
-  .process-header::after {
-    content: 'SWIPE \2192'; /* Hex code for right arrow */
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #888;
-    letter-spacing: 0.1em;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 50px;
-    animation: swipePulse 2s ease-in-out infinite;
-  }
-
-  @keyframes swipePulse {
-    0%, 100% { transform: translateX(0); opacity: 0.6; }
-    50% { transform: translateX(6px); opacity: 1; }
-  }
-
-  .process-cards-container {
-    height: auto !important;
-    position: relative;
-    display: flex !important;
-    flex-direction: row !important; /* Changes from vertical stack to horizontal row */
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory;
-    gap: 16px !important;
-    padding: 0 20px 40px !important; /* Side padding for first/last card */
-    max-width: 100%;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .process-cards-container::-webkit-scrollbar {
-    display: none; /* Hides scrollbar for native app feel */
-  }
-
-  /* Force every card into a horizontal slide */
-  .process-card {
-    position: relative !important;
-    height: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    background: #0d0d0d !important; /* Solid dark background */
-    border-radius: 16px !important; /* Soft corners for app-like cards */
-    overflow: hidden !important;
-    flex: 0 0 85% !important; /* Take up 85% of the screen width */
-    min-width: 85% !important;
-    scroll-snap-align: center;
-  }
-
-  .card-image-col {
-    height: 240px; /* Adjusted slightly for mobile carousel proportions */
-    width: 100%;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-  }
-  
-  .card-image-col img {
-    opacity: 0.9;
-  }
-
-  .card-info-col {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Stretches to fill empty space so buttons align at bottom */
-  }
-  
-  .card-info-col h3 {
-    font-size: 1.15rem;
-    margin-bottom: 12px;
-  }
-  
-  .card-info-col p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    color: #aaa;
-  }
-
-  .process-list {
-    margin-bottom: 20px;
-  }
-
-  .process-list li {
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  /* Override the solid white circle to a chevron */
-  .process-list li::before {
-    content: '\f054'; /* FontAwesome chevron-right */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    background: transparent;
-    color: #666;
-    width: auto; 
-    height: auto;
-    font-size: 0.75rem;
-    margin-top: 3px;
-  }
-
-  .card-footer {
-    border-top: none;
-    padding-top: 0;
-    margin-top: auto; /* Push the timer to the absolute bottom of the card */
-  }
-
-  .card-footer .time {
-    font-size: 0.65rem;
-  }
-
-  .card-footer .number {
-    font-size: 5rem;
-    bottom: -15px;
-    right: 10px;
-    color: rgba(255, 255, 255, 0.05); /* Huge watermark style */
-    position: absolute;
   }
 
   /* ============================================================= */

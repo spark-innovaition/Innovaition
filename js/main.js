@@ -706,59 +706,28 @@ cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0
       });
     }
 
-    // 2. PROCESS CARDS ANIMATION (Home Page)
-    const processWrapper = document.querySelector('#process-pin-wrapper');
-    const processCards = gsap.utils.toArray('.process-card');
+    // 2. REBUILT PROCESS CARDS (Horizontal Scroll on Desktop)
+    const processSection = document.querySelector('#process-section');
+    const processTrack = document.querySelector('#process-track');
 
-    if (processWrapper && processCards.length > 0) {
-      // 1. Completely reset the cards
-      gsap.set(processCards, { clearProps: "all" });
-      
-      // 2. Prepare the initial state: Card 1 is visible, the rest are pushed down
-      gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
-      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 100 }); 
+    if (processSection && processTrack) {
+      // Perfectly aligns the track's right padding with the right edge of the window
+      const getScrollAmount = () => -(processTrack.scrollWidth - window.innerWidth);
 
-      // 3. Create the timeline
-      const processTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: processWrapper,
-          start: "center center", // Pins exactly when the section hits the middle of the screen
-          end: "+=400%", // 4 full screen heights to scroll through
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1
-        }
+      const processTween = gsap.to(processTrack, {
+        x: getScrollAmount,
+        ease: "none"
       });
 
-      // 4. Build a perfectly sequenced timeline
-      processCards.forEach((card, i) => {
-        // A. Hold the current card on screen so user can read it
-        processTl.to(card, { y: 0, duration: 1 }); // Dummy tween acts as a pause
-        
-        // B. Transition to the next card (if not the last card)
-        if (i < processCards.length - 1) {
-          const nextCard = processCards[i + 1];
-
-          processTl
-            // Fade out current card and push it UP
-            .to(card, { 
-              autoAlpha: 0, 
-              y: -100, 
-              duration: 1, 
-              ease: "power2.inOut" 
-            })
-            // Fade in next card from the BOTTOM (running at the exact same time using "<")
-            .to(nextCard, { 
-              autoAlpha: 1, 
-              y: 0, 
-              duration: 1, 
-              ease: "power2.inOut" 
-            }, "<");
-        }
+      ScrollTrigger.create({
+        trigger: processSection,
+        start: "center center",
+        end: () => `+=${processTrack.scrollWidth}`, // Links scroll duration to width of the cards
+        pin: true,
+        animation: processTween,
+        scrub: 1,
+        invalidateOnRefresh: true // Recalculates perfectly if the user resizes their browser
       });
-
-      // 5. Add a final hold so the last card stays visible before the section unpins
-      processTl.to(processCards[processCards.length - 1], { y: 0, duration: 1 });
     }
 
     // 3. SPLIT SCREEN PINNED SCROLL (Services Page)
