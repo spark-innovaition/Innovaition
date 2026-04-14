@@ -7065,4 +7065,94 @@ background: var(--bg-dark); }
   .split-text-item h2 {
     font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
   }
+
+  /* ============================================================= */
+  /* ===== EXCELLENCE SECTION — MOBILE REFINEMENT            ===== */
+  /* ============================================================= */
+
+  .excellence-section {
+    padding: 80px 20px 40px !important;
+    min-height: 100vh !important;
+  }
+
+  .exc-content-wrap {
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    height: 100%;
+    gap: 40px !important;
+  }
+
+  /* Top Left Alignment */
+  .exc-left {
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+  }
+
+  .exc-massive-num {
+    font-size: clamp(5rem, 18vw, 8rem) !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .exc-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Middle Right Alignment */
+  .exc-right {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    max-width: 100% !important;
+  }
+
+  .exc-quote-block {
+    text-align: right !important;
+    align-self: flex-end !important;
+    max-width: 90% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .exc-quote-block .logo-small {
+    justify-content: flex-end !important;
+  }
+
+  .exc-quote {
+    font-size: clamp(1.1rem, 5vw, 1.4rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Bottom Glass Box */
+  .exc-stats-box {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important; /* Using borders instead of gap for the center line */
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important; /* Restoring the translucent look */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+  }
+
+  .exc-stat {
+    padding: 30px 20px !important;
+  }
+
+  .exc-stat:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important; /* Center divider */
+  }
+
+  .exc-stat h4 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .exc-stat p {
+    font-size: 0.9rem !important;
+    opacity: 0.8 !important;
+  }
 }
