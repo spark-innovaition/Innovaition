@@ -1419,6 +1419,7 @@ a {
   .process-header { margin-bottom: 30px; padding: 0 20px; }
   .process-slider-container { padding-left: 0; }
   .process-track { 
+    width: 100% !important; /* CRITICAL: Overrides max-content so native scrolling activates */
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     scrollbar-width: none;
@@ -1427,7 +1428,11 @@ a {
     padding-right: 20px;
   }
   .process-track::-webkit-scrollbar { display: none; }
-  .process-card { width: 85vw; scroll-snap-align: center; }
+  
+  .process-card { 
+    flex: 0 0 85vw !important; /* Ensures cards maintain exact width inside the flex container */
+    scroll-snap-align: center; 
+  }
   
   .process-header::after {
     content: 'SWIPE \2192'; 
@@ -6843,22 +6848,25 @@ background: var(--bg-dark); }
   .history-section {
     flex-direction: column;
     padding-top: 60px !important;
-    padding-left: 20px !important; /* Inset to allow borders to show */
+    padding-left: 20px !important; 
     padding-right: 20px !important;
     overflow: hidden !important; 
     width: 100% !important;
+    max-width: 100vw !important;
     box-sizing: border-box !important;
-    background-color: #ffffff !important; /* Outer page background */
+    background-color: #ffffff !important; 
   }
 
   .history-grid {
     width: 100% !important;
-    max-width: 100vw !important;
+    margin: 0 !important;
+    max-width: 100% !important;
     overflow: hidden !important;
-    background-color: #f4f4f0 !important; /* Inner gray box */
+    background-color: #f4f4f0 !important; 
     border-left: 1px solid rgba(0,0,0,0.1) !important;
     border-right: 1px solid rgba(0,0,0,0.1) !important;
     border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    box-sizing: border-box !important;
   }
 
   .history-section .history-left-content {
@@ -6868,30 +6876,28 @@ background: var(--bg-dark); }
   }
 
   .history-top-divider {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
     position: relative;
   }
 
   .history-top-divider::before {
-    left: 0 !important; /* Line starts exactly at the gray container border */
+    left: 0 !important; 
     right: 0 !important;
   }
 
   .history-top-divider .badge {
-    margin-left: 20px !important; /* Inset badge slightly */
-    background-color: #f4f4f0 !important; /* Match inner gray box */
+    margin-left: 20px !important; 
+    background-color: #f4f4f0 !important; 
   }
 
   .history-title {
     font-size: clamp(2rem, 8vw, 2.8rem) !important;
     line-height: 1.1 !important;
     margin-bottom: 20px;
-    overflow-wrap: break-word;
+    word-break: break-word;
     color: #111 !important;
   }
 
@@ -6899,6 +6905,11 @@ background: var(--bg-dark); }
     margin-bottom: 30px !important;
     color: #555 !important;
     font-size: 1rem !important;
+  }
+  
+  .timeline-window {
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   /* Force 2 cards side-by-side on mobile */
@@ -6921,20 +6932,23 @@ background: var(--bg-dark); }
   }
 
   .tl-controls {
-    flex-direction: row !important; /* Keep buttons side-by-side */
+    flex-direction: row !important; 
     border-top: 1px solid rgba(0,0,0,0.1) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .tl-btn {
     padding: 16px !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
-    flex: 1 !important; /* Take equal halves */
+    flex: 1 !important; 
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     background: #fff !important;
     color: #111 !important;
+    box-sizing: border-box !important;
   }
 
   .tl-btn.prev {
@@ -6958,13 +6972,17 @@ background: var(--bg-dark); }
   .founder-wrapper {
     max-width: 100% !important;
     width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
   .founder-photo-box {
-    background: #111 !important; /* Solid dark background */
-    padding: 0 !important; /* Image goes edge to edge */
+    background: #111 !important; 
+    padding: 0 !important; 
     border: none !important;
     backdrop-filter: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .founder-photo {
@@ -6972,12 +6990,15 @@ background: var(--bg-dark); }
     aspect-ratio: 4/5;
     width: 100% !important;
     position: relative;
+    box-sizing: border-box !important;
   }
 
   .founder-info {
     border-top: none !important;
     padding: 24px 20px !important;
     text-align: center;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   .founder-info h3 {
