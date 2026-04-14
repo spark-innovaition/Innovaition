@@ -1177,6 +1177,12 @@ a {
 }
 .cta-btn .profile-btn-icon i { transform: rotate(0); }
 
+/* ===== ACCORDION MOBILE-ONLY ELEMENTS (hidden on desktop) ===== */
+/* acc-num, acc-includes, includes-label, acc-tag are hidden by default;
+   the @media (max-width: 768px) block at the bottom makes them visible. */
+.acc-num { display: none; }
+.acc-includes { display: none; }
+
 /* --- Lower Metrics Callout (Phase 5) --- */
 .metrics-block {
   display: grid;
@@ -6628,22 +6634,105 @@ background: var(--bg-dark); }
     gap: 0;
   }
 
+  /* All items fully expanded on mobile — dark card style */
   .accordion-item {
-    min-height: 70px;
-    padding: 24px 20px;
+    flex: none !important;
+    min-height: auto;
+    padding: 30px 24px 28px;
     border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
   }
 
-  .accordion-item.active {
-    flex: none;
-    min-height: 360px;
+  .accordion-item:last-of-type {
+    border-bottom: none !important;
   }
 
-  /* Un-rotate the vertical tab title text */
-  .tab-header h3 {
+  /* Show background image on every item (not just active) */
+  .accordion-item .bg-image,
+  .accordion-item::after {
+    opacity: 1 !important;
+  }
+
+  /* Show tab-content on every item */
+  .accordion-item .tab-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+    margin-top: 14px;
+  }
+
+  /* Tab header: stack number above title */
+  .accordion-item .tab-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Force title colour + orientation */
+  .accordion-item .tab-header h3 {
     writing-mode: horizontal-tb !important;
-    transform: rotate(0deg) !important;
-    font-size: 1rem !important;
+    transform: none !important;
+    color: #fff !important;
+    font-size: 1.15rem !important;
+  }
+
+  /* Hide the +/× toggle icon on mobile */
+  .accordion-item .tab-icon {
+    display: none !important;
+  }
+
+  /* Number label */
+  .acc-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.06em;
+  }
+
+  /* Description */
+  .accordion-item .tab-content p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  /* INCLUDES section */
+  .acc-includes {
+    margin-top: 18px;
+  }
+
+  .includes-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .includes-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .acc-tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+
+  /* Hide explore button on mobile — replaced by tags */
+  .accordion-item .explore-btn {
+    display: none !important;
   }
 
   .accordion-static-cta {
