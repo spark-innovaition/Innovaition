@@ -618,17 +618,21 @@ a {
 
 /* ===== ABOUT / TRANSFORMING SECTION ===== */
 .about-section {
-    padding: 60px 20px !important;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  padding: 140px var(--layout-pad); 
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-dark);
+}
 
-.about-grid { 
-    display: flex !important; /* Kills the stubborn grid overflow */
-    flex-direction: column; 
-    gap: 40px; 
-    width: 100%;
-  }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 360px));
+  justify-content: center;
+  gap: clamp(40px, 5vw, 80px); 
+  align-items: center; 
+  padding: 0; 
+}
 
 .about-content-left {
   display: flex;
@@ -732,8 +736,7 @@ a {
   border-left: 1px solid var(--text-white);
 }
 
-.profile-btn-icon i { transform: rotate(-45deg);
-  transition: var(--transition); }
+.profile-btn-icon i { transform: rotate(-45deg); transition: var(--transition); }
 .profile-btn:hover .profile-btn-icon i { transform: rotate(0); }
 
 .about-content-right {
@@ -774,8 +777,7 @@ a {
 }
 
 .advantage-list li:first-child { border-top: 1px solid var(--border-color); }
-.advantage-list li:hover { color: var(--text-white);
-  padding-left: 10px; }
+.advantage-list li:hover { color: var(--text-white); padding-left: 10px; }
 .advantage-list li i { font-size: 0.8rem; color: var(--text-muted); }
 
 .about-copyright { 
@@ -6283,6 +6285,100 @@ background: var(--bg-dark); }
 
   /* ============================================================= */
   /* ===== PHASE 3: FLOATING CARDS — disable GSAP pinning    ===== */
+  /* --- 2. About Section (Mobile) --- */
+  .about-section {
+    padding: 60px 20px !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .about-grid { 
+    display: flex !important; /* Kills the stubborn grid overflow */
+    flex-direction: column; 
+    gap: 40px; 
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-content-left {
+    width: 100%;
+    text-align: left;
+  }
+
+  .about-content-left .section-title { 
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    white-space: normal; 
+  }
+  
+  .about-desc { 
+    font-size: 1.05rem; 
+    max-width: 100%;
+  }
+
+  .about-card-wrapper { 
+    max-width: 100%; 
+    width: 100%; 
+    display: block;
+  }
+
+  .profile-card { 
+    margin-top: 0; 
+    width: 100%; 
+  }
+
+  .profile-img-wrapper { 
+    aspect-ratio: 4/5; 
+    width: 100%;
+  }
+
+  .profile-info {
+    padding: 40px 20px 20px;
+  }
+
+  .profile-btn { 
+    padding: 0 0 0 20px; 
+    font-size: 1.05rem; 
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profile-btn-icon { 
+    padding: 16px 20px; 
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-left: none !important;
+  }
+
+  .about-content-right { 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .small-heading { margin-bottom: 10px; }
+
+  .advantage-list {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .advantage-list li { 
+    font-size: 1.05rem; 
+    padding: 20px 0; 
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .about-copyright { margin-top: 10px; }
   /* ============================================================= */
 
   #phase3-pin-wrapper {
