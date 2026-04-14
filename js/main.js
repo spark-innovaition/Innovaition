@@ -686,11 +686,12 @@ window.addEventListener('load', () => {
             }
         });
 
-        cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0.1 }, 0)
-               .to(cards[0], { xPercent: -140, rotation: -20, scale: 0.9, duration: 1 }, 0) 
-               .to(cards[1], { xPercent: -70,  rotation: -10,  scale: 0.95, duration: 1 }, 0) 
-               .to(cards[3], { xPercent: 70,   rotation: 10,   scale: 0.95, duration: 1 }, 0) 
-               .to(cards[4], { xPercent: 140,  rotation: 20,  scale: 0.9, duration: 1 }, 0); 
+// Reduces the spread and rotation slightly so they don't clash aggressively
+cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0.1 }, 0)
+       .to(cards[0], { xPercent: -130, rotation: -15, scale: 0.9, duration: 1 }, 0)
+       .to(cards[1], { xPercent: -65,  rotation: -8,  scale: 0.95, duration: 1 }, 0)
+       .to(cards[3], { xPercent: 65,   rotation: 8,   scale: 0.95, duration: 1 }, 0)
+       .to(cards[4], { xPercent: 130,  rotation: 15,  scale: 0.9, duration: 1 }, 0);
     }
 
     // SEAMLESS CROSS-SECTION PIN (Home Page)
@@ -712,18 +713,18 @@ window.addEventListener('load', () => {
 
     if (processWrapper && processCards.length > 0) {
       gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
-      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 50 });
+gsap.set(processCards.slice(1), { autoAlpha: 0, y: 30 });
 
       const processTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: processWrapper,
-          start: "top top",
-          end: "+=300%",
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1
-        }
-      });
+  scrollTrigger: {
+    trigger: processWrapper,
+    start: "top top",
+    end: "+=300%",
+    pin: true,
+    scrub: 1,
+    anticipatePin: 1
+  }
+});
 
       processCards.forEach((card, i) => {
         if (i > 0) {
