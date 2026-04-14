@@ -2189,7 +2189,7 @@ a {
   top: 0;
   bottom: 0;
   left: 0;
-  right: calc(var(--grid-edge) * -1);
+  right: calc(0px - var(--grid-edge));
   background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
@@ -2276,6 +2276,29 @@ a {
 .founder-info p {
   color: #a3a3a3;
   font-size: 0.9rem;
+}
+
+/* =====================================================================
+   HISTORY SECTION FIXES
+   ===================================================================== */
+
+/* 1. Stop the divider line exactly at the 50% split so it doesn't cross the dark image */
+.history-top-divider::before {
+  right: 50% !important; 
+}
+
+/* 2. Move the right diamond to sit exactly on the split edge */
+.history-top-divider .diamond.right {
+  right: 50% !important;
+  margin-right: -3px; /* Centers the 7px diamond perfectly over the edge */
+}
+
+/* 3. Fix the badge alignment so it correctly follows the text padding on all pages */
+.history-top-divider .badge,
+.pricing-top-divider .badge,
+.blog-top-divider .badge {
+  /* Aligns perfectly with the left layout padding */
+  margin-left: calc(var(--grid-buffer) + 20px) !important;
 }
 
 /* ==================================================== */
