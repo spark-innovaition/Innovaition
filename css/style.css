@@ -6427,19 +6427,24 @@ background: var(--bg-dark); }
     overflow: hidden;
   }
   
+  .hero-container {
+    justify-content: flex-start !important; /* Pushes content to the top */
+    padding-top: 120px; /* Clears the navbar */
+  }
+
   .hero-text-wrapper {
-    margin-top: -15vh; /* Pushes title up */
-    z-index: 10;
+    margin-top: 0 !important;
+    z-index: 20;
   }
 
   .hero-title-row {
-    flex-wrap: wrap; /* Allows AI to wrap if needed */
+    flex-wrap: wrap; 
     padding: 0 20px;
     gap: 10px;
   }
 
   .hero-title-row.indent {
-    padding-left: 20px; /* Removes desktop indent */
+    padding-left: 20px; 
     margin-top: 10px;
     justify-content: flex-start;
     position: relative;
@@ -6456,7 +6461,6 @@ background: var(--bg-dark); }
     transform: translateY(-4px);
   }
 
-  /* Floating "Since 2019" next to POWER */
   .since-text {
     position: absolute;
     right: 20px;
@@ -6470,12 +6474,13 @@ background: var(--bg-dark); }
 
   /* Robot 3D Canvas Background */
   .hero-robot-3d {
-    width: 100% !important;
-    right: 0 !important;
-    left: 0 !important;
-    bottom: -5vh !important;
-    opacity: 0.5; /* Dims slightly for text readability */
+    width: 160vw !important;
+    right: -30vw !important;
+    left: auto !important;
+    bottom: -20vh !important; /* Pushes the robot significantly down */
+    opacity: 0.5; 
     pointer-events: none;
+    z-index: 1 !important; /* Locks the robot into the deep background */
   }
 
   /* Lower Content (Stats, Text, Buttons) */
@@ -6484,8 +6489,8 @@ background: var(--bg-dark); }
     bottom: 40px;
     left: 20px;
     padding: 0;
-    max-width: 85%; /* Leaves room for social icons on the right */
-    z-index: 10;
+    max-width: 85%; 
+    z-index: 50 !important; /* PULLS TEXT & BUTTONS ABOVE THE ROBOT CANVAS */
   }
 
   .client-stats {
@@ -6498,11 +6503,31 @@ background: var(--bg-dark); }
     font-size: 1rem;
     margin-bottom: 24px;
     max-width: 280px;
+    color: #ffffff !important; /* Forces bright white text */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Adds contrast shadow just in case */
+  }
+  
+  .hero-desc strong {
+    color: #ffffff !important;
+  }
+
+  .btn-group {
+    position: relative;
+    z-index: 50;
   }
 
   .btn-group .btn-main {
     padding: 12px 20px;
     font-size: 0.85rem;
+    background-color: #ffffff !important; /* Forces solid white button */
+    color: #000000 !important;
+    opacity: 1 !important;
+  }
+
+  .btn-group .btn-icon {
+    border-color: rgba(255,255,255,0.3) !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
   }
 
   /* Social Icons Stacked on Right */
@@ -6513,14 +6538,16 @@ background: var(--bg-dark); }
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 10;
+    z-index: 50 !important; /* PULLS ICONS ABOVE THE ROBOT CANVAS */
   }
 
   .hero-social-float a {
     width: 32px;
     height: 32px;
     font-size: 0.75rem;
+    background-color: rgba(255,255,255,0.05); /* Adds a slight backdrop to make them pop */
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.2) !important;
   }
 
-  .hero-bottom-bar { display: none; } /* Hidden on mobile */
-}
+  .hero-bottom-bar { display: none; }
