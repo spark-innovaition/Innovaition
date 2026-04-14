@@ -6577,22 +6577,77 @@ background: var(--bg-dark); }
   }
 
   /* ============================================================= */
-  /* ===== METRICS BLOCK — single column                     ===== */
+  /* ===== METRICS BLOCK — single column (MOBILE)            ===== */
   /* ============================================================= */
 
   .metrics-block {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding-top: 30px;
+  }
+
+  .metrics-content-left .hero-desc {
+    font-size: 1.8rem;
+    color: var(--text-dark) !important;
+    line-height: 1.25;
+    max-width: 100%;
+    margin-bottom: 24px;
+    font-family: var(--font-heading); /* Matches the bold sans-serif in your screenshot */
+    font-weight: 500;
+  }
+
+  .metrics-content-left .hero-desc strong {
+    font-family: var(--font-body); 
+    font-weight: 400;
+    color: #888 !important; /* Greys out the second half of the sentence */
+    font-size: 1.8rem;
+    letter-spacing: normal;
+  }
+
+  .metrics-cta {
+    display: flex;
+    width: max-content;
+  }
+
+  .metrics-cta .btn-main {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+  }
+
+  .metrics-cta .btn-icon {
+    padding: 0 16px;
+    border-left: none; /* Removes the double border */
+  }
+  
+  .metrics-cta .btn-icon i {
+    font-size: 1.1rem;
   }
 
   .metrics-stats-right {
     flex-direction: column;
-    gap: 16px;
+    gap: 30px; 
   }
 
-  .metrics-content-left .hero-desc {
-    font-size: 1.1rem;
+  .metrics-stats-right .metric-card {
+    text-align: left;
+  }
+
+  .metrics-stats-right .metric-card h2 {
+    font-size: 3.5rem;
+    color: #888; /* Greys out the X, %, + */
+    margin-bottom: 0px;
+  }
+
+  .metrics-stats-right .metric-card h2 .counter {
+    color: var(--text-dark); /* Keeps the dynamic numbers solid black */
+    font-size: 4.5rem;
+  }
+
+  .metrics-stats-right .metric-card p {
+    font-size: 1.2rem;
+    color: #888;
     max-width: 100%;
+    margin-top: 8px;
   }
 
   /* ============================================================= */
