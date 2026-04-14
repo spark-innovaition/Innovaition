@@ -6653,15 +6653,13 @@ background: var(--bg-dark); }
     margin-top: 8px;
   }
 
-  /* ============================================================= */
-  /* ===== PROCESS SECTION — CRITICAL FIX                   ===== */
-  /* ===  Cards have opacity:0/visibility:hidden in CSS;     ===== */
-  /* ===  GSAP only restores them on desktop (≥769px).       ===== */
+/* ============================================================= */
+  /* ===== PROCESS SECTION — MOBILE TIMELINE FIX            ===== */
   /* ============================================================= */
 
   #process-pin-wrapper {
     min-height: auto !important;
-    padding: 60px 20px !important;
+    padding: 80px 20px 60px !important;
     overflow: visible;
   }
 
@@ -6670,7 +6668,7 @@ background: var(--bg-dark); }
     position: relative;
     display: flex !important;
     flex-direction: column;
-    gap: 0;
+    gap: 40px; /* Space between each vertical card */
     max-width: 100%;
   }
 
@@ -6681,55 +6679,223 @@ background: var(--bg-dark); }
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .process-card:last-child {
-    border-bottom: none;
+    display: flex !important;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.1); /* Subtle box outline */
+    background: transparent;
   }
 
   .card-image-col {
-    height: 220px;
+    height: 280px; /* Taller image for better visibility */
+    width: 100%;
     border-right: none !important;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: none !important;
+  }
+  
+  .card-image-col img {
+    opacity: 0.9; /* Slightly brighter for mobile */
   }
 
   .card-info-col {
-    padding: 24px 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-info-col h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+  
+  .card-info-col p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #aaa;
+  }
+
+  .process-list li {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  /* Override the solid white circle to a chevron */
+  .process-list li::before {
+    content: '\f054'; /* FontAwesome chevron-right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    background: transparent;
+    color: #666;
+    width: auto; 
+    height: auto;
+    font-size: 0.75rem;
+    margin-top: 3px;
+  }
+
+  .card-footer {
+    border-top: none; /* Removed the top divider from footer */
+    padding-top: 0;
+    margin-top: 10px;
+  }
+
+  .card-footer .time {
+    font-size: 0.65rem;
+  }
+
+  .card-footer .number {
+    font-size: 5rem;
+    bottom: -15px;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.05); /* Huge watermark style */
   }
 
   .process-header {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .process-title {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   /* ============================================================= */
-  /* ===== IMPACT SECTION — reduce excessive padding/gap     ===== */
+  /* ===== IMPACT SECTION — MOBILE REFINEMENT                ===== */
   /* ============================================================= */
 
   .impact-section {
-    padding: 80px 0 !important;
+    padding: 80px 0 40px !important;
   }
 
   .impact-container {
-    gap: 50px;
+    gap: 40px;
+  }
+
+  .impact-heading {
+    font-size: clamp(3.5rem, 13vw, 4.5rem) !important;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    color: #ddd; /* Slightly dimmed to match screenshot */
+  }
+
+  /* Stack the 120+ and the text block vertically */
+  .impact-middle-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  .impact-number {
+    font-size: clamp(4.5rem, 20vw, 6rem);
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #fff; /* Bright white for emphasis */
+  }
+
+  /* Stack the paragraph above the "CLIENT" text */
+  .impact-sub-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    margin-left: 0 !important; /* Removes the desktop indent */
+    width: 100%;
+  }
+
+  .impact-subtext {
+    font-size: 1.05rem;
+    max-width: 100%;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  /* Apply the faded gradient specifically to CLIENT and WORLDWIDE */
+  .impact-heading.client-text,
+  .impact-typography > .impact-heading:last-child {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.15) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgba(255, 255, 255, 0.5); /* Fallback */
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  /* Force 2-column logo grid with dark background */
+  .client-logo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    background: rgba(0, 0, 0, 0.4); /* Matches the dark translucent box look */
+  }
+
+  .client-logo-item {
+    padding: 30px 15px !important; 
+    font-size: 1.1rem !important;
   }
 
   /* ============================================================= */
-  /* ===== BENTO SECTION — reduce 150px padding              ===== */
+  /* ===== BENTO SECTION — MOBILE REFINEMENT                 ===== */
   /* ============================================================= */
 
   .bento-section {
-    padding: 80px 20px !important;
+    padding: 60px 20px 80px !important;
   }
 
   .bento-header {
     margin: 30px 0 40px;
+  }
+  
+  .bento-header h2 {
+    font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+  }
+
+  .bento-grid {
+    gap: 16px !important;
+  }
+
+  .bento-card {
+    border-radius: 0 !important; /* Sharp corners matching the design */
+    padding: 35px 24px !important;
+  }
+
+  /* Stack the mini cards vertically */
+  .bento-split-col {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Flip alignments to match the mockup perfectly */
+  .bento-mini:first-child {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .bento-mini.center-text {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  /* Adjust Robot Image sizing and position */
+  .bento-robot-img {
+    width: 85% !important;
+    bottom: 0 !important;
+    right: -15px !important;
+  }
+
+  /* Team Card */
+  .bento-col-mid-top {
+    min-height: 480px !important;
+  }
+
+  /* Support Card - move 24/7 to the bottom left */
+  .bento-col-right-bot {
+    min-height: 380px !important;
+    justify-content: flex-end;
+  }
+
+  .bento-badge-br {
+    position: relative !important;
+    bottom: 0 !important;
+    right: auto !important;
+    left: 0 !important;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.6rem !important; 
   }
 
   /* ============================================================= */
