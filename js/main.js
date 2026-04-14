@@ -472,115 +472,119 @@ if (lampContainer) {
 
 
 // =================================================================
-// ===== ALL PINNED SCROLLTRIGGERS (WRAPPED IN WINDOW.LOAD)    =====
+// ===== ALL PINNED SCROLLTRIGGERS (DESKTOP/TABLET ONLY)       =====
 // =================================================================
 window.addEventListener('load', () => {
 
-  // 1. FLOATING CARDS ANIMATION (Phase 3 - Home Page)
-  const cards = gsap.utils.toArray('.anim-card');
-  const phase3Pin = document.querySelector('#phase3-pin-wrapper'); 
+  // Create a GSAP MatchMedia instance
+  let mm = gsap.matchMedia();
 
-  if (cards.length > 0 && phase3Pin) {
-      gsap.set([cards[0], cards[1], cards[3], cards[4]], { scale: 1, xPercent: 0, yPercent: 0, rotation: 0, autoAlpha: 0 });
+  // ONLY run these pinning animations on screens WIDER than 768px
+  mm.add("(min-width: 769px)", () => {
 
-      const cardsTl = gsap.timeline({
-          scrollTrigger: {
-              trigger: phase3Pin,
-              start: "top top",
-              end: "+=200%", 
-              pin: true,
-              scrub: 1,
-              anticipatePin: 1
-          }
+    // 1. FLOATING CARDS ANIMATION (Phase 3 - Home Page)
+    const cards = gsap.utils.toArray('.anim-card');
+    const phase3Pin = document.querySelector('#phase3-pin-wrapper'); 
+
+    if (cards.length > 0 && phase3Pin) {
+        gsap.set([cards[0], cards[1], cards[3], cards[4]], { scale: 1, xPercent: 0, yPercent: 0, rotation: 0, autoAlpha: 0 });
+
+        const cardsTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: phase3Pin,
+                start: "top top",
+                end: "+=200%", 
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1
+            }
+        });
+
+        cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0.1 }, 0)
+               .to(cards[0], { xPercent: -140, rotation: -20, scale: 0.9, duration: 1 }, 0) 
+               .to(cards[1], { xPercent: -70,  rotation: -10,  scale: 0.95, duration: 1 }, 0) 
+               .to(cards[3], { xPercent: 70,   rotation: 10,   scale: 0.95, duration: 1 }, 0) 
+               .to(cards[4], { xPercent: 140,  rotation: 20,  scale: 0.9, duration: 1 }, 0); 
+    }
+
+    // SEAMLESS CROSS-SECTION PIN (Home Page)
+    const aboutCardWrapper = document.querySelector(".about-card-wrapper");
+    if (aboutCardWrapper && phase3Pin) {
+      ScrollTrigger.create({
+        trigger: ".about-card-wrapper", 
+        start: "center center", 
+        endTrigger: "#phase3-pin-wrapper",
+        end: "bottom bottom", 
+        pin: true,
+        pinSpacing: false, 
+      });
+    }
+
+    // 2. PROCESS CARDS ANIMATION (Home Page)
+    const processWrapper = document.querySelector('#process-pin-wrapper');
+    const processCards = gsap.utils.toArray('.process-card');
+
+    if (processWrapper && processCards.length > 0) {
+      gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
+      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 50 });
+
+      const processTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: processWrapper,
+          start: "top top",
+          end: "+=300%",
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1
+        }
       });
 
-      cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0.1 }, 0)
-             .to(cards[0], { xPercent: -140, rotation: -20, scale: 0.9, duration: 1 }, 0) 
-             .to(cards[1], { xPercent: -70,  rotation: -10,  scale: 0.95, duration: 1 }, 0) 
-             .to(cards[3], { xPercent: 70,   rotation: 10,   scale: 0.95, duration: 1 }, 0) 
-             .to(cards[4], { xPercent: 140,  rotation: 20,  scale: 0.9, duration: 1 }, 0); 
-  }
-
-  // SEAMLESS CROSS-SECTION PIN (Home Page)
-  const aboutCardWrapper = document.querySelector(".about-card-wrapper");
-  if (aboutCardWrapper && phase3Pin) {
-    ScrollTrigger.create({
-      trigger: ".about-card-wrapper", 
-      start: "center center", 
-      endTrigger: "#phase3-pin-wrapper",
-      end: "bottom bottom", 
-      pin: true,
-      pinSpacing: false, 
-    });
-  }
-
-  // 2. PROCESS CARDS ANIMATION (Home Page)
-  const processWrapper = document.querySelector('#process-pin-wrapper');
-  const processCards = gsap.utils.toArray('.process-card');
-
-  if (processWrapper && processCards.length > 0) {
-    gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
-    gsap.set(processCards.slice(1), { autoAlpha: 0, y: 50 });
-
-    const processTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: processWrapper,
-        start: "top top",
-        end: "+=300%",
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1
-      }
-    });
-
-    processCards.forEach((card, i) => {
-      if (i > 0) {
-        processTl.to(card, { autoAlpha: 1, y: 0, duration: 1 }, `+=${0.5}`);
-      }
-      if (i !== processCards.length - 1) {
-        processTl.to(card, { autoAlpha: 0, y: -50, duration: 1, scale: 0.98 }, `+=${0.2}`);
-      }
-    });
-  }
-
-  // 3. SPLIT SCREEN PINNED SCROLL (Services Page)
-  const splitWrapper = document.querySelector('#split-pin-wrapper');
-  const splitTexts = gsap.utils.toArray('.split-text-item');
-  const splitCards = gsap.utils.toArray('.split-card-item');
-
-  if (splitWrapper && splitTexts.length > 0 && splitCards.length > 0) {
-    
-    gsap.set(splitTexts, { autoAlpha: 0, yPercent: 100 }); 
-    gsap.set(splitCards, { autoAlpha: 0, yPercent: -100 }); 
-
-    gsap.set(splitTexts[0], { autoAlpha: 1, yPercent: 0 });
-    gsap.set(splitCards[0], { autoAlpha: 1, yPercent: 0 });
-
-    const splitTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: splitWrapper,
-        start: "top top",
-        end: "+=300%", 
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1
-      }
-    });
-
-    for (let i = 0; i < splitTexts.length - 1; i++) {
-      splitTl
-        .to(splitTexts[i], { autoAlpha: 0, yPercent: -100, duration: 1 }, i)
-        .to(splitCards[i], { autoAlpha: 0, yPercent: 100, duration: 1 }, i)
-        .to(splitTexts[i + 1], { autoAlpha: 1, yPercent: 0, duration: 1 }, i)
-        .to(splitCards[i + 1], { autoAlpha: 1, yPercent: 0, duration: 1 }, i);
+      processCards.forEach((card, i) => {
+        if (i > 0) {
+          processTl.to(card, { autoAlpha: 1, y: 0, duration: 1 }, `+=${0.5}`);
+        }
+        if (i !== processCards.length - 1) {
+          processTl.to(card, { autoAlpha: 0, y: -50, duration: 1, scale: 0.98 }, `+=${0.2}`);
+        }
+      });
     }
-  }
 
-  // Call refresh after pinning is initialized
-  ScrollTrigger.sort();
-  ScrollTrigger.refresh();
+    // 3. SPLIT SCREEN PINNED SCROLL (Services Page)
+    const splitWrapper = document.querySelector('#split-pin-wrapper');
+    const splitTexts = gsap.utils.toArray('.split-text-item');
+    const splitCards = gsap.utils.toArray('.split-card-item');
+
+    if (splitWrapper && splitTexts.length > 0 && splitCards.length > 0) {
+      gsap.set(splitTexts, { autoAlpha: 0, yPercent: 100 }); 
+      gsap.set(splitCards, { autoAlpha: 0, yPercent: -100 }); 
+      gsap.set(splitTexts[0], { autoAlpha: 1, yPercent: 0 });
+      gsap.set(splitCards[0], { autoAlpha: 1, yPercent: 0 });
+
+      const splitTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: splitWrapper,
+          start: "top top",
+          end: "+=300%", 
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1
+        }
+      });
+
+      for (let i = 0; i < splitTexts.length - 1; i++) {
+        splitTl
+          .to(splitTexts[i], { autoAlpha: 0, yPercent: -100, duration: 1 }, i)
+          .to(splitCards[i], { autoAlpha: 0, yPercent: 100, duration: 1 }, i)
+          .to(splitTexts[i + 1], { autoAlpha: 1, yPercent: 0, duration: 1 }, i)
+          .to(splitCards[i + 1], { autoAlpha: 1, yPercent: 0, duration: 1 }, i);
+      }
+    }
+
+    // Call refresh after pinning is initialized
+    ScrollTrigger.sort();
+    ScrollTrigger.refresh();
+  });
 });
-
 
 // ====================================================
 // ===== ISOLATED THREE.JS CANVAS ENGINES         =====
