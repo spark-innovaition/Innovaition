@@ -6483,14 +6483,18 @@ background: var(--bg-dark); }
     z-index: 1 !important; /* Locks the robot into the deep background */
   }
 
-  /* Lower Content (Stats, Text, Buttons) */
+/* Lower Content (Stats, Text, Buttons) */
   .hero-content-left {
     position: absolute;
     bottom: 40px;
     left: 20px;
     padding: 0;
     max-width: 85%; 
-    z-index: 50 !important; /* PULLS TEXT & BUTTONS ABOVE THE ROBOT CANVAS */
+    z-index: 100 !important;
+    /* OVERRIDES GSAP ANIMATION BUG */
+    opacity: 1 !important; 
+    visibility: visible !important;
+    transform: none !important;
   }
 
   .client-stats {
@@ -6499,12 +6503,17 @@ background: var(--bg-dark); }
     transform-origin: left center;
   }
 
+  .review-stars span {
+    color: #ffffff !important; /* Brightens the 'Happy clients' text */
+    opacity: 0.9 !important;
+  }
+
   .hero-desc {
     font-size: 1rem;
     margin-bottom: 24px;
     max-width: 280px;
     color: #ffffff !important; /* Forces bright white text */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Adds contrast shadow just in case */
+    opacity: 1 !important;
   }
   
   .hero-desc strong {
@@ -6513,7 +6522,8 @@ background: var(--bg-dark); }
 
   .btn-group {
     position: relative;
-    z-index: 50;
+    z-index: 100;
+    opacity: 1 !important;
   }
 
   .btn-group .btn-main {
@@ -6525,7 +6535,7 @@ background: var(--bg-dark); }
   }
 
   .btn-group .btn-icon {
-    border-color: rgba(255,255,255,0.3) !important;
+    border-color: rgba(255,255,255,0.4) !important;
     color: #ffffff !important;
     opacity: 1 !important;
   }
@@ -6538,16 +6548,22 @@ background: var(--bg-dark); }
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 50 !important; /* PULLS ICONS ABOVE THE ROBOT CANVAS */
+    z-index: 100 !important;
+    /* OVERRIDES GSAP ANIMATION BUG */
+    opacity: 1 !important; 
+    visibility: visible !important;
+    transform: none !important;
   }
 
   .hero-social-float a {
     width: 32px;
     height: 32px;
     font-size: 0.75rem;
-    background-color: rgba(255,255,255,0.05); /* Adds a slight backdrop to make them pop */
-    color: #ffffff !important;
-    border-color: rgba(255,255,255,0.2) !important;
+    background-color: rgba(255,255,255,0.05);
+    color: #ffffff !important; /* Forces bright white icons */
+    border-color: rgba(255,255,255,0.3) !important;
+    opacity: 1 !important;
   }
 
   .hero-bottom-bar { display: none; }
+  
