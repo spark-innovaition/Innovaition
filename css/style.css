@@ -6829,73 +6829,89 @@ background: var(--bg-dark); }
   }
 
   /* ============================================================= */
-  /* ===== BENTO SECTION — MOBILE REFINEMENT                 ===== */
+  /* ===== BENTO SECTION — MOBILE HORIZONTAL CAROUSEL        ===== */
   /* ============================================================= */
 
   .bento-section {
-    padding: 60px 20px 80px !important;
+    padding: 80px 0 !important; /* Removes side padding so cards bleed off the edge smoothly */
+    overflow: hidden;
   }
 
   .bento-header {
-    margin: 30px 0 40px;
+    margin: 30px 20px 40px !important; /* Adds the padding back to the text */
   }
   
   .bento-header h2 {
     font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
   }
 
+  /* Converts the grid into a horizontal swiping track */
   .bento-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
     gap: 16px !important;
+    padding: 0 20px 40px !important; /* Side padding for the first and last card */
+    margin: 0 !important;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
   }
 
-  .bento-card {
-    border-radius: 0 !important; /* Sharp corners matching the design */
-    padding: 35px 24px !important;
+  .bento-grid::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari for a native app feel */
   }
 
-  /* Stack the mini cards vertically */
+  /* Each card becomes a slide taking up 85% of the screen width */
+  .bento-card, .bento-split-col {
+    flex: 0 0 85% !important;
+    min-width: 85% !important;
+    scroll-snap-align: center;
+    min-height: 420px !important;
+    border-radius: 16px !important; /* Re-applies nice rounded corners */
+  }
+
+  /* The split column holds two smaller cards */
   .bento-split-col {
+    display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
 
-  /* Flip alignments to match the mockup perfectly */
-  .bento-mini:first-child {
-    text-align: center !important;
-    align-items: center !important;
+  .bento-mini {
+    flex: 1 !important;
+    min-height: 202px !important; /* Half height minus the gap */
+    width: 100% !important;
+    border-radius: 16px !important; /* Mini cards need border radius too */
   }
 
-  .bento-mini.center-text {
-    text-align: left !important;
-    align-items: flex-start !important;
-  }
-
-  /* Adjust Robot Image sizing and position */
+  /* Image formatting fixes for the mobile bounds */
   .bento-robot-img {
-    width: 85% !important;
-    bottom: 0 !important;
-    right: -15px !important;
+    width: 80% !important;
+    bottom: -10px !important;
+    right: -10px !important;
   }
-
-  /* Team Card */
-  .bento-col-mid-top {
-    min-height: 480px !important;
-  }
-
-  /* Support Card - move 24/7 to the bottom left */
-  .bento-col-right-bot {
-    min-height: 380px !important;
-    justify-content: flex-end;
-  }
-
+  
   .bento-badge-br {
-    position: relative !important;
-    bottom: 0 !important;
-    right: auto !important;
-    left: 0 !important;
-    text-align: left;
-    margin-top: 10px;
-    font-size: 1.6rem !important; 
+    position: absolute !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    left: auto !important;
+    margin-top: 0;
+    font-size: 2rem !important;
+  }
+  
+  .bento-col-right-bot {
+    min-height: 420px !important; /* Match other cards */
+    justify-content: flex-start !important;
+  }
+  
+  .bento-col-mid-top {
+    min-height: 420px !important; /* Match other cards */
   }
 
   /* ============================================================= */
