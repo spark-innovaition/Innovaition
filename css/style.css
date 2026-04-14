@@ -1267,12 +1267,13 @@ a {
   min-height: 100vh;
   background-color: var(--bg-dark);
   color: var(--text-white);
-  padding: 100px var(--layout-pad);
+  padding: 0 var(--layout-pad); /* Removed rigid vertical padding */
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Perfectly centers the header and cards vertically on any screen */
   align-items: center;
   overflow: hidden;
-  z-index: 1; /* Lowered from 10 to prevent overlap flashing */
+  z-index: 1; 
 }
 
 .process-top-divider {
@@ -1298,10 +1299,10 @@ a {
 
 .process-header {
   text-align: center;
-  margin-bottom: 120px; /* Increased from 80px for more breathing room */
+  margin-bottom: 80px; /* Reduced from 120px to pull the cards up */
   position: relative;
-  z-index: 20; /* Increased to ensure header strictly stays above cards */
-  flex-shrink: 0; /* Prevents flexbox from squishing the header */
+  z-index: 20; 
+  flex-shrink: 0; 
 }
 
 .process-title {
@@ -1319,7 +1320,7 @@ a {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 420px;
+  height: 480px; /* Increased height to fit all content comfortably */
   margin: 0 auto;
   flex-shrink: 0; /* Prevents container from shrinking and messing up absolute positioning */
 }
