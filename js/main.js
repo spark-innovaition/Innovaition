@@ -187,21 +187,207 @@ counters.forEach(c => counterObserver.observe(c));
 // ===== PRICING TOGGLE =====
 const pricingToggle = document.getElementById('pricingToggle');
 const toggleLabels = document.querySelectorAll('.toggle-label');
-const amounts = document.querySelectorAll('.amount[data-monthly]');
-const periods = document.querySelectorAll('.period'); 
+const periods = document.querySelectorAll('.period');
 
-if(pricingToggle && toggleLabels.length > 0 && amounts.length > 0) {
+if (pricingToggle && toggleLabels.length > 0) {
   pricingToggle.addEventListener('change', () => {
     const isYearly = pricingToggle.checked;
     toggleLabels.forEach(l => l.classList.remove('active'));
     toggleLabels[isYearly ? 1 : 0].classList.add('active');
-    
-    amounts.forEach(a => {
+
+    document.querySelectorAll('.amount[data-monthly]').forEach(a => {
       a.textContent = isYearly ? a.dataset.yearly : a.dataset.monthly;
     });
 
     periods.forEach(p => {
-        p.textContent = isYearly ? '/Per year' : '/Per month';
+      p.textContent = isYearly ? '/Per year' : '/Per month';
+    });
+  });
+}
+
+// ===== SERVICE-BASED PRICING TABS =====
+const pricingData = {
+  strategy: {
+    starter: {
+      desc: 'For businesses exploring their AI strategy.',
+      monthly: '800', yearly: '8,500',
+      features: [
+        'AI readiness assessment',
+        'Opportunity mapping',
+        '2 strategy consultation sessions',
+        'Basic strategic roadmap',
+        'Market benchmarking report'
+      ]
+    },
+    growth: {
+      desc: 'For companies ready to scale their AI vision.',
+      monthly: '2,000', yearly: '20,000',
+      features: [
+        'Custom AI strategy design',
+        'Competitive landscape analysis',
+        '90-day implementation roadmap',
+        'Team alignment workshops',
+        'Quarterly strategy reviews',
+        'KPI & success metrics development'
+      ]
+    },
+    enterprise: {
+      desc: 'Full strategic engagement at enterprise scale.',
+      features: [
+        'Executive AI advisory program',
+        'Board-level reporting & insights',
+        'Ongoing strategic partnership',
+        'Priority access & dedicated support'
+      ]
+    }
+  },
+  automation: {
+    starter: {
+      desc: 'Automate your most critical manual processes.',
+      monthly: '1,200', yearly: '12,000',
+      features: [
+        'Up to 3 workflow automations',
+        'Basic system integrations',
+        'Process mapping & documentation',
+        '30-day setup & deployment',
+        'Basic monitoring & alerts'
+      ]
+    },
+    growth: {
+      desc: 'Comprehensive automation for growing teams.',
+      monthly: '2,800', yearly: '28,000',
+      features: [
+        'Up to 15 workflow automations',
+        'Custom triggers & conditional logic',
+        'Real-time monitoring dashboard',
+        'API & third-party integrations',
+        'Monthly performance reporting',
+        'Ongoing optimization support'
+      ]
+    },
+    enterprise: {
+      desc: 'End-to-end automation transformation at scale.',
+      features: [
+        'Unlimited workflow automations',
+        'Custom workflow development',
+        'Dedicated automation engineer',
+        '24/7 monitoring & incident response'
+      ]
+    }
+  },
+  tools: {
+    starter: {
+      desc: 'Start leveraging AI tools in your existing stack.',
+      monthly: '1,500', yearly: '15,000',
+      features: [
+        '1–2 AI tool integrations',
+        'Setup & full configuration',
+        'Staff onboarding & training',
+        'Performance tracking setup',
+        '30-day post-launch support'
+      ]
+    },
+    growth: {
+      desc: 'Build a connected multi-tool AI ecosystem.',
+      monthly: '3,200', yearly: '32,000',
+      features: [
+        'Up to 5 AI tool integrations',
+        'Custom connectors & middleware',
+        'Performance optimization',
+        'Advanced team training',
+        'Quarterly tech stack reviews',
+        'Priority technical support'
+      ]
+    },
+    enterprise: {
+      desc: 'Full AI technology stack for large organizations.',
+      features: [
+        'Unlimited AI integrations',
+        'Custom AI development',
+        'Dedicated integration specialist',
+        'Enterprise SLA guarantees'
+      ]
+    }
+  },
+  data: {
+    starter: {
+      desc: 'Get your data organized and AI-ready.',
+      monthly: '1,000', yearly: '10,000',
+      features: [
+        'Data audit & quality assessment',
+        'Basic pipeline setup',
+        'Reporting dashboard (1 view)',
+        'Data governance basics',
+        'Team data literacy training'
+      ]
+    },
+    growth: {
+      desc: 'Build a scalable, insight-driven data foundation.',
+      monthly: '2,400', yearly: '24,000',
+      features: [
+        'Data architecture design',
+        'ETL pipeline development',
+        'Analytics platform setup',
+        'Data quality framework',
+        'Business intelligence dashboards',
+        'Monthly data health reports'
+      ]
+    },
+    enterprise: {
+      desc: 'Enterprise-grade data platform built for scale.',
+      features: [
+        'Full data platform engineering',
+        'ML-ready infrastructure',
+        'Data governance framework',
+        'Real-time analytics capabilities',
+        'Dedicated data engineer'
+      ]
+    }
+  }
+};
+
+function updatePricingPanel(serviceKey) {
+  const data = pricingData[serviceKey];
+  if (!data) return;
+  const isYearly = pricingToggle && pricingToggle.checked;
+
+  const buildFeatures = list =>
+    list.map(f => `<li><i class="fa-solid fa-chevron-right"></i> ${f}</li>`).join('');
+
+  const starterCard = document.getElementById('pcard-starter');
+  if (starterCard) {
+    starterCard.querySelector('.p-plan-desc').textContent = data.starter.desc;
+    const amt = starterCard.querySelector('.amount');
+    amt.dataset.monthly = data.starter.monthly;
+    amt.dataset.yearly  = data.starter.yearly;
+    amt.textContent = isYearly ? data.starter.yearly : data.starter.monthly;
+    starterCard.querySelector('.p-features').innerHTML = buildFeatures(data.starter.features);
+  }
+
+  const growthCard = document.getElementById('pcard-growth');
+  if (growthCard) {
+    growthCard.querySelector('.p-plan-desc').textContent = data.growth.desc;
+    const amt = growthCard.querySelector('.amount');
+    amt.dataset.monthly = data.growth.monthly;
+    amt.dataset.yearly  = data.growth.yearly;
+    amt.textContent = isYearly ? data.growth.yearly : data.growth.monthly;
+    growthCard.querySelector('.p-features').innerHTML = buildFeatures(data.growth.features);
+  }
+
+  const enterpriseCard = document.getElementById('pcard-enterprise');
+  if (enterpriseCard) {
+    enterpriseCard.querySelector('.p-plan-desc').textContent = data.enterprise.desc;
+    enterpriseCard.querySelector('.p-features').innerHTML = buildFeatures(data.enterprise.features);
+  }
+}
+
+const svcTabs = document.querySelectorAll('.svc-tab');
+if (svcTabs.length > 0) {
+  svcTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      svcTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      updatePricingPanel(tab.dataset.panel);
     });
   });
 }
