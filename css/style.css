@@ -1264,16 +1264,16 @@ a {
 #process-pin-wrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh; /* Locked to viewport height to guarantee perfect centering */
   background-color: var(--bg-dark);
   color: var(--text-white);
-  padding: 0 var(--layout-pad); /* Removed rigid vertical padding */
+  padding: 0 var(--layout-pad); /* Removed padding so flexbox can center it */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Perfectly centers the header and cards vertically on any screen */
+  justify-content: center; /* Absolutely center the content vertically */
   align-items: center;
   overflow: hidden;
-  z-index: 1; 
+  z-index: 10;
 }
 
 .process-top-divider {
@@ -1299,7 +1299,7 @@ a {
 
 .process-header {
   text-align: center;
-  margin-bottom: 80px; /* Reduced from 120px to pull the cards up */
+  margin-bottom: 40px; /* Reduced to pull cards up for laptop screens */
   position: relative;
   z-index: 20; 
   flex-shrink: 0; 
@@ -1320,9 +1320,9 @@ a {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 480px; /* Increased height to fit all content comfortably */
+  height: 400px; /* Shrunk height to ensure it fits perfectly on 13" laptops */
   margin: 0 auto;
-  flex-shrink: 0; /* Prevents container from shrinking and messing up absolute positioning */
+  flex-shrink: 0; 
 }
 
 .process-card {
@@ -1337,7 +1337,7 @@ a {
   opacity: 0;
   visibility: hidden;
   will-change: transform, opacity;
-  overflow: hidden; /* Added to prevent image/content bleed */
+  overflow: hidden; 
 }
 
 @media (max-width: 768px) {
@@ -1365,7 +1365,7 @@ a {
 }
 
 .card-info-col {
-  padding: 40px;
+  padding: 30px 40px; /* Tighter vertical padding to squeeze content safely */
   display: flex;
   flex-direction: column;
   position: relative;

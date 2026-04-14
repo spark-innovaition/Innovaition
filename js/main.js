@@ -711,52 +711,54 @@ cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0
     const processCards = gsap.utils.toArray('.process-card');
 
     if (processWrapper && processCards.length > 0) {
-      // Hard reset all cards to ensure clean state on load/resize
+      // 1. Completely reset the cards
       gsap.set(processCards, { clearProps: "all" });
-      gsap.set(processCards[0], { autoAlpha: 1, y: 0, scale: 1 });
-      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 50, scale: 0.95 });
+      
+      // 2. Prepare the initial state: Card 1 is visible, the rest are pushed down
+      gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
+      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 100 }); 
 
+      // 3. Create the timeline
       const processTl = gsap.timeline({
         scrollTrigger: {
           trigger: processWrapper,
-          start: "top top",
-          end: "+=400%", // Scroll distance for 4 cards
+          start: "center center", // Pins exactly when the section hits the middle of the screen
+          end: "+=400%", // 4 full screen heights to scroll through
           pin: true,
-          scrub: 1
+          scrub: 1,
+          anticipatePin: 1
         }
       });
 
-      // 1. Initial pause so the user can read the first card before it moves
-      processTl.to({}, {duration: 0.5});
-
-      // 2. Loop through and create perfectly sequenced crossfades
+      // 4. Build a perfectly sequenced timeline
       processCards.forEach((card, i) => {
-        if (i !== processCards.length - 1) {
+        // A. Hold the current card on screen so user can read it
+        processTl.to(card, { y: 0, duration: 1 }); // Dummy tween acts as a pause
+        
+        // B. Transition to the next card (if not the last card)
+        if (i < processCards.length - 1) {
           const nextCard = processCards[i + 1];
 
-          // Fade out current card & shrink slightly
-          processTl.to(card, { 
-            autoAlpha: 0, 
-            y: -50, 
-            scale: 0.95, 
-            duration: 1 
-          });
-          
-          // Fade in next card starting 0.7s BEFORE the previous one finishes
-          processTl.to(nextCard, { 
-            autoAlpha: 1, 
-            y: 0, 
-            scale: 1, 
-            duration: 1 
-          }, "-=0.7");
-          
-          // Pause so the user can read the newly arrived card
-          processTl.to({}, {duration: 0.5});
+          processTl
+            // Fade out current card and push it UP
+            .to(card, { 
+              autoAlpha: 0, 
+              y: -100, 
+              duration: 1, 
+              ease: "power2.inOut" 
+            })
+            // Fade in next card from the BOTTOM (running at the exact same time using "<")
+            .to(nextCard, { 
+              autoAlpha: 1, 
+              y: 0, 
+              duration: 1, 
+              ease: "power2.inOut" 
+            }, "<");
         }
       });
-      
-      // 3. Final pause to hold the last card on screen before unpinning
-      processTl.to({}, {duration: 0.5});
+
+      // 5. Add a final hold so the last card stays visible before the section unpins
+      processTl.to(processCards[processCards.length - 1], { y: 0, duration: 1 });
     }
 
     // 3. SPLIT SCREEN PINNED SCROLL (Services Page)
