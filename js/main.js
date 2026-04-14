@@ -481,7 +481,7 @@ if (tlTrack && tlPrev && tlNext) {
   const tlCards = tlTrack.querySelectorAll('.tl-card');
   
   function updateTlCarousel() {
-    const cardsPerView = window.innerWidth <= 600 ? 1 : 2;
+    const cardsPerView = 2; // Locked to 2 cards per view to match CSS styling
     const maxIndex = tlCards.length - cardsPerView;
     
     tlIndex = Math.max(0, Math.min(tlIndex, maxIndex));
@@ -497,7 +497,7 @@ if (tlTrack && tlPrev && tlNext) {
   }
 
   tlNext.addEventListener('click', () => {
-    const cardsPerView = window.innerWidth <= 600 ? 1 : 2;
+    const cardsPerView = 2; // Locked to 2
     if (tlIndex < tlCards.length - cardsPerView) {
       tlIndex++;
       updateTlCarousel();
