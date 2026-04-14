@@ -711,42 +711,52 @@ cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0
     const processCards = gsap.utils.toArray('.process-card');
 
     if (processWrapper && processCards.length > 0) {
-      // Set initial state: Card 1 visible, others hidden and shifted down
+      // Hard reset all cards to ensure clean state on load/resize
+      gsap.set(processCards, { clearProps: "all" });
       gsap.set(processCards[0], { autoAlpha: 1, y: 0, scale: 1 });
-      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 40, scale: 1 });
+      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 50, scale: 0.95 });
 
       const processTl = gsap.timeline({
         scrollTrigger: {
           trigger: processWrapper,
           start: "top top",
-          end: "+=400%", // Provides 4x scroll depth to gracefully transition all cards
+          end: "+=400%", // Scroll distance for 4 cards
           pin: true,
-          scrub: 1,
-          anticipatePin: 1
+          scrub: 1
         }
       });
 
-      // Flawless crossfade math with reading pauses
+      // 1. Initial pause so the user can read the first card before it moves
+      processTl.to({}, {duration: 0.5});
+
+      // 2. Loop through and create perfectly sequenced crossfades
       processCards.forEach((card, i) => {
         if (i !== processCards.length - 1) {
-          let startTime = i * 2 + 1; // Creates a clear pause before each transition
-          
-          // Current card fades out & shrinks up
+          const nextCard = processCards[i + 1];
+
+          // Fade out current card & shrink slightly
           processTl.to(card, { 
             autoAlpha: 0, 
-            y: -40, 
+            y: -50, 
             scale: 0.95, 
             duration: 1 
-          }, startTime);
+          });
           
-          // Next card fades in from bottom
-          processTl.to(processCards[i + 1], { 
+          // Fade in next card starting 0.7s BEFORE the previous one finishes
+          processTl.to(nextCard, { 
             autoAlpha: 1, 
             y: 0, 
+            scale: 1, 
             duration: 1 
-          }, startTime + 0.2); // 0.2s offset for a beautiful crossfade
+          }, "-=0.7");
+          
+          // Pause so the user can read the newly arrived card
+          processTl.to({}, {duration: 0.5});
         }
       });
+      
+      // 3. Final pause to hold the last card on screen before unpinning
+      processTl.to({}, {duration: 0.5});
     }
 
     // 3. SPLIT SCREEN PINNED SCROLL (Services Page)
