@@ -6921,16 +6921,27 @@ background: var(--bg-dark); }
   .history-section {
     flex-direction: column;
     padding-top: 60px !important;
+    overflow: hidden !important; /* CRITICAL: Clips all bleeding lines */
+    width: 100vw !important;
   }
 
   .history-section .history-left-content {
     padding: 40px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .history-top-divider {
+    margin-left: -20px !important;
+    margin-right: -20px !important; /* Pulls both sides evenly */
+    width: auto !important;
   }
 
   .history-title {
-    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
-    line-height: 1 !important;
+    font-size: clamp(2rem, 8.5vw, 2.8rem) !important; /* Scaled down slightly so 'DELIVERING' doesn't burst bounds */
+    line-height: 1.1 !important;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
   }
 
   .history-desc {
@@ -6943,6 +6954,7 @@ background: var(--bg-dark); }
     min-width: 50% !important;
     padding: 30px 20px !important;
     min-height: 250px !important;
+    box-sizing: border-box !important;
   }
   
   .tl-card h3 {
@@ -6968,6 +6980,8 @@ background: var(--bg-dark); }
   .history-right {
     min-height: auto !important;
     padding: 40px 20px 80px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Hide the desktop blurry background on mobile */
@@ -6977,6 +6991,7 @@ background: var(--bg-dark); }
 
   .founder-wrapper {
     max-width: 100% !important;
+    width: 100% !important;
   }
 
   .founder-photo-box {
@@ -6989,6 +7004,7 @@ background: var(--bg-dark); }
   .founder-photo {
     height: auto !important;
     aspect-ratio: 4/5;
+    width: 100% !important;
   }
 
   .founder-info {
