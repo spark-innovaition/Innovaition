@@ -205,28 +205,29 @@ a { text-decoration: none; color: inherit;
 /* Left Column */
 .menu-col-left {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
-  padding: clamp(40px, 8vh, 120px) var(--layout-pad) !important; 
+  /* Reduced top padding to push it near the edge, keeping left padding intact */
+  padding: 20px var(--layout-pad) 40px !important; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* PULLS THE MENU ITEMS TO THE TOP EDGE */
 }
 
 .menu-nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 15px; /* Adds space between clean text links */
   width: 100%;
 }
 
 .menu-nav-item {
-  border: none !important; /* Strips out the horizontal lines */
+  border: none !important; /* Strips out the previous horizontal box borders */
   width: auto;
 }
 
 .menu-nav-item a {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 5.5vw, 85px); /* Scaled down slightly to fit "CONTACT US" */
+  font-size: clamp(3rem, 5.5vw, 85px); /* Scales down text to fit "CONTACT US" */
   font-weight: 700;
   line-height: 1.1;
   color: #666;
@@ -246,17 +247,17 @@ a { text-decoration: none; color: inherit;
   color: inherit;
   transform: translate(-15px, 15px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-left: 12px; /* Sits right next to the word */
+  margin-left: 12px; /* Places the arrow immediately next to the word */
 }
 
 .menu-nav-item a:hover { 
   color: var(--text-white); 
-  padding-left: 20px; /* Smooth indent on hover */
+  padding-left: 20px; /* Smooth slide effect on hover */
 }
 
 .menu-nav-item a:hover i { 
   opacity: 1; 
-  transform: translate(0, 0) !important; /* Arrow locks into place */
+  transform: translate(0, 0) !important; /* Arrow shoots up-right */
 }
 
 /* Meta Labels (Vertical Line matching reference) */
@@ -6338,7 +6339,7 @@ background: var(--bg-dark); }
   color: var(--text-dark);
 }
 
-/* Invert the structural vertical borders */
+/* Invert the structural grid borders */
 .light-theme .menu-col-left { border-right: 1px solid rgba(0, 0, 0, 0.15) !important; }
 .light-theme .menu-info-top { border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; }
 .light-theme .menu-social-row { border-top: 1px solid rgba(0, 0, 0, 0.15) !important; }
@@ -6348,7 +6349,7 @@ background: var(--bg-dark); }
   .light-theme .menu-col-left { border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; border-right: none !important; }
 }
 
-/* Text coloring - Perfect Gray for light mode */
+/* Text coloring - Perfect Slate Gray for high visibility */
 .light-theme .menu-nav-item a {
   color: #999999; 
 }
@@ -6358,7 +6359,7 @@ background: var(--bg-dark); }
 
 .light-theme .menu-nav-item a:hover {
   color: #111111; /* Turns solid black on hover */
-  background-color: transparent; 
+  background-color: transparent; /* Removes background highlight from previous turns */
 }
 .light-theme .menu-nav-item a:hover i {
   color: #111111;
