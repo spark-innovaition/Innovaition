@@ -6654,25 +6654,69 @@ background: var(--bg-dark); }
   }
 
 /* ============================================================= */
-  /* ===== PROCESS SECTION — MOBILE TIMELINE FIX            ===== */
+  /* ===== PROCESS SECTION — MOBILE HORIZONTAL CAROUSEL      ===== */
   /* ============================================================= */
 
   #process-pin-wrapper {
     min-height: auto !important;
-    padding: 80px 20px 60px !important;
-    overflow: visible;
+    padding: 80px 0 40px !important; /* Removed side padding for full bleed */
+    overflow: hidden !important;
+  }
+
+  .process-header {
+    margin-bottom: 40px;
+    padding: 0 20px !important; /* Add padding back to header */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .process-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  /* Injects a subtle, animated swipe hint below the title */
+  .process-header::after {
+    content: 'SWIPE \2192'; /* Hex code for right arrow */
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 50px;
+    animation: swipePulse 2s ease-in-out infinite;
+  }
+
+  @keyframes swipePulse {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50% { transform: translateX(6px); opacity: 1; }
   }
 
   .process-cards-container {
     height: auto !important;
     position: relative;
     display: flex !important;
-    flex-direction: column;
-    gap: 40px; /* Space between each vertical card */
+    flex-direction: row !important; /* Changes from vertical stack to horizontal row */
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    gap: 16px !important;
+    padding: 0 20px 40px !important; /* Side padding for first/last card */
     max-width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  /* Force every card visible and in normal document flow */
+  .process-cards-container::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for native app feel */
+  }
+
+  /* Force every card into a horizontal slide */
   .process-card {
     position: relative !important;
     height: auto !important;
@@ -6681,25 +6725,31 @@ background: var(--bg-dark); }
     transform: none !important;
     display: flex !important;
     flex-direction: column;
-    border: 1px solid rgba(255,255,255,0.1); /* Subtle box outline */
-    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    background: #0d0d0d !important; /* Solid dark background */
+    border-radius: 16px !important; /* Soft corners for app-like cards */
+    overflow: hidden !important;
+    flex: 0 0 85% !important; /* Take up 85% of the screen width */
+    min-width: 85% !important;
+    scroll-snap-align: center;
   }
 
   .card-image-col {
-    height: 280px; /* Taller image for better visibility */
+    height: 240px; /* Adjusted slightly for mobile carousel proportions */
     width: 100%;
     border-right: none !important;
-    border-bottom: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
   }
   
   .card-image-col img {
-    opacity: 0.9; /* Slightly brighter for mobile */
+    opacity: 0.9;
   }
 
   .card-info-col {
     padding: 24px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1; /* Stretches to fill empty space so buttons align at bottom */
   }
   
   .card-info-col h3 {
@@ -6711,6 +6761,10 @@ background: var(--bg-dark); }
     font-size: 0.95rem;
     margin-bottom: 20px;
     color: #aaa;
+  }
+
+  .process-list {
+    margin-bottom: 20px;
   }
 
   .process-list li {
@@ -6732,9 +6786,9 @@ background: var(--bg-dark); }
   }
 
   .card-footer {
-    border-top: none; /* Removed the top divider from footer */
+    border-top: none;
     padding-top: 0;
-    margin-top: 10px;
+    margin-top: auto; /* Push the timer to the absolute bottom of the card */
   }
 
   .card-footer .time {
@@ -6746,15 +6800,7 @@ background: var(--bg-dark); }
     bottom: -15px;
     right: 10px;
     color: rgba(255, 255, 255, 0.05); /* Huge watermark style */
-  }
-
-  .process-header {
-    margin-bottom: 50px;
-  }
-
-  .process-title {
-    font-size: 2rem;
-    line-height: 1.2;
+    position: absolute;
   }
 
   /* ============================================================= */
@@ -6839,10 +6885,28 @@ background: var(--bg-dark); }
 
   .bento-header {
     margin: 30px 20px 40px !important; /* Adds the padding back to the text */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the badge under the text */
   }
   
   .bento-header h2 {
     font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+  }
+
+  /* Injects a subtle, animated swipe hint below the Bento title */
+  .bento-header::after {
+    content: 'SWIPE \2192'; 
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.1em;
+    background: rgba(0, 0, 0, 0.05); /* Darker translucent background for light theme */
+    padding: 6px 12px;
+    border-radius: 50px;
+    animation: swipePulse 2s ease-in-out infinite;
   }
 
   /* Converts the grid into a horizontal swiping track */

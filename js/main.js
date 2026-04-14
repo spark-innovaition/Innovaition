@@ -712,37 +712,39 @@ cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0
 
     if (processWrapper && processCards.length > 0) {
       // Set initial state: Card 1 visible, others hidden and shifted down
-      gsap.set(processCards[0], { autoAlpha: 1, y: 0 });
-      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 40 });
+      gsap.set(processCards[0], { autoAlpha: 1, y: 0, scale: 1 });
+      gsap.set(processCards.slice(1), { autoAlpha: 0, y: 40, scale: 1 });
 
       const processTl = gsap.timeline({
         scrollTrigger: {
           trigger: processWrapper,
           start: "top top",
-          end: "+=400%", // Extended for smoother transitions across all 4 cards
+          end: "+=400%", // Provides 4x scroll depth to gracefully transition all cards
           pin: true,
-          scrub: 1
+          scrub: 1,
+          anticipatePin: 1
         }
       });
 
+      // Flawless crossfade math with reading pauses
       processCards.forEach((card, i) => {
-        // Animate the next card in
-        if (i > 0) {
+        if (i !== processCards.length - 1) {
+          let startTime = i * 2 + 1; // Creates a clear pause before each transition
+          
+          // Current card fades out & shrinks up
           processTl.to(card, { 
+            autoAlpha: 0, 
+            y: -40, 
+            scale: 0.95, 
+            duration: 1 
+          }, startTime);
+          
+          // Next card fades in from bottom
+          processTl.to(processCards[i + 1], { 
             autoAlpha: 1, 
             y: 0, 
             duration: 1 
-          }, i * 1.5); // Staggered entry
-        }
-        
-        // Animate the current card out (except for the last card)
-        if (i !== processCards.length - 1) {
-          processTl.to(card, { 
-            autoAlpha: 0, 
-            y: -40, // Shift up slightly as it disappears to prevent clipping
-            scale: 0.95, 
-            duration: 1 
-          }, (i + 1) * 1.5 - 0.5); 
+          }, startTime + 0.2); // 0.2s offset for a beautiful crossfade
         }
       });
     }
