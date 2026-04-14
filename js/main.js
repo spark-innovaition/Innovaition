@@ -681,8 +681,7 @@ window.addEventListener('load', () => {
                 start: "top top",
                 end: "+=200%", 
                 pin: true,
-                scrub: 1,
-                anticipatePin: 1
+                scrub: 1
             }
         });
 
@@ -721,8 +720,7 @@ gsap.set(processCards.slice(1), { autoAlpha: 0, y: 30 });
     start: "top top",
     end: "+=300%",
     pin: true,
-    scrub: 1,
-    anticipatePin: 1
+    scrub: 1
   }
 });
 
@@ -753,8 +751,7 @@ gsap.set(processCards.slice(1), { autoAlpha: 0, y: 30 });
           start: "top top",
           end: "+=300%", 
           pin: true,
-          scrub: 1,
-          anticipatePin: 1
+          scrub: 1
         }
       });
 
