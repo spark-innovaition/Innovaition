@@ -32,16 +32,23 @@
   box-sizing: border-box;
 }
 
+/* FIX: Strictly prevents horizontal scrolling on all devices */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-dark);
   color: var(--text-white);
   line-height: 1.4;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-a { text-decoration: none; color: inherit; 
+a { 
+  text-decoration: none; 
+  color: inherit; 
 }
 
 /* ===== UNIVERSAL GLOBAL GRID OVERLAY ===== */
@@ -6405,146 +6412,115 @@ background: var(--bg-dark); }
   }
   .horizontal-divider .badge { margin-left: 20px !important; }
 
-  /* --- Navbar --- */
+  /* --- Navbar (Mobile) --- */
   .navbar { padding: 0 20px; }
-  .nav-cta { display: none; } /* Hide 'Book a Call' text to save space */
+  .nav-cta { display: none !important; } /* Hide 'Book a Call' text */
+  .nav-avatar { display: none !important; } /* Hide Avatar on mobile */
   .nav-right { gap: 10px; }
-  .nav-cta-icon { border-left: 1px solid var(--border-color); border-radius: 4px; }
+  .nav-cta-icon { border: 1px solid var(--border-color) !important; border-radius: 4px; padding: 0 16px; height: 36px; }
 
-  /* --- 1. Hero Section --- */
+  /* --- 1. Hero Section (Mobile) --- */
+  .hero {
+    height: 100vh;
+    min-height: 700px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-text-wrapper {
+    margin-top: -15vh; /* Pushes title up */
+    z-index: 10;
+  }
+
   .hero-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 var(--layout-pad);
-    gap: 0;
+    flex-wrap: wrap; /* Allows AI to wrap if needed */
+    padding: 0 20px;
+    gap: 10px;
   }
+
   .hero-title-row.indent {
-    padding-left: var(--layout-pad);
-    margin-top: 0;
+    padding-left: 20px; /* Removes desktop indent */
+    margin-top: 10px;
+    justify-content: flex-start;
+    position: relative;
   }
+
   .hero-title {
-    font-size: clamp(3.5rem, 15vw, 5.5rem);
-    line-height: 1;
+    font-size: clamp(3.5rem, 15vw, 6rem);
+    line-height: 0.9;
   }
+
   .hero-lock-icon {
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
     margin: 0 8px;
     transform: translateY(-4px);
   }
-  .ai-text {
+
+  /* Floating "Since 2019" next to POWER */
+  .since-text {
+    position: absolute;
+    right: 20px;
+    top: 0;
     margin-top: 0;
+    text-align: right;
+    font-size: 0.8rem;
+    max-width: 80px;
+    line-height: 1.3;
   }
-  .hero-content-left {
-    padding: 0 var(--layout-pad);
-    margin-top: 2vh;
-    position: relative;
-    bottom: auto;
-    max-width: 100%;
-  }
+
+  /* Robot 3D Canvas Background */
   .hero-robot-3d {
-    width: 150vw;
-    right: -30vw;
-    bottom: -5vh;
-    opacity: 0.3; /* Dims the robot so text is readable */
+    width: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: -5vh !important;
+    opacity: 0.5; /* Dims slightly for text readability */
+    pointer-events: none;
   }
-  .hero-bottom-bar { display: none; }
 
-  /* --- 2. About Section --- */
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-content-left .section-title { font-size: 2.2rem; }
-  .about-card-wrapper { max-width: 100%; }
-  .profile-card { margin-top: 20px; }
-  .profile-info { padding: 30px 20px 20px; }
+  /* Lower Content (Stats, Text, Buttons) */
+  .hero-content-left {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    padding: 0;
+    max-width: 85%; /* Leaves room for social icons on the right */
+    z-index: 10;
+  }
 
-  /* --- 3. Scroll Cards (Phase 3) --- */
-  #phase3-pin-wrapper { height: auto !important; min-height: auto !important; padding: 60px 20px !important; }
-  .scroll-cards-container { height: auto; }
-  .cards-wrapper { width: 100%; height: auto; display: flex; flex-direction: column; gap: 16px; transform: none !important; }
-  .anim-card { position: relative !important; transform: none !important; opacity: 1 !important; visibility: visible !important; min-height: 250px; border-radius: 12px; }
-  .quote-wrapper { position: relative; top: auto; margin-top: 40px; padding: 0; }
+  .client-stats {
+    margin-bottom: 20px;
+    transform: scale(0.9);
+    transform-origin: left center;
+  }
 
-  /* --- 4. Services Accordion --- */
-  .services-header .section-title.text-center { font-size: 2.2rem; }
-  .accordion-wrapper { flex-direction: column; height: auto; gap: 16px; }
-  .accordion-item { width: 100%; flex: none !important; padding: 20px; min-height: 80px; }
-  .accordion-item.active { min-height: 300px; }
-  .accordion-item .tab-header h3 { writing-mode: horizontal-tb; transform: none; font-size: 1.1rem; text-align: left; }
-  .accordion-item .tab-header { justify-content: flex-start; gap: 16px; }
-  .accordion-item .tab-icon { margin-left: auto; }
-  .accordion-static-cta { padding: 40px 24px; margin-top: 20px; }
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    max-width: 280px;
+  }
 
-  /* --- 5. Metrics Section --- */
-  .metrics-block { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; margin-top: 40px; border-top: 1px solid rgba(0,0,0,0.1); }
-  .metrics-stats-right { flex-direction: column; gap: 24px; }
-  .metrics-stats-right .metric-card h2 { font-size: 3.5rem; }
+  .btn-group .btn-main {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
 
-  /* --- 6. Case Studies --- */
-  .cs-header-wrapper { padding: 40px 20px 20px; }
-  .cs-section-title { font-size: 2.2rem; }
-  .cs-grid { display: flex; flex-direction: column; }
-  .cs-feat-image-col { min-height: 300px; border-right: none; }
-  .cs-glass-stats { position: relative; width: 100%; flex-direction: column; gap: 16px; align-items: flex-start; padding: 20px; background: rgba(0,0,0,0.8); backdrop-filter: none; }
-  .cs-stat-divider { width: 100%; height: 1px; }
-  .cs-feat-info-col { padding: 30px 20px; }
-  .cs-info-title { font-size: 1.5rem; }
-  .cs-meta-row { flex-direction: column; gap: 8px; align-items: flex-start; }
-  .cs-meta-row .meta-value { text-align: left; }
-  .cs-list-col { border-right: none; }
-  .cs-list-header, .cs-list-item { padding: 20px; }
-  .cs-visual-col { display: none; } /* Hide folder visual on mobile to save space */
+  /* Social Icons Stacked on Right */
+  .hero-social-float {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+  }
 
-  /* --- 7. Process Cards --- */
-  #process-pin-wrapper { height: auto !important; min-height: auto !important; padding: 80px 20px !important; }
-  .process-title { font-size: 2.2rem; }
-  .process-cards-container { height: auto; display: flex; flex-direction: column; gap: 20px; }
-  .process-card { position: relative !important; opacity: 1 !important; visibility: visible !important; transform: none !important; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
-  .card-image-col { height: 200px; border-right: none; border-bottom: 1px solid var(--border-color); }
-  .card-info-col { padding: 24px; }
-  .card-footer .number { font-size: 3.5rem; bottom: 10px; right: 20px; }
+  .hero-social-float a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
 
-  /* --- 8. Impact / Logos --- */
-  .impact-heading { font-size: 3rem; text-align: center; }
-  .impact-number { font-size: 4rem; }
-  .impact-sub-wrap { flex-direction: column; align-items: center; text-align: center; margin-left: 0; margin-top: 10px; }
-  .client-logo-grid { grid-template-columns: repeat(2, 1fr); }
-  .client-logo-item { padding: 30px 10px; }
-
-  /* --- 9. Bento Grid / Why Choose Us --- */
-  .bento-header h2 { font-size: 2.2rem; }
-  .bento-grid { display: flex; flex-direction: column; gap: 20px; }
-  .bento-card { padding: 24px; min-height: auto; }
-  .bento-robot-img { position: relative; bottom: 0; right: 0; width: 100%; margin-top: 20px; border-radius: 8px; }
-  .bento-split-col { flex-direction: column; }
-  .bento-stat { font-size: 2.5rem; }
-
-  /* --- 10. History Timeline --- */
-  .history-grid { display: flex; flex-direction: column; }
-  .history-title { font-size: 2.2rem; }
-  .history-left-content { padding: 60px 20px 40px; }
-  .timeline-track { flex-direction: column; transform: none !important; }
-  .tl-card { min-width: 100%; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 30px 20px; min-height: auto; }
-  .history-right { padding: 40px 20px; }
-  .founder-wrapper { max-width: 100%; }
-
-  /* --- 11. Pricing --- */
-  .pricing-title-block .section-title { font-size: 2.2rem; }
-  .pricing-grid { display: flex; flex-direction: column; margin: 0; border: none; }
-  .p-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 40px 20px; }
-  .p-card:last-child { border-bottom: none; }
-  .price-wrap .amount { font-size: 3.5rem; }
-
-  /* --- 12. Contact Split --- */
-  .contact-split-sec { display: flex; flex-direction: column; margin: 0; width: 100%; border: none; border-top: 1px solid rgba(0,0,0,0.1); }
-  .contact-split-left, .contact-split-right { padding: 40px 20px; border-right: none; }
-  .contact-split-left { border-bottom: 1px solid rgba(0,0,0,0.1); }
-  .contact-form-heading { font-size: 1.5rem; }
-  .c-form-row { grid-template-columns: 1fr; }
-  .contact-info-massive { font-size: 1.2rem; word-break: break-all; }
-  .contact-info-time { font-size: 2.5rem; }
-
-  /* --- 13. Footer --- */
-  .footer-framed-box { width: 100%; margin: 0; border-radius: 0; border-left: none; border-right: none; }
-  .footer-top { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
-  .footer-bottom { grid-template-columns: 1fr; }
-  .footer-bot-col { padding: 30px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .hero-bottom-bar { display: none; } /* Hidden on mobile */
 }
