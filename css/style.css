@@ -2089,9 +2089,19 @@ a {
   width: 100%;
   background-color: #f2f2f0;
   position: relative;
-  z-index: 20;
-  padding-top: 100px;
+  z-index: 21;
+  padding-top: 180px;
 }
+/* Use horizontal-divider (80px down) as the single visible top border. Hide
+   the frame's own top line + top corner diamonds on history, and hide the
+   previous (excellence) section's bottom line + bottom corners so there is
+   only ONE line at this junction — the one with the WHY CHOOSE US badge. */
+.history-section .section-frame .sf-line.top,
+.history-section .section-frame .sf-dia.tl,
+.history-section .section-frame .sf-dia.tr { display: none; }
+.excellence-section .section-frame .sf-line.bottom,
+.excellence-section .section-frame .sf-dia.bl,
+.excellence-section .section-frame .sf-dia.br { display: none; }
 
 .history-grid {
   display: grid;
@@ -7350,4 +7360,111 @@ background: var(--bg-dark); }
   .p-summary-left { text-align: left; align-items: flex-start; }
   .p-summary-desc { text-align: left; }
   .p-summary-list li { padding: 24px; }
+}
+
+/* ==========================================================================
+   Section Frame — top + bottom lines with diamonds at all 4 corners
+   where they meet the global vertical grid lines.
+   Usage: add class "section-framed" to a <section>, and inside it place:
+     <div class="section-frame">
+       <span class="sf-line top"></span>
+       <span class="sf-line bottom"></span>
+       <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+     </div>
+   ========================================================================== */
+.section-framed { position: relative; overflow: visible; }
+
+.section-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.section-frame .sf-line {
+  position: absolute;
+  background-color: rgba(0,0,0,0.15);
+}
+.section-frame .sf-line.top,
+.section-frame .sf-line.bottom {
+  left: var(--grid-edge);
+  right: var(--grid-edge);
+  height: 1px;
+}
+.section-frame .sf-line.top    { top: 0; }
+.section-frame .sf-line.bottom { bottom: 0; }
+.section-frame .sf-line.left,
+.section-frame .sf-line.right {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+.section-frame .sf-line.left  { left:  var(--grid-edge); }
+.section-frame .sf-line.right { right: var(--grid-edge); }
+
+.section-frame .sf-dia {
+  position: absolute;
+  width: 7px; height: 7px;
+  background-color: rgba(0,0,0,0.35);
+  transform: rotate(45deg);
+}
+.section-frame .sf-dia.tl { top: -3px;    left:  calc(var(--grid-edge) - 3px); }
+.section-frame .sf-dia.tr { top: -3px;    right: calc(var(--grid-edge) - 3px); }
+.section-frame .sf-dia.bl { bottom: -3px; left:  calc(var(--grid-edge) - 3px); }
+.section-frame .sf-dia.br { bottom: -3px; right: calc(var(--grid-edge) - 3px); }
+
+/* Dark background variant */
+.section-frame.light-lines .sf-line { background-color: rgba(255,255,255,0.15); }
+.section-frame.light-lines .sf-dia  { background-color: rgba(255,255,255,0.45); }
+
+/* History section: split light/dark layout — use blend mode so lines stay
+   visible on both halves without needing two separate rulesets. */
+/* History uses the same default dark lines as the bento section. */
+.section-frame.history-frame .sf-line { background-color: rgba(0,0,0,0.15); }
+.section-frame.history-frame .sf-dia  { background-color: rgba(0,0,0,0.35); }
+/* The badge floats independently now; frame draws all 4 sides cleanly. */
+.history-top-divider.badge-only,
+.blog-top-divider.badge-only,
+.pricing-top-divider.badge-only {
+  position: absolute !important;
+  top: -14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  display: block !important;
+  background: transparent !important;
+  z-index: 210;
+}
+.history-top-divider.badge-only::before,
+.blog-top-divider.badge-only::before,
+.pricing-top-divider.badge-only::before { content: none !important; display: none !important; }
+
+.history-top-divider.badge-only .badge,
+.blog-top-divider.badge-only .badge,
+.pricing-top-divider.badge-only .badge {
+  position: static !important;
+  margin: 0 !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+}
+/* History section badge sits on light bg */
+.history-section .history-top-divider.badge-only .badge {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+}
+.blog-section .blog-top-divider.badge-only .badge {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+}
+.pricing-summary-sec .pricing-top-divider.badge-only .badge {
+  background-color: var(--bg-dark) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
 }
