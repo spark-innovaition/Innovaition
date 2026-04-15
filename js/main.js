@@ -115,6 +115,22 @@ window.addEventListener('load', () => {
     .from(".gs-reveal", { y: 30, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.8");
 });
 
+// ===== "KEY ADVANTAGES" STAGGER ANIMATION =====
+const advItems = gsap.utils.toArray('.adv-item');
+if (advItems.length > 0) {
+  gsap.from(advItems, {
+    scrollTrigger: {
+      trigger: ".advantage-list",
+      start: "top 85%",
+    },
+    x: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "back.out(1.2)"
+  });
+}
+
 // ===== GSAP SCROLL REVEAL =====
 gsap.utils.toArray(".gs-reveal-up").forEach(elem => {
   gsap.from(elem, {
@@ -656,6 +672,21 @@ if (lampContainer) {
         .to('.gs-lamp-content', { autoAlpha: 1, y: 0 }, 0.3);
 }
 
+// ===== "KEY ADVANTAGES" STAGGER ANIMATION =====
+const advItems = gsap.utils.toArray('.adv-item');
+if (advItems.length > 0) {
+  gsap.from(advItems, {
+    scrollTrigger: {
+      trigger: ".advantage-list",
+      start: "top 85%",
+    },
+    x: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "back.out(1.2)"
+  });
+}
 
 // =================================================================
 // ===== ALL PINNED SCROLLTRIGGERS (DESKTOP/TABLET ONLY)       =====
@@ -665,45 +696,29 @@ window.addEventListener('load', () => {
   // Create a GSAP MatchMedia instance
   let mm = gsap.matchMedia();
 
-  // ONLY run these pinning animations on screens WIDER than 768px
+  // ONLY run these animations on screens WIDER than 768px
   mm.add("(min-width: 769px)", () => {
 
-    // 1. FLOATING CARDS ANIMATION (Phase 3 - Home Page)
-    const cards = gsap.utils.toArray('.anim-card');
-    const phase3Pin = document.querySelector('#phase3-pin-wrapper'); 
+    // 1. FANNING CARDS ANIMATION (Replaces old pinning method)
+    const fanTrigger = document.querySelector('#cards-fan-trigger');
+    if (fanTrigger) {
+      // Set initial stacked state
+      gsap.set('.fan-card', { rotation: 0, xPercent: 0, transformOrigin: "bottom center" });
 
-    if (cards.length > 0 && phase3Pin) {
-        gsap.set([cards[0], cards[1], cards[3], cards[4]], { scale: 1, xPercent: 0, yPercent: 0, rotation: 0, autoAlpha: 0 });
-
-        const cardsTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: phase3Pin,
-                start: "top top",
-                end: "+=200%", 
-                pin: true,
-                scrub: 1
-            }
-        });
-
-// Reduces the spread and rotation slightly so they don't clash aggressively
-cardsTl.to([cards[0], cards[1], cards[3], cards[4]], { autoAlpha: 1, duration: 0.1 }, 0)
-       .to(cards[0], { xPercent: -130, rotation: -15, scale: 0.9, duration: 1 }, 0)
-       .to(cards[1], { xPercent: -65,  rotation: -8,  scale: 0.95, duration: 1 }, 0)
-       .to(cards[3], { xPercent: 65,   rotation: 8,   scale: 0.95, duration: 1 }, 0)
-       .to(cards[4], { xPercent: 130,  rotation: 15,  scale: 0.9, duration: 1 }, 0);
-    }
-
-    // SEAMLESS CROSS-SECTION PIN (Home Page)
-    const aboutCardWrapper = document.querySelector(".about-card-wrapper");
-    if (aboutCardWrapper && phase3Pin) {
-      ScrollTrigger.create({
-        trigger: ".about-card-wrapper", 
-        start: "center center", 
-        endTrigger: "#phase3-pin-wrapper",
-        end: "bottom bottom", 
-        pin: true,
-        pinSpacing: false, 
+      // Animate out like a hand of cards while scrolling (no pinning)
+      const fanTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: fanTrigger,
+          start: "top 80%",   // Start fanning when stack hits bottom 20% of screen
+          end: "top 20%",     // Fully fanned when it reaches top 20%
+          scrub: 1,           // Smooth scrub
+        }
       });
+
+      fanTl.to('.card-left-outer', { rotation: -18, xPercent: -110, duration: 1 }, 0)
+           .to('.card-left-inner', { rotation: -8,  xPercent: -55,  duration: 1 }, 0)
+           .to('.card-right-inner', { rotation: 8,   xPercent: 55,   duration: 1 }, 0)
+           .to('.card-right-outer', { rotation: 18,  xPercent: 110,  duration: 1 }, 0);
     }
 
     // 2. REBUILT PROCESS CARDS (Horizontal Scroll on Desktop)

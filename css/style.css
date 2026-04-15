@@ -446,9 +446,9 @@ a {
 .hero-robot-3d {
   position: absolute;
   bottom: 0;
-  right: var(--layout-pad); 
+  right: -5vw; /* Anchors it to the right gap instead of pushing it center */
   width: 65vw; 
-  max-width: 1000px; 
+  max-width: 1100px; /* Slightly wider to compensate for shifting right */
   height: 95vh;
   z-index: 1; 
   pointer-events: auto;
@@ -457,8 +457,8 @@ a {
 /* Fix for 16:10 laptops (like 1920x1200) */
 @media (min-width: 1200px) and (max-aspect-ratio: 16/10) {
   .hero-robot-3d {
-    right: -15vw !important;
-}
+    right: -20vw !important; /* Pushes it firmly into the right gap on taller laptop screens */
+  }
 }
 
 .hero-text-wrapper {
@@ -756,35 +756,166 @@ a {
   padding: 6px 12px;
   align-self: flex-start;
 }
+/* ==================================================== */
+/* ===== IMPROVISED ABOUT SECTION (ADVANTAGES)    ===== */
+/* ==================================================== */
+.floating-card {
+  animation: floatSmooth 6s ease-in-out infinite;
+}
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
 
 .advantage-list { 
   list-style: none; 
   margin-top: 24px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.advantage-list li {
+.adv-item {
   font-size: 1.05rem; 
-  color: var(--text-muted);
-  padding: 16px 0; 
-  border-bottom: 1px solid var(--border-color);
+  color: var(--text-white);
+  padding: 16px 20px; 
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 16px;
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1.3;
 }
 
-.advantage-list li:first-child { border-top: 1px solid var(--border-color); }
-.advantage-list li:hover { color: var(--text-white); padding-left: 10px; }
-.advantage-list li i { font-size: 0.8rem; color: var(--text-muted); }
-
-.about-copyright { 
-  font-size: 0.8rem; 
-  color: var(--text-muted);
+.adv-item i { 
+  font-size: 1.2rem; 
+  color: rgba(255,255,255,0.3); 
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
+.adv-item:hover { 
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateX(10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.adv-item:hover i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ==================================================== */
+/* ===== IMPROVISED FANNING CARDS SECTION         ===== */
+/* ==================================================== */
+#fanning-cards-sec {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-dark);
+  z-index: 5;
+  padding: 100px 0 150px;
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.scroll-cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 320px; 
+  height: 420px; 
+  margin: 0 auto 80px; 
+  z-index: 5;
+  perspective: 1000px;
+}
+
+.anim-card {
+  position: absolute;
+  inset: 0; 
+  border: 1px solid var(--border-color);
+  background: var(--bg-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  will-change: transform;
+  transform-origin: bottom center; /* Crucial for fanning from the bottom */
+}
+
+.card-left-inner { z-index: 4; display: flex; flex-direction: column; justify-content: center; padding: 40px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop') center/cover; }
+.card-right-inner { z-index: 3; }
+.card-left-outer { z-index: 2; }
+.card-right-outer { z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px; background: linear-gradient(135deg, #001b3a 0%, #004d7a 100%); }
+
+.card-left-outer img, 
+.card-right-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+}
+
+.anim-card h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem); 
+  color: var(--text-white);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.anim-card p {
+  color: rgba(255,255,255,0.8); 
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.quote-wrapper {
+  text-align: center;
+  max-width: 600px;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+/* Mobile Overrides for New Sections */
+@media (max-width: 1024px) {
+  .cards-wrapper { margin-bottom: 60px; height: 350px; width: 280px; }
+}
+
+@media (max-width: 768px) {
+  .adv-item { padding: 14px; font-size: 0.95rem; }
+  
+  /* Un-stack cards and convert to horizontal native scroll row on mobile */
+  .cards-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex !important;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0 20px 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 40px;
+  }
+  .cards-wrapper::-webkit-scrollbar { display: none; }
+
+  .anim-card {
+    position: relative;
+    flex: 0 0 75vw;
+    height: 350px;
+    scroll-snap-align: center;
+    transform: none !important; /* Disable GSAP transforms on mobile */
+  }
+}
 
 /* ===== FLOATING CARDS SECTION (Phase 3) ===== */
 #phase3-pin-wrapper {
@@ -1956,47 +2087,14 @@ a {
 /* ===== REFINED: HISTORY & TEAM (PHASE 10) =====       */
 /* ==================================================== */
 
-.history-section > .horizontal-divider {
-  left: 0 !important; /* FIX: Resets the inherited offset */
-  right: 50% !important; /* Spans perfectly across the left half */
-}
-.history-section > .horizontal-divider .diamond.right {
-  right: -3px;
-}
-.history-section > .horizontal-divider .badge {
-  left: 0;
-  transform: translateX(0);
-  margin-left: 20px;
-  background-color: #f2f2f0;
-}
-
 .history-section {
-  display: flex;
+  display: block; /* Changed from flex so items stack correctly */
   width: 100%;
   background-color: #f2f2f0;
   position: relative;
   z-index: 20;
-  /* Contain content within the vertical grid lines */
-  padding-left: var(--grid-edge);
-  padding-right: var(--grid-edge);
+  padding-top: 100px;
 }
-
-/* Inside history-section, reset inner paddings that were built around layout-pad */
-.history-section .history-left-content {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.history-section .history-top-divider {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.history-section .history-top-divider::before {
-  left: -40px;
-  right: -40px;
-}
-.history-section .history-top-divider .diamond.left { left: -3px; }
-.history-section .history-top-divider .diamond.right { right: -3px; }
 
 .history-grid {
   display: grid;
@@ -2021,7 +2119,7 @@ a {
 }
 
 .history-left-content {
-  padding: 120px 80px 40px var(--layout-pad);
+  padding: 40px 80px 40px var(--layout-pad);
   position: relative;
   flex-grow: 1;
 }
@@ -2031,38 +2129,7 @@ a {
   align-items: center;
   margin-bottom: 40px;
   position: relative;
-  /* Pulls the line exactly to the left edge of the screen */
-  margin-left: calc(var(--layout-pad) * -1); 
-  padding-left: var(--layout-pad);
-}
-
-.history-top-divider .line {
-  position: absolute;
-  left: 0; right: 0;
-  height: 1px;
-  background-color: rgba(0,0,0,0.15);
-  z-index: 1;
-}
-
-.history-top-divider .diamond {
-  position: absolute;
-  left: var(--layout-pad);
-  width: 5px; height: 5px;
-  background-color: rgba(0,0,0,0.15);
-  transform: rotate(45deg);
-  z-index: 2;
-}
-
-.history-top-divider .badge {
-  background: #fff;
-  padding: 0 16px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #000;
-  position: relative;
-  z-index: 3;
-  margin-left: calc(var(--layout-pad) + 20px);
+  width: 100%;
 }
 
 .history-title {
@@ -2307,12 +2374,18 @@ a {
   margin-right: -3px; /* Centers the 7px diamond perfectly over the edge */
 }
 
-/* 3. Fix the badge alignment so it correctly follows the text padding on all pages */
 .history-top-divider .badge,
 .pricing-top-divider .badge,
-.blog-top-divider .badge {
-  /* Aligns perfectly with the left layout padding */
-  margin-left: calc(var(--grid-buffer) + 20px) !important;
+.blog-top-divider .badge,
+.process-top-divider .badge {
+  margin-left: var(--grid-buffer) !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+  border-radius: 2px !important;
+  line-height: 26px !important;
+  height: 28px !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 
 /* ==================================================== */
