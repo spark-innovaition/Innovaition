@@ -57,14 +57,14 @@ a {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  mix-blend-mode: difference;
+  /* Removed mix-blend-mode: difference; (Huge performance killer on scroll) */
 }
 
 .global-grid .grid-line {
   position: absolute;
   top: 0; bottom: 0;
   width: 1px;
-  background-color: rgba(128, 128, 128, 0.22);
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle static line instead */
 }
 
 .global-grid .grid-line.left { left: var(--grid-edge); }
@@ -7233,4 +7233,98 @@ background: var(--bg-dark); }
   .blog-date {
     font-size: 0.85rem !important;
   }
+}
+
+/* ==================================================== */
+/* ===== UNIFIED PRICING SUMMARY (PERFORMANCE)    ===== */
+/* ==================================================== */
+
+.pricing-summary-sec {
+  position: relative;
+  padding: 150px 0 100px;
+  background-color: var(--bg-dark);
+  color: #fff;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.p-summary-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin: 0 var(--layout-pad);
+  align-items: center;
+}
+
+.p-summary-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 60px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.p-summary-desc {
+  font-size: 1.1rem;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.p-summary-btn {
+  display: inline-flex !important;
+  padding-left: 24px !important;
+}
+
+.p-summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.p-summary-list li {
+  padding: 30px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.p-summary-list li:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.tier-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.tier-desc {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .p-summary-container { grid-template-columns: 1fr; }
+  .p-summary-left { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .p-summary-desc { text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .pricing-summary-sec { padding: 80px 0 40px; }
+  .p-summary-container { margin: 0 20px; gap: 40px; }
+  .p-summary-title { font-size: clamp(2rem, 8vw, 2.5rem); text-align: left;}
+  .p-summary-left { text-align: left; align-items: flex-start; }
+  .p-summary-desc { text-align: left; }
+  .p-summary-list li { padding: 24px; }
 }
