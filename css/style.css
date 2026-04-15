@@ -119,11 +119,8 @@ a {
   padding: 0 var(--layout-pad);
   height: 80px;
   border-bottom: 1px solid var(--border-color);
-  z-index: 1000;
-  /* Swapped solid background for transparent with blur */
-  background: transparent; 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999; /* Boosted so it always stays on top */
+  background-color: var(--bg-dark); /* Restored solid background */
 }
 
 .menu-btn {
