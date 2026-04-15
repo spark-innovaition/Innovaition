@@ -200,7 +200,7 @@ a {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   width: 100%;
   height: 100%;
   padding-top: 80px;
@@ -322,7 +322,12 @@ a {
 .menu-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 0;
+}
+.menu-contact-grid .location-block { padding-right: 40px; }
+.menu-contact-grid .contact-block {
+  padding-left: 40px;
+  border-left: 1px solid rgba(255,255,255,0.1);
 }
 
 .menu-contact-grid .meta-label {
@@ -1428,8 +1433,9 @@ a {
 }
 
 .process-slider-container {
-  width: 100%;
-  /* Removed padding from the container to allow full track movement */
+  width: calc(100% - (var(--grid-edge) * 2));
+  margin: 0 var(--grid-edge);
+  overflow: hidden; /* Cards clip at the frame borders, not cross over them */
 }
 
 .process-track {
@@ -1441,7 +1447,7 @@ a {
 }
 
 .process-card {
-  width: 800px; /* Fixed width for desktop */
+  width: 620px;
   min-height: 420px;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -2085,13 +2091,14 @@ a {
 /* ==================================================== */
 
 .history-section {
-  display: block; /* Changed from flex so items stack correctly */
+  display: block;
   width: 100%;
   background-color: #f2f2f0;
   position: relative;
   z-index: 21;
-  padding-top: 180px;
+  padding: 180px var(--grid-edge) 0;
 }
+.history-section .history-left-content { padding-left: 40px; }
 /* Use horizontal-divider (80px down) as the single visible top border. Hide
    the frame's own top line + top corner diamonds on history, and hide the
    previous (excellence) section's bottom line + bottom corners so there is
@@ -2099,9 +2106,10 @@ a {
 .history-section .section-frame .sf-line.top,
 .history-section .section-frame .sf-dia.tl,
 .history-section .section-frame .sf-dia.tr { display: none; }
-.excellence-section .section-frame .sf-line.bottom,
-.excellence-section .section-frame .sf-dia.bl,
-.excellence-section .section-frame .sf-dia.br { display: none; }
+.bento-section .section-frame .sf-line.bottom,
+.bento-section .section-frame .sf-dia.bl,
+.bento-section .section-frame .sf-dia.br { display: none; }
+.history-section .bento-divider-wrap .horizontal-divider { top: 0 !important; }
 
 .history-grid {
   display: grid;
@@ -2956,10 +2964,20 @@ a {
 .blog-section {
   background-color: #ffffff;
   color: var(--text-dark);
-  padding: 150px var(--layout-pad) 100px;
+  padding: 230px var(--layout-pad) 100px;
   position: relative;
   z-index: 20;
 }
+/* Hide the previous section's (excellence) frame bottom + blog's frame top so
+   only the horizontal-divider line (at y=80) with INSIGHTS & UPDATES badge
+   shows as the junction line, matching the bento/history pattern. */
+.excellence-section .section-frame .sf-line.bottom,
+.excellence-section .section-frame .sf-dia.bl,
+.excellence-section .section-frame .sf-dia.br { display: none; }
+.blog-section .section-frame .sf-line.top,
+.blog-section .section-frame .sf-dia.tl,
+.blog-section .section-frame .sf-dia.tr { display: none; }
+.blog-section .bento-divider-wrap .horizontal-divider { top: 0 !important; }
 
 .blog-top-divider {
   display: flex;
@@ -4199,7 +4217,8 @@ background: var(--bg-dark); }
 }
 
 .marquee-container {
-  width: 100vw;
+  width: calc(100% - (var(--grid-edge) * 2));
+  margin: 0 var(--grid-edge);
   overflow: hidden;
   display: flex;
   border-top: 1px solid rgba(0,0,0,0.15);
@@ -4638,6 +4657,16 @@ background: var(--bg-dark); }
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.video-content.align-left {
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: calc(var(--grid-edge) + 40px);
+  max-width: 720px;
+}
+.about-video-sec .video-content.align-left { margin-right: auto; margin-left: 0; }
+.about-video-sec { justify-content: flex-start;
   gap: 24px;
 }
 
@@ -7417,6 +7446,41 @@ background: var(--bg-dark); }
 /* Dark background variant */
 .section-frame.light-lines .sf-line { background-color: rgba(255,255,255,0.15); }
 .section-frame.light-lines .sf-dia  { background-color: rgba(255,255,255,0.45); }
+
+/* When two framed sections are adjacent, collapse the shared boundary into
+   a single line: hide the later section's top line + top corner diamonds. */
+.section-framed + .section-framed > .section-frame > .sf-line.top,
+.section-framed + .section-framed > .section-frame > .sf-dia.tl,
+.section-framed + .section-framed > .section-frame > .sf-dia.tr { display: none; }
+
+/* ==========================================================================
+   Section top label — a pill/badge that sits centered on the top border line
+   of a .section-framed section (left-aligned, like the reference).
+   ========================================================================== */
+.section-framed .section-top-label {
+  position: absolute !important;
+  top: -13px !important;
+  left: calc(var(--grid-edge) + 40px) !important;
+  z-index: 210;
+  background-color: var(--bg-dark);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 2px !important;
+  padding: 0 16px !important;
+  line-height: 26px !important;
+  font-size: 0.65rem !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0 !important;
+}
+/* Light-bg variant */
+.section-framed .section-top-label.on-light {
+  background-color: #ffffff;
+  color: #000 !important;
+  border-color: rgba(0,0,0,0.15) !important;
+}
 
 /* History section: split light/dark layout — use blend mode so lines stay
    visible on both halves without needing two separate rulesets. */

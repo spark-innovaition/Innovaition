@@ -121,13 +121,15 @@ if (advItems.length > 0) {
   gsap.from(advItems, {
     scrollTrigger: {
       trigger: ".advantage-list",
-      start: "top 85%",
+      start: "top 95%",
+      toggleActions: "play none none none",
     },
     x: 50,
     opacity: 0,
     duration: 0.8,
     stagger: 0.15,
-    ease: "back.out(1.2)"
+    ease: "back.out(1.2)",
+    clearProps: "all",
   });
 }
 
@@ -688,8 +690,8 @@ window.addEventListener('load', () => {
     const processTrack = document.querySelector('#process-track');
 
     if (processSection && processTrack) {
-      // Perfectly aligns the track's right padding with the right edge of the window
-      const getScrollAmount = () => -(processTrack.scrollWidth - window.innerWidth);
+      // Perfectly aligns the track's right padding with the right edge of the container
+      const getScrollAmount = () => -(processTrack.scrollWidth - processTrack.parentElement.offsetWidth);
 
       const processTween = gsap.to(processTrack, {
         x: getScrollAmount,
