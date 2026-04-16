@@ -146,32 +146,37 @@ a {
   align-items: center;
   padding: 0 var(--layout-pad);
   height: 80px;
-  border-bottom: none;
-  /* Removed the black bar from the bottom */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 9999;
-  /* Boosted so it always stays on top */
-  background-color: #fff;
-  /* Switched to white theme */
-  color: #000;
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+/* Glass effect when scrolling down on dark pages */
+.navbar.scrolled {
+  background-color: rgba(13, 13, 13, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar .logo {
-  color: #000;
+  color: #fff;
 }
 
 .navbar .logo svg circle,
 .navbar .logo svg path {
-  stroke: #000;
+  stroke: #fff;
 }
 
 .navbar .logo circle[fill="white"] {
-  fill: #000;
+  fill: #fff;
 }
 
 .menu-btn {
-  background: #fff;
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 8px 16px;
   border-radius: 4px;
   font-family: var(--font-heading);
@@ -182,13 +187,12 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
   transition: var(--transition);
 }
 
 .menu-btn:hover {
-  background: var(--text-white);
-  color: var(--text-dark);
+  background: #fff;
+  color: #000;
 }
 
 .logo {
@@ -218,7 +222,7 @@ a {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -229,19 +233,65 @@ a {
   display: grid;
   place-items: center;
   padding: 0 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-left: none;
   transition: var(--transition);
 }
 
 .nav-right:hover .nav-cta,
 .nav-right:hover .nav-cta-icon {
-  background: var(--text-white);
-  color: var(--text-dark);
+  background: #fff;
+  color: #000;
 }
 
 .nav-right:hover .nav-cta-icon i {
   transform: rotate(-45deg);
+}
+
+/* --- LIGHT THEME NAVBAR OVERRIDES --- */
+.light-theme .navbar {
+  background-color: #fff;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.light-theme .navbar .logo {
+  color: #000;
+}
+
+.light-theme .navbar .logo svg circle,
+.light-theme .navbar .logo svg path {
+  stroke: #000;
+}
+
+.light-theme .navbar .logo circle[fill="white"] {
+  fill: #000;
+}
+
+.light-theme .menu-btn {
+  background: #fff;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .menu-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.light-theme .nav-cta,
+.light-theme .nav-cta-icon {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .nav-right:hover .nav-cta,
+.light-theme .nav-right:hover .nav-cta-icon {
+  background: #000;
+  color: #fff;
 }
 
 /* ==================================================== */
@@ -4688,10 +4738,12 @@ a {
 /* ===== LAMP EFFECT (ABOUT HERO) ===== */
 .lamp-container {
   position: absolute;
-  top: 0;
+  top: 80px;
+  /* Pushes the lamp down to start exactly below the 80px navbar */
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 80px);
+  /* Adjusts the height so it doesn't overflow the section */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -9019,7 +9071,8 @@ a {
 
 .pricing-summary-sec {
   position: relative;
-  padding: 180px 0 100px;
+  padding: 140px 0;
+  /* Changed to 140px top and bottom for perfect vertical centering */
   background-color: var(--bg-dark);
   color: #fff;
   z-index: 22;
@@ -9038,7 +9091,8 @@ a {
 
 .pricing-horizontal-divider {
   position: absolute;
-  top: 80px;
+  top: 0;
+  /* Reset to 0 so the inner line aligns perfectly with the 80px diamonds */
   left: var(--grid-edge);
   right: var(--grid-edge);
   height: 1px;
