@@ -51,9 +51,34 @@ a {
   color: inherit; 
 }
 
-/* ===== UNIVERSAL GLOBAL GRID OVERLAY ===== */
-/* Global grid removed in favor of section-native vertical lines for better rendering performance and theme accuracy */
-.global-grid { display: none; }
+/* ===== UNIVERSAL GLOBAL GRID OVERLAY (Restored for Perfect Continuity) ===== */
+.global-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000; /* Sits above all section backgrounds */
+  display: block;
+}
+
+.grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.grid-line.left {
+  left: var(--grid-edge);
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.grid-line.right {
+  right: var(--grid-edge);
+  background-color: rgba(128, 128, 128, 0.2);
+}
 
 
 /* ===== GEOMETRIC BUTTONS ===== */
@@ -1079,6 +1104,26 @@ a {
   border-radius: 0;
   line-height: 26px; 
   white-space: nowrap; /* FIX: Prevents text from ever stacking vertically */
+}
+
+/* For segmented dividers (Partner Grid, FAQ, etc.) */
+.horizontal-divider.divider-flex .badge {
+  position: relative !important;
+  left: auto !important;
+  top: 0 !important; /* Resets the -14px jump from global .badge */
+  transform: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-left: 1px solid rgba(0,0,0,0.2) !important; /* Default dark side lines */
+  border-right: 1px solid rgba(0,0,0,0.2) !important;
+  padding: 0 16px; /* Space between the track segments and the vertical side-lines */
+}
+
+/* Specific light-lines override for dark backgrounds */
+.horizontal-divider.light-lines.divider-flex .badge {
+  border-left: 1px solid rgba(255,255,255,0.3) !important;
+  border-right: 1px solid rgba(255,255,255,0.3) !important;
+  color: #fff !important;
 }
 
 .services-header {
@@ -3895,7 +3940,7 @@ a {
   display: flex;
   align-items: center;
   z-index: 20;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-bottom: none;
 }
 /* New Centered About Hero */
 .about-hero-centered {
@@ -3971,15 +4016,15 @@ a {
 /* --- 2. Massive Statement Section (Text Reveal) --- */
 .massive-statement {
   position: relative;
-  padding: 150px 0;
+  padding: 140px 0 80px; 
   z-index: 20;
 }
-
-.statement-container {
-  margin: 0 var(--grid-edge); /* Constrain to vertical grid lines */
+.massive-statement .section-frame .sf-line.top { display: none; }
+.massive-statement .statement-container {
+  margin: 0 var(--grid-edge); 
+  padding: 0 40px; /* Added internal gap from the vertical grid lines */
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  margin-bottom: 80px; /* Gap before bento grid */
 }
 
 .massive-statement .small-heading {
@@ -3988,11 +4033,12 @@ a {
 
 .statement-text {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 65px);
+  font-size: clamp(1.8rem, 3.2vw, 52px); /* Slightly smaller to fit more words per line */
   line-height: 1.1;
   font-weight: 500;
   text-transform: uppercase;
-  max-width: 1200px;
+  width: 100%; /* Spans full section width */
+  max-width: none; 
   margin: 0;
   color: rgba(255, 255, 255, 0.2); /* Initial dimmed state */
 }
@@ -4000,7 +4046,7 @@ a {
 /* --- 3. About Bento Grid Section (4x2 layout) --- */
 .about-bento-sec {
   position: relative;
-  padding: 0 0 150px;
+  padding: 80px 0 80px; /* Aligned with section-frame insets */
   z-index: 20;
 }
 
@@ -4008,12 +4054,11 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   
-  /* ↓ Controls the height of the boxes ↓ */
-  grid-auto-rows: 340px; 
+  /* ↓ Controls the height of the boxes - slightly reduced for combined view ↓ */
+  grid-auto-rows: 280px; 
   
   margin: 0 var(--grid-edge); 
-  border-top: 1px solid rgba(255, 255, 255, 0.15); 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Seals the bottom boundary */
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Seals the division between statement and grid */
 }
 
 .bento-cell {
@@ -4054,7 +4099,7 @@ a {
 
 .vision-list li {
   padding: 12px 0; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none; /* Removed as requested */
   font-size: 0.95rem; 
   font-weight: 500;
   display: flex;
@@ -4130,6 +4175,7 @@ a {
   padding: 180px 0 150px;
   z-index: 20;
 }
+.capabilities-sec .section-frame .sf-line.top { display: none; } /* Divider handles the top line with segments */
 
 .cap-header h2 {
   font-family: var(--font-heading);
@@ -4146,82 +4192,58 @@ a {
   /* Removed top and left borders */
 }
 
+/* Partner Card Style (Updated from Expertise) */
 .cap-item {
   position: relative;
-  /* Removed right and bottom borders */
-  aspect-ratio: 1.3 / 1; 
-  background: transparent;
+  aspect-ratio: 1.4 / 1; 
+  background-color: #ebebeb; /* Darkened grey box */
+  border: 1px solid rgba(0,0,0,0.03);
+  margin: 6px; /* Small gap between boxes */
   overflow: hidden;
-  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-item:hover {
+  background-color: #ebebeb;
+  transform: translateY(-2px);
 }
 
 .cap-number {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #aaa;
+  top: 16px;
+  right: 16px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #999;
 }
 
-.cap-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* Base state: Logo centered */
 .cap-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  color: #1a1a1a;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
-  color: var(--text-dark);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
 }
 
-.cap-logo i { font-size: 1.8rem; }
+.cap-logo i { font-size: 1.4rem; color: #333; }
 
-/* Font Mappings to simulate distinct "Logos" */
-.cap-item:nth-child(1) .cap-logo { font-family: 'Syncopate', sans-serif; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
+/* Keep specific font mappings for logo variety */
+.cap-item:nth-child(1) .cap-logo { font-family: 'Syncopate', sans-serif; text-transform: uppercase; font-size: 1.1rem; }
 .cap-item:nth-child(2) .cap-logo { font-family: 'Cinzel', serif; font-size: 1.8rem; }
-.cap-item:nth-child(3) .cap-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 1px; }
-.cap-item:nth-child(4) .cap-logo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; text-transform: lowercase;}
-.cap-item:nth-child(5) .cap-logo { font-family: var(--font-heading); font-weight: 500; font-size: 1.6rem; letter-spacing: -1px; }
-.cap-item:nth-child(6) .cap-logo { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: lowercase; }
-.cap-item:nth-child(7) .cap-logo { font-family: 'Cinzel', serif; font-size: 1.6rem; letter-spacing: 2px; }
+.cap-item:nth-child(3) .cap-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; }
+.cap-item:nth-child(4) .cap-logo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; }
+.cap-item:nth-child(5) .cap-logo { font-family: var(--font-heading); font-weight: 500; font-size: 1.6rem; }
+.cap-item:nth-child(6) .cap-logo { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; }
+.cap-item:nth-child(7) .cap-logo { font-family: 'Cinzel', serif; font-size: 1.6rem; }
 .cap-item:nth-child(8) .cap-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; }
 .cap-item:nth-child(9) .cap-logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; }
-.cap-item:nth-child(10) .cap-logo { font-family: var(--font-body); font-weight: 400; font-size: 1.8rem; letter-spacing: -2px; }
+.cap-item:nth-child(10).cap-logo { font-family: var(--font-body); font-size: 1.8rem; }
 
-/* Base state: Text hidden below */
-.cap-desc {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 20px);
-  width: 80%;
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #666;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Hover Animation */
-.cap-item:hover .cap-logo {
-  transform: translate(-50%, -40px); /* Shifts icon up */
-}
-.cap-item:hover .cap-desc {
-  transform: translate(-50%, 15px); /* Shifts text up and fades in */
-  opacity: 1;
-}
+.cap-desc { display: none; } /* Text reveal removed for this aesthetic */
 
 /* Double-Width "Join Us" Card - Forced Dark Theme */
 .cap-item.join-us-card {
@@ -4293,13 +4315,17 @@ a {
 .growth-marquee-sec {
   position: relative;
   background-color: #f4f4f0;
-  padding: 100px 0 150px;
+  padding: 40px 0 150px; /* Reduced top padding for better flow */
   z-index: 20;
   overflow: hidden;
 }
+.growth-marquee-sec .section-frame .sf-line.top,
+.growth-marquee-sec .section-frame .sf-line.bottom,
+.growth-marquee-sec .section-frame .sf-dia { display: none; }
 
 .growth-header {
   margin: 0 var(--grid-edge) 60px;
+  padding-left: 40px; /* Aligns with the mission statement gap */
 }
 
 .growth-header .section-title {
@@ -4317,8 +4343,7 @@ a {
   margin: 0 var(--grid-edge);
   overflow: hidden;
   display: flex;
-  border-top: 1px solid rgba(0,0,0,0.15);
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border: none; /* Removed internal borders as requested */
 }
 
 .marquee-track {
@@ -4343,7 +4368,7 @@ a {
 }
 
 .m-card.text-card {
-  background-color: transparent;
+  background-color: #ffffff; /* Explicit white for the "White-Black-White" pattern */
   padding: 30px 24px; /* Tighter padding for smaller boxes */
   justify-content: flex-start;
 }
@@ -4396,7 +4421,7 @@ a {
   display: flex;
   flex-direction: column;
   z-index: 20;
-  padding: 120px 0 0 0; /* Generous top padding */
+  padding: 120px 0 80px 0; /* Matches the bottom frame line offset exactly */
 }
 
 .since-bg {
@@ -4444,6 +4469,7 @@ a {
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding-left: 40px; /* Aligns with global vertical grid gap */
   background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4459,6 +4485,7 @@ a {
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
+  padding-right: 40px; /* Aligns with the global grid gap */
 }
 
 .since-quote-box p {
@@ -4527,6 +4554,8 @@ a {
 }
 
 /* --- 7. Team Grid Section --- */
+
+
 .team-sec {
   position: relative;
   padding: 150px 0;
@@ -4585,11 +4614,12 @@ a {
 /* --- 7. FAQ Section (Split Pane Layout) --- */
 .faq-sec {
   position: relative;
-  padding: 180px 0 150px; 
-  background-color: #ffffff;
+  padding: 80px 0 150px; /* Reduced top padding for tighter flow */
+  background-color: #ffffff; 
   color: var(--text-dark);
   z-index: 20;
 }
+.faq-sec .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 .faq-container {
   margin: 0 var(--grid-edge); 
@@ -4601,7 +4631,8 @@ a {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-top: 60px; /* Space between divider and title */
+  padding-left: 40px; /* Standard vertical grid offset */
+  margin-top: 60px; /* Symmetrical with the 60px bottom margin */
   margin-bottom: 60px;
   text-transform: uppercase;
 }
@@ -4645,7 +4676,7 @@ a {
 .faq-question-item.no-border { border-bottom: none; }
 
 .faq-question-item:hover:not(.active) {
-  background-color: #f4f4f0;
+  background-color: rgba(0,0,0,0.02); /* Very subtle shift instead of grey */
 }
 
 /* Active Question State */
@@ -4658,7 +4689,7 @@ a {
 .faq-right {
   display: flex;
   flex-direction: column;
-  background-color: #fcfcfc;
+  background-color: #ffffff; /* Restored clean white panel */
 }
 
 .faq-answer-display {
@@ -4703,7 +4734,7 @@ a {
 /* ===== FULL SCREEN VIDEO SECTION (ABOUT PAGE) ===== */
 .about-video-sec {
   position: relative;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to respect scrollbar and grid alignment */
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -4711,6 +4742,7 @@ a {
   justify-content: center;
   z-index: 20;
 }
+.about-video-sec .section-frame .sf-line.top { display: none; }
 
 /* The video itself */
 .bg-video {
@@ -6002,15 +6034,25 @@ a {
   flex-shrink: 0;
 }
 
-/* First segment: 20px offset to badge */
+/* First segment: 40px offset from grid edge to match headers */
 .horizontal-divider.divider-flex .line-seg:first-child {
-  width: 20px;
+  width: 40px;
   flex-shrink: 0;
 }
 
 /* Second segment: fills the rest of the grid width + viewport overflow */
 .horizontal-divider.divider-flex .line-seg:nth-child(3) {
   flex-grow: 1;
+}
+
+/* Dark lines variant for light backgrounds (Bento, Partners, etc.) */
+.horizontal-divider.dark-lines.divider-flex .line-seg,
+.horizontal-divider.dark-lines.divider-flex::before {
+  background-color: rgba(0,0,0,0.3) !important; /* Stronger visibility */
+  display: block;
+}
+.horizontal-divider.dark-lines.divider-flex .diamond {
+  background-color: rgba(0,0,0,0.45);
 }
 
 .contact-divider-wrap .horizontal-divider .diamond.left { left: calc(50vw + var(--grid-edge) - 3px); }
@@ -6060,6 +6102,44 @@ a {
   letter-spacing: -0.02em;
   margin-bottom: 40px;
   text-transform: uppercase;
+}
+
+.contact-connect {
+  margin-top: 10px;
+}
+
+.connect-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.connect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.connect-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: #fff;
+  font-weight: 500;
+}
+
+.connect-list li i {
+  font-size: 0.8rem;
+  color: #fff;
+  transform: rotate(45deg); /* Architectural arrow style */
 }
 
 .contact-form-wrap {
@@ -6373,7 +6453,7 @@ a {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
   }
-  .horizontal-divider .badge { margin-left: 20px !important; }
+  .horizontal-divider .badge { margin-left: 40px !important; }
 
   /* --- Navbar (Mobile) --- */
   .navbar { padding: 0 20px; }
@@ -7604,7 +7684,8 @@ a {
 
 .section-frame .sf-line {
   position: absolute;
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(0,0,0,0.3); /* Uniform baseline contrast */
+  z-index: 500; /* Elevated above all potential background overlaps */
 }
 .section-frame .sf-line.top,
 .section-frame .sf-line.bottom {
@@ -7616,13 +7697,8 @@ a {
 .section-frame .sf-line.bottom { bottom: 80px; }
 .section-frame .sf-line.left,
 .section-frame .sf-line.right {
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  display: block; /* Restored for continuous vertical sightlines */
+  display: none; /* Vertical lines handled by global-grid for 100% continuity */
 }
-.section-frame .sf-line.left  { left:  var(--grid-edge); }
-.section-frame .sf-line.right { right: var(--grid-edge); }
 
 .section-frame .sf-dia {
   position: absolute;
@@ -7636,8 +7712,8 @@ a {
 .section-frame .sf-dia.br { bottom: 77px; right: calc(var(--grid-edge) - 3px); }
 
 /* Dark background variant */
-.section-frame.light-lines .sf-line { background-color: rgba(255,255,255,0.15); }
-.section-frame.light-lines .sf-dia  { background-color: rgba(255,255,255,0.45); }
+.section-frame.light-lines .sf-line { background-color: rgba(255,255,255,0.4); } 
+.section-frame.light-lines .sf-dia  { background-color: rgba(255,255,255,0.8); z-index: 501; }
 
 /* Removed section boundary collapse logic — dividers are now inset 80px within sections */
 

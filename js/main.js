@@ -621,12 +621,12 @@ if (revealText) {
   gsap.to('#reveal-text span', {
     color: '#ffffff',
     stagger: 0.1,
-    ease: "power1.inOut",
+    ease: "power2.out",
     scrollTrigger: {
-      trigger: '#statement-sec',
-      start: 'top 60%',
-      end: 'bottom 70%',
-      scrub: true
+      trigger: '.statement-container',
+      start: 'top 80%',
+      end: 'bottom 40%',
+      scrub: 1.5 // Added a bit of smoothing
     }
   });
 }
