@@ -1,0 +1,638 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - text: MENU
+    - link "Innovaition ®" [ref=e7] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e8]
+      - text: Innovaition
+      - superscript [ref=e12]: ®
+    - generic [ref=e13]:
+      - link "BOOK A CALL" [ref=e15] [cursor=pointer]:
+        - /url: "#contact"
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e17]: 
+  - generic [ref=e19]:
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "HOME" [ref=e23] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e24]:
+        - link "ABOUT US" [ref=e25] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e26]:
+        - link "SERVICES" [ref=e27] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e28]:
+        - link "PRICING" [ref=e29] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e30]:
+        - link "BLOG" [ref=e31] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e32]:
+        - link "CONTACT US" [ref=e33] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e36]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e37]:
+          - generic [ref=e38]: 
+          - generic [ref=e39]: 62.328° N - 15.845° E
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: LOCATION
+            - paragraph [ref=e44]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "03:30 AM" [level=2] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]: CONTACT ON
+            - paragraph [ref=e48]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e49] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e50]:
+          - link "X Twitter - X" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e53]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e55]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e56] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e57]: 
+            - text: Instagram
+  - banner [ref=e58]:
+    - generic:
+      - generic:
+        - generic:
+          - heading "UNL  CK" [level=1]:
+            - text: UNL
+            - generic: 
+            - text: CK
+          - heading "AI" [level=1]
+        - generic:
+          - heading "POWER" [level=1]
+          - generic: ©Since — 2019
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e68]: "+51"
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]: 
+              - generic [ref=e72]: 
+              - generic [ref=e73]: 
+              - generic [ref=e74]: 
+              - generic [ref=e75]: 
+            - generic [ref=e76]: Happy clients
+        - paragraph [ref=e77]:
+          - text: We help businesses use AI to simplify workflows and drive
+          - strong [ref=e78]: smarter, faster, more meaningful results.
+        - generic [ref=e79] [cursor=pointer]:
+          - link "Start Your AI Journey" [ref=e80]:
+            - /url: "#journey"
+          - link "" [ref=e81]:
+            - /url: "#journey"
+            - generic [ref=e82]: 
+      - generic [ref=e83]:
+        - link "" [ref=e84] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e85]: 
+        - link "" [ref=e86] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e87]: 
+        - link "" [ref=e88] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e89]: 
+    - generic [ref=e90]:
+      - generic [ref=e92]: LA, CALIFORNIA
+      - generic [ref=e93]: 03:30 AM
+      - generic [ref=e94]: (34.0522° N, 118.2437° W)
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - heading "TRANSFORMING IDEAS INTO INTELLIGENT OUTCOMES WITH THE POWER OF AI" [level=2] [ref=e99]:
+        - text: TRANSFORMING
+        - text: IDEAS INTO
+        - text: INTELLIGENT
+        - text: OUTCOMES WITH
+        - text: THE POWER OF AI
+      - paragraph [ref=e100]: Whether it's predictive analytics, automation, or intelligent process design, we focus on building tools that empower your people and elevate your results.
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - img "Amanda Reed" [ref=e104]
+        - generic [ref=e105]:
+          - heading "Amanda Reed" [level=4] [ref=e106]
+          - text: Marketing Director
+      - link "Book a 30-Min Call " [ref=e107] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Book a 30-Min Call
+        - generic [ref=e109]: 
+    - generic [ref=e110]:
+      - generic [ref=e111]: KEY ADVANTAGES
+      - list [ref=e112]:
+        - listitem [ref=e113]:
+          - generic [ref=e114]: 
+          - text: Smart process automation
+        - listitem [ref=e115]:
+          - generic [ref=e116]: 
+          - text: Predictive data insights
+        - listitem [ref=e117]:
+          - generic [ref=e118]: 
+          - text: Custom AI solutions
+        - listitem [ref=e119]:
+          - generic [ref=e120]: 
+          - text: Seamless system integration
+      - generic [ref=e121]: © 2026 Innovaition consulting agency
+  - generic [ref=e122]:
+    - generic [ref=e125]: OUR EXPERTISE
+    - heading "EMPOWERING GROWTH THROUGH AI" [level=2] [ref=e128]:
+      - text: EMPOWERING
+      - text: GROWTH THROUGH AI
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e132]:
+          - heading "AI STRATEGY & ROADMAP" [level=3] [ref=e133]
+          - generic [ref=e135]: +
+        - generic [ref=e136]:
+          - paragraph [ref=e137]: We help you identify the most impactful areas for AI adoption and create a scalable roadmap to drive long-term business value.
+          - link "Explore Service " [ref=e138] [cursor=pointer]:
+            - /url: "#"
+            - text: Explore Service
+            - generic [ref=e139]: 
+      - generic [ref=e142] [cursor=pointer]:
+        - heading "WORKFLOW AUTOMATION" [level=3] [ref=e143]
+        - generic [ref=e145]: +
+      - generic [ref=e148] [cursor=pointer]:
+        - heading "AI TOOLS & INTEGRATIONS" [level=3] [ref=e149]
+        - generic [ref=e151]: +
+      - generic [ref=e154] [cursor=pointer]:
+        - heading "DATA STRATEGY & MANAGEMENT" [level=3] [ref=e155]
+        - generic [ref=e157]: +
+      - generic [ref=e158]:
+        - link "Innovaition ®" [ref=e159] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e160]
+          - text: Innovaition
+          - superscript [ref=e164]: ®
+        - heading "START YOUR AI JOURNEY WITH US" [level=3] [ref=e165]
+        - link "Let's Talk " [ref=e166] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e167]: Let's Talk
+          - generic [ref=e169]: 
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - paragraph [ref=e172]:
+          - text: Our performance metrics show how
+          - strong [ref=e173]: AI delivers measurable impact.
+        - generic [ref=e174] [cursor=pointer]:
+          - link "Get started now" [ref=e175]:
+            - /url: "#journey"
+          - link "" [ref=e176]:
+            - /url: "#journey"
+            - generic [ref=e177]: 
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - heading "0X" [level=2] [ref=e180]
+          - paragraph [ref=e181]: Faster AI execution
+        - generic [ref=e182]:
+          - heading "0%" [level=2] [ref=e183]
+          - paragraph [ref=e184]: Reliable system uptime
+        - generic [ref=e185]:
+          - heading "0+" [level=2] [ref=e186]
+          - paragraph [ref=e187]: Businesses supported
+  - generic [ref=e189]:
+    - generic [ref=e190]:
+      - generic [ref=e191]: How it works
+      - heading "A SIMPLE PROCESS FOR AI DISCOVERY" [level=2] [ref=e192]:
+        - text: A SIMPLE PROCESS FOR AI
+        - text: DISCOVERY
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - img "Discovery Strategy" [ref=e197]
+        - generic [ref=e198]:
+          - heading "DISCOVERY & STRATEGY" [level=3] [ref=e199]
+          - paragraph [ref=e200]: This helps us identify where AI can create the most value.
+          - list [ref=e201]:
+            - listitem [ref=e202]: Business analysis
+            - listitem [ref=e203]: AI opportunity mapping
+            - listitem [ref=e204]: Technical feasibility review
+          - generic [ref=e205]:
+            - generic [ref=e206]: "TIME PERIOD: 1-2 WEEKS"
+            - generic [ref=e207]: "01"
+      - generic [ref=e208]:
+        - img "Data Planning" [ref=e210]
+        - generic [ref=e211]:
+          - heading "DATA & PLANNING" [level=3] [ref=e212]
+          - paragraph [ref=e213]: We organize and refine your data for AI readiness, ensuring accuracy and consistency.
+          - list [ref=e214]:
+            - listitem [ref=e215]: Data collection and cleaning
+            - listitem [ref=e216]: Infrastructure setup
+            - listitem [ref=e217]: Model selection planning
+          - generic [ref=e218]:
+            - generic [ref=e219]: "TIME PERIOD: 2-3 WEEKS"
+            - generic [ref=e220]: "02"
+      - generic [ref=e221]:
+        - img "Development Integration" [ref=e223]
+        - generic [ref=e224]:
+          - heading "DEVELOPMENT & INTEGRATION" [level=3] [ref=e225]
+          - paragraph [ref=e226]: We build, test, and integrate AI models into your existing systems seamlessly.
+          - list [ref=e227]:
+            - listitem [ref=e228]: AI model development, API
+            - listitem [ref=e229]: and system integration
+            - listitem [ref=e230]: Technical feasibility review
+          - generic [ref=e231]:
+            - generic [ref=e232]: "TIME PERIOD: 2-3 WEEKS"
+            - generic [ref=e233]: "03"
+      - generic [ref=e234]:
+        - img "Launch Support" [ref=e236]
+        - generic [ref=e237]:
+          - heading "LAUNCH & SUPPORT" [level=3] [ref=e238]
+          - paragraph [ref=e239]: After deployment, we monitor performance, train your team, and provide ongoing support to ensure lasting success.
+          - list [ref=e240]:
+            - listitem [ref=e241]: System deployment
+            - listitem [ref=e242]: Team training
+            - listitem [ref=e243]: Ongoing maintenance and updates
+          - generic [ref=e244]:
+            - generic [ref=e245]: "TIME PERIOD: CONTINUOUS"
+            - generic [ref=e246]: "04"
+  - generic [ref=e250]:
+    - generic [ref=e251]:
+      - heading "HELPING" [level=2] [ref=e252]
+      - generic [ref=e253]:
+        - heading "0+" [level=2] [ref=e254]
+        - generic [ref=e255]:
+          - paragraph [ref=e256]:
+            - text: Unlocking business potential through
+            - text: strategy and innovation.
+          - heading "CLIENT" [level=2] [ref=e257]
+      - heading "WORLDWIDE" [level=2] [ref=e258]
+    - generic [ref=e259]:
+      - generic [ref=e260]:
+        - generic [ref=e261]: 
+        - text: Nexter
+      - generic [ref=e262]:
+        - generic [ref=e263]: 
+        - text: Crofty
+      - generic [ref=e264]: oslo.
+      - generic [ref=e265]:
+        - generic [ref=e266]: 
+        - text: MAVNE
+      - generic [ref=e267]: next
+      - generic [ref=e268]:
+        - generic [ref=e269]: 
+        - text: thoro
+      - generic [ref=e270]:
+        - generic [ref=e271]: 
+        - text: TOLET
+      - generic [ref=e272]:
+        - generic [ref=e273]: 
+        - text: Umbrella
+      - generic [ref=e274]:
+        - generic [ref=e275]: 
+        - text: Riel
+      - generic [ref=e276]:
+        - generic [ref=e277]: 
+        - text: London
+      - generic [ref=e278]:
+        - generic [ref=e279]: 
+        - text: Metricx
+      - link "JOIN US " [ref=e280] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e281]: JOIN US
+        - generic [ref=e282]: 
+  - generic [ref=e283]:
+    - generic [ref=e287]: WHY CHOOSE US
+    - heading "SMARTER AI. REAL RESULTS." [level=2] [ref=e290]:
+      - text: SMARTER AI.
+      - text: REAL RESULTS.
+    - generic [ref=e291]:
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - heading "STRATEGIC CUSTOMIZATION" [level=3] [ref=e294]
+          - paragraph [ref=e295]: AI solutions tailored to align perfectly with your business strategy.
+          - list [ref=e296]:
+            - listitem [ref=e297]:
+              - generic [ref=e298]: 
+              - text: Tailored AI solutions
+            - listitem [ref=e299]:
+              - generic [ref=e300]: 
+              - text: Aligned with strategy
+            - listitem [ref=e301]:
+              - generic [ref=e302]: 
+              - text: Custom-Built AI
+            - listitem [ref=e303]:
+              - generic [ref=e304]: 
+              - text: Strategic integration
+        - img "AI Robot"
+        - generic [ref=e305]: © 2026 Innovaition Agency
+      - generic [ref=e306]:
+        - generic:
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+          - img "Team"
+        - generic [ref=e307]:
+          - generic [ref=e308]:
+            - generic [ref=e309]: 
+            - text: Innovaition®
+          - heading "EXPERT AI TEAM" [level=3] [ref=e310]
+          - paragraph [ref=e311]: Specialists who align technology with your business goals.
+      - generic [ref=e312]:
+        - generic [ref=e313]:
+          - heading "0+" [level=2] [ref=e314]
+          - paragraph [ref=e315]: Happy Clients
+          - generic: 
+        - generic [ref=e316]:
+          - heading "SAFE & RELIABLE" [level=3] [ref=e317]:
+            - text: SAFE &
+            - text: RELIABLE
+          - generic: 
+          - generic [ref=e318]: SINCE 2019
+      - generic [ref=e319]:
+        - generic [ref=e320]:
+          - heading "SCALABLE FOR GROWTH" [level=3] [ref=e321]
+          - paragraph [ref=e322]: AI systems that grow with your business.
+        - generic [ref=e323]:
+          - generic [ref=e326]: 30%
+          - generic [ref=e329]: 80%
+          - generic [ref=e332]: 50%
+          - paragraph [ref=e333]:
+            - text: 15% more compare
+            - text: to the last month
+      - generic [ref=e334]:
+        - generic [ref=e335]:
+          - heading "REAL TIME SUPPORT" [level=3] [ref=e336]
+          - paragraph [ref=e337]: From planning to launch and beyond.
+        - generic [ref=e338]: 24/7
+  - generic [ref=e339]:
+    - generic [ref=e343]: HISTORY
+    - generic [ref=e345]:
+      - generic [ref=e346]:
+        - generic [ref=e347]:
+          - heading "DELIVERING RESULTS OVER TIME" [level=2] [ref=e348]:
+            - text: DELIVERING
+            - text: RESULTS OVER TIME
+          - paragraph [ref=e349]: From our humble beginnings to leading AI innovations, we've consistently driven measurable results for clients.
+        - generic [ref=e350]:
+          - generic [ref=e352]:
+            - generic [ref=e353]:
+              - generic [ref=e354]: "2018"
+              - generic [ref=e355]:
+                - heading "FOUNDATION" [level=3] [ref=e356]
+                - paragraph [ref=e357]: Launched with a vision to bring AI solutions to businesses of all sizes.
+            - generic [ref=e358]:
+              - generic [ref=e359]: "2020"
+              - generic [ref=e360]:
+                - heading "BUILDING EXPERTISE" [level=3] [ref=e361]
+                - paragraph [ref=e362]: Launched enterprise projects to streamline operations with automation and AI.
+            - generic [ref=e363]:
+              - generic [ref=e364]: "2022"
+              - generic [ref=e365]:
+                - heading "EXPANDING HORIZONS" [level=3] [ref=e366]
+                - paragraph [ref=e367]: Expanded globally, supporting key industries like healthcare and finance.
+            - generic [ref=e368]:
+              - generic [ref=e369]: "2025"
+              - generic [ref=e370]:
+                - heading "LEADING WITH INNOVATION" [level=3] [ref=e371]
+                - paragraph [ref=e372]: Started delivering data-driven strategies and consulting for early-stage clients.
+          - generic [ref=e373]:
+            - button " Previous" [ref=e374]:
+              - generic [ref=e375]: 
+              - text: Previous
+            - button "Next " [ref=e376] [cursor=pointer]:
+              - text: Next
+              - generic [ref=e377]: 
+      - generic [ref=e382]:
+        - generic [ref=e383]:
+          - img "Ethan Parker" [ref=e384]
+          - generic [ref=e385]:
+            - img [ref=e386]
+            - text: Innovaition
+            - superscript [ref=e390]: ®
+        - generic [ref=e391]:
+          - heading "ETHAN PARKER" [level=3] [ref=e392]
+          - paragraph [ref=e393]: Founder & CEO, GEN-AI Consulting
+  - generic [ref=e394]:
+    - generic [ref=e398]: PRICING PLANS
+    - generic [ref=e400]:
+      - generic [ref=e401]:
+        - heading "FLEXIBLE ENGAGEMENT TIERS" [level=2] [ref=e402]:
+          - text: FLEXIBLE
+          - text: ENGAGEMENT TIERS
+        - paragraph [ref=e403]: Whether you are exploring AI or ready for full enterprise integration, we have a transparent plan built for your scale.
+        - link "Explore full pricing " [ref=e404] [cursor=pointer]:
+          - /url: pricing.html
+          - generic [ref=e405]: Explore full pricing
+          - generic [ref=e406]: 
+      - list [ref=e408]:
+        - listitem [ref=e409]:
+          - generic [ref=e410]: STARTER
+          - generic [ref=e411]: For early-stage AI strategy and opportunity mapping.
+        - listitem [ref=e412]:
+          - generic [ref=e413]: GROWTH
+          - generic [ref=e414]: For scaling custom AI solutions and automation workflows.
+        - listitem [ref=e415]:
+          - generic [ref=e416]: ENTERPRISE
+          - generic [ref=e417]: Full strategic engagement and deployment at enterprise scale.
+  - generic [ref=e419]:
+    - generic [ref=e420]:
+      - heading "7+" [level=2] [ref=e421]
+      - heading "YEARS IN AI EXCELLENCE" [level=3] [ref=e422]:
+        - text: YEARS IN AI
+        - text: EXCELLENCE
+    - generic [ref=e423]:
+      - generic [ref=e424]:
+        - generic [ref=e425]:
+          - generic [ref=e426]: 
+          - text: Innovaition®
+        - paragraph [ref=e427]: “AI SHOULD SIMPLIFY DECISIONS, NOT COMPLICATE THEM. OUR MISSION IS TO MAKE INTELLIGENCE PRACTICAL FOR EVERY BUSINESS.”
+      - generic [ref=e428]:
+        - generic [ref=e429]:
+          - heading "0+" [level=4] [ref=e430]
+          - paragraph [ref=e431]:
+            - text: AI models for
+            - text: smarter decisions
+        - generic [ref=e432]:
+          - heading "0%" [level=4] [ref=e433]
+          - paragraph [ref=e434]:
+            - text: Client satisfaction
+            - text: rate
+  - generic [ref=e435]:
+    - generic [ref=e440]:
+      - heading "STAY AHEAD WITH AI KNOWLEDGE" [level=2] [ref=e441]:
+        - text: STAY AHEAD WITH AI
+        - text: KNOWLEDGE
+      - link "View all blogs " [ref=e442] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e443]: View all blogs
+        - generic [ref=e445]: 
+    - generic [ref=e446]:
+      - 'link "AI Decisions FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION November 17, 2025" [ref=e447] [cursor=pointer]':
+        - /url: "#"
+        - img "AI Decisions" [ref=e449]
+        - generic [ref=e450]:
+          - 'heading "FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION" [level=3] [ref=e451]'
+          - text: November 17, 2025
+      - 'link "AI Marketing AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS November 17, 2025" [ref=e452] [cursor=pointer]':
+        - /url: "#"
+        - img "AI Marketing" [ref=e454]
+        - generic [ref=e455]:
+          - 'heading "AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS" [level=3] [ref=e456]'
+          - text: November 17, 2025
+  - generic [ref=e457]:
+    - generic [ref=e461]: WE'RE HERE TO HELP
+    - generic [ref=e465]:
+      - generic [ref=e466]:
+        - heading "LET'S TALK ABOUT YOUR NEXT AI PROJECT" [level=2] [ref=e467]:
+          - text: LET'S TALK ABOUT YOUR
+          - text: NEXT AI PROJECT
+        - generic [ref=e468]:
+          - generic [ref=e469]: HOW DO WE CONNECT?
+          - list [ref=e470]:
+            - listitem [ref=e471]:
+              - generic [ref=e472]: 
+              - text: Smart process automation
+            - listitem [ref=e473]:
+              - generic [ref=e474]: 
+              - text: Direct access to our team — no bots.
+            - listitem [ref=e475]:
+              - generic [ref=e476]: 
+              - text: We ask smart questions fast.
+      - generic [ref=e477]:
+        - heading "START YOUR AI JOURNEY" [level=3] [ref=e478]
+        - generic [ref=e479]:
+          - generic [ref=e480]:
+            - generic [ref=e481]: Name*
+            - textbox "Enter your name" [ref=e482]
+          - generic [ref=e483]:
+            - generic [ref=e484]: Email*
+            - textbox "Enter your email" [ref=e485]
+          - generic [ref=e486]:
+            - generic [ref=e487]: Message
+            - textbox "Message" [ref=e488]
+          - button "Send Message" [ref=e489]
+  - contentinfo [ref=e490]:
+    - generic: innovAItion
+    - generic [ref=e491]:
+      - generic [ref=e492]:
+        - generic [ref=e493]:
+          - paragraph [ref=e494]: We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.
+          - generic [ref=e495]:
+            - paragraph [ref=e496]: Book a call and let's see what we can do.
+            - link "Book a discovery call" [ref=e497] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e498]: Book a discovery call
+        - generic [ref=e500]:
+          - generic [ref=e501]: MAIN LINKS
+          - list [ref=e502]:
+            - listitem [ref=e503]:
+              - link "Home" [ref=e504] [cursor=pointer]:
+                - /url: index.html
+                - text: Home
+            - listitem [ref=e505]:
+              - link "About Us" [ref=e506] [cursor=pointer]:
+                - /url: about.html
+                - text: About Us
+            - listitem [ref=e507]:
+              - link "Services" [ref=e508] [cursor=pointer]:
+                - /url: services.html
+                - text: Services
+            - listitem [ref=e509]:
+              - link "Pricing" [ref=e510] [cursor=pointer]:
+                - /url: pricing.html
+                - text: Pricing
+            - listitem [ref=e511]:
+              - link "Case Study" [ref=e512] [cursor=pointer]:
+                - /url: case-studies.html
+                - text: Case Study
+            - listitem [ref=e513]:
+              - link "Contact us" [ref=e514] [cursor=pointer]:
+                - /url: contact.html
+                - text: Contact us
+        - generic [ref=e515]:
+          - generic [ref=e516]: UTILITY LINKS
+          - list [ref=e517]:
+            - listitem [ref=e518]:
+              - link "Style Guide" [ref=e519] [cursor=pointer]:
+                - /url: "#"
+                - text: Style Guide
+            - listitem [ref=e520]:
+              - link "Instructions" [ref=e521] [cursor=pointer]:
+                - /url: "#"
+                - text: Instructions
+            - listitem [ref=e522]:
+              - link "Licenses" [ref=e523] [cursor=pointer]:
+                - /url: "#"
+                - text: Licenses
+            - listitem [ref=e524]:
+              - link "Changelog" [ref=e525] [cursor=pointer]:
+                - /url: "#"
+                - text: Changelog
+            - listitem [ref=e526]:
+              - link "Error 404" [ref=e527] [cursor=pointer]:
+                - /url: "#"
+                - text: Error 404
+        - generic [ref=e528]:
+          - generic [ref=e529]: STAY CONNECTED
+          - paragraph [ref=e530]: Join our newsletter for tips, updates, and project highlights — only the good stuff.
+          - generic [ref=e531]:
+            - textbox "Enter email address" [ref=e532]
+            - button "" [ref=e533] [cursor=pointer]:
+              - generic [ref=e534]: 
+          - paragraph [ref=e535]:
+            - text: By submitting, you agree to our
+            - link "Privacy Policy" [ref=e536] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e537]:
+        - generic [ref=e538]:
+          - generic [ref=e539]: MAIN
+          - paragraph [ref=e540]: +1 (415) 555-0167
+          - link "SUPPORT@INNOVAITION.CA" [ref=e541] [cursor=pointer]:
+            - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e542]:
+          - generic [ref=e543]: ADDRESS
+          - paragraph [ref=e544]:
+            - text: Innovaition consulting Agency
+            - text: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+        - generic [ref=e545]:
+          - generic [ref=e546]: SOCIAL
+          - generic [ref=e547]:
+            - link "" [ref=e548] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e549]: 
+            - link "" [ref=e550] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e551]: 
+            - link "" [ref=e552] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e553]: 
+            - link "" [ref=e554] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e555]: 
+        - generic [ref=e556]:
+          - generic [ref=e557]: LEGAL
+          - paragraph [ref=e558]:
+            - text: ©2026 Innovaition Agency
+            - text: Designed by
+            - link "VictorWork" [ref=e559] [cursor=pointer]:
+              - /url: "#"
+            - text: . Powered by
+            - link "Webflow" [ref=e560] [cursor=pointer]:
+              - /url: "#"
+            - text: .

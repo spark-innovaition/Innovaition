@@ -2205,8 +2205,10 @@ a {
 }
 
 .bento-card.light-card {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   color: var(--text-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Adds a subtle border to separate it from the white background */
 }
 
 .bento-card.img-card {
@@ -2295,7 +2297,8 @@ a {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3px solid #f5f5f5;
+  border: 3px solid #ffffff;
+  /* Swapped to match the new white background */
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -2349,7 +2352,8 @@ a {
 .team-center-text {
   position: relative;
   z-index: 2;
-  background: rgba(245, 245, 245, 0.85);
+  background: rgba(255, 255, 255, 0.85);
+  /* Swapped from grey to white */
   backdrop-filter: blur(4px);
   padding: 20px;
   border-radius: 12px;
@@ -3378,21 +3382,14 @@ a {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop');
-  /* Colorful abstract tech screen */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+  background-color: #ffffff;
+  color: var(--text-dark);
   padding: 120px var(--layout-pad);
   z-index: 20;
 }
 
 .exc-overlay {
-  position: absolute;
-  inset: 0;
-  /* Dark gradient heavily overlaying left and bottom right for readability */
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 100%);
-  z-index: 1;
+  display: none;
 }
 
 .exc-content-wrap {
@@ -3477,10 +3474,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 40px;
 }
 
@@ -4567,7 +4562,7 @@ a {
 }
 
 .light-theme {
-  background-color: #f4f4f0;
+  background-color: #ffffff;
   color: var(--text-dark);
 }
 
@@ -8948,6 +8943,10 @@ a {
 
 .pricing-summary-sec .section-frame .sf-line.top {
   display: none;
+}
+
+.pricing-summary-sec .section-frame::after {
+  background-color: #ffffff;
 }
 
 .pricing-horizontal-divider {

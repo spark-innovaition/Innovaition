@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI is Redefining Business Strategy - Innovaition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Force the entire page body to be white, overriding any dark mode defaults */
+        body.blog-detail-page {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            overflow-x: hidden;
+        }
+
+        /* Ensure all white sections stretch 100% edge-to-edge */
+        .bd-hero,
+        .bd-content-sec,
+        .more-blogs-sec {
+            width: 100%;
+            background-color: #ffffff !important;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bd-hero {
+            padding: 180px var(--layout-pad) 60px;
+            text-align: center;
+        }
+
+        .bd-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 60px);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: #000;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bd-date {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .bd-image-wrap {
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            margin-top: 60px;
+        }
+
+        .bd-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bd-content-sec {
+            padding: 100px var(--layout-pad) 120px;
+        }
+
+        .bd-content-sec .horizontal-divider {
+            top: 0;
+            left: var(--grid-edge);
+            right: var(--grid-edge);
+        }
+
+        .bd-rich-text {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .bd-rich-text h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+            margin: 50px 0 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .bd-rich-text h3:first-child {
+            margin-top: 0;
+        }
+
+        .bd-rich-text p {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 24px;
+        }
+
+        .bd-rich-text ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+            color: #444;
+        }
+
+        .bd-rich-text li {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .more-blogs-sec {
+            padding: 80px var(--layout-pad) 150px;
+        }
+
+        .more-blogs-sec .horizontal-divider {
+            top: 0;
+            left: var(--grid-edge);
+            right: var(--grid-edge);
+        }
+
+        .more-blogs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .more-blogs-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 50px);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .mb-btn {
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.3s;
+        }
+
+        .mb-btn:hover {
+            background: #333;
+        }
+
+        .mb-btn i {
+            font-size: 0.8rem;
+            transform: rotate(-45deg);
+            transition: transform 0.3s;
+        }
+
+        .mb-btn:hover i {
+            transform: rotate(0);
+        }
+
+        .mb-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mb-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .mb-img-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .mb-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mb-card:hover .mb-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .mb-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            color: #111;
+            transition: color 0.3s;
+        }
+
+        .mb-card:hover .mb-title {
+            color: #666;
+        }
+
+        .mb-date {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .bd-image-wrap {
+                height: 40vh;
+            }
+
+            .more-blogs-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .mb-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="blog-detail-page light-theme">
+
+    <div class="global-grid">
+        <div class="grid-line left" style="background-color: rgba(0,0,0,0.05);"></div>
+        <div class="grid-line right" style="background-color: rgba(0,0,0,0.05);"></div>
+    </div>
+
+    <nav class="navbar" style="border-bottom: 1px solid rgba(0,0,0,0.1); background-color: #ffffff;">
+        <div class="nav-left">
+            <button class="menu-btn mobile-menu-btn" style="color: #000; border-color: rgba(0,0,0,0.2);">
+                <i class="fa-solid fa-bars"></i> <span>MENU</span>
+            </button>
+        </div>
+
+        <div class="nav-center">
+            <a href="index.html" class="logo" style="color: #000;">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" stroke="#000" stroke-width="2" />
+                    <path d="M10 20L16 10L22 20" stroke="#000" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="16" cy="14" r="2" fill="#000" />
+                </svg>
+                Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-avatar"></div>
+            <a href="contact.html" class="nav-cta" style="color: #000; border-color: rgba(0,0,0,0.2);">BOOK A CALL</a>
+            <a href="contact.html" class="nav-cta-icon" style="color: #000; border-color: rgba(0,0,0,0.2);">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="menu-overlay">
+        <div class="menu-grid">
+            <div class="menu-col-left">
+                <ul class="menu-nav-list">
+                    <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="about.html">ABOUT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="services.html">SERVICES <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="pricing.html">PRICING <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="blog.html">BLOG <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="contact.html">CONTACT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                </ul>
+            </div>
+            <div class="menu-col-right">
+                <div class="menu-info-top">
+                    <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+                    <div class="menu-globe-widget">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="coords">62.328° N - 15.845° E</span>
+                    </div>
+                </div>
+                <div class="menu-info-bottom">
+                    <div class="menu-contact-grid">
+                        <div class="location-block">
+                            <span class="meta-label">LOCATION</span>
+                            <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+                            <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+                        </div>
+                        <div class="contact-block">
+                            <span class="meta-label">CONTACT ON</span>
+                            <p>+1 (415) 555-0167</p>
+                            <a href="mailto:SUPPORT@INNOVAITION.CA" class="menu-email">SUPPORT@INNOVAITION.CA</a>
+                        </div>
+                    </div>
+                    <div class="menu-social-row">
+                        <a href="#">X Twitter - X</a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bd-hero gs-reveal-up">
+        <h1 class="bd-title">HOW AI IS REDEFINING BUSINESS STRATEGY</h1>
+        <span class="bd-date">Release date: November 17, 2025</span>
+
+        <div class="bd-image-wrap">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop"
+                alt="AI Face Code">
+        </div>
+    </section>
+
+    <section class="bd-content-sec section-framed light-theme">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+        </div>
+
+        <div class="horizontal-divider dark-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">BLOG DETAIL</div>
+            <div class="line-seg"></div>
+        </div>
+
+        <div class="bd-rich-text gs-reveal-up">
+            <h3>INTRODUCTION</h3>
+            <p>AI isn't just another tech buzzword — it's reshaping how businesses think, plan, and compete. From
+                predictive analytics to automated decision-making, AI brings clarity to chaos. It helps leaders identify
+                trends, reduce inefficiencies, and unlock new market opportunities faster than ever. The smartest
+                strategies today are powered by data, not intuition.</p>
+
+            <h3>START WITH CLARITY</h3>
+            <p>Successful AI adoption starts with purpose. Businesses must define where AI can create the most impact —
+                whether that's improving operations, enhancing customer experience, or predicting market shifts. The
+                clearer the goal, the smarter the strategy. AI works best when it's guided by intention, not curiosity.
+            </p>
+
+            <h3>KEY ELEMENTS THAT MATTER</h3>
+            <p>Effective AI strategy depends on alignment between business goals, data infrastructure, and leadership
+                vision. To create long-term impact, companies should:</p>
+            <ul>
+                <li>Invest in reliable, well-structured data.</li>
+                <li>Foster collaboration between departments.</li>
+                <li>Build scalable systems for growth.</li>
+            </ul>
+
+            <h3>DESIGNING FOR ADAPTABILITY</h3>
+            <p>AI strategy is never static. It evolves with data, market conditions, and customer behavior. Leaders must
+                stay flexible, integrating feedback loops and real-time analytics to refine decisions continuously. In a
+                world driven by change, adaptability becomes the new competitive edge.</p>
+
+            <h3 style="margin-top: 80px;">TAKEAWAY</h3>
+            <p>AI isn't replacing strategy — it's redefining it. Businesses that embrace AI as a strategic partner, not
+                a tool, will lead markets, outpace competitors, and future-proof their growth.</p>
+        </div>
+    </section>
+
+    <section class="more-blogs-sec section-framed light-theme">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+        </div>
+
+        <div class="horizontal-divider dark-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">INSIGHTS & UPDATES</div>
+            <div class="line-seg"></div>
+        </div>
+
+        <div class="more-blogs-header gs-reveal-up">
+            <h2>MORE BLOGS</h2>
+            <a href="blog.html" class="mb-btn">View all blogs <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="mb-grid gs-reveal-up">
+            <a href="#" class="mb-card">
+                <div class="mb-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=800&auto=format&fit=crop"
+                        alt="Data Insights">
+                </div>
+                <div class="mb-meta">
+                    <h3 class="mb-title">FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION</h3>
+                    <span class="mb-date">November 17, 2025</span>
+                </div>
+            </a>
+
+            <a href="#" class="mb-card">
+                <div class="mb-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
+                        alt="Marketing">
+                </div>
+                <div class="mb-meta">
+                    <h3 class="mb-title">AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS</h3>
+                    <span class="mb-date">November 17, 2025</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="contact-section dark-theme section-framed" id="contact">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <canvas id="paper-shader-canvas"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; touch-action: none; background: #0a0a0a;"></canvas>
+
+        <div class="contact-divider-wrap">
+            <div class="horizontal-divider light-lines divider-flex">
+                <div class="line-seg"></div>
+                <div class="badge">WE'RE HERE TO HELP</div>
+                <div class="line-seg"></div>
+                <div class="diamond left"></div>
+                <div class="diamond right"></div>
+            </div>
+        </div>
+
+        <div class="contact-grid gs-reveal-up">
+            <div class="contact-info">
+                <h2 class="contact-title" style="margin-bottom: 40px; margin-top: 20px;">
+                    LET'S TALK ABOUT YOUR<br>
+                    <span class="rotating-wrapper">
+                        <span class="rot-text">NEXT AI PROJECT</span>
+                        <span class="rot-text">AUTOMATION GOALS</span>
+                        <span class="rot-text">DATA STRATEGY</span>
+                        <span class="rot-text">BUSINESS GROWTH</span>
+                        <span class="rot-text">SMART WORKFLOWS</span>
+                    </span>
+                </h2>
+
+                <div class="contact-connect">
+                    <span class="connect-label">HOW DO WE CONNECT?</span>
+                    <ul class="connect-list">
+                        <li><i class="fa-solid fa-play"></i> Smart process automation</li>
+                        <li><i class="fa-solid fa-play"></i> Direct access to our team — no bots.</li>
+                        <li><i class="fa-solid fa-play"></i> We ask smart questions fast.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap">
+                <h3 class="form-title">START YOUR AI JOURNEY</h3>
+                <form class="contact-form">
+                    <div class="input-group">
+                        <label>Name*</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email*</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea placeholder="Message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-main submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-watermark">innovAItion</div>
+
+        <div class="footer-column-stack">
+
+            <div class="brand-col footer-col">
+                <a href="index.html" class="logo footer-logo-mobile">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+                        <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="16" cy="14" r="2" fill="white" />
+                    </svg>
+                    Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+                </a>
+                <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive
+                    smarter growth.</p>
+                <p>Book a call and let's see what we can do.</p>
+
+                <a href="#contact" class="btn-main quote-btn cta-btn footer-cta-mobile">
+                    <span class="btn-text">Book a discovery call</span>
+                    <div class="profile-btn-icon"><i class="fa-solid fa-arrow-up"></i></div>
+                </a>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">MAIN LINKS</span>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fa-solid fa-play"
+                                style="font-size: 0.6rem; margin-right: 8px;"></i> Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">UTILITY LINKS</span>
+                <ul class="footer-links">
+                    <li><a href="#">Style Guide</a></li>
+                    <li><a href="#">Instructions</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Error 404</a></li>
+                    <li><a href="#">Password Protected</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter-col footer-col">
+                <span class="footer-label">STAY CONNECTED</span>
+                <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter email address" required>
+                    <button type="submit">
+                        <div class="circle-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    </button>
+                </form>
+                <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+            </div>
+
+            <div class="main-contact-col footer-col">
+                <span class="footer-label">MAIN</span>
+                <div class="contact-details">
+                    <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
+                    <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+                </div>
+            </div>
+
+            <div class="address-col footer-col">
+                <span class="footer-label">ADDRESS</span>
+                <p>Innovaition consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United
+                    States</p>
+            </div>
+
+            <div class="social-col footer-col">
+                <span class="footer-label">SOCIAL</span>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="legal-col footer-col">
+                <span class="footer-label">LEGAL</span>
+                <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by
+                    <a href="#" style="color: #fff;">Webflow</a>.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-framed-box gs-reveal-up">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive
+                        smarter growth.</p>
+                    <div class="book-call-wrap" style="margin-top: 30px;">
+                        <p
+                            style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px;">
+                            Book a call and let's see what we can do.</p>
+                        <a href="contact.html" class="footer-btn-modern">
+                            <span class="btn-text">Book a discovery call</span>
+                            <div class="btn-icon-box"><i class="fa-solid fa-arrow-up-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col links-col">
+                    <span class="footer-label">MAIN LINKS</span>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="services.html">Services <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="pricing.html">Pricing <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="blog.html">Blog <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="contact.html">Contact us <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links-col">
+                    <span class="footer-label">UTILITY LINKS</span>
+                    <ul class="footer-links">
+                        <li><a href="#">Style Guide <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="#">Instructions <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="#">Licenses <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="#">Changelog <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                        <li><a href="#">Error 404 <i class="fa-solid fa-arrow-up-right"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <span class="footer-label">STAY CONNECTED</span>
+                    <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px;">Join our newsletter for tips,
+                        updates, and project highlights — only the good stuff.</p>
+                    <form class="newsletter-form-modern">
+                        <input type="email" placeholder="Enter email address" required>
+                        <button type="submit"
+                            style="background:none; border:none; color:inherit; padding:0; cursor:pointer;"><i
+                                class="fa-solid fa-arrow-right-long arrow-link"></i></button>
+                    </form>
+                    <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bot-col">
+                    <span class="footer-label">MAIN</span>
+                    <p style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+1 (415) 555-0167
+                    </p>
+                    <a href="mailto:SUPPORT@INNOVAITION.CA"
+                        style="font-size: 1.1rem; font-weight: 700; color: #fff; text-transform: uppercase;">SUPPORT@INNOVAITION.CA</a>
+                </div>
+                <div class="footer-bot-col">
+                    <span class="footer-label">ADDRESS</span>
+                    <p style="font-size: 0.95rem; color: #aaa; line-height: 1.5; font-weight: 500;">Innovaition
+                        consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+                </div>
+                <div class="footer-bot-col">
+                    <span class="footer-label">SOCIAL</span>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bot-col">
+                    <span class="footer-label">LEGAL</span>
+                    <p style="font-size: 0.85rem; color: #888; line-height: 1.6;">©2026 Innovaition Agency<br>Designed
+                        by <a href="#" style="color: #fff; font-weight: 600;">VictorWork</a>. Powered by <a href="#"
+                            style="color: #fff; font-weight: 600;">Webflow</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
