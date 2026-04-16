@@ -4374,10 +4374,14 @@ a {
 /* --- 5. Growth Marquee Section (Infinite Loop) --- */
 .growth-marquee-sec {
   position: relative;
-  background-color: #f4f4f0;
-  padding: 40px 0 150px; /* Reduced top padding for better flow */
+  background-color: #ffffff; /* Switched from off-white to pure white as requested */
+  padding: 100px 0 60px; /* Tightened padding to remove excess vertical space */
   z-index: 20;
   overflow: hidden;
+}
+.growth-marquee-sec::before,
+.growth-marquee-sec::after {
+  display: none !important; /* Disables the masks that were cutting off the text */
 }
 .growth-marquee-sec .section-frame .sf-line.top,
 .growth-marquee-sec .section-frame .sf-line.bottom,
@@ -4481,7 +4485,7 @@ a {
   display: flex;
   flex-direction: column;
   z-index: 20;
-  padding: 120px 0 80px 0; /* Matches the bottom frame line offset exactly */
+  padding: 0 0 80px 0;
 }
 
 .since-bg {
@@ -4498,7 +4502,7 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--bg-dark) 0%, transparent 20%, transparent 80%, var(--bg-dark) 100%);
+  background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--bg-dark) 100%);
 }
 
 .since-content {
@@ -4507,6 +4511,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 120px;
   flex-grow: 1;
   justify-content: space-between; /* Pushes the stats row to the absolute bottom */
 }
@@ -6280,7 +6285,7 @@ a {
 /* ===== REFINED: BLOG PAGE (PHASE 16) =====            */
 /* ==================================================== */
 
-.blog-page {
+.blog-page, .about-page {
   background-color: #ffffff !important;
 }
 
