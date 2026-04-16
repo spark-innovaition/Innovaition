@@ -1058,8 +1058,8 @@ a {
 .horizontal-divider .line {
   position: absolute;
   top: 0;
-  /* Line extends slightly past each diamond for a small stub effect */
-  left: -100px; right: -100px;
+  /* Line extends infinitely to create full-bleed horizontal track */
+  left: -100vw; right: -100vw;
   height: 1px;
   background-color: rgba(0,0,0,0.15);
 }
@@ -1072,8 +1072,7 @@ a {
   background-color: rgba(0,0,0,0.35);
   transform: rotate(45deg);
 }
-.horizontal-divider .diamond.left  { left: -3px;
-}
+.horizontal-divider .diamond.left  { left: -3px; }
 .horizontal-divider .diamond.right { right: -3px; }
 
 .horizontal-divider .badge {
@@ -1089,8 +1088,10 @@ a {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 2px;
+  border: none;
+  border-left: 1px solid rgba(0,0,0,0.15);
+  border-right: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0;
   line-height: 26px; 
   white-space: nowrap; /* FIX: Prevents text from ever stacking vertically */
 }
@@ -2096,7 +2097,7 @@ a {
   background-color: #f2f2f0;
   position: relative;
   z-index: 21;
-  padding: 180px var(--grid-edge) 0;
+  padding: 180px var(--grid-edge) 100px;
 }
 .history-section .history-left-content { padding-left: 40px; }
 /* Use horizontal-divider (80px down) as the single visible top border. Hide
@@ -2109,7 +2110,7 @@ a {
 .bento-section .section-frame .sf-line.bottom,
 .bento-section .section-frame .sf-dia.bl,
 .bento-section .section-frame .sf-dia.br { display: none; }
-.history-section .bento-divider-wrap .horizontal-divider { top: 0 !important; }
+.bento-section .section-frame .sf-dia.br { display: none; }
 
 .history-grid {
   display: grid;
@@ -2977,7 +2978,7 @@ a {
 .blog-section .section-frame .sf-line.top,
 .blog-section .section-frame .sf-dia.tl,
 .blog-section .section-frame .sf-dia.tr { display: none; }
-.blog-section .bento-divider-wrap .horizontal-divider { top: 0 !important; }
+/* top constraint removed to let it sit at 80px normally */
 
 .blog-top-divider {
   display: flex;
@@ -3660,12 +3661,12 @@ a {
 .horizontal-divider.dark-lines .line { background-color: rgba(0,0,0,0.15);
 }
 .horizontal-divider.dark-lines .diamond { background-color: rgba(0,0,0,0.35); }
-.horizontal-divider.dark-lines .badge { border: 1px solid rgba(0,0,0,0.15); color: #000; background: #f4f4f0;
+.horizontal-divider.dark-lines .badge { border: none; border-left: 1px solid rgba(0,0,0,0.15); border-right: 1px solid rgba(0,0,0,0.15); color: #000; background: #f4f4f0;
 }
 
 .horizontal-divider.light-lines .line { background-color: rgba(255,255,255,0.15); }
 .horizontal-divider.light-lines .diamond { background-color: rgba(255,255,255,0.35); }
-.horizontal-divider.light-lines .badge { border: 1px solid rgba(255,255,255,0.15); color: #fff;
+.horizontal-divider.light-lines .badge { border: none; border-left: 1px solid rgba(255,255,255,0.15); border-right: 1px solid rgba(255,255,255,0.15); color: #fff;
 background: var(--bg-dark); }
 
 /* Utility: Parallax Overflow Wrapper */
@@ -4031,7 +4032,7 @@ background: var(--bg-dark); }
 /* --- 4. Core Capabilities Grid (Replaces Partners Section) --- */
 .capabilities-sec {
   position: relative;
-  padding: 100px 0 150px;
+  padding: 180px 0 150px;
   z-index: 20;
 }
 
@@ -4489,22 +4490,10 @@ background: var(--bg-dark); }
 /* --- 7. FAQ Section (Split Pane Layout) --- */
 .faq-sec {
   position: relative;
-  padding: 100px 0 150px; 
+  padding: 180px 0 150px; 
   background-color: #ffffff;
   color: var(--text-dark);
   z-index: 20;
-}
-
-/* Fixes the massive top gap and forces the badge to the left */
-.faq-sec .horizontal-divider {
-  top: 100px; /* Pushes the line down away from the dark section above */
-}
-.faq-sec .horizontal-divider .badge {
-  left: 0 !important;
-  transform: none !important;
-  margin-left: var(--grid-edge) !important;
-  background-color: #ffffff;
-  border: 1px solid rgba(0,0,0,0.15);
 }
 
 .faq-container {
@@ -7303,11 +7292,56 @@ background: var(--bg-dark); }
 
 .pricing-summary-sec {
   position: relative;
-  padding: 150px 0 100px;
+  padding: 180px 0 100px;
   background-color: var(--bg-dark);
   color: #fff;
-  z-index: 20;
-  overflow: hidden;
+  z-index: 22;
+}
+
+.pricing-horizontal-divider {
+  position: absolute;
+  top: 80px;
+  left: var(--grid-edge);
+  right: var(--grid-edge);
+  height: 1px;
+  z-index: 100;
+}
+.pricing-horizontal-divider .line {
+  position: absolute;
+  top: 0;
+  left: -100vw; right: -100vw;
+  height: 1px;
+  background-color: rgba(255,255,255,0.15);
+}
+.pricing-horizontal-divider .diamond {
+  position: absolute;
+  top: -3px;
+  width: 7px; height: 7px;
+  background-color: rgba(255,255,255,0.35);
+  transform: rotate(45deg);
+}
+.pricing-horizontal-divider .diamond.left  { left: -3px; }
+.pricing-horizontal-divider .diamond.right { right: -3px; }
+
+.pricing-horizontal-divider .badge {
+  position: absolute;
+  top: -14px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-dark);
+  color: #fff;
+  padding: 0 20px;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0;
+  line-height: 28px; 
+  white-space: nowrap;
 }
 
 .p-summary-container {
