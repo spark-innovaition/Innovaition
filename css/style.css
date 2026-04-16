@@ -36,6 +36,7 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden; 
+  scrollbar-gutter: stable; /* Ensures grid alignment stays perfect even with scrollbar */
 }
 
 body {
@@ -53,13 +54,13 @@ a {
 
 /* ===== UNIVERSAL GLOBAL GRID OVERLAY (Restored for Perfect Continuity) ===== */
 .global-grid {
-  position: fixed;
+  position: fixed; /* Reverted to fixed to follow scroll */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1000; /* Sits above all section backgrounds */
+  z-index: 1; /* Sits behind sections; sections provide their own overlapping frame lines */
   display: block;
 }
 
@@ -76,7 +77,8 @@ a {
 }
 
 .grid-line.right {
-  right: var(--grid-edge);
+  display: none; /* Removed to avoid double-line effect with section frames */
+  left: calc(100% - var(--grid-edge)); 
   background-color: rgba(128, 128, 128, 0.2);
 }
 
@@ -128,20 +130,34 @@ a {
   align-items: center;
   padding: 0 var(--layout-pad);
   height: 80px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none; /* Removed the black bar from the bottom */
   z-index: 9999; /* Boosted so it always stays on top */
-  background-color: var(--bg-dark); /* Restored solid background */
+  background-color: #fff; /* Switched to white theme */
+  color: #000;
+}
+
+.navbar .logo {
+  color: #000;
+}
+.navbar .logo svg circle, 
+.navbar .logo svg path {
+  stroke: #000;
+}
+.navbar .logo circle[fill="white"] {
+  fill: #000;
 }
 
 .menu-btn {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-white);
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.1);
   padding: 8px 16px;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+  border-radius: 4px;
+  font-family: var(--font-heading);
   font-weight: 600;
+  font-size: 0.75rem;
   letter-spacing: 0.05em;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -196,7 +212,7 @@ a {
   inset: 0;
   background-color: var(--bg-dark);
   color: var(--text-white);
-  z-index: 999; /* Sits right beneath the navbar */
+  z-index: 5000; /* Above all section dividers (1000) and diamonds (1100) */
   display: flex;
   align-items: stretch;
   transform: translateY(-100%); /* Hidden state */
@@ -415,7 +431,7 @@ a {
 .hero {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to ensure grid alignment */
   overflow: hidden;
   background: radial-gradient(circle at 40% 60%, rgba(255,255,255,0.03) 0%, var(--bg-dark) 60%);
 }
@@ -1054,6 +1070,7 @@ a {
   gap: 80px; 
   z-index: 50;
 }
+.services-accordion-section .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 .horizontal-divider {
   position: absolute;
@@ -1062,7 +1079,7 @@ a {
   left: -50vw;
   right: -50vw;
   height: 1px;
-  z-index: 100;
+  z-index: 1000; /* Must be higher than the section-frame masks (490) */
 }
 
 .horizontal-divider .line {
@@ -2443,6 +2460,7 @@ a {
   position: relative;
   z-index: 20;
 }
+.pricing-section .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 /* Exact same divider styling for consistency */
 .pricing-top-divider {
@@ -2501,8 +2519,50 @@ a {
   text-transform: uppercase;
 }
 
+.pricing-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.industry-nav {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 5px;
+  gap: 4px;
+}
+
+.industry-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.industry-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.industry-btn.active {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 .pricing-toggle-container {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .pricing-toggle-switch {
@@ -4986,15 +5046,16 @@ a {
 
 .why-partner-sec {
   position: relative;
-  padding: 150px 0 150px;
+  padding: 150px 0 80px; /* Reduced bottom padding to align floor with grid line */
   background-color: #ffffff;
   color: var(--text-dark);
   z-index: 20;
 }
+.why-partner-sec .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 /* Adjust divider positioning to match global grid */
 .why-partner-sec .horizontal-divider {
-  top: 100px;
+  top: 80px; /* Aligned with sf-line.top and grid corners */
 }
 
 .why-header {
@@ -5076,16 +5137,20 @@ a {
 /* ==================================================== */
 
 .approach-sec {
-  padding: 150px 0;
+  padding: 150px 0 60px; /* Reduced bottom padding for a tighter transition */
   background-color: var(--bg-dark);
   color: var(--text-white);
   position: relative;
   z-index: 20;
 }
+.approach-sec .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 .approach-sec .horizontal-divider {
-  top: 100px;
+  top: 80px; /* Aligned with sf-line.top and grid corners */
 }
+.approach-sec .section-frame .sf-line.bottom { display: none; }
+.approach-sec .section-frame .sf-dia.bl,
+.approach-sec .section-frame .sf-dia.br { display: none; }
 
 .approach-grid {
   display: grid;
@@ -5210,17 +5275,21 @@ a {
 /* ==================================================== */
 
 #split-pin-wrapper {
-  /* Crucial: No transforms or filters on a pinning wrapper */
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Restored to full screen to prevent background gaps during pinning */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* Ground the content closer to the bottom border */
+  padding-bottom: 120px; /* Aligns content with the architectural grid floor */
   background-color: var(--bg-dark); 
   z-index: 10;
   overflow: hidden;
 }
+#split-pin-wrapper.section-framed .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
+#split-pin-wrapper.section-framed .section-frame .sf-line.bottom { display: none; }
+#split-pin-wrapper.section-framed .section-frame .sf-dia.bl,
+#split-pin-wrapper.section-framed .section-frame .sf-dia.br { display: none; }
 
 .split-scroll-container {
   display: grid;
@@ -5230,7 +5299,7 @@ a {
   max-width: var(--max-width, 1400px);
   margin: 0 auto;
   padding: 0 var(--gutter, 24px);
-  height: 70vh; /* Fixed height for the animated area */
+  height: 70vh; /* Original height for optimal card visibility */
   align-items: center;
 }
 
@@ -5318,13 +5387,18 @@ a {
 .cta-globe-sec {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 85vh; /* Reduced from 100vh to tighten vertical space */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to allow manual padding control */
   justify-content: center;
   overflow: hidden;
-  padding: 100px 24px;
+  padding: 180px 24px 180px; /* Increased bottom padding for a more balanced gap */
   background: linear-gradient(to bottom right, var(--bg-dark, #0a0a0a), rgba(10,10,10,0.95), rgba(40,40,60,0.1));
+}
+.cta-globe-sec .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
+.cta-globe-sec .section-frame .sf-line.left,
+.cta-globe-sec .section-frame .sf-line.right {
+  bottom: 80px; /* Terminate lines at the grid floor */
 }
 
 .cta-globe-sec::after {
@@ -5736,6 +5810,7 @@ a {
   background-color: var(--bg-dark, #0a0a0a);
   width: 100%;
 }
+.compare-section .section-frame .sf-line.top { display: none; } /* Divider handles the segmented top track */
 
 .compare-container {
   max-width: 100%;
@@ -5823,6 +5898,11 @@ a {
   padding: 150px 0 120px;
   background-color: #000; /* Black background allows the shader colors to pop */
   min-height: 70vh;
+}
+.cta-react-translated-sec .section-frame .sf-line.top { display: none; }
+.cta-react-translated-sec .section-frame .sf-line.left,
+.cta-react-translated-sec .section-frame .sf-line.right {
+  bottom: 80px; /* Terminate lines at the grid floor */
 }
 
 #cta-liquid-canvas {
@@ -6200,6 +6280,10 @@ a {
 /* ===== REFINED: BLOG PAGE (PHASE 16) =====            */
 /* ==================================================== */
 
+.blog-page {
+  background-color: #ffffff !important;
+}
+
 .blog-hero-sec {
   position: relative;
   padding: 180px var(--layout-pad) 80px;
@@ -6207,6 +6291,10 @@ a {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   overflow: hidden;
   z-index: 10;
+}
+.blog-hero-sec::before,
+.blog-hero-sec::after {
+  display: none !important; /* Removes the architectural masks that cause black space on light sections */
 }
 
 .blog-hero-blur {
@@ -7534,6 +7622,7 @@ a {
   color: #fff;
   z-index: 22;
 }
+.pricing-summary-sec .section-frame .sf-line.top { display: none; }
 
 .pricing-horizontal-divider {
   position: absolute;
@@ -7693,27 +7782,65 @@ a {
   right: -100vw;
   height: 1px;
 }
+
+/* 
+   Architectural Masks: 
+   These create a "floor" and "ceiling" that hide content 
+   passing through the 80px gutter, ensuring it looks like 
+   it's going "under" the grid line.
+*/
+.section-frame::before,
+.section-frame::after {
+  content: '';
+  position: absolute;
+  left: -100vw;
+  right: -100vw;
+  background-color: var(--bg-dark); /* Default for dark-theme sections */
+  z-index: 490; /* Sits just below the sf-line (500) but above content (10) */
+  pointer-events: none;
+}
+.section-frame::before { top: 0; height: 80px; }
+.section-frame::after { bottom: 0; height: 80px; }
+
+/* Light theme variants for masks */
+.section-framed.light-theme .section-frame::before,
+.section-framed.light-theme .section-frame::after {
+  background-color: #ffffff;
+}
+
+
+
 .section-frame .sf-line.top    { top: 80px; }
 .section-frame .sf-line.bottom { bottom: 80px; }
-.section-frame .sf-line.left,
+.section-frame .sf-line.left { 
+  display: block;
+  top: 0; bottom: 0; width: 1px;
+  left: var(--grid-edge);
+}
 .section-frame .sf-line.right {
-  display: none; /* Vertical lines handled by global-grid for 100% continuity */
+  display: block;
+  top: 0; bottom: 0; width: 1px;
+  left: calc(100% - var(--grid-edge)); /* Anchored from left for perfect sync */
 }
 
 .section-frame .sf-dia {
   position: absolute;
   width: 7px; height: 7px;
-  background-color: rgba(0,0,0,0.35);
+  background-color: #000; /* Solid opaque color to cover line intersections */
   transform: rotate(45deg);
+  z-index: 1100; /* Must be higher than both masks (490) and dividers (1000) */
 }
-.section-frame .sf-dia.tl { top: 77px;    left:  calc(var(--grid-edge) - 3px); }
-.section-frame .sf-dia.tr { top: 77px;    right: calc(var(--grid-edge) - 3px); }
-.section-frame .sf-dia.bl { bottom: 77px; left:  calc(var(--grid-edge) - 3px); }
-.section-frame .sf-dia.br { bottom: 77px; right: calc(var(--grid-edge) - 3px); }
+.section-frame .sf-dia.tl { top: 76.5px;    left:  calc(var(--grid-edge) - 3.5px); }
+.section-frame .sf-dia.tr { top: 76.5px;    left:  calc(100% - var(--grid-edge) - 3.5px); } /* Positioned from left */
+.section-frame .sf-dia.bl { bottom: 76.5px; left:  calc(var(--grid-edge) - 3.5px); }
+.section-frame .sf-dia.br { bottom: 76.5px; left:  calc(100% - var(--grid-edge) - 3.5px); } /* Positioned from left */
 
 /* Dark background variant */
 .section-frame.light-lines .sf-line { background-color: rgba(255,255,255,0.4); } 
-.section-frame.light-lines .sf-dia  { background-color: rgba(255,255,255,0.8); z-index: 501; }
+.section-frame.light-lines .sf-dia  { 
+  background-color: #fff; 
+  z-index: 1101; 
+} /* Solid white on dark sections */
 
 /* Removed section boundary collapse logic — dividers are now inset 80px within sections */
 

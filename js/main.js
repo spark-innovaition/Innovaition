@@ -178,31 +178,166 @@ if (whyGrid) {
   });
 }
 
-// ===== COUNTER ANIMATION =====
-const counters = document.querySelectorAll('.counter');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const counter = entry.target;
-      const target = parseInt(counter.dataset.target);
-      let current = 0;
-      const increment = target / 60;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          counter.textContent = target;
-          clearInterval(timer);
-        } else {
-          counter.textContent = Math.floor(current);
-        }
-      }, 25);
-      counterObserver.unobserve(counter);
+// ===== INDUSTRY-BASED PRICING DATA =====
+const industryPricingData = {
+  general: {
+    title: "ENGAGEMENT MODELS",
+    starter: {
+      amount: "1,200", yearly: "12,500",
+      features: [
+        "AI readiness and opportunity assessment",
+        "Strategic consultation sessions (up to 3)",
+        "Workflow automation blueprint",
+        "Data preparation guidance",
+        "Basic AI tool recommendations",
+        "2-week implementation roadmap"
+      ]
+    },
+    enterprise: {
+      amount: "3,000", yearly: "30,000",
+      features: [
+        "In-depth AI strategy and roadmap design",
+        "Custom AI model and automation development",
+        "Integration with internal tools and systems",
+        "Predictive analytics and dashboard setup",
+        "Continuous performance monitoring",
+        "Team training and onboarding",
+        "Ongoing technical support"
+      ]
     }
-  });
-}, { threshold: 0.5 });
-counters.forEach(c => counterObserver.observe(c));
+  },
+  healthcare: {
+    title: "HEALTHCARE SOLUTIONS",
+    starter: {
+      amount: "2,500", yearly: "26,000",
+      features: [
+        "HIPAA-compliant AI readiness audit",
+        "Workflow optimization for patient intake",
+        "Basic medical documentation automation",
+        "Data privacy impact assessment",
+        "Consultation on AI ethics in care",
+        "EHR integration feasibility study"
+      ]
+    },
+    enterprise: {
+      amount: "6,500", yearly: "68,000",
+      features: [
+        "Full Clinical AI implementation roadmap",
+        "Predictive patient monitoring systems",
+        "Advanced medical imaging analysis tools",
+        "Secure EHR automation & interoperability",
+        "Multi-department AI deployment",
+        "Regulatory compliance (HIPAA/GDPR) automation",
+        "24/7 mission-critical AI support"
+      ]
+    }
+  },
+  ecommerce: {
+    title: "E-COMMERCE ENGINES",
+    starter: {
+      amount: "1,800", yearly: "18,500",
+      features: [
+        "Customer behavior analysis & insights",
+        "Inventory automation roadmap",
+        "Basic product recommendation engine",
+        "Dynamic pricing strategy workshop",
+        "Marketing copy automation setup",
+        "Conversion rate optimization audit"
+      ]
+    },
+    enterprise: {
+      amount: "4,800", yearly: "50,000",
+      features: [
+        "Enterprise personalization engine (OMNI)",
+        "Predictive inventory & supply chain AI",
+        "Real-time visual search implementation",
+        "Advanced fraud detection systems",
+        "Cross-channel sentiment analysis",
+        "Automated CRM & loyalty optimization",
+        "Bi-weekly growth strategy sessions"
+      ]
+    }
+  },
+  logistics: {
+    title: "LOGISTICS ARCHITECTURE",
+    starter: {
+      amount: "2,200", yearly: "23,000",
+      features: [
+        "Route optimization health-check",
+        "Warehouse automation feasibility",
+        "Basic demand forecasting model",
+        "Fleet data analytics dashboard",
+        "Supply chain bottleneck analysis",
+        "Initial IoT integration roadmap"
+      ]
+    },
+    enterprise: {
+      amount: "5,800", yearly: "60,000",
+      features: [
+        "Real-time Global Logistics AI Pod",
+        "Advanced route & fuel optimization",
+        "Autonomous warehouse workflow design",
+        "Predictive delivery & risk management",
+        "Full-stack IoT sensor integration",
+        "Carrier & vendor automated management",
+        "Quarterly logistics efficiency audit"
+      ]
+    }
+  }
+};
 
-// ===== PRICING TOGGLE =====
+const industryBtns = document.querySelectorAll('.industry-btn');
+const pricingSecBadge = document.querySelector('.pricing-section .badge');
+
+if (industryBtns.length > 0) {
+  industryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.industry;
+      const data = industryPricingData[mode];
+      if (!data) return;
+
+      industryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (pricingSecBadge) pricingSecBadge.textContent = data.title;
+
+      const cards = document.querySelectorAll('.pricing-grid .p-card');
+      const isYearly = document.getElementById('pricingToggle')?.checked;
+
+      if (cards.length >= 2) {
+        updateCardContent(cards[0], data.starter, isYearly);
+        updateCardContent(cards[1], data.enterprise, isYearly);
+      }
+    });
+  });
+}
+
+function updateCardContent(card, data, isYearly) {
+  const amt = card.querySelector('.amount');
+  const list = card.querySelector('.p-features');
+  const isLight = card.classList.contains('light');
+
+  if (amt) {
+    amt.dataset.monthly = data.amount;
+    amt.dataset.yearly = data.yearly;
+    amt.textContent = isYearly ? data.yearly : data.amount;
+  }
+
+  if (list) {
+    list.innerHTML = data.features.map(f => 
+      `<li ${isLight ? 'style="color:#000;"' : ''}><i class="fa-solid fa-chevron-right" style="color: ${isLight ? '#000' : '#22c55e'};"></i> ${f}</li>`
+    ).join('');
+  }
+
+  gsap.from(card.querySelectorAll('.p-plan-name, .p-plan-desc, .price-wrap, .p-features li'), {
+    opacity: 0,
+    y: 15,
+    duration: 0.5,
+    stagger: 0.05,
+    ease: "power2.out"
+  });
+}
+
 const pricingToggle = document.getElementById('pricingToggle');
 const toggleLabels = document.querySelectorAll('.toggle-label');
 const periods = document.querySelectorAll('.period');
@@ -724,7 +859,7 @@ window.addEventListener('load', () => {
         scrollTrigger: {
           trigger: splitWrapper,
           start: "top top",
-          end: "+=300%", 
+          end: "+=150%", /* Reduced from 300% to bring the next section up much sooner */
           pin: true,
           scrub: 1
         }
