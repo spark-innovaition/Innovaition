@@ -1,0 +1,6 @@
+[     704ms] [LOG] Live reload enabled. @ http://127.0.0.1:5500/blog.html:333
+[     760ms] [WARNING] GSAP target .hero-title-row not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     761ms] [WARNING] GSAP target  not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     761ms] [WARNING] GSAP target .gs-reveal not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     761ms] [WARNING] GSAP target  not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     777ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5500/favicon.ico:0

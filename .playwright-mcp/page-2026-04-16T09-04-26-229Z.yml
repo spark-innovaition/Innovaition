@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - text: MENU
+    - link "Innovaition ®" [ref=e7] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e8]
+      - text: Innovaition
+      - superscript [ref=e12]: ®
+    - generic [ref=e13]:
+      - link "BOOK A CALL" [ref=e15] [cursor=pointer]:
+        - /url: contact.html
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: contact.html
+        - generic [ref=e17]: 
+  - generic [ref=e19]:
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "HOME" [ref=e23] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e24]:
+        - link "ABOUT US" [ref=e25] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e26]:
+        - link "SERVICES" [ref=e27] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e28]:
+        - link "PRICING" [ref=e29] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e30]:
+        - link "BLOG" [ref=e31] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e32]:
+        - link "CONTACT US" [ref=e33] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e36]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e37]:
+          - generic [ref=e38]: 
+          - generic [ref=e39]: 62.328° N - 15.845° E
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: LOCATION
+            - paragraph [ref=e44]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "03:04 AM" [level=2] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]: CONTACT ON
+            - paragraph [ref=e48]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e49] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e50]:
+          - link "X Twitter - X" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e53]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e55]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e56] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e57]: 
+            - text: Instagram
+  - generic [ref=e59]:
+    - heading "OUR" [level=1] [ref=e60]
+    - heading "BLOG" [level=1] [ref=e61]
+  - generic [ref=e63]:
+    - link "FEATURED POST Featured AI Image HOW AI IS REDEFINING BUSINESS STRATEGY November 17, 2025" [ref=e64] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e65]:
+        - generic [ref=e66]: FEATURED POST
+        - img "Featured AI Image" [ref=e67]
+      - generic [ref=e68]:
+        - heading "HOW AI IS REDEFINING BUSINESS STRATEGY" [level=3] [ref=e69]
+        - generic [ref=e70]: November 17, 2025
+    - 'link "AI Insights FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION November 17, 2025" [ref=e71] [cursor=pointer]':
+      - /url: "#"
+      - generic:
+        - img "AI Insights"
+      - generic [ref=e72]:
+        - 'heading "FROM DATA TO DECISIONS: TURNING INSIGHTS INTO ACTION" [level=3] [ref=e73]'
+        - generic [ref=e74]: November 17, 2025
+    - 'link "AI Marketing AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS November 17, 2025" [ref=e75] [cursor=pointer]':
+      - /url: "#"
+      - generic:
+        - img "AI Marketing"
+      - generic [ref=e76]:
+        - 'heading "AI-POWERED MARKETING: SMARTER CAMPAIGNS, BETTER RESULTS" [level=3] [ref=e77]'
+        - generic [ref=e78]: November 17, 2025
+    - 'link "AI Workflows AUTOMATING WORKFLOWS: THE SMART WAY FORWARD November 17, 2025" [ref=e79] [cursor=pointer]':
+      - /url: "#"
+      - generic:
+        - img "AI Workflows"
+      - generic [ref=e80]:
+        - 'heading "AUTOMATING WORKFLOWS: THE SMART WAY FORWARD" [level=3] [ref=e81]'
+        - generic [ref=e82]: November 17, 2025
+    - link "AI Trust BUILDING TRUST IN AI SYSTEMS November 17, 2025" [ref=e83] [cursor=pointer]:
+      - /url: "#"
+      - generic:
+        - img "AI Trust"
+      - generic [ref=e84]:
+        - heading "BUILDING TRUST IN AI SYSTEMS" [level=3] [ref=e85]
+        - generic [ref=e86]: November 17, 2025
+    - 'link "AI Experience AI IN CUSTOMER EXPERIENCE: THE HUMAN TOUCH, ENHANCED November 17, 2025" [ref=e87] [cursor=pointer]':
+      - /url: "#"
+      - generic:
+        - img "AI Experience"
+      - generic [ref=e88]:
+        - 'heading "AI IN CUSTOMER EXPERIENCE: THE HUMAN TOUCH, ENHANCED" [level=3] [ref=e89]'
+        - generic [ref=e90]: November 17, 2025
+  - generic [ref=e91]:
+    - generic [ref=e95]: WE'RE HERE TO HELP
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - heading "LET'S TALK ABOUT YOUR NEXT AI PROJECT AUTOMATION GOALS DATA STRATEGY BUSINESS GROWTH SMART WORKFLOWS" [level=2] [ref=e101]:
+          - text: LET'S TALK ABOUT YOUR
+          - generic [ref=e102]:
+            - generic [ref=e103]: NEXT AI PROJECT
+            - generic [ref=e104]: AUTOMATION GOALS
+            - generic [ref=e105]: DATA STRATEGY
+            - generic [ref=e106]: BUSINESS GROWTH
+            - generic [ref=e107]: SMART WORKFLOWS
+        - generic [ref=e108]:
+          - generic [ref=e109]: HOW DO WE CONNECT?
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - generic [ref=e112]: 
+              - text: Smart process automation
+            - listitem [ref=e113]:
+              - generic [ref=e114]: 
+              - text: Direct access to our team — no bots.
+            - listitem [ref=e115]:
+              - generic [ref=e116]: 
+              - text: We ask smart questions fast.
+      - generic [ref=e117]:
+        - heading "START YOUR AI JOURNEY" [level=3] [ref=e118]
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: Name*
+            - textbox "Enter your name" [ref=e122]
+          - generic [ref=e123]:
+            - generic [ref=e124]: Email*
+            - textbox "Enter your email" [ref=e125]
+          - generic [ref=e126]:
+            - generic [ref=e127]: Message
+            - textbox "Message" [ref=e128]
+          - button "Send Message" [ref=e129]
+  - contentinfo [ref=e130]:
+    - generic: innovAItion
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - paragraph [ref=e134]: We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Book a call and let's see what we can do.
+            - link "Book a discovery call" [ref=e137] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e138]: Book a discovery call
+        - generic [ref=e140]:
+          - generic [ref=e141]: MAIN LINKS
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - link "Home" [ref=e144] [cursor=pointer]:
+                - /url: index.html
+                - text: Home
+            - listitem [ref=e145]:
+              - link "About Us" [ref=e146] [cursor=pointer]:
+                - /url: about.html
+                - text: About Us
+            - listitem [ref=e147]:
+              - link "Services" [ref=e148] [cursor=pointer]:
+                - /url: services.html
+                - text: Services
+            - listitem [ref=e149]:
+              - link "Pricing" [ref=e150] [cursor=pointer]:
+                - /url: pricing.html
+                - text: Pricing
+            - listitem [ref=e151]:
+              - link "Case Study" [ref=e152] [cursor=pointer]:
+                - /url: case-studies.html
+                - text: Case Study
+            - listitem [ref=e153]:
+              - link "Contact us" [ref=e154] [cursor=pointer]:
+                - /url: contact.html
+                - text: Contact us
+        - generic [ref=e155]:
+          - generic [ref=e156]: UTILITY LINKS
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "Style Guide" [ref=e159] [cursor=pointer]:
+                - /url: "#"
+                - text: Style Guide
+            - listitem [ref=e160]:
+              - link "Instructions" [ref=e161] [cursor=pointer]:
+                - /url: "#"
+                - text: Instructions
+            - listitem [ref=e162]:
+              - link "Licenses" [ref=e163] [cursor=pointer]:
+                - /url: "#"
+                - text: Licenses
+            - listitem [ref=e164]:
+              - link "Changelog" [ref=e165] [cursor=pointer]:
+                - /url: "#"
+                - text: Changelog
+            - listitem [ref=e166]:
+              - link "Error 404" [ref=e167] [cursor=pointer]:
+                - /url: "#"
+                - text: Error 404
+        - generic [ref=e168]:
+          - generic [ref=e169]: STAY CONNECTED
+          - paragraph [ref=e170]: Join our newsletter for tips, updates, and project highlights — only the good stuff.
+          - generic [ref=e171]:
+            - textbox "Enter email address" [ref=e172]
+            - button "" [ref=e173] [cursor=pointer]:
+              - generic [ref=e174]: 
+          - paragraph [ref=e175]:
+            - text: By submitting, you agree to our
+            - link "Privacy Policy" [ref=e176] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - generic [ref=e179]: MAIN
+          - paragraph [ref=e180]: +1 (415) 555-0167
+          - link "SUPPORT@INNOVAITION.CA" [ref=e181] [cursor=pointer]:
+            - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e182]:
+          - generic [ref=e183]: ADDRESS
+          - paragraph [ref=e184]:
+            - text: Innovaition consulting Agency
+            - text: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+        - generic [ref=e185]:
+          - generic [ref=e186]: SOCIAL
+          - generic [ref=e187]:
+            - link "" [ref=e188] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e189]: 
+            - link "" [ref=e190] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e191]: 
+            - link "" [ref=e192] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e193]: 
+            - link "" [ref=e194] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e195]: 
+        - generic [ref=e196]:
+          - generic [ref=e197]: LEGAL
+          - paragraph [ref=e198]:
+            - text: ©2026 Innovaition Agency
+            - text: Designed by
+            - link "VictorWork" [ref=e199] [cursor=pointer]:
+              - /url: "#"
+            - text: . Powered by
+            - link "Webflow" [ref=e200] [cursor=pointer]:
+              - /url: "#"
+            - text: .

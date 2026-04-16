@@ -7232,8 +7232,8 @@ a {
   background-color: var(--bg-dark, #0a0a0a);
   color: #fff;
   z-index: 20;
-  overflow: hidden;
-  /* This stops the canvas from bleeding out! */
+  overflow-x: clip;
+  /* This stops the canvas from bleeding out horizontally without clipping the divider badge vertically */
 }
 
 .contact-divider-wrap {
@@ -7313,6 +7313,19 @@ a {
 .contact-section .section-frame .sf-dia.tl,
 .contact-section .section-frame .sf-dia.tr {
   display: none !important;
+}
+
+.contact-section .section-frame .sf-line.left,
+.contact-section .section-frame .sf-line.right {
+  top: 80px !important;
+  bottom: 80px !important;
+}
+
+/* Ensure masks match the dark section background, even on light-theme pages */
+.contact-section.dark-theme .section-frame::before,
+.contact-section.dark-theme .section-frame::after {
+  background-color: #0a0a0a !important;
+  opacity: 1 !important;
 }
 
 .contact-overlay {
@@ -7454,15 +7467,18 @@ a {
 
 .blog-hero-sec {
   position: relative;
-  padding: 180px var(--layout-pad) 80px;
+  padding: 120px var(--layout-pad) 40px;
   background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none !important;
+  border-bottom: none !important;
   overflow: hidden;
   z-index: 10;
 }
 
 .blog-hero-sec .section-frame::before,
-.blog-hero-sec .section-frame::after {
+.blog-hero-sec .section-frame::after,
+.blog-hero-sec .sf-line.top,
+.blog-hero-sec .sf-line.bottom {
   display: none !important;
 }
 
@@ -7517,6 +7533,7 @@ a {
   grid-auto-rows: 380px;
   /* Locks the height so image expansion works perfectly */
   margin: 0 var(--grid-edge);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }

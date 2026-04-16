@@ -1418,89 +1418,100 @@ window.addEventListener('load', () => {
   }
 }
 
-// 5. BLOG CONTACT: BACKGROUND PAPER SHADER (THREE.JS)
+/* ==================================================== */
+/* 5. BLOG CONTACT: CELESTIAL INK SHADER (THREE.JS)     */
+/* ==================================================== */
 {
   const energyCanvas = document.getElementById('paper-shader-canvas');
 
   if (energyCanvas && typeof THREE !== 'undefined') {
     const scene = new THREE.Scene();
-    
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.z = 2.5; 
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    const renderer = new THREE.WebGLRenderer({ canvas: energyCanvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-    const renderer = new THREE.WebGLRenderer({ canvas: energyCanvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const clock = new THREE.Clock();
 
-    const planeUniforms = {
-      time: { value: 0 },
-      intensity: { value: 1.0 },
-      color1: { value: new THREE.Color("#ff5722") }, 
-      color2: { value: new THREE.Color("#ffffff") }  
+    const vertexShader = `
+      void main() {
+        gl_Position = vec4(position, 1.0);
+      }
+    `;
+
+    const fragmentShader = `
+      precision highp float;
+      uniform vec2 iResolution;
+      uniform float iTime;
+      uniform vec2 iMouse;
+
+      float random(vec2 st) {
+        return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+      }
+
+      float noise(vec2 p) {
+        vec2 i = floor(p);
+        vec2 f = fract(p);
+        vec2 u = f * f * (3.0 - 2.0 * f);
+        return mix(
+          mix(random(i), random(i + vec2(1.0, 0.0)), u.x),
+          mix(random(i + vec2(0.0, 1.0)), random(i + vec2(1.0, 1.0)), u.x),
+          u.y
+        );
+      }
+
+      float fbm(vec2 p) {
+        float v = 0.0;
+        float a = 0.5;
+        for (int i = 0; i < 6; i++) {
+          v += a * noise(p);
+          p *= 2.0;
+          a *= 0.5;
+        }
+        return v;
+      }
+
+      void main() {
+        vec2 uv    = (gl_FragCoord.xy - 0.5 * iResolution.xy) / iResolution.y;
+        vec2 mouse = (iMouse      - 0.5 * iResolution.xy) / iResolution.y;
+        float t     = iTime * 0.1;
+
+        float d = length(uv - mouse);
+        float ripple = 1.0 - smoothstep(0.0, 0.3, d);
+
+        float angle = t * 0.5;
+        mat2 rot = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+        vec2 p = rot * uv;
+
+        float pattern = fbm(p * 3.0 + t);
+        pattern -= fbm(p * 6.0 - t * 0.5) * 0.3;
+        pattern += ripple * 0.5;
+
+        vec3 c1 = vec3(0.01, 0.01, 0.02);
+        vec3 c2 = vec3(0.12, 0.12, 0.15);
+        vec3 highlight = vec3(0.4, 0.4, 0.45);
+
+        vec3 color = mix(c1, c2, smoothstep(0.4, 0.6, pattern));
+        float hl = pow(smoothstep(0.6, 0.8, pattern), 2.0);
+        color = mix(color, highlight, hl);
+
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `;
+
+    const uniforms = {
+      iTime:       { value: 0 },
+      iResolution: { value: new THREE.Vector2() },
+      iMouse:      { value: new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2) }
     };
 
-    const planeVertexShader = `
-      uniform float time;
-      uniform float intensity;
-      varying vec2 vUv;
-      varying vec3 vPosition;
-      
-      void main() {
-        vUv = uv;
-        vPosition = position;
-        
-        vec3 pos = position;
-        pos.y += sin(pos.x * 10.0 + time) * 0.1 * intensity;
-        pos.x += cos(pos.y * 8.0 + time * 1.5) * 0.05 * intensity;
-        
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-      }
-    `;
-
-    const planeFragmentShader = `
-      uniform float time;
-      uniform float intensity;
-      uniform vec3 color1;
-      uniform vec3 color2;
-      varying vec2 vUv;
-      
-      void main() {
-        vec2 uv = vUv;
-        
-        float noise = sin(uv.x * 20.0 + time) * cos(uv.y * 15.0 + time * 0.8);
-        noise += sin(uv.x * 35.0 - time * 2.0) * cos(uv.y * 25.0 + time * 1.2) * 0.5;
-        
-        vec3 color = mix(color1, color2, noise * 0.5 + 0.5);
-        color = mix(color, vec3(1.0), pow(abs(noise), 2.0) * intensity);
-        
-        float glow = 1.0 - length(uv - 0.5) * 2.0;
-        glow = pow(max(glow, 0.0), 2.0);
-        
-        gl_FragColor = vec4(color * glow, glow * 0.8);
-      }
-    `;
-
-    const planeGeo = new THREE.PlaneGeometry(8, 8, 64, 64);
-    const planeMat = new THREE.ShaderMaterial({
-      vertexShader: planeVertexShader,
-      fragmentShader: planeFragmentShader,
-      uniforms: planeUniforms,
-      transparent: true,
-      side: THREE.DoubleSide
+    const material = new THREE.ShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      uniforms
     });
-    
-    const shaderPlane = new THREE.Mesh(planeGeo, planeMat);
-    shaderPlane.position.z = -1; 
-    scene.add(shaderPlane);
-
-    const ringGeo = new THREE.RingGeometry(1.6, 2.0, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ 
-      color: 0xff5722, 
-      transparent: true, 
-      opacity: 0.6, 
-      side: THREE.DoubleSide 
-    });
-    const energyRing = new THREE.Mesh(ringGeo, ringMat);
-    scene.add(energyRing);
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh     = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
     const handleResize = () => {
       const parent = energyCanvas.parentElement;
@@ -1508,26 +1519,25 @@ window.addEventListener('load', () => {
         const width = parent.clientWidth;
         const height = parent.clientHeight;
         renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
+        uniforms.iResolution.value.set(width, height);
       }
     };
     
     window.addEventListener("resize", handleResize);
     handleResize();
 
-    const clock = new THREE.Clock();
-    
+    const onMouseMove = (e) => {
+      const rect = energyCanvas.getBoundingClientRect();
+      uniforms.iMouse.value.set(
+        e.clientX - rect.left,
+        rect.height - (e.clientY - rect.top)
+      );
+    };
+    window.addEventListener("mousemove", onMouseMove);
+
     const animate = () => {
       requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
-      
-      planeUniforms.time.value = elapsedTime;
-      planeUniforms.intensity.value = 1.0 + Math.sin(elapsedTime * 2) * 0.3;
-      
-      energyRing.rotation.z = elapsedTime;
-      energyRing.material.opacity = 0.5 + Math.sin(elapsedTime * 3) * 0.3;
-      
+      uniforms.iTime.value = clock.getElapsedTime();
       renderer.render(scene, camera);
     };
     
