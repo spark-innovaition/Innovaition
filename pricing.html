@@ -91,18 +91,54 @@
 
   <section class="pricing-hero-sec dark-theme section-framed">
     <div class="section-frame light-lines">
-      <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span class="sf-line right"></span>
+      <span class="sf-line top"></span><span class="sf-line left"></span><span class="sf-line right"></span>
       <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
-      <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
-    <div class="pricing-hero-glow"></div>
     
-    <div class="pricing-hero-content gs-reveal-up">
+    <canvas id="hero-waves-canvas"></canvas>
+
+    <div class="ph-content-wrapper">
       <div class="ph-badge">
-        <i class="fa-solid fa-cube" style="color: #22c55e;"></i> Pricing
+        <i class="fa-solid fa-cube" style="color: #22c55e;"></i> PRICING PLANS
       </div>
-      <h1 class="ph-title">Simple and transparent pricing</h1>
-      <p class="ph-desc">We offer flexible pricing plans to suit your business needs. No hidden fees. Just measurable AI results.</p>
+      
+      <h1 class="ph-title">
+        Simple and transparent<br>
+        <span>pricing models</span>
+      </h1>
+      
+      <p class="ph-desc">
+        We offer flexible pricing plans to suit your business needs. No hidden fees. Just measurable AI results and seamless integration.
+      </p>
+
+      <div class="ph-btn-group">
+        <a href="#pricing" class="btn-main quote-btn cta-btn" style="background: #fff; color: #000; border-radius: 100px; padding-left: 32px;">
+          <span style="margin-right: 24px;">VIEW ALL PLANS</span>
+          <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-down"></i></div>
+        </a>
+        <a href="contact.html" class="btn-outline">CUSTOM QUOTE</a>
+      </div>
+
+      <ul class="ph-highlights">
+        <li>NO HIDDEN FEES</li>
+        <li>FLEXIBLE SCALING</li>
+        <li>MEASURABLE ROI</li>
+      </ul>
+
+      <div class="ph-stats-card">
+        <div class="ph-stat-item">
+          <span class="ph-stat-label">LIVE INSTALLATIONS</span>
+          <span class="ph-stat-val">320+</span>
+        </div>
+        <div class="ph-stat-item">
+          <span class="ph-stat-label">LATENCY</span>
+          <span class="ph-stat-val">8ms</span>
+        </div>
+        <div class="ph-stat-item">
+          <span class="ph-stat-label">TEAMS ONBOARDED</span>
+          <span class="ph-stat-val">120+</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -113,11 +149,12 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
     
-    <div class="horizontal-divider light-lines">
-       <div class="line"></div>
+    <div class="horizontal-divider light-lines divider-flex">
+       <div class="line-seg"></div>
+       <div class="badge">ENGAGEMENT MODELS</div>
+       <div class="line-seg"></div>
        <div class="diamond left"></div>
        <div class="diamond right"></div>
-       <div class="badge">ENGAGEMENT MODELS</div>
     </div>
 
     <div class="pricing-header-row gs-reveal-up">
@@ -231,11 +268,12 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
     
-    <div class="horizontal-divider light-lines">
-      <div class="line"></div>
-      <div class="diamond left"></div>
-      <div class="diamond right"></div>
-      <div class="badge">COMPARE PLANS</div>
+    <div class="horizontal-divider light-lines divider-flex">
+       <div class="line-seg"></div>
+       <div class="badge">HOW WE WORK</div>
+       <div class="line-seg"></div>
+       <div class="diamond left"></div>
+       <div class="diamond right"></div>
     </div>
 
     <div class="compare-container gs-reveal-up">
@@ -299,11 +337,12 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
     
-    <div class="horizontal-divider dark-lines">
-      <div class="line"></div>
-      <div class="diamond left"></div>
-      <div class="diamond right"></div>
-      <div class="badge">FAQS</div>
+    <div class="horizontal-divider dark-lines divider-flex">
+       <div class="line-seg"></div>
+       <div class="badge">FREQUENTLY ASKED</div>
+       <div class="line-seg"></div>
+       <div class="diamond left"></div>
+       <div class="diamond right"></div>
     </div>
     
     <div class="faq-container">
@@ -362,11 +401,12 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
     
-    <div class="horizontal-divider light-lines">
-      <div class="line"></div>
+    <div class="horizontal-divider light-lines divider-flex">
+      <div class="line-seg"></div>
+      <div class="badge">LET'S CONNECT</div>
+      <div class="line-seg"></div>
       <div class="diamond left"></div>
       <div class="diamond right"></div>
-      <div class="badge">LET'S CONNECT</div>
     </div>
 
     <canvas id="cta-liquid-canvas"></canvas>
@@ -406,48 +446,47 @@
   </svg>
 
   <footer class="footer-section">
-    <div class="footer-watermark">Innovaition®</div>
+    <div class="footer-watermark">innovAItion</div>
     <div class="footer-framed-box gs-reveal-up">
       <div class="footer-top">
         <div class="footer-col brand-col">
           <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter growth.</p>
-          <div class="book-call-wrap">
-            <span class="book-call-label">BOOK A CALL AND LET'S SEE WHAT WE CAN DO.</span>
-            <a href="contact.html" class="btn-main quote-btn cta-btn" style="background: #fff; color: #000;">
-              <span style="margin-right: 24px;">Book a discovery call</span>
-              <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+          <div class="book-call-wrap" style="margin-top: 30px;">
+            <p style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px;">Book a call and let's see what we can do.</p>
+            <a href="contact.html" class="footer-btn-modern">
+               <span class="btn-text">Book a discovery call</span>
+               <div class="btn-icon-box"><i class="fa-solid fa-arrow-up-right"></i></div>
             </a>
           </div>
         </div>
         <div class="footer-col links-col">
           <span class="footer-label">MAIN LINKS</span>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing <i class="fa-solid fa-play" style="font-size: 0.6rem;"></i></a></li>
-            <li><a href="case-studies.html">Case Study</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="index.html">Home <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="services.html">Services <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="pricing.html">Pricing <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="case-studies.html">Case Study <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="contact.html">Contact us <i class="fa-solid fa-arrow-up-right"></i></a></li>
           </ul>
         </div>
 
         <div class="footer-col links-col">
           <span class="footer-label">UTILITY LINKS</span>
           <ul class="footer-links">
-            <li><a href="#">Style Guide</a></li>
-            <li><a href="#">Instructions</a></li>
-            <li><a href="#">Licenses</a></li>
-            <li><a href="#">Changelog</a></li>
-            <li><a href="#">Error 404</a></li>
-            <li><a href="#">Password Protected</a></li>
+            <li><a href="#">Style Guide <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="#">Instructions <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="#">Licenses <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="#">Changelog <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="#">Error 404 <i class="fa-solid fa-arrow-up-right"></i></a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
           <span class="footer-label">STAY CONNECTED</span>
-          <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
-          <form class="newsletter-form">
+          <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px;">Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+          <form class="newsletter-form-modern">
             <input type="email" placeholder="Enter email address" required>
-            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            <button type="submit" style="background:none; border:none; color:inherit; padding:0; cursor:pointer;"><i class="fa-solid fa-arrow-right-long arrow-link"></i></button>
           </form>
           <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
         </div>
@@ -455,12 +494,12 @@
       <div class="footer-bottom">
         <div class="footer-bot-col">
           <span class="footer-label">MAIN</span>
-          <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
-          <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+          <p style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+1 (415) 555-0167</p>
+          <a href="mailto:SUPPORT@INNOVAITION.CA" style="font-size: 1.1rem; font-weight: 700; color: #fff; text-transform: uppercase;">SUPPORT@INNOVAITION.CA</a>
         </div>
         <div class="footer-bot-col">
           <span class="footer-label">ADDRESS</span>
-          <p>Innovaition Consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+          <p style="font-size: 0.95rem; color: #aaa; line-height: 1.5; font-weight: 500;">Innovaition consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
         </div>
         <div class="footer-bot-col">
           <span class="footer-label">SOCIAL</span>
@@ -471,18 +510,17 @@
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
-      
         <div class="footer-bot-col">
           <span class="footer-label">LEGAL</span>
-          <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by <a href="#" style="color: #fff;">Webflow</a>.</p>
+          <p style="font-size: 0.85rem; color: #888; line-height: 1.6;">©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff; font-weight: 600;">VictorWork</a>. Powered by <a href="#" style="color: #fff; font-weight: 600;">Webflow</a>.</p>
         </div>
       </div>
-
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/glowy-waves.js"></script>
 </body>
 </html>

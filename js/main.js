@@ -811,14 +811,14 @@ window.addEventListener('load', () => {
     heroScene.add(particleMesh);
 
     window.threeScrollProgress = 0;
-    gsap.set('.phase-1, .phase-2, .phase-3', { autoAlpha: 0, y: 50 });
+    gsap.set('.phase-1, .phase-2', { autoAlpha: 0, y: 50 });
 
     // Initialize ScrollTrigger
     const svcTl = gsap.timeline({
       scrollTrigger: {
         trigger: heroPinWrapper,
         start: "top top",
-        end: "+=400%", 
+        end: "+=300%", 
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
@@ -828,7 +828,7 @@ window.addEventListener('load', () => {
           
           if(progressFill) progressFill.style.height = `${self.progress * 100}%`;
           if(counterCurrent) {
-              const sectionNum = Math.min(Math.floor(self.progress * 4) + 1, 4);
+              const sectionNum = Math.min(Math.floor(self.progress * 3) + 1, 3);
               counterCurrent.innerText = String(sectionNum).padStart(2, '0');
           }
         }
@@ -838,17 +838,14 @@ window.addEventListener('load', () => {
     svcTl.to('.phase-0', { autoAlpha: 0, y: -50, duration: 0.5 }, 0.5)
          .fromTo('.phase-1', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
          .to('.phase-1', { autoAlpha: 0, y: -50, duration: 0.5 }, 2.0)
-         .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0)
-         .to('.phase-2', { autoAlpha: 0, y: -50, duration: 0.5 }, 3.5)
-         .fromTo('.phase-3', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.5);
+         .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0);
 
     let smoothCamPos = { x: 0, y: 0, z: 1200 };
     
     const cameraPositions = [
       { x: 0, y: 0, z: 1200 },   
       { x: 0, y: 0, z: 0 },      
-      { x: 0, y: 0, z: -1200 },  
-      { x: 0, y: 0, z: -2400 }   
+      { x: 0, y: 0, z: -1200 }
     ];
 
     const heroRenderLoop = () => {
@@ -858,12 +855,12 @@ window.addEventListener('load', () => {
       particleMesh.rotation.z = time * 0.05;
       particleMesh.rotation.y = time * 0.02;
 
-      const totalProg = window.threeScrollProgress * 3; 
+      const totalProg = window.threeScrollProgress * 2; 
       const currentSection = Math.floor(totalProg);
       const sectionProg = totalProg % 1;
 
-      const currentPos = cameraPositions[currentSection] || cameraPositions[3];
-      const nextPos = cameraPositions[currentSection + 1] || cameraPositions[3];
+      const currentPos = cameraPositions[currentSection] || cameraPositions[2];
+      const nextPos = cameraPositions[currentSection + 1] || cameraPositions[2];
 
       const targetX = currentPos.x + (nextPos.x - currentPos.x) * sectionProg;
       const targetY = currentPos.y + (nextPos.y - currentPos.y) * sectionProg;
