@@ -25,22 +25,22 @@ menuTl.from(".menu-nav-item", {
   duration: 0.6,
   stagger: 0.1
 }, 0.3)
-.from(".menu-info-top, .location-block, .contact-block, .menu-social-row a", {
-  y: 30,
-  opacity: 0,
-  duration: 0.6,
-  stagger: 0.05
-}, 0.4);
+  .from(".menu-info-top, .location-block, .contact-block, .menu-social-row a", {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.05
+  }, 0.4);
 
 if (menuBtn && menuOverlay) {
   menuBtn.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
-    
+
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if(btnText) btnText.textContent = 'CLOSE';
-      if(btnIcon) {
+      if (btnText) btnText.textContent = 'CLOSE';
+      if (btnIcon) {
         btnIcon.classList.remove('fa-bars');
         btnIcon.classList.add('fa-xmark');
       }
@@ -48,8 +48,8 @@ if (menuBtn && menuOverlay) {
     } else {
       menuOverlay.classList.remove('active');
       document.body.style.overflow = '';
-      if(btnText) btnText.textContent = 'MENU';
-      if(btnIcon) {
+      if (btnText) btnText.textContent = 'MENU';
+      if (btnIcon) {
         btnIcon.classList.remove('fa-xmark');
         btnIcon.classList.add('fa-bars');
       }
@@ -62,8 +62,8 @@ if (menuBtn && menuOverlay) {
       isMenuOpen = false;
       menuOverlay.classList.remove('active');
       document.body.style.overflow = '';
-      if(btnText) btnText.textContent = 'MENU';
-      if(btnIcon) {
+      if (btnText) btnText.textContent = 'MENU';
+      if (btnIcon) {
         btnIcon.classList.remove('fa-xmark');
         btnIcon.classList.add('fa-bars');
       }
@@ -75,12 +75,12 @@ if (menuBtn && menuOverlay) {
 // ===== HERO & MENU TIME =====
 function updateTime() {
   const now = new Date();
-  const timeStr = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute:'2-digit' });
-  
+  const timeStr = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' });
+
   const heroEl = document.getElementById('heroTime');
   const menuEl = document.getElementById('menuTime');
-  const contactEl = document.getElementById('contactTime'); 
-  
+  const contactEl = document.getElementById('contactTime');
+
   if (heroEl) heroEl.textContent = timeStr;
   if (menuEl) menuEl.textContent = timeStr;
   if (contactEl) contactEl.textContent = timeStr;
@@ -138,7 +138,7 @@ gsap.utils.toArray(".gs-reveal-up").forEach(elem => {
   gsap.from(elem, {
     scrollTrigger: {
       trigger: elem,
-      start: "top 85%", 
+      start: "top 85%",
       toggleActions: "play none none none"
     },
     y: 60,
@@ -148,17 +148,36 @@ gsap.utils.toArray(".gs-reveal-up").forEach(elem => {
   });
 });
 
-gsap.utils.toArray(".gs-reveal").forEach(elem => {
-  gsap.from(elem, {
-    scrollTrigger: {
-      trigger: elem,
-      start: "top 85%", 
-    },
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out"
-  });
-});
+// ===== COUNTER ANIMATION =====
+const counters = document.querySelectorAll('.counter');
+if (counters.length > 0) {
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        // Adjust the '60' to change how fast the numbers count up
+        const increment = target / 60;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current);
+          }
+        }, 25); // 25ms interval for smooth counting
+
+        // Stop observing once the animation triggers so it doesn't run again
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 }); // Starts when the counter is 50% visible
+
+  counters.forEach(c => counterObserver.observe(c));
+}
 
 // ===== WHY PARTNER GRID STAGGER ANIMATION =====
 const whyGrid = document.querySelector('.why-grid');
@@ -167,13 +186,13 @@ if (whyGrid) {
   gsap.from(whyCards, {
     scrollTrigger: {
       trigger: whyGrid,
-      start: "top 80%", 
+      start: "top 80%",
       toggleActions: "play none none none"
     },
     y: 50,
     opacity: 0,
     duration: 0.8,
-    stagger: 0.15, 
+    stagger: 0.15,
     ease: "power3.out"
   });
 }
@@ -324,7 +343,7 @@ function updateCardContent(card, data, isYearly) {
   }
 
   if (list) {
-    list.innerHTML = data.features.map(f => 
+    list.innerHTML = data.features.map(f =>
       `<li ${isLight ? 'style="color:#000;"' : ''}><i class="fa-solid fa-chevron-right" style="color: ${isLight ? '#000' : '#22c55e'};"></i> ${f}</li>`
     ).join('');
   }
@@ -512,7 +531,7 @@ function updatePricingPanel(serviceKey) {
     starterCard.querySelector('.p-plan-desc').textContent = data.starter.desc;
     const amt = starterCard.querySelector('.amount');
     amt.dataset.monthly = data.starter.monthly;
-    amt.dataset.yearly  = data.starter.yearly;
+    amt.dataset.yearly = data.starter.yearly;
     amt.textContent = isYearly ? data.starter.yearly : data.starter.monthly;
     starterCard.querySelector('.p-features').innerHTML = buildFeatures(data.starter.features);
   }
@@ -522,7 +541,7 @@ function updatePricingPanel(serviceKey) {
     growthCard.querySelector('.p-plan-desc').textContent = data.growth.desc;
     const amt = growthCard.querySelector('.amount');
     amt.dataset.monthly = data.growth.monthly;
-    amt.dataset.yearly  = data.growth.yearly;
+    amt.dataset.yearly = data.growth.yearly;
     amt.textContent = isYearly ? data.growth.yearly : data.growth.monthly;
     growthCard.querySelector('.p-features').innerHTML = buildFeatures(data.growth.features);
   }
@@ -549,7 +568,7 @@ if (svcTabs.length > 0) {
 const accordionItems = document.querySelectorAll('.accordion-item');
 if (accordionItems.length > 0) {
   accordionItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
       accordionItems.forEach(el => el.classList.remove('active'));
       this.classList.add('active');
     });
@@ -632,19 +651,19 @@ let tlIndex = 0;
 
 if (tlTrack && tlPrev && tlNext) {
   const tlCards = tlTrack.querySelectorAll('.tl-card');
-  
+
   function updateTlCarousel() {
     const cardsPerView = 2; // Locked to 2 cards per view to match CSS styling
     const maxIndex = tlCards.length - cardsPerView;
-    
+
     tlIndex = Math.max(0, Math.min(tlIndex, maxIndex));
-    
+
     const cardPercentage = 100 / cardsPerView;
     tlTrack.style.transform = `translateX(-${tlIndex * cardPercentage}%)`;
-    
+
     tlPrev.style.opacity = tlIndex === 0 ? '0.5' : '1';
     tlPrev.style.cursor = tlIndex === 0 ? 'not-allowed' : 'pointer';
-    
+
     tlNext.style.opacity = tlIndex === maxIndex ? '0.5' : '1';
     tlNext.style.cursor = tlIndex === maxIndex ? 'not-allowed' : 'pointer';
   }
@@ -665,7 +684,7 @@ if (tlTrack && tlPrev && tlNext) {
   });
 
   window.addEventListener('resize', updateTlCarousel);
-  updateTlCarousel(); 
+  updateTlCarousel();
 }
 
 // ===== PRICING CARDS REVEAL =====
@@ -749,7 +768,7 @@ if (revealText) {
   words.forEach((word, i) => {
     const span = document.createElement('span');
     span.innerText = word + (i < words.length - 1 ? ' ' : '');
-    span.style.color = 'rgba(255, 255, 255, 0.15)'; 
+    span.style.color = 'rgba(255, 255, 255, 0.15)';
     revealText.appendChild(span);
   });
 
@@ -776,12 +795,12 @@ if (rotTexts.length > 0) {
   setInterval(() => {
     const nextIndex = (currentIndex + 1) % rotTexts.length;
     gsap.to(rotTexts[currentIndex], { y: -150, opacity: 0, duration: 0.6, ease: "power2.in" });
-    gsap.fromTo(rotTexts[nextIndex], 
+    gsap.fromTo(rotTexts[nextIndex],
       { y: 150, opacity: 0 },
       { y: 0, opacity: 1, duration: 1.2, ease: "back.out(1.5)", delay: 0.1 }
     );
     currentIndex = nextIndex;
-  }, 2000); 
+  }, 2000);
 }
 
 // ===== LAMP EFFECT ANIMATION LOGIC =====
@@ -803,10 +822,10 @@ if (lampContainer) {
   });
 
   lampTl.to('.lamp-glow-main', { autoAlpha: 0.8, width: "28rem" }, 0.3)
-        .to('.lamp-glow-oval', { autoAlpha: 1, width: "16rem" }, 0.3)
-        .to('.lamp-line', { autoAlpha: 1, width: "30rem" }, 0.3)
-        .to('.lamp-cone', { autoAlpha: 1, width: "30rem" }, 0.3)
-        .to('.gs-lamp-content', { autoAlpha: 1, y: 0 }, 0.3);
+    .to('.lamp-glow-oval', { autoAlpha: 1, width: "16rem" }, 0.3)
+    .to('.lamp-line', { autoAlpha: 1, width: "30rem" }, 0.3)
+    .to('.lamp-cone', { autoAlpha: 1, width: "30rem" }, 0.3)
+    .to('.gs-lamp-content', { autoAlpha: 1, y: 0 }, 0.3);
 }
 
 // =================================================================
@@ -850,8 +869,8 @@ window.addEventListener('load', () => {
     const splitCards = gsap.utils.toArray('.split-card-item');
 
     if (splitWrapper && splitTexts.length > 0 && splitCards.length > 0) {
-      gsap.set(splitTexts, { autoAlpha: 0, yPercent: 100 }); 
-      gsap.set(splitCards, { autoAlpha: 0, yPercent: -100 }); 
+      gsap.set(splitTexts, { autoAlpha: 0, yPercent: 100 });
+      gsap.set(splitCards, { autoAlpha: 0, yPercent: -100 });
       gsap.set(splitTexts[0], { autoAlpha: 1, yPercent: 0 });
       gsap.set(splitCards[0], { autoAlpha: 1, yPercent: 0 });
 
@@ -891,8 +910,8 @@ window.addEventListener('load', () => {
 
   if (heroCanvasEl && heroPinWrapper && typeof THREE !== 'undefined') {
     const heroScene = new THREE.Scene();
-    heroScene.fog = new THREE.FogExp2(0x0a0a1a, 0.0008); 
-    
+    heroScene.fog = new THREE.FogExp2(0x0a0a1a, 0.0008);
+
     const heroCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 8000);
     heroCamera.position.set(0, 0, 1200);
 
@@ -905,14 +924,14 @@ window.addEventListener('load', () => {
     const posArray = new Float32Array(particlesCount * 3);
     const colorsArray = new Float32Array(particlesCount * 3);
 
-    for(let i = 0; i < particlesCount; i++) {
+    for (let i = 0; i < particlesCount; i++) {
       posArray[i * 3] = (Math.random() - 0.5) * 5000;
       posArray[i * 3 + 1] = (Math.random() - 0.5) * 5000;
       posArray[i * 3 + 2] = (Math.random() - 0.5) * 8000;
 
-      const starColor = new THREE.Color(0xffffff); 
-      if (Math.random() > 0.85) starColor.setHex(0xddeeff); 
-      else if (Math.random() > 0.85) starColor.setHex(0xffffee); 
+      const starColor = new THREE.Color(0xffffff);
+      if (Math.random() > 0.85) starColor.setHex(0xddeeff);
+      else if (Math.random() > 0.85) starColor.setHex(0xffffee);
 
       colorsArray[i * 3] = starColor.r;
       colorsArray[i * 3 + 1] = starColor.g;
@@ -923,7 +942,7 @@ window.addEventListener('load', () => {
     geometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
 
     const canvasText = document.createElement('canvas');
-    canvasText.width = 32; 
+    canvasText.width = 32;
     canvasText.height = 32;
     const ctx = canvasText.getContext('2d');
     ctx.beginPath();
@@ -933,13 +952,13 @@ window.addEventListener('load', () => {
     const texture = new THREE.CanvasTexture(canvasText);
 
     const material = new THREE.PointsMaterial({
-      size: 6, 
+      size: 6,
       vertexColors: true,
       map: texture,
       transparent: true,
-      opacity: 0.9, 
-      depthWrite: false, 
-      blending: THREE.AdditiveBlending 
+      opacity: 0.9,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
     });
 
     const particleMesh = new THREE.Points(geometry, material);
@@ -953,33 +972,33 @@ window.addEventListener('load', () => {
       scrollTrigger: {
         trigger: heroPinWrapper,
         start: "top top",
-        end: "+=300%", 
+        end: "+=300%",
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
           window.threeScrollProgress = self.progress;
           const progressFill = document.querySelector('.progress-fill');
           const counterCurrent = document.querySelector('.section-counter-current');
-          
-          if(progressFill) progressFill.style.height = `${self.progress * 100}%`;
-          if(counterCurrent) {
-              const sectionNum = Math.min(Math.floor(self.progress * 3) + 1, 3);
-              counterCurrent.innerText = String(sectionNum).padStart(2, '0');
+
+          if (progressFill) progressFill.style.height = `${self.progress * 100}%`;
+          if (counterCurrent) {
+            const sectionNum = Math.min(Math.floor(self.progress * 3) + 1, 3);
+            counterCurrent.innerText = String(sectionNum).padStart(2, '0');
           }
         }
       }
     });
 
     svcTl.to('.phase-0', { autoAlpha: 0, y: -50, duration: 0.5 }, 0.5)
-         .fromTo('.phase-1', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
-         .to('.phase-1', { autoAlpha: 0, y: -50, duration: 0.5 }, 2.0)
-         .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0);
+      .fromTo('.phase-1', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
+      .to('.phase-1', { autoAlpha: 0, y: -50, duration: 0.5 }, 2.0)
+      .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0);
 
     let smoothCamPos = { x: 0, y: 0, z: 1200 };
-    
+
     const cameraPositions = [
-      { x: 0, y: 0, z: 1200 },   
-      { x: 0, y: 0, z: 0 },      
+      { x: 0, y: 0, z: 1200 },
+      { x: 0, y: 0, z: 0 },
       { x: 0, y: 0, z: -1200 }
     ];
 
@@ -990,7 +1009,7 @@ window.addEventListener('load', () => {
       particleMesh.rotation.z = time * 0.05;
       particleMesh.rotation.y = time * 0.02;
 
-      const totalProg = window.threeScrollProgress * 2; 
+      const totalProg = window.threeScrollProgress * 2;
       const currentSection = Math.floor(totalProg);
       const sectionProg = totalProg % 1;
 
@@ -1006,11 +1025,11 @@ window.addEventListener('load', () => {
       smoothCamPos.z += (targetZ - smoothCamPos.z) * 0.05;
 
       heroCamera.position.set(
-        smoothCamPos.x + Math.sin(time) * 10, 
+        smoothCamPos.x + Math.sin(time) * 10,
         smoothCamPos.y + Math.cos(time * 0.8) * 10,
         smoothCamPos.z
       );
-      
+
       heroCamera.lookAt(0, 0, smoothCamPos.z - 500);
 
       heroRenderer.render(heroScene, heroCamera);
@@ -1120,7 +1139,7 @@ window.addEventListener('load', () => {
       context.arc(width / 2, height / 2, currentScale, 0, 2 * Math.PI);
       context.fillStyle = "#000000";
       context.fill();
-      context.strokeStyle = "rgba(255, 255, 255, 0.1)"; 
+      context.strokeStyle = "rgba(255, 255, 255, 0.1)";
       context.lineWidth = 2 * scaleFactor;
       context.stroke();
 
@@ -1148,7 +1167,7 @@ window.addEventListener('load', () => {
           if (projected && projected[0] >= 0 && projected[0] <= width && projected[1] >= 0 && projected[1] <= height) {
             context.beginPath();
             context.arc(projected[0], projected[1], 1.2 * scaleFactor, 0, 2 * Math.PI);
-            context.fillStyle = "#ffffff"; 
+            context.fillStyle = "#ffffff";
             context.fill();
           }
         });
@@ -1232,10 +1251,10 @@ window.addEventListener('load', () => {
       width = container.clientWidth;
       height = container.clientHeight;
       radius = Math.min(width, height) / 2.5;
-      
+
       globeCanvas.width = width * dpr;
       globeCanvas.height = height * dpr;
-      
+
       projection.scale(radius).translate([width / 2, height / 2]);
       render();
     });
@@ -1248,29 +1267,29 @@ window.addEventListener('load', () => {
 {
   const ctaGlobeCanvas = document.getElementById('cta-globe-canvas');
   if (ctaGlobeCanvas && typeof THREE !== 'undefined') {
-    
-    const ctaScene = new THREE.Scene();
-    
-    const ctaCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    ctaCamera.position.z = 15; 
 
-    const ctaRenderer = new THREE.WebGLRenderer({ 
-      canvas: ctaGlobeCanvas, 
-      alpha: true, 
-      antialias: true 
+    const ctaScene = new THREE.Scene();
+
+    const ctaCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    ctaCamera.position.z = 15;
+
+    const ctaRenderer = new THREE.WebGLRenderer({
+      canvas: ctaGlobeCanvas,
+      alpha: true,
+      antialias: true
     });
     ctaRenderer.setSize(window.innerWidth, window.innerHeight);
     ctaRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const globeRadius = 6;
     const geometry = new THREE.SphereGeometry(globeRadius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ 
-      color: 0xffffff, 
-      transparent: true, 
-      opacity: 0.05, 
-      wireframe: true 
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.05,
+      wireframe: true
     });
-    
+
     const ctaGlobe = new THREE.Mesh(geometry, material);
     ctaScene.add(ctaGlobe);
 
@@ -1278,11 +1297,11 @@ window.addEventListener('load', () => {
 
     const ctaRenderLoop = () => {
       requestAnimationFrame(ctaRenderLoop);
-      
+
       ctaGlobe.rotation.y += rotationSpeed;
       ctaGlobe.rotation.x += rotationSpeed * 0.3;
       ctaGlobe.rotation.z += rotationSpeed * 0.1;
-      
+
       ctaRenderer.render(ctaScene, ctaCamera);
     };
     ctaRenderLoop();
@@ -1297,14 +1316,14 @@ window.addEventListener('load', () => {
         ctaRenderer.setSize(width, height);
       }
     });
-    
+
     const initialContainer = ctaGlobeCanvas.parentElement;
     if (initialContainer) {
-       const width = initialContainer.clientWidth;
-       const height = initialContainer.clientHeight;
-       ctaCamera.aspect = width / height;
-       ctaCamera.updateProjectionMatrix();
-       ctaRenderer.setSize(width, height);
+      const width = initialContainer.clientWidth;
+      const height = initialContainer.clientHeight;
+      ctaCamera.aspect = width / height;
+      ctaCamera.updateProjectionMatrix();
+      ctaRenderer.setSize(width, height);
     }
 
     gsap.to('.gradient-underline', {
@@ -1374,11 +1393,11 @@ window.addEventListener('load', () => {
 
     const positions = new Float32Array([
       -1.0, -1.0, 0.0,
-       1.0, -1.0, 0.0,
-      -1.0,  1.0, 0.0,
-       1.0, -1.0, 0.0,
-      -1.0,  1.0, 0.0,
-       1.0,  1.0, 0.0,
+      1.0, -1.0, 0.0,
+      -1.0, 1.0, 0.0,
+      1.0, -1.0, 0.0,
+      -1.0, 1.0, 0.0,
+      1.0, 1.0, 0.0,
     ]);
 
     const geometry = new THREE.BufferGeometry();
@@ -1406,14 +1425,14 @@ window.addEventListener('load', () => {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); 
+    handleResize();
 
     const animate = () => {
       uniforms.time.value += 0.01;
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };
-    
+
     animate();
   }
 }
@@ -1499,9 +1518,9 @@ window.addEventListener('load', () => {
     `;
 
     const uniforms = {
-      iTime:       { value: 0 },
+      iTime: { value: 0 },
       iResolution: { value: new THREE.Vector2() },
-      iMouse:      { value: new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2) }
+      iMouse: { value: new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2) }
     };
 
     const material = new THREE.ShaderMaterial({
@@ -1510,7 +1529,7 @@ window.addEventListener('load', () => {
       uniforms
     });
     const geometry = new THREE.PlaneGeometry(2, 2);
-    const mesh     = new THREE.Mesh(geometry, material);
+    const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
     const handleResize = () => {
@@ -1522,7 +1541,7 @@ window.addEventListener('load', () => {
         uniforms.iResolution.value.set(width, height);
       }
     };
-    
+
     window.addEventListener("resize", handleResize);
     handleResize();
 
@@ -1540,7 +1559,7 @@ window.addEventListener('load', () => {
       uniforms.iTime.value = clock.getElapsedTime();
       renderer.render(scene, camera);
     };
-    
+
     animate();
   }
 }

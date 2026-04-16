@@ -39,8 +39,6 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  scrollbar-gutter: stable;
-  /* Ensures grid alignment stays perfect even with scrollbar */
 }
 
 body {
@@ -568,21 +566,26 @@ a {
 .hero-robot-3d {
   position: absolute;
   bottom: 0;
-  right: -5vw;
-  /* Anchors it to the right gap instead of pushing it center */
+  left: 68%;
+  transform: translateX(-50%);
   width: 65vw;
   max-width: 1100px;
-  /* Slightly wider to compensate for shifting right */
   height: 95vh;
   z-index: 1;
   pointer-events: auto;
 }
 
 /* Fix for 16:10 laptops (like 1920x1200) */
-@media (min-width: 1200px) and (max-aspect-ratio: 16/10) {
+/* Media query for robot positioning on wide monitors to keep him centered with text */
+@media (min-width: 1400px) {
   .hero-robot-3d {
-    right: -20vw !important;
-    /* Pushes it firmly into the right gap on taller laptop screens */
+    left: 65%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-robot-3d {
+    left: 60%;
   }
 }
 
@@ -704,15 +707,16 @@ a {
 
 .review-stars span {
   display: block;
-  color: var(--text-muted);
-  font-weight: 400;
+  color: #ccc;
+  font-weight: 500;
 }
 
 .hero-desc {
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: var(--text-white);
   line-height: 1.5;
   margin-bottom: 32px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-desc strong {
@@ -1713,10 +1717,10 @@ a {
 .process-section {
   position: relative;
   width: 100%;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-dark, #0d0d0d) !important;
   color: var(--text-white);
   padding: 120px 0;
-  overflow: hidden;
+  overflow: visible;
   z-index: 10;
 }
 
@@ -1953,14 +1957,24 @@ a {
 .impact-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  /* Removed min-height: 100vh so it stops forcing the section to be artificially tall */
   background-color: var(--bg-dark);
-  padding: 150px 0;
+  padding: 100px 0;
+  /* Reduced from 150px for a tighter, cleaner fit */
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   z-index: 10;
+}
+
+/* Hide the 80px black architectural masks so the background image fills the entire section */
+.impact-section .section-frame::before,
+.impact-section .section-frame::after,
+.impact-section .section-frame .sf-line.top,
+.impact-section .section-frame .sf-line.bottom,
+.impact-section .section-frame .sf-dia {
+  display: none !important;
 }
 
 .impact-bg {
@@ -2150,6 +2164,31 @@ a {
   left: 0;
   right: 0;
   height: 1px;
+}
+
+/* Hide top frame line and diamonds to prevent overlap with horizontal dividers in light sections */
+.services-accordion-section .section-frame .sf-line.top,
+.process-section .section-frame .sf-line.top,
+.process-section .section-frame .sf-dia.tl,
+.process-section .section-frame .sf-dia.tr,
+.bento-section .section-frame .sf-line.top,
+.bento-section .section-frame .sf-dia.tl,
+.bento-section .section-frame .sf-dia.tr,
+.history-section .section-frame .sf-line.top,
+.history-section .section-frame .sf-dia.tl,
+.history-section .section-frame .sf-dia.tr,
+.blog-section .section-frame .sf-dia.br,
+.blog-section .section-frame .sf-line.top,
+.blog-section .section-frame .sf-dia.tl,
+.blog-section .section-frame .sf-dia.tr {
+  display: none !important;
+}
+
+/* Ensure process section badge has dark background */
+.process-section .contact-divider-wrap .horizontal-divider .badge {
+  background-color: var(--bg-dark, #0a0a0a) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Fixed styling for the bento section badge and line */
@@ -3381,6 +3420,7 @@ a {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  /* Restored to keep the section tall */
   display: flex;
   background-color: #ffffff;
   color: var(--text-dark);
@@ -3388,8 +3428,28 @@ a {
   z-index: 20;
 }
 
+/* Hide the 80px masks so the white background stretches edge-to-edge, removing the black bars */
+.excellence-section .section-frame::before,
+.excellence-section .section-frame::after,
+.excellence-section .section-frame .sf-line.top,
+.excellence-section .section-frame .sf-line.bottom {
+  display: none !important;
+}
+
+.excellence-section.light-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .exc-overlay {
-  display: none;
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/Swirling White Smoke.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .exc-content-wrap {
@@ -3474,9 +3534,10 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 40px;
+  backdrop-filter: blur(5px);
 }
 
 .exc-stat h4 {
@@ -3657,8 +3718,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 160px var(--layout-pad) 60px;
-  /* Reduced height and top padding */
+  padding: 200px var(--layout-pad) 140px;
+  /* Increased padding to clear the 80px masks */
   background-color: #ffffff;
   overflow: hidden;
   z-index: 10;
@@ -5391,6 +5452,14 @@ a {
   padding: 0 0 80px 0;
 }
 
+/* Hide the 80px black architectural masks so the background image fills the entire section */
+.since-sec .section-frame::before,
+.since-sec .section-frame::after,
+.since-sec .section-frame .sf-line.top,
+.since-sec .section-frame .sf-line.bottom {
+  display: none !important;
+}
+
 .since-bg {
   position: absolute;
   inset: 0;
@@ -5774,8 +5843,11 @@ a {
   z-index: 20;
 }
 
-.about-video-sec .section-frame .sf-line.top {
-  display: none;
+.about-video-sec .section-frame .sf-line.top,
+.about-video-sec .section-frame::before,
+.about-video-sec .section-frame::after {
+  display: none !important;
+  /* Hides the black top/bottom masks so the video fills the screen */
 }
 
 /* The video itself */
@@ -7040,8 +7112,12 @@ a {
   min-height: 70vh;
 }
 
-.cta-react-translated-sec .section-frame .sf-line.top {
-  display: none;
+/* Hide the 80px black architectural masks so the background fills the entire section */
+.cta-react-translated-sec .section-frame .sf-line.top,
+.cta-react-translated-sec .section-frame .sf-line.bottom,
+.cta-react-translated-sec .section-frame::before,
+.cta-react-translated-sec .section-frame::after {
+  display: none !important;
 }
 
 .cta-react-translated-sec .section-frame .sf-line.left,
@@ -7228,7 +7304,12 @@ a {
   color: #fff;
   z-index: 20;
   overflow-x: clip;
-  /* This stops the canvas from bleeding out horizontally without clipping the divider badge vertically */
+}
+
+/* Hide the 80px black architectural masks so the WebGL shader canvas fills the entire section */
+.contact-section .section-frame::before,
+.contact-section .section-frame::after {
+  display: none !important;
 }
 
 .contact-divider-wrap {
@@ -7236,7 +7317,8 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 1000;
+  /* Boosted so the badge breaks through the background mask */
 }
 
 .contact-divider-wrap .horizontal-divider {
@@ -7318,8 +7400,10 @@ a {
 
 /* Ensure masks match the dark section background, even on light-theme pages */
 .contact-section.dark-theme .section-frame::before,
-.contact-section.dark-theme .section-frame::after {
-  background-color: #0a0a0a !important;
+.contact-section.dark-theme .section-frame::after,
+.process-section.section-framed .section-frame::before,
+.process-section.section-framed .section-frame::after {
+  background-color: var(--bg-dark, #0d0d0d) !important;
   opacity: 1 !important;
 }
 
@@ -8941,12 +9025,15 @@ a {
   z-index: 22;
 }
 
-.pricing-summary-sec .section-frame .sf-line.top {
-  display: none;
+/* Hide the 80px architectural masks so the background stretches cleanly edge-to-edge */
+.pricing-summary-sec .section-frame::before,
+.pricing-summary-sec .section-frame::after {
+  display: none !important;
 }
 
-.pricing-summary-sec .section-frame::after {
-  background-color: #ffffff;
+/* Hide top frame line because the "PRICING PLANS" badge handles the top line */
+.pricing-summary-sec .section-frame .sf-line.top {
+  display: none;
 }
 
 .pricing-horizontal-divider {
