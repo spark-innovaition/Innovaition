@@ -5525,25 +5525,21 @@ a {
   display: none !important;
 }
 
-/* --- ZERO LIMITS VIDEO BACKGROUND --- */
-.since-bg-video {
+.since-bg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
   z-index: 1;
-  opacity: 0.5;
-  /* You can adjust this to make the video brighter or darker */
-  pointer-events: none;
 }
 
-.since-overlay {
+.since-bg::after {
+  content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--bg-dark) 100%);
-  z-index: 2;
-  pointer-events: none;
 }
 
 .since-content {
