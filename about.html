@@ -22,7 +22,7 @@
   <nav class="navbar">
     <div class="nav-left">
       <button class="menu-btn mobile-menu-btn">
-        <i class="fa-solid fa-bars"></i> MENU
+        <i class="fa-solid fa-bars"></i> <span>MENU</span>
       </button>
     </div>
     <div class="nav-center">
@@ -37,8 +37,8 @@
     </div>
     <div class="nav-right">
       <div class="nav-avatar"></div>
-      <a href="index.html#contact" class="nav-cta">BOOK A CALL</a>
-      <a href="index.html#contact" class="nav-cta-icon">
+      <a href="contact.html" class="nav-cta">BOOK A CALL</a>
+      <a href="contact.html" class="nav-cta-icon">
         <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
@@ -96,6 +96,10 @@
       <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
+
+    <canvas id="beams-canvas"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; filter: blur(15px); pointer-events: none;"></canvas>
+
     <div class="lamp-container">
       <div class="lamp-blur-top"></div>
       <div class="lamp-glow-main"></div>
@@ -112,23 +116,23 @@
       </div>
     </div>
 
-    <div class="about-hero-centered">
-      <div class="trust-badge gs-reveal-up">
+    <div class="about-hero-centered gs-lamp-content">
+      <div class="trust-badge">
         <i class="fa-solid fa-cube"></i> INNOVAITION AI CONSULTING
       </div>
 
-      <h1 class="gs-reveal-up">
-        PIONEERING THE<br>FUTURE OF AI
+      <h1>
+        BUILDING A SMARTER<br>WAY TO WORK
       </h1>
 
-      <p class="gs-reveal-up">
-        We empower businesses to harness AI's true potential with strategic thinking, innovation, and measurable,
-        data-driven impact. No hype, just results.
+      <p>
+        We build secure, custom AI tools that cut out the busywork, speed up your day-to-day operations, and help your
+        business grow smoothly.
       </p>
 
-      <div class="hero-actions gs-reveal-up">
-        <a href="#contact" class="btn-main rounded-btn">Start Your Journey</a>
-        <a href="#mission" class="btn-icon rounded-btn"><i class="fa-solid fa-arrow-down"></i></a>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-main rounded-btn">See How We Work</a>
+        <a href="#statement-sec" class="btn-icon rounded-btn"><i class="fa-solid fa-arrow-down"></i></a>
       </div>
     </div>
   </section>
@@ -148,14 +152,15 @@
 
     <div class="horizontal-divider light-lines divider-flex">
       <div class="line-seg"></div>
-      <div class="badge">INTELLIGENCE IN MOTION</div>
+      <div class="badge">SEE IT IN ACTION</div>
       <div class="line-seg"></div>
     </div>
 
     <div class="video-content gs-reveal-up align-left">
-      <h2 class="video-title">SEE THE FUTURE</h2>
+      <h2 class="video-title">BUILT FOR<br>YOUR BUSINESS</h2>
     </div>
   </section>
+
   <section class="massive-statement dark-theme section-framed" id="statement-sec">
     <div class="section-frame light-lines">
       <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
@@ -170,22 +175,20 @@
     </div>
 
     <div class="statement-container">
-      <h2 class="statement-text" id="reveal-text">AT INNOVAITION®, WE HELP BUSINESSES INTEGRATE ARTIFICIAL INTELLIGENCE
-        INTO THEIR CORE STRATEGIES, ENABLING SMARTER DECISIONS, FASTER WORKFLOWS, AND MEANINGFUL INNOVATION ACROSS EVERY
-        LEVEL.</h2>
+      <h2 class="statement-text" id="reveal-text">AT INNOVAITION®, WE DON'T JUST TALK ABOUT AI. WE BUILD SIMPLE, SECURE,
+        AND CUSTOM TOOLS THAT REMOVE EVERYDAY ROADBLOCKS SO YOUR TEAM CAN DO THEIR ABSOLUTE BEST WORK.</h2>
     </div>
 
     <div class="about-bento-grid">
       <div class="bento-cell border-right border-bottom gs-reveal-up">
-        <span class="small-heading">OUR MISSION</span>
-        <p class="bento-p mt-30">At Innovaition, we help businesses harness the power of AI to work smarter, move
-          faster, and innovate with confidence. Our solutions simplify operations, enhance decisions, and drive
-          sustainable growth.</p>
+        <span class="small-heading">OUR PROMISE</span>
+        <p class="bento-p mt-30">To cut through the AI hype and build safe, reliable tools that actually solve your
+          real-world business problems.</p>
       </div>
 
       <div class="bento-cell border-right border-bottom img-cell gs-reveal">
         <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=600&auto=format&fit=crop"
-          alt="AI Interface">
+          alt="Data Architecture">
       </div>
 
       <div class="bento-cell border-right border-bottom center-flex gs-reveal-up">
@@ -193,29 +196,29 @@
       </div>
 
       <div class="bento-cell border-bottom gs-reveal-up">
-        <span class="small-heading">OUR VISION</span>
+        <span class="small-heading">CORE PRINCIPLES</span>
         <ul class="vision-list mt-30">
-          <li><i class="fa-solid fa-play"></i> Empower growth with AI.</li>
-          <li><i class="fa-solid fa-play"></i> Inspire innovation daily.</li>
-          <li><i class="fa-solid fa-play"></i> Enhance human potential.</li>
-          <li><i class="fa-solid fa-play"></i> Drive data-led success.</li>
-          <li><i class="fa-solid fa-play"></i> Shape a smarter future.</li>
+          <li><i class="fa-solid fa-play"></i> Keeping your data completely private.</li>
+          <li><i class="fa-solid fa-play"></i> Automating your most repetitive tasks.</li>
+          <li><i class="fa-solid fa-play"></i> Building systems that grow with you.</li>
+          <li><i class="fa-solid fa-play"></i> Focusing on real, measurable results.</li>
+          <li><i class="fa-solid fa-play"></i> Giving your team superpowers.</li>
         </ul>
       </div>
 
       <div class="bento-cell border-right img-cell gs-reveal">
         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop"
-          alt="AI Core">
+          alt="AI Processing">
       </div>
 
       <div class="bento-cell border-right action-cell gs-reveal">
-        <h3 class="bento-title" style="color:#fff;">LET'S WORK TOGETHER</h3>
+        <h3 class="bento-title" style="color:#fff;">LET'S CONNECT</h3>
         <div class="action-bottom">
-          <span class="small-heading" style="border:none; padding:0; margin-bottom:16px; color:#fff;">BOOK A CALL AND
-            SEE IF WE'RE A GOOD FIT.</span>
-          <a href="#contact" class="btn-main quote-btn cta-btn"
+          <span class="small-heading" style="border:none; padding:0; margin-bottom:16px; color:#fff;">BOOK A FREE
+            DISCOVERY CALL TO SEE HOW WE CAN HELP.</span>
+          <a href="contact.html" class="btn-main quote-btn cta-btn"
             style="background: #fff; color: #000; width: max-content;">
-            <span style="margin-right: 16px;">Book a call</span>
+            <span style="margin-right: 16px;">Book a discovery call</span>
             <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2); padding: 12px;"><i
                 class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
           </a>
@@ -223,18 +226,18 @@
       </div>
 
       <div class="bento-cell border-right goal-cell gs-reveal">
-        <span class="small-heading">OUR GOAL</span>
-        <p class="bento-p mt-30">At Innovaition, our goal is to guide businesses toward intelligent growth with
-          practical AI solutions that create lasting impact.</p>
+        <span class="small-heading">OUR FOCUS</span>
+        <p class="bento-p mt-30">To build reliable, easy-to-use AI solutions that become the smartest part of your daily
+          routine.</p>
         <div class="goal-stats mt-auto" style="color:#fff;">
-          <h3><span class="counter" data-target="50">0</span>+</h3>
-          <p class="stat-label">Projects delivered</p>
+          <h3><span class="counter" data-target="100">0</span>%</h3>
+          <p class="stat-label">Custom Built</p>
         </div>
       </div>
 
       <div class="bento-cell img-cell gs-reveal">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
-          alt="AI Vision">
+          alt="System Integration">
       </div>
     </div>
   </section>
@@ -249,71 +252,72 @@
 
     <div class="horizontal-divider dark-lines divider-flex">
       <div class="line-seg"></div>
-      <div class="badge">TRUSTED BY LEADING INNOVATORS</div>
+      <div class="badge">OUR TOOLKIT</div>
       <div class="line-seg"></div>
     </div>
 
     <div class="cap-header gs-reveal-up">
-      <h2>PARTNERS WHO BELIEVE<br>IN THE POWER OF AI</h2>
+      <h2>BUILT WITH THE BEST<br>TOOLS AVAILABLE</h2>
     </div>
 
     <div class="cap-grid gs-reveal-up">
 
       <div class="cap-item">
-        <span class="cap-number">2024</span>
-        <div class="cap-logo">Nexter</div>
+        <span class="cap-number">SYS</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">OpenAI</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2024</span>
-        <div class="cap-logo">Syd</div>
+        <span class="cap-number">CORE</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">Anthropic</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2023</span>
-        <div class="cap-logo">oslo.</div>
+        <span class="cap-number">ML</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">PyTorch</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2023</span>
-        <div class="cap-logo">NONME</div>
+        <span class="cap-number">ML</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">TensorFlow</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2022</span>
-        <div class="cap-logo">next</div>
+        <span class="cap-number">CLOUD</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">AWS</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2021</span>
-        <div class="cap-logo">Theo</div>
+        <span class="cap-number">CLOUD</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">Google Cloud</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2020</span>
-        <div class="cap-logo">London</div>
+        <span class="cap-number">CLOUD</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">Azure</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2020</span>
-        <div class="cap-logo">umbrella</div>
+        <span class="cap-number">DB</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">Pinecone</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2019</span>
-        <div class="cap-logo">Risë</div>
+        <span class="cap-number">INT</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">LangChain</div>
       </div>
 
       <div class="cap-item">
-        <span class="cap-number">2018</span>
-        <div class="cap-logo">Hudson</div>
+        <span class="cap-number">DB</span>
+        <div class="cap-logo" style="font-family: var(--font-heading);">Databricks</div>
       </div>
 
-      <a href="#contact" class="cap-item join-us-card dark-theme">
+      <a href="contact.html" class="cap-item join-us-card dark-theme">
         <span class="logo-small" style="color: #fff;"><i class="fa-solid fa-cube"></i> Innovaition®</span>
-        <h4>JOIN THE FUTURE OF AI INNOVATION</h4>
-        <div class="join-btn">Join us <i class="fa-solid fa-arrow-right"></i></div>
-        <div class="rating"><strong>4.9</strong> ★★★★★ <span>100+ Happy clients</span></div>
+        <h4>BUILD YOUR CUSTOM AI SOLUTION</h4>
+        <div class="join-btn">Let's Get Started <i class="fa-solid fa-arrow-right"></i></div>
+        <div class="rating"><i class="fa-solid fa-shield-halved" style="color: #22c55e;"></i> <span>100% Secure &
+            Private</span></div>
       </a>
 
     </div>
@@ -327,71 +331,70 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
     <div class="growth-header gs-reveal-up">
-      <h2 class="section-title">OUR GROWTH<br>OVER THE YEARS</h2>
+      <h2 class="section-title">HOW WE WORK<br>TOGETHER</h2>
     </div>
 
     <div class="marquee-container gs-reveal-up">
       <div class="marquee-track">
 
         <div class="m-card text-card">
-          <h3>FOUNDATION</h3>
-          <span class="year">2018</span>
-          <p>Started delivering data-driven strategies and consulting for early-stage clients.</p>
+          <h3>DISCOVERY & STRATEGY</h3>
+          <span class="year">PHASE 01</span>
+          <p>We sit down with you to learn how your business runs and find exactly where AI can help the most.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=600&auto=format&fit=crop"
-            alt="Foundation">
+            alt="Discovery">
         </div>
 
         <div class="m-card text-card dark-card">
-          <h3>BUILDING EXPERTISE</h3>
-          <span class="year">2020</span>
-          <p>Launched enterprise projects to streamline operations with automation and AI.</p>
+          <h3>PLANNING & DESIGN</h3>
+          <span class="year">PHASE 02</span>
+          <p>We create a clear, step-by-step plan for a custom AI tool built just for your unique needs.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop"
-            alt="Expertise">
+            alt="Architecture">
         </div>
 
         <div class="m-card text-card">
-          <h3>EXPANDING HORIZONS</h3>
-          <span class="year">2022</span>
-          <p>Expanded globally, supporting key industries like healthcare and finance.</p>
+          <h3>DEVELOPMENT & LAUNCH</h3>
+          <span class="year">PHASE 03</span>
+          <p>We build, test, and launch your new AI tools so they fit perfectly into your daily routine.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
-            alt="Horizons">
+            alt="Deployment">
         </div>
 
-        <!-- Repeat for Loop -->
         <div class="m-card text-card">
-          <h3>FOUNDATION</h3>
-          <span class="year">2018</span>
-          <p>Started delivering data-driven strategies and consulting for early-stage clients.</p>
+          <h3>DISCOVERY & STRATEGY</h3>
+          <span class="year">PHASE 01</span>
+          <p>We sit down with you to learn how your business runs and find exactly where AI can help the most.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=600&auto=format&fit=crop"
-            alt="Foundation">
+            alt="Discovery">
         </div>
 
         <div class="m-card text-card dark-card">
-          <h3>BUILDING EXPERTISE</h3>
-          <span class="year">2020</span>
-          <p>Launched enterprise projects to streamline operations with automation and AI.</p>
+          <h3>PLANNING & DESIGN</h3>
+          <span class="year">PHASE 02</span>
+          <p>We create a clear, step-by-step plan for a custom AI tool built just for your unique needs.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop"
-            alt="Expertise">
+            alt="Architecture">
         </div>
 
         <div class="m-card text-card">
-          <h3>EXPANDING HORIZONS</h3>
-          <span class="year">2022</span>
-          <p>Expanded globally, supporting key industries like healthcare and finance.</p>
+          <h3>DEVELOPMENT & LAUNCH</h3>
+          <span class="year">PHASE 03</span>
+          <p>We build, test, and launch your new AI tools so they fit perfectly into your daily routine.</p>
         </div>
         <div class="m-card img-card">
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
-            alt="Horizons">
+            alt="Deployment">
         </div>
 
       </div>
@@ -410,17 +413,17 @@
 
       <div class="since-top">
         <h2 class="massive-since">
-          <span class="line-1">SINCE</span>
-          <span class="line-2">2019</span>
+          <span class="line-1">ZERO</span>
+          <span class="line-2" style="padding-left: 0;">LIMITS</span>
         </h2>
 
         <div class="since-quote-box">
           <span class="logo-small" style="color: #fff;"><i class="fa-solid fa-cube"></i> Innovaition®</span>
-          <p>“AI SHOULD SIMPLIFY DECISIONS, NOT COMPLICATE THEM. OUR MISSION IS TO MAKE INTELLIGENCE PRACTICAL FOR EVERY
-            BUSINESS.”</p>
+          <p>“WE DON'T BUILD AI TO REPLACE YOUR TEAM. WE BUILD IT TO GIVE THEM THE TIME AND TOOLS TO DO THEIR VERY BEST
+            WORK.”</p>
           <span class="small-heading" style="border:none; padding:0; margin-bottom:16px;">BOOK A CALL, AND LET'S SEE
             WHAT WE CAN DO.</span>
-          <a href="#contact" class="btn-main quote-btn cta-btn"
+          <a href="contact.html" class="btn-main quote-btn cta-btn"
             style="background: #fff; color: #000; width: max-content;">
             <span style="margin-right: 16px;">Book a call</span>
             <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2); padding: 12px;"><i
@@ -432,23 +435,23 @@
       <div class="since-stats-row">
         <div class="stat-col">
           <h3><span class="counter" data-target="5">0</span>X</h3>
-          <p>Faster AI<br>Implementations</p>
+          <p>Faster daily<br>workflows</p>
         </div>
         <div class="stat-col">
-          <h3><span class="counter" data-target="62">0</span>+</h3>
-          <p>Businesses empowered</p>
+          <h3><span class="counter" data-target="100">0</span>%</h3>
+          <p>Custom-built<br>tools</p>
         </div>
         <div class="stat-col">
           <h3><span class="counter" data-target="99">0</span>%</h3>
-          <p>System uptime</p>
+          <p>Safe and<br>reliable</p>
         </div>
         <div class="stat-col">
-          <h3><span class="counter" data-target="50">0</span>+</h3>
-          <p>AI models for smarter<br>decisions</p>
+          <h3>24/7</h3>
+          <p>Around-the-clock<br>support</p>
         </div>
         <div class="stat-col">
-          <h3><span class="counter" data-target="98">0</span>%</h3>
-          <p>Client satisfaction rate</p>
+          <h3><span class="counter" data-target="100">0</span>%</h3>
+          <p>Total data<br>privacy</p>
         </div>
       </div>
 
@@ -470,7 +473,7 @@
     </div>
 
     <div class="faq-container">
-      <h2 class="faq-title gs-reveal-up">ANSWERS TO<br>COMMON AI QUERIES</h2>
+      <h2 class="faq-title gs-reveal-up">ANSWERS TO<br>COMMON QUESTIONS</h2>
 
       <div class="faq-split-layout gs-reveal-up">
 
@@ -486,10 +489,10 @@
             HOW LONG DOES IT TAKE TO IMPLEMENT AN AI SOLUTION? <i class="fa-solid fa-plus"></i>
           </div>
           <div class="faq-question-item" data-target="ans-3">
-            DO YOU OFFER END-TO-END AI CONSULTING? <i class="fa-solid fa-plus"></i>
+            DO YOU HANDLE EVERYTHING FROM START TO FINISH? <i class="fa-solid fa-plus"></i>
           </div>
           <div class="faq-question-item" data-target="ans-4">
-            CAN SMALL BUSINESSES BENEFIT FROM AI CONSULTING? <i class="fa-solid fa-plus"></i>
+            IS AI RIGHT FOR SMALL BUSINESSES? <i class="fa-solid fa-plus"></i>
           </div>
           <div class="faq-question-item no-border" data-target="ans-5">
             WHAT MAKES INNOVAITION DIFFERENT FROM OTHER AGENCIES? <i class="fa-solid fa-plus"></i>
@@ -503,24 +506,24 @@
 
           <div class="faq-answer-display">
             <div class="faq-answer-text active" id="ans-1">
-              <p>We partner with businesses in healthcare, finance, e-commerce, real estate, and technology—delivering
-                AI solutions tailored to their goals.</p>
+              <p>We work with businesses across all kinds of industries—from healthcare to e-commerce—who want to save
+                time and work smarter.</p>
             </div>
             <div class="faq-answer-text" id="ans-2">
-              <p>Most AI solutions are planned, developed, and launched within 4-12 weeks, depending on project size and
-                data readiness.</p>
+              <p>Typically, we can design, build, and launch a custom AI tool for your business in just 4 to 12 weeks.
+              </p>
             </div>
             <div class="faq-answer-text" id="ans-3">
-              <p>Yes, from discovery and strategy to custom model development, integration, and ongoing support, we
-                handle the entire lifecycle.</p>
+              <p>Absolutely. We guide you through the entire process, from figuring out what you need to building it and
+                training your team how to use it.</p>
             </div>
             <div class="faq-answer-text" id="ans-4">
-              <p>Absolutely. Our solutions are designed to be affordable, scalable, and focused on improving efficiency
-                and business growth.</p>
+              <p>Yes! If you have repetitive tasks or want to grow without hiring a massive team, custom AI tools can
+                save you countless hours.</p>
             </div>
             <div class="faq-answer-text" id="ans-5">
-              <p>We focus on practical, results-driven AI rather than just hype. Our expert team ensures your tech
-                aligns directly with your business goals.</p>
+              <p>We don't just give you advice and walk away. We actually build the tools, make sure they are secure,
+                and ensure they solve your specific problems.</p>
             </div>
           </div>
         </div>
@@ -536,6 +539,9 @@
       <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
+
+    <canvas id="shader-canvas"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; background: black; touch-action: none;"></canvas>
 
     <div class="contact-divider-wrap">
       <div class="horizontal-divider light-lines divider-flex">
@@ -562,9 +568,9 @@
         <div class="contact-connect">
           <span class="connect-label">HOW DO WE CONNECT?</span>
           <ul class="connect-list">
-            <li><i class="fa-solid fa-location-arrow"></i> Smart process automation</li>
-            <li><i class="fa-solid fa-location-arrow"></i> Direct access to our team — no bots.</li>
-            <li><i class="fa-solid fa-location-arrow"></i> We ask smart questions fast.</li>
+            <li><i class="fa-solid fa-play"></i> Keep your data totally secure</li>
+            <li><i class="fa-solid fa-play"></i> Build tools tailored to your needs</li>
+            <li><i class="fa-solid fa-play"></i> Launch quickly and reliably</li>
           </ul>
         </div>
       </div>
@@ -592,6 +598,87 @@
 
   <footer class="footer-section">
     <div class="footer-watermark">innovAItion</div>
+
+    <div class="footer-column-stack">
+      <div class="brand-col footer-col">
+        <a href="index.html" class="logo footer-logo-mobile">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+            <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="16" cy="14" r="2" fill="white" />
+          </svg>
+          Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+        </a>
+        <p>We help businesses harness the power of AI to automate workflows, improve decisions, and drive smarter
+          growth.</p>
+        <p>Book a call and let's see what we can do.</p>
+        <a href="contact.html" class="footer-cta-mobile">
+          <span class="btn-text">Book a discovery call</span>
+          <div class="profile-btn-icon"><i class="fa-solid fa-arrow-up"></i></div>
+        </a>
+      </div>
+      <div class="links-col footer-col">
+        <span class="footer-label">MAIN LINKS</span>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-play" style="font-size: 0.6rem; margin-right: 8px;"></i>
+              Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="links-col footer-col">
+        <span class="footer-label">UTILITY LINKS</span>
+        <ul class="footer-links">
+          <li><a href="#">Style Guide</a></li>
+          <li><a href="#">Instructions</a></li>
+          <li><a href="#">Licenses</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Error 404</a></li>
+          <li><a href="#">Password Protected</a></li>
+        </ul>
+      </div>
+      <div class="newsletter-col footer-col">
+        <span class="footer-label">STAY CONNECTED</span>
+        <p>Join our newsletter for tips, updates, and project highlights — only the good stuff.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter email address" required>
+          <button type="submit">
+            <div class="circle-icon"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+        </form>
+        <p class="privacy-text">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+      </div>
+      <div class="main-contact-col footer-col">
+        <span class="footer-label">MAIN</span>
+        <div class="contact-details">
+          <a href="tel:+14155550167" class="footer-bot-link">+1 (415) 555-0167</a>
+          <a href="mailto:SUPPORT@INNOVAITION.CA" class="footer-bot-link">SUPPORT@INNOVAITION.CA</a>
+        </div>
+      </div>
+      <div class="address-col footer-col">
+        <span class="footer-label">ADDRESS</span>
+        <p>Innovaition consulting Agency<br>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+      </div>
+      <div class="social-col footer-col">
+        <span class="footer-label">SOCIAL</span>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="legal-col footer-col">
+        <span class="footer-label">LEGAL</span>
+        <p>©2026 Innovaition Agency<br>Designed by <a href="#" style="color: #fff;">VictorWork</a>. Powered by <a
+            href="#" style="color: #fff;">Webflow</a>.</p>
+      </div>
+    </div>
+
     <div class="footer-framed-box gs-reveal-up">
       <div class="footer-top">
         <div class="footer-col brand-col">
@@ -614,7 +701,7 @@
             <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right"></i></a></li>
             <li><a href="services.html">Services <i class="fa-solid fa-arrow-up-right"></i></a></li>
             <li><a href="pricing.html">Pricing <i class="fa-solid fa-arrow-up-right"></i></a></li>
-            <li><a href="case-studies.html">Case Study <i class="fa-solid fa-arrow-up-right"></i></a></li>
+            <li><a href="blog.html">Blog <i class="fa-solid fa-arrow-up-right"></i></a></li>
             <li><a href="contact.html">Contact us <i class="fa-solid fa-arrow-up-right"></i></a></li>
           </ul>
         </div>
@@ -675,6 +762,113 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/floating-paths.js"></script>
+
+  <script>
+    {
+      const canvas = document.getElementById('beams-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const MINIMUM_BEAMS = 20;
+        let beams = [];
+        let animationFrameId;
+
+        const createBeam = (width, height) => {
+          const angle = -15 + Math.random() * 30;
+          return {
+            x: Math.random() * width,
+            y: Math.random() * height * 1.5 - height * 0.25,
+            width: 30 + Math.random() * 60,
+            length: height * 1.5,
+            angle: angle,
+            speed: 0.6 + Math.random() * 1.2,
+            opacity: 0.12 + Math.random() * 0.16,
+            hue: 190 + Math.random() * 70,
+            pulse: Math.random() * Math.PI * 2,
+            pulseSpeed: 0.02 + Math.random() * 0.03,
+          };
+        };
+
+        const resetBeam = (beam, index, totalBeams, width, height) => {
+          const column = index % 3;
+          const spacing = width / 3;
+
+          beam.y = -100 - Math.random() * 200;
+          beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.5;
+          beam.width = 100 + Math.random() * 100;
+          beam.speed = 0.5 + Math.random() * 0.4;
+          beam.hue = 190 + (index * 70) / totalBeams;
+          beam.opacity = 0.2 + Math.random() * 0.1;
+          return beam;
+        };
+
+        const updateCanvasSize = () => {
+          const dpr = window.devicePixelRatio || 1;
+          const parent = canvas.parentElement;
+          canvas.width = parent.clientWidth * dpr;
+          canvas.height = parent.clientHeight * dpr;
+          ctx.scale(dpr, dpr);
+
+          const totalBeams = MINIMUM_BEAMS * 1.5;
+          beams = Array.from({ length: totalBeams }, () => createBeam(parent.clientWidth, parent.clientHeight));
+        };
+
+        window.addEventListener('resize', updateCanvasSize);
+        updateCanvasSize();
+
+        /* ========================================================= */
+        /* ===== FIND AND REPLACE THIS EXACT FUNCTION BLOCK ===== */
+        /* ========================================================= */
+        const drawBeam = (ctx, beam) => {
+          ctx.save();
+          ctx.translate(beam.x, beam.y);
+          ctx.rotate((beam.angle * Math.PI) / 180);
+
+          // We multiply by 1 to represent 'strong' intensity as strong, medium as 0.85 and subtle as 0.7 
+          const pulsingOpacity = beam.opacity * (0.8 + Math.sin(beam.pulse) * 0.2) * 1;
+
+          const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
+
+          // UPDATED: Removed beam.hue and set saturation to 0% for shades of grey.
+          // Adjust the lightness percentage (currently 65%) to make the grey brighter or darker.
+          gradient.addColorStop(0, `hsla(0, 0%, 65%, 0)`);
+          gradient.addColorStop(0.1, `hsla(0, 0%, 65%, ${pulsingOpacity * 0.5})`);
+          gradient.addColorStop(0.4, `hsla(0, 0%, 65%, ${pulsingOpacity})`);
+          gradient.addColorStop(0.6, `hsla(0, 0%, 65%, ${pulsingOpacity})`);
+          gradient.addColorStop(0.9, `hsla(0, 0%, 65%, ${pulsingOpacity * 0.5})`);
+          gradient.addColorStop(1, `hsla(0, 0%, 65%, 0)`);
+
+          ctx.fillStyle = gradient;
+          ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
+          ctx.restore();
+        };
+
+        const animate = () => {
+          const w = canvas.width / (window.devicePixelRatio || 1);
+          const h = canvas.height / (window.devicePixelRatio || 1);
+
+          ctx.clearRect(0, 0, w, h);
+          ctx.filter = "blur(35px)";
+
+          const totalBeams = beams.length;
+
+          beams.forEach((beam, index) => {
+            beam.y += beam.speed;
+            beam.pulse += beam.pulseSpeed;
+
+            if (beam.y > h + 100) {
+              resetBeam(beam, index, totalBeams, w, h);
+            }
+
+            drawBeam(ctx, beam);
+          });
+
+          animationFrameId = requestAnimationFrame(animate);
+        };
+
+        animate();
+      }
+    }
+  </script>
 </body>
 
 </html>

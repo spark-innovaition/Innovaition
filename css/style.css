@@ -9695,3 +9695,68 @@ a {
     padding: 24px;
   }
 }
+
+/* === REFINED LAMP GLOW: Eliminates bounding box and applies grey shade === */
+.lamp-glow-main {
+  /* Using radial-gradient with alpha transparency to ensure boundless, soft edges */
+  background: radial-gradient(circle,
+      rgba(220, 220, 220, 0.3) 0%,
+      /* Grey core with reduced opacity */
+      rgba(220, 220, 220, 0.15) 60%,
+      /* Softer grey middle */
+      rgba(220, 220, 220, 0) 100%
+      /* Perfectly transparent edge - ELIMINATES THE BOX */
+    );
+  filter: blur(25px);
+  /* Added filter blur to soften any remaining lines */
+  pointer-events: none;
+  /* Ensure it doesn't block clicks */
+}
+
+.lamp-glow-oval {
+  /* Applying a grey pool of light, diffused and boundless */
+  background: radial-gradient(ellipse,
+      rgba(180, 180, 180, 0.15) 0%,
+      /* Softer grey core */
+      rgba(180, 180, 180, 0.05) 70%,
+      /* Diffuse grey middle */
+      rgba(180, 180, 180, 0) 100%
+      /* Perfectly transparent edge - ELIMINATES THE BOX */
+    );
+  filter: blur(40px);
+  /* Heavier blur for a soft, atmospheric pool */
+  pointer-events: none;
+}
+
+/* === REFINED BOUNDLESS GREY/WHITE GLOW === */
+
+/* 1. Hide all hard geometric lines, cones, and bounding boxes */
+.lamp-line,
+.lamp-cone,
+.lamp-mask,
+.lamp-blur-top {
+  display: none !important;
+}
+
+/* 2. Allow the light to bleed naturally */
+.lamp-container {
+  overflow: visible !important;
+}
+
+/* 3. Use solid colors and heavy blurs so the light punches through the dark background */
+.lamp-glow-main {
+  background: rgba(255, 255, 255, 0.8) !important;
+  filter: blur(80px) !important;
+  /* Huge blur creates the boundless gradient */
+  height: 18rem !important;
+  /* Made taller so the light reaches further down */
+  transform: translateY(-50%) !important;
+  /* Centers the light over the top edge */
+}
+
+.lamp-glow-oval {
+  background: #ffffff !important;
+  filter: blur(40px) !important;
+  height: 10rem !important;
+  transform: translateY(-50%) !important;
+}
