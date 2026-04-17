@@ -4467,14 +4467,16 @@ a {
   }
 
   .footer-btn-modern .btn-icon-box {
-    background: #000;
-    color: #fff;
+    background: transparent !important;
+    /* Removes the black box */
+    color: #000 !important;
+    /* Makes the arrow black */
     width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
   }
 
   .footer-links li a {
@@ -9759,4 +9761,56 @@ a {
   filter: blur(40px) !important;
   height: 10rem !important;
   transform: translateY(-50%) !important;
+}
+
+/* === ALTRION FOOTER MATCHING OVERRIDES === */
+@media (min-width: 769px) {
+
+  /* Forces 4 columns so the links stay tight on the left, leaving the right empty */
+  .footer-framed-box .footer-top {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+    gap: 40px;
+  }
+
+  /* Matches Altrion's button style (White body, Black icon box) */
+  .footer-btn-modern {
+    background: #ffffff !important;
+    border-radius: 0 !important;
+  }
+
+  .footer-btn-modern .btn-text {
+    color: #000000 !important;
+  }
+
+  .footer-btn-modern .btn-icon-box {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+/* Matches Altrion's label styling (side borders only, transparent bg) */
+.footer-label {
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 0 12px !important;
+  font-size: 0.65rem !important;
+  color: #888 !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Matches Altrion's social icons (Square, dark background, no border) */
+.footer-socials a {
+  border-radius: 4px !important;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #888 !important;
+}
+
+.footer-socials a:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
 }
