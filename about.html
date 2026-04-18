@@ -1081,6 +1081,43 @@
       }
     }
   </script>
+
+  <script>
+    // Mobile-only: convert the About bento grid into a looping horizontal carousel.
+    (function setupAboutBentoCarousel() {
+      function init() {
+        if (window.innerWidth > 768) return;
+        const grid = document.querySelector('.about-page .about-bento-grid');
+        if (!grid || grid.dataset.carouselReady === '1') return;
+
+        const cells = Array.from(grid.children);
+        if (!cells.length) return;
+
+        const track = document.createElement('div');
+        track.className = 'about-bento-carousel-track';
+        cells.forEach(c => track.appendChild(c));
+        // Duplicate the set so the -50% keyframe wraps seamlessly.
+        cells.forEach(c => track.appendChild(c.cloneNode(true)));
+        grid.appendChild(track);
+        grid.dataset.carouselReady = '1';
+
+        // Pause on touch, resume after a short idle.
+        let resumeTimer;
+        const pause = () => {
+          track.classList.add('is-paused');
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => track.classList.remove('is-paused'), 2500);
+        };
+        track.addEventListener('touchstart', pause, { passive: true });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </body>
 
 </html>

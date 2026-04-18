@@ -10654,3 +10654,193 @@ spline-viewer::part(logo) {
     color: #555 !important;
   }
 }
+
+/* ============================================================= */
+/* ===== MOBILE: About Hero — fit in one vertical screen ======= */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .about-page .about-hero-sec {
+    min-height: 100svh;
+    height: 100svh;
+    padding: 96px 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .about-page .about-hero-centered {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+  }
+
+  .about-page .about-hero-centered .trust-badge {
+    font-size: 0.62rem;
+    padding: 6px 12px;
+    margin-bottom: 18px;
+    letter-spacing: 0.08em;
+  }
+
+  .about-page .about-hero-centered h1 {
+    font-size: clamp(2.1rem, 10.5vw, 3rem);
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .about-page .about-hero-centered p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto 22px;
+    max-width: 92%;
+  }
+
+  .about-page .about-hero-centered .hero-actions {
+    gap: 10px;
+  }
+
+  .about-page .about-hero-centered .hero-actions .btn-main {
+    padding: 12px 22px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .about-page .about-hero-centered .hero-actions .btn-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Tame the lamp effect so it doesn't push layout / overflow on mobile */
+  .about-page .about-hero-sec .lamp-container {
+    transform: scale(0.7);
+    transform-origin: center top;
+  }
+}
+
+/* ============================================================= */
+/* ===== MOBILE: About Bento → Looping Horizontal Carousel ===== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .about-page .about-bento-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    grid-auto-rows: auto !important;
+    margin: 0 !important;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .about-page .about-bento-carousel-track {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    animation: bentoLoop 40s linear infinite;
+    will-change: transform;
+  }
+
+  .about-page .about-bento-carousel-track:hover,
+  .about-page .about-bento-carousel-track:active,
+  .about-page .about-bento-carousel-track.is-paused {
+    animation-play-state: paused;
+  }
+
+  .about-page .about-bento-grid .bento-cell {
+    flex: 0 0 82vw;
+    width: 82vw;
+    height: 340px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: none !important;
+  }
+
+  .about-page .about-bento-grid .bento-cell.img-cell {
+    height: 340px;
+  }
+
+  @keyframes bentoLoop {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* ============================================================= */
+/* ===== MOBILE: About OUR TOOLKIT — 2×2 compact grid ========== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .about-page .capabilities-sec {
+    padding: 80px 0 80px;
+  }
+
+  .about-page .capabilities-sec .cap-header h2 {
+    font-size: 1.9rem;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    padding: 0 20px;
+  }
+
+  .about-page .capabilities-sec .cap-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 0 16px;
+    gap: 0;
+  }
+
+  .about-page .capabilities-sec .cap-item {
+    aspect-ratio: 0.85 / 1;
+    min-height: 0;
+    margin: 4px;
+    padding: 18px 12px;
+    background-color: #ebebeb;
+  }
+
+  .about-page .capabilities-sec .cap-number {
+    top: 10px;
+    right: 12px;
+    font-size: 0.6rem;
+  }
+
+  .about-page .capabilities-sec .cap-logo {
+    gap: 6px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  /* Shrink each variant logo size to suit the smaller tile */
+  .about-page .capabilities-sec .cap-item:nth-child(1) .cap-logo { font-size: 0.78rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(2) .cap-logo { font-size: 1.15rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(3) .cap-logo { font-size: 1.45rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(4) .cap-logo { font-size: 1.05rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(5) .cap-logo { font-size: 1.05rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(6) .cap-logo { font-size: 0.78rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(7) .cap-logo { font-size: 1.05rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(8) .cap-logo { font-size: 1.45rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(9) .cap-logo { font-size: 1.1rem; }
+  .about-page .capabilities-sec .cap-item:nth-child(10) .cap-logo { font-size: 1.1rem; }
+
+  /* Join-us CTA spans the full 2-column row */
+  .about-page .capabilities-sec .cap-item.join-us-card {
+    grid-column: span 2 !important;
+    aspect-ratio: auto;
+    padding: 28px 22px;
+    margin: 4px;
+  }
+
+  .about-page .capabilities-sec .cap-item.join-us-card h4 {
+    font-size: 1.15rem;
+    margin: 14px 0;
+  }
+
+  .about-page .capabilities-sec .cap-item.join-us-card .join-btn {
+    font-size: 0.72rem;
+    padding: 9px 16px;
+  }
+
+  .about-page .capabilities-sec .cap-item.join-us-card .rating {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 16px;
+    font-size: 0.72rem;
+  }
+}
