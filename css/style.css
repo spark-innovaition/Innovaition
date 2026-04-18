@@ -9909,4 +9909,17 @@ spline-viewer::part(logo) {
   .about-section {
     padding-top: 80px !important;
   }
+
+  /* --- SERVICES PAGE: Hide floating side navigation on mobile to prevent text overlap --- */
+  .svc-side-menu,
+  .svc-scroll-progress {
+    display: none !important;
+  }
+
+  /* --- NEW SECTIONS: Reduce massive desktop paddings to mobile size --- */
+  .pricing-section,
+  .impact-section {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+  }
 }
