@@ -7965,17 +7965,18 @@ a {
 
   /* --- 1. Hero Section (Mobile) --- */
   .hero {
-    height: 100vh;
-    min-height: 700px;
+    height: 100svh;
+    /* Uses dynamic mobile viewport height */
+    min-height: 550px;
+    /* Lowered from 700px to prevent forced cutoff */
     width: 100%;
     overflow: hidden;
   }
 
   .hero-container {
     justify-content: flex-start !important;
-    /* Pushes content to the top */
-    padding-top: 120px;
-    /* Clears the navbar */
+    padding-top: 100px;
+    /* Tightened from 120px */
   }
 
   .hero-text-wrapper {
@@ -7985,19 +7986,20 @@ a {
 
   .hero-title-row {
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 20px !important;
     gap: 10px;
   }
 
   .hero-title-row.indent {
-    padding-left: 20px;
+    padding-left: 20px !important;
     margin-top: 10px;
     justify-content: flex-start;
     position: relative;
   }
 
   .hero-title {
-    font-size: clamp(3.5rem, 15vw, 6rem);
+    font-size: clamp(3rem, 13vw, 5rem);
+    /* Slightly smaller to save vertical space */
     line-height: 0.9;
   }
 
@@ -8008,61 +8010,58 @@ a {
   }
 
   .since-text {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    margin-top: 0;
-    text-align: right;
-    font-size: 0.8rem;
-    max-width: 80px;
-    line-height: 1.3;
+    display: none !important;
   }
 
   /* Robot 3D Canvas Background */
   .hero-robot-3d {
-    width: 160vw !important;
-    right: -30vw !important;
+    width: 150vw !important;
+    /* Scaled up */
+    right: -40vw !important;
+    /* Pushed hard to the right */
     left: auto !important;
-    bottom: -20vh !important;
-    /* Pushes the robot significantly down */
-    opacity: 0.5;
+    bottom: -15vh !important;
+    /* Pushed further down */
+    top: auto !important;
+    opacity: 0.4 !important;
+    /* Dimmed to prevent text clashing */
+    transform: none !important;
     pointer-events: none;
     z-index: 1 !important;
-    /* Locks the robot into the deep background */
   }
 
   /* Lower Content (Stats, Text, Buttons) */
   .hero-content-left {
     position: absolute;
-    bottom: 40px;
+    bottom: 25px;
+    /* Anchored tighter to the bottom */
     left: 20px;
     padding: 0;
     max-width: 85%;
     z-index: 100 !important;
-    /* OVERRIDES GSAP ANIMATION BUG */
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
   }
 
   .client-stats {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    /* Tightened */
     transform: scale(0.9);
     transform-origin: left center;
   }
 
   .review-stars span {
     color: #ffffff !important;
-    /* Brightens the 'Happy clients' text */
     opacity: 0.9 !important;
   }
 
   .hero-desc {
-    font-size: 1rem;
-    margin-bottom: 24px;
+    font-size: 0.95rem;
+    /* Slightly smaller */
+    margin-bottom: 20px;
     max-width: 280px;
     color: #ffffff !important;
-    /* Forces bright white text */
     opacity: 1 !important;
   }
 
@@ -8080,7 +8079,6 @@ a {
     padding: 12px 20px;
     font-size: 0.85rem;
     background-color: #ffffff !important;
-    /* Forces solid white button */
     color: #000000 !important;
     opacity: 1 !important;
   }
@@ -8094,13 +8092,13 @@ a {
   /* Social Icons Stacked on Right */
   .hero-social-float {
     position: absolute;
-    bottom: 40px;
+    bottom: 25px;
+    /* Matched with content-left */
     right: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     z-index: 100 !important;
-    /* OVERRIDES GSAP ANIMATION BUG */
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
@@ -8112,7 +8110,6 @@ a {
     font-size: 0.75rem;
     background-color: rgba(255, 255, 255, 0.05);
     color: #ffffff !important;
-    /* Forces bright white icons */
     border-color: rgba(255, 255, 255, 0.3) !important;
     opacity: 1 !important;
   }
