@@ -9261,6 +9261,182 @@ a {
   .p-summary-list li {
     padding: 24px;
   }
+
+  /* ==================================================== */
+  /* --- MOBILE MENU REDESIGN (MATCHING REFERENCE)  --- */
+  /* ==================================================== */
+
+  .menu-grid {
+    padding-top: 60px !important;
+    /* Ensure it clears the navbar */
+    align-content: flex-start;
+  }
+
+  .menu-col-left {
+    padding: 0 !important;
+    border-bottom: none !important;
+  }
+
+  /* Create the 2-column grid for links */
+  .menu-nav-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-nav-item {
+    width: 100% !important;
+    padding: 24px 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Add border between the two columns */
+  .menu-nav-item:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Remove top border for the first row to keep it clean */
+  .menu-nav-item:nth-child(1),
+  .menu-nav-item:nth-child(2) {
+    border-top: none !important;
+  }
+
+  /* Style the links to match the clean Sans-Serif reference */
+  .menu-nav-item a {
+    font-family: var(--font-body, sans-serif) !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    color: #ccc !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 !important;
+  }
+
+  /* Hide the diagonal arrows on mobile */
+  .menu-nav-item a i {
+    display: none !important;
+  }
+
+  /* --- Lower Menu Info Section --- */
+  .menu-col-right {
+    padding: 40px 20px 0 !important;
+    /* No bottom padding so social row bleeds */
+  }
+
+  .menu-info-top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .menu-vision-text {
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    line-height: 1.4 !important;
+  }
+
+  .menu-globe-widget {
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .menu-globe-widget i {
+    font-size: 2.5rem !important;
+    color: #888 !important;
+    /* Muted globe */
+  }
+
+  .menu-globe-widget .coords {
+    font-size: 0.75rem !important;
+    color: #888 !important;
+  }
+
+  .menu-info-bottom {
+    gap: 30px !important;
+    margin-top: 40px !important;
+  }
+
+  .menu-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .menu-contact-grid .location-block,
+  .menu-contact-grid .contact-block {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* The vertical line next to LOCATION / CONTACT ON */
+  .menu-contact-grid .meta-label {
+    border-left: 1px solid #555 !important;
+    border-bottom: none !important;
+    padding-left: 12px !important;
+    padding-bottom: 0 !important;
+    font-size: 0.7rem !important;
+    color: #666 !important;
+    margin-bottom: 12px !important;
+    display: inline-block !important;
+  }
+
+  .location-block p,
+  .contact-block p {
+    font-size: 1rem !important;
+    color: #aaa !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .menu-time {
+    font-size: 2.8rem !important;
+    color: #fff !important;
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .menu-email {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+  }
+
+  /* --- Social Row Footer --- */
+  .menu-social-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: calc(100% + 40px) !important;
+    /* Bleeds to the edges */
+    margin-left: -20px !important;
+    margin-top: 40px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 0 !important;
+  }
+
+  .menu-social-row a {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 20px 0 !important;
+    justify-content: center !important;
+    font-size: 0 !important;
+    /* MAGIC TRICK: Hides the text (e.g. 'LinkedIn') without altering HTML */
+  }
+
+  .menu-social-row a:last-child {
+    border-right: none !important;
+  }
+
+  .menu-social-row a i {
+    font-size: 1.2rem !important;
+    /* Keeps the icons visible and sized properly */
+    color: #ccc !important;
+  }
 }
 
 /* ==========================================================================
