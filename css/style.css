@@ -10025,16 +10025,19 @@ spline-viewer::part(logo) {
   /* --- HERO: robot was positioned off-screen at 50% opacity.
          Recenter so it sits behind the text as visible backdrop. --- */
   /* --- HERO: Override the rogue positioning --- */
+  /* --- HERO: Center the robot behind the text --- */
   .hero-robot-3d {
     width: 150vw !important;
-    right: -40vw !important;
-    left: auto !important;
+    left: 50% !important;
+    /* Pull to the middle */
+    right: auto !important;
+    /* Clear the right-side anchor */
+    transform: translateX(-50%) !important;
+    /* Perfectly centers it */
     bottom: -28vh !important;
-    /* Forces it safely below the text */
+    /* Keeps it pushed down below the text */
     top: auto !important;
     opacity: 0.4 !important;
-    /* Dims it so text pops */
-    transform: none !important;
   }
 
   /* --- HERO: '© Automated — Growth' badge clipped off right edge.
