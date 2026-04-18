@@ -9268,12 +9268,11 @@ a {
   /* ==================================================== */
 
   .menu-grid {
-    padding-top: 60px !important;
+    padding-top: 80px !important;
+    /* Changed from 60px to exactly clear the Navbar */
     align-content: flex-start;
     height: 100svh !important;
-    /* Locks to exact screen height */
     overflow: hidden !important;
-    /* Prevents scrolling */
   }
 
   .menu-col-left {
@@ -10025,13 +10024,16 @@ spline-viewer::part(logo) {
 
   /* --- HERO: robot was positioned off-screen at 50% opacity.
          Recenter so it sits behind the text as visible backdrop. --- */
+  /* --- HERO: Override the rogue positioning --- */
   .hero-robot-3d {
-    width: 120vw !important;
-    right: -10vw !important;
+    width: 150vw !important;
+    right: -40vw !important;
     left: auto !important;
-    bottom: -8vh !important;
+    bottom: -28vh !important;
+    /* Forces it safely below the text */
     top: auto !important;
-    opacity: 0.85 !important;
+    opacity: 0.4 !important;
+    /* Dims it so text pops */
     transform: none !important;
   }
 
