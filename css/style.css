@@ -8026,8 +8026,8 @@ a {
     width: 150vw !important;
     right: -40vw !important;
     left: auto !important;
-    bottom: -22vh !important;
-    /* Moved down further */
+    bottom: -28vh !important;
+    /* Pushed down further so the face clears the text */
     top: auto !important;
     opacity: 0.4 !important;
     transform: none !important;
