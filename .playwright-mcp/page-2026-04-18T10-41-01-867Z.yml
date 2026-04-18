@@ -1,0 +1,501 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - text: MENU
+    - link "Innovaition ®" [ref=e7] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e8]
+      - text: Innovaition
+      - superscript [ref=e12]: ®
+    - generic [ref=e13]:
+      - link "BOOK A CALL" [ref=e15] [cursor=pointer]:
+        - /url: contact.html
+      - link "" [ref=e16] [cursor=pointer]:
+        - /url: contact.html
+        - generic [ref=e17]: 
+  - generic [ref=e19]:
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "HOME" [ref=e23] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e24]:
+        - link "ABOUT US" [ref=e25] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e26]:
+        - link "SERVICES" [ref=e27] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e28]:
+        - link "INDUSTRIES" [ref=e29] [cursor=pointer]:
+          - /url: industries.html
+          - text: INDUSTRIES
+      - listitem [ref=e30]:
+        - link "BLOG" [ref=e31] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e32]:
+        - link "CONTACT US" [ref=e33] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e36]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e37]:
+          - generic [ref=e38]: 
+          - generic [ref=e39]: 62.328° N - 15.845° E
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: LOCATION
+            - paragraph [ref=e44]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "04:41 AM" [level=2] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]: CONTACT ON
+            - paragraph [ref=e48]: +1 (403) 555-0167
+            - link "INFO@INNOVAITION.CA" [ref=e49] [cursor=pointer]:
+              - /url: mailto:info@innovaition.ca
+        - generic [ref=e50]:
+          - link " LinkedIn" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e52]: 
+            - text: LinkedIn
+          - link " Facebook" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e54]: 
+            - text: Facebook
+          - link " Instagram" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e56]: 
+            - text: Instagram
+  - banner [ref=e57]:
+    - generic:
+      - generic:
+        - generic:
+          - heading "NEVER" [level=1]
+        - generic:
+          - heading "MISS " [level=1]:
+            - text: MISS
+            - generic: 
+        - generic:
+          - heading "A LEAD" [level=1]
+          - generic: © Automated — Growth
+      - generic [ref=e61]:
+        - paragraph [ref=e62]:
+          - text: We build complete automation ecosystems for
+          - strong [ref=e63]: clinics, salons, and service businesses
+          - text: using AI, Web Design, and SEO to keep your calendars full.
+        - generic [ref=e64] [cursor=pointer]:
+          - link "View Our Ecosystems" [ref=e65]:
+            - /url: "#journey"
+          - link "" [ref=e66]:
+            - /url: "#journey"
+            - generic [ref=e67]: 
+      - generic [ref=e68]:
+        - link "" [ref=e69] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e70]: 
+        - link "" [ref=e71] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e72]: 
+        - link "" [ref=e73] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e74]: 
+    - generic [ref=e75]:
+      - generic [ref=e77]: CALGARY, AB
+      - generic [ref=e78]: 04:41 AM
+      - generic [ref=e79]: (51.0447° N, 114.0719° W)
+  - generic [ref=e82]:
+    - generic [ref=e83]:
+      - heading "STOP DOING ADMIN IN THE TRUCK OR CLINIC" [level=2] [ref=e84]:
+        - text: STOP DOING
+        - text: ADMIN IN
+        - text: THE TRUCK
+        - text: OR CLINIC
+      - paragraph [ref=e85]: Business owners work 80 hours a week because they are stuck doing data entry, answering phones, and chasing leads. We build localized automation systems to give you your life back.
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]: 
+        - heading "Autopilot Your Growth" [level=4] [ref=e90]
+        - paragraph [ref=e91]: We build the infrastructure that captures leads, books appointments, and syncs data 24/7 without human intervention.
+      - link "Book a Demo Call " [ref=e92] [cursor=pointer]:
+        - /url: contact.html
+        - text: Book a Demo Call
+        - generic [ref=e94]: 
+    - generic [ref=e95]:
+      - generic [ref=e96]: THE AUTOMATION ADVANTAGE
+      - list [ref=e97]:
+        - listitem [ref=e98]:
+          - generic [ref=e99]: 
+          - text: Unified Inbox (IG, FB, SMS, Email)
+        - listitem [ref=e100]:
+          - generic [ref=e101]: 
+          - text: Missed Call Auto-Text Back
+        - listitem [ref=e102]:
+          - generic [ref=e103]: 
+          - text: Seamless Booking Integrations
+        - listitem [ref=e104]:
+          - generic [ref=e105]: 
+          - text: Automated QuickBooks Invoicing
+      - generic [ref=e106]: © 2026 Innovaition consulting agency
+  - generic [ref=e107]:
+    - generic [ref=e110]: WHO WE HELP
+    - heading "INDUSTRY-SPECIFIC AUTOMATION ECOSYSTEMS" [level=2] [ref=e113]:
+      - text: INDUSTRY-SPECIFIC
+      - text: AUTOMATION ECOSYSTEMS
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e117]:
+          - heading "HEALTH & WELLNESS CLINICS" [level=3] [ref=e118]
+          - generic [ref=e120]: +
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: Stop front-desk bottlenecking and empty last-minute slots. We integrate with Jane App to provide HIPAA-compliant AI receptionists, automated waitlist reactivation, and secure communications.
+          - link "Explore Clinic Solutions " [ref=e123] [cursor=pointer]:
+            - /url: services.html
+            - text: Explore Clinic Solutions
+            - generic [ref=e124]: 
+      - generic [ref=e127] [cursor=pointer]:
+        - heading "SALONS & BARBERSHOPS" [level=3] [ref=e128]
+        - generic [ref=e130]: +
+      - generic [ref=e133] [cursor=pointer]:
+        - heading "HOME & GENERAL SERVICES" [level=3] [ref=e134]
+        - generic [ref=e136]: +
+      - generic [ref=e137]:
+        - link "Innovaition ®" [ref=e138] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e139]
+          - text: Innovaition
+          - superscript [ref=e143]: ®
+        - heading "READY TO FILL YOUR CALENDAR?" [level=3] [ref=e144]
+        - link "Book a Demo " [ref=e145] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e146]: Book a Demo
+          - generic [ref=e148]: 
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - paragraph [ref=e151]:
+          - text: We build automation ecosystems designed to deliver
+          - strong [ref=e152]: real, measurable bookings.
+        - generic [ref=e153] [cursor=pointer]:
+          - link "Get started now" [ref=e154]:
+            - /url: contact.html
+          - link "" [ref=e155]:
+            - /url: contact.html
+            - generic [ref=e156]: 
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - heading "0" [level=2] [ref=e159]
+          - paragraph [ref=e160]: Missed Calls Ever Again
+        - generic [ref=e161]:
+          - heading "0%" [level=2] [ref=e162]
+          - paragraph [ref=e163]: Lead Capture Rate
+        - generic [ref=e164]:
+          - heading "24/7" [level=2] [ref=e165]
+          - paragraph [ref=e166]: Automated Booking
+  - generic [ref=e168]:
+    - generic [ref=e171]: OUR METHODOLOGY
+    - heading "A SIMPLE PROCESS FOR SYSTEM INTEGRATION" [level=2] [ref=e174]:
+      - text: A SIMPLE PROCESS FOR
+      - text: SYSTEM INTEGRATION
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - img "Discovery Strategy" [ref=e179]
+        - generic [ref=e180]:
+          - heading "DISCOVERY & AUDIT" [level=3] [ref=e181]
+          - paragraph [ref=e182]: We analyze your current booking flow, lead generation, and accounting software to find exactly where you are losing time and money.
+          - list [ref=e183]:
+            - listitem [ref=e184]: Process mapping
+            - listitem [ref=e185]: Software auditing
+            - listitem [ref=e186]: Clear goal setting
+          - generic [ref=e187]:
+            - generic [ref=e188]: PHASE 01
+            - generic [ref=e189]: "01"
+      - generic [ref=e190]:
+        - img "Data Planning" [ref=e192]
+        - generic [ref=e193]:
+          - heading "CRM & WORKFLOW BUILD" [level=3] [ref=e194]
+          - paragraph [ref=e195]: We set up your Unified Inbox (GoHighLevel) and connect it securely to your existing tools like JaneApp, Fresha, or QuickBooks.
+          - list [ref=e196]:
+            - listitem [ref=e197]: Unified Inbox Setup
+            - listitem [ref=e198]: Missed Call Text-Back
+            - listitem [ref=e199]: Accounting Sync
+          - generic [ref=e200]:
+            - generic [ref=e201]: PHASE 02
+            - generic [ref=e202]: "02"
+      - generic [ref=e203]:
+        - img "Development Integration" [ref=e205]
+        - generic [ref=e206]:
+          - heading "AI AGENT TRAINING" [level=3] [ref=e207]
+          - paragraph [ref=e208]: We train custom AI Chatbots and Voice Receptionists to answer FAQs, pre-qualify leads, and book directly into your calendar.
+          - list [ref=e209]:
+            - listitem [ref=e210]: Custom Chatbot Build
+            - listitem [ref=e211]: Voice AI Dispatcher
+            - listitem [ref=e212]: Thorough testing
+          - generic [ref=e213]:
+            - generic [ref=e214]: PHASE 03
+            - generic [ref=e215]: "03"
+      - generic [ref=e216]:
+        - img "Launch Support" [ref=e218]
+        - generic [ref=e219]:
+          - heading "LAUNCH & SCALE" [level=3] [ref=e220]
+          - paragraph [ref=e221]: We launch the system, train your staff on how to use the mobile app, and continuously optimize the automations to handle more volume.
+          - list [ref=e222]:
+            - listitem [ref=e223]: Staff App Training
+            - listitem [ref=e224]: Automated Review Requests
+            - listitem [ref=e225]: Ongoing Optimization
+          - generic [ref=e226]:
+            - generic [ref=e227]: PHASE 04
+            - generic [ref=e228]: "04"
+  - generic [ref=e229]:
+    - generic [ref=e233]: THE INNOVAITION ADVANTAGE
+    - heading "SMARTER SYSTEMS. FULL CALENDARS." [level=2] [ref=e236]:
+      - text: SMARTER SYSTEMS.
+      - text: FULL CALENDARS.
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - heading "THE UNIFIED INBOX" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Stop checking 5 different apps. We pull your Instagram DMs, Facebook messages, Website Chats, SMS, and Emails into one single app on your phone.
+          - list [ref=e242]:
+            - listitem [ref=e243]:
+              - generic [ref=e244]: 
+              - text: Instant Lead Alerts
+            - listitem [ref=e245]:
+              - generic [ref=e246]: 
+              - text: Tap-to-Call Clients
+            - listitem [ref=e247]:
+              - generic [ref=e248]: 
+              - text: Send Payment Links
+            - listitem [ref=e249]:
+              - generic [ref=e250]: 
+              - text: Auto-Review Requests
+        - generic [ref=e251]: © 2026 Innovaition Agency
+      - generic [ref=e253]:
+        - generic [ref=e255]: 
+        - heading "MISSED CALL TEXT-BACK" [level=3] [ref=e256]
+        - paragraph [ref=e257]: Never lose a booking to a competitor again. If you miss a call while with a client, our system instantly texts them back to capture the lead.
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - heading "100%" [level=2] [ref=e260]
+          - paragraph [ref=e261]: HIPAA Compliant
+          - generic: 
+        - generic [ref=e262]:
+          - heading "SAFE & SECURE" [level=3] [ref=e263]:
+            - text: SAFE &
+            - text: SECURE
+          - generic: 
+          - generic [ref=e264]: BUSINESS GRADE
+      - generic [ref=e265]:
+        - generic [ref=e266]:
+          - heading "ACCOUNTING & PAYROLL SYNC" [level=3] [ref=e267]
+          - paragraph [ref=e268]: We connect your POS directly to QuickBooks and payroll systems so you never have to manually calculate splits again.
+        - generic [ref=e269]:
+          - generic [ref=e272]: QBO
+          - generic [ref=e275]: Wagepoint
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - heading "24/7 AI RECEPTIONIST" [level=3] [ref=e278]
+          - paragraph [ref=e279]: Your phones are answered on the first ring, every time. Qualify leads and book appointments automatically while you sleep.
+        - generic [ref=e280]: 24/7
+  - generic [ref=e281]:
+    - generic [ref=e285]: OUR PHILOSOPHY
+    - generic [ref=e287]:
+      - generic [ref=e288]:
+        - generic [ref=e289]:
+          - heading "YOUR DIGITAL GROWTH PARTNERS" [level=2] [ref=e290]:
+            - text: YOUR DIGITAL
+            - text: GROWTH PARTNERS
+          - paragraph [ref=e291]: You started a business to practice your craft, not to do data entry at 10 PM. We build the systems that run your operations smoothly, so you can focus on what you do best.
+        - generic [ref=e292]:
+          - generic [ref=e294]:
+            - generic [ref=e295]:
+              - generic [ref=e296]: TIME
+              - generic [ref=e297]:
+                - heading "GET YOUR HOURS BACK" [level=3] [ref=e298]
+                - paragraph [ref=e299]: We eliminate the repetitive admin tasks, giving you and your front desk hours back every single week to focus on actual client care.
+            - generic [ref=e300]:
+              - generic [ref=e301]: CONVERSION
+              - generic [ref=e302]:
+                - heading "ZERO MISSED LEADS" [level=3] [ref=e303]
+                - paragraph [ref=e304]: Through missed-call text-backs and instant AI replies, we ensure every person who reaches out to your business gets an immediate response.
+            - generic [ref=e305]:
+              - generic [ref=e306]: RETENTION
+              - generic [ref=e307]:
+                - heading "LIFETIME CLIENTS" [level=3] [ref=e308]
+                - paragraph [ref=e309]: Our systems automatically follow up with clients, send birthday offers, and reactivate old leads to keep your chairs and schedules full.
+            - generic [ref=e310]:
+              - generic [ref=e311]: SCALE
+              - generic [ref=e312]:
+                - heading "GROW WITHOUT HEADCOUNT" [level=3] [ref=e313]
+                - paragraph [ref=e314]: As you scale and handle 10x the volume, our automations expand with you, meaning you don't need to hire an army of administrators.
+          - generic [ref=e315]:
+            - button " Previous" [ref=e316]:
+              - generic [ref=e317]: 
+              - text: Previous
+            - button "Next " [ref=e318] [cursor=pointer]:
+              - text: Next
+              - generic [ref=e319]: 
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - img "Innovaition AI Standard" [ref=e326]
+          - generic [ref=e327]:
+            - img [ref=e328]
+            - text: Innovaition
+            - superscript [ref=e332]: ®
+        - generic [ref=e333]:
+          - heading "THE INNOVAITION STANDARD" [level=3] [ref=e334]
+          - paragraph [ref=e335]: Built for Local Business Scale
+  - generic [ref=e337]:
+    - generic [ref=e338]:
+      - heading "100%" [level=2] [ref=e339]
+      - heading "COMMITTED TO YOUR SUCCESS" [level=3] [ref=e340]:
+        - text: COMMITTED TO
+        - text: YOUR SUCCESS
+    - generic [ref=e341]:
+      - generic [ref=e342]:
+        - generic [ref=e343]:
+          - generic [ref=e344]: 
+          - text: Innovaition®
+        - paragraph [ref=e345]: “YOU SHOULD RUN YOUR BUSINESS, YOUR BUSINESS SHOULDN'T RUN YOU. WE BUILD AUTOMATION SO YOU CAN FOCUS ON YOUR CRAFT.”
+      - generic [ref=e346]:
+        - generic [ref=e347]:
+          - heading "0%" [level=4] [ref=e348]
+          - paragraph [ref=e349]:
+            - text: Data
+            - text: Security
+        - generic [ref=e350]:
+          - heading "24/7" [level=4] [ref=e351]
+          - paragraph [ref=e352]:
+            - text: Ongoing
+            - text: Support
+  - generic [ref=e353]:
+    - generic [ref=e357]: INSIGHTS & UPDATES
+    - generic [ref=e359]:
+      - heading "STAY AHEAD WITH AI KNOWLEDGE" [level=2] [ref=e360]:
+        - text: STAY AHEAD WITH AI
+        - text: KNOWLEDGE
+      - link "View all blogs" [ref=e361] [cursor=pointer]:
+        - /url: blog.html
+        - text: View all blogs
+    - generic [ref=e363]:
+      - link "AI Decisions HOW AI RECEPTIONISTS ARE REVOLUTIONIZING CLINICS November 17, 2025" [ref=e364] [cursor=pointer]:
+        - /url: "#"
+        - img "AI Decisions" [ref=e366]
+        - generic [ref=e367]:
+          - heading "HOW AI RECEPTIONISTS ARE REVOLUTIONIZING CLINICS" [level=3] [ref=e368]
+          - text: November 17, 2025
+      - link "AI Marketing THE ULTIMATE GUIDE TO AUTOMATING YOUR SALON November 17, 2025" [ref=e369] [cursor=pointer]:
+        - /url: "#"
+        - img "AI Marketing" [ref=e371]
+        - generic [ref=e372]:
+          - heading "THE ULTIMATE GUIDE TO AUTOMATING YOUR SALON" [level=3] [ref=e373]
+          - text: November 17, 2025
+  - generic [ref=e374]:
+    - generic [ref=e378]: WE'RE HERE TO HELP
+    - generic [ref=e382]:
+      - generic [ref=e383]:
+        - heading "LET'S TALK ABOUT YOUR NEXT GROWTH PHASE" [level=2] [ref=e384]:
+          - text: LET'S TALK ABOUT YOUR
+          - text: NEXT GROWTH PHASE
+        - generic [ref=e385]:
+          - generic [ref=e386]: HOW DO WE CONNECT?
+          - list [ref=e387]:
+            - listitem [ref=e388]:
+              - generic [ref=e389]: 
+              - text: Unified Inbox Setup
+            - listitem [ref=e390]:
+              - generic [ref=e391]: 
+              - text: AI Voice & Chatbots
+            - listitem [ref=e392]:
+              - generic [ref=e393]: 
+              - text: Seamless CRM Sync
+      - generic [ref=e394]:
+        - heading "START YOUR AUTOMATION JOURNEY" [level=3] [ref=e395]
+        - generic [ref=e396]:
+          - generic [ref=e397]:
+            - generic [ref=e398]: Name*
+            - textbox "Enter your name" [ref=e399]
+          - generic [ref=e400]:
+            - generic [ref=e401]: Email*
+            - textbox "Enter your email" [ref=e402]
+          - generic [ref=e403]:
+            - generic [ref=e404]: Message
+            - textbox "Message" [ref=e405]
+          - button "Send Message" [ref=e406]
+  - contentinfo [ref=e407]:
+    - generic: innovAItion
+    - text:    
+    - generic [ref=e408]:
+      - generic [ref=e409]:
+        - generic [ref=e410]:
+          - paragraph [ref=e411]:
+            - strong [ref=e412]: End-to-end AI automation for local businesses.
+            - text: Built to eliminate admin work and fill your calendar.
+          - generic [ref=e413]:
+            - paragraph [ref=e414]: Ready to transform your operations?
+            - link "Book a Free Demo" [ref=e415] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e416]: Book a Free Demo
+        - generic [ref=e418]:
+          - generic [ref=e419]: COMPANY
+          - list [ref=e420]:
+            - listitem [ref=e421]:
+              - link "About Us" [ref=e422] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e423]:
+              - link "Services" [ref=e424] [cursor=pointer]:
+                - /url: services.html
+            - listitem [ref=e425]:
+              - link "Industries" [ref=e426] [cursor=pointer]:
+                - /url: industries.html
+            - listitem [ref=e427]:
+              - link "Insights & Blog" [ref=e428] [cursor=pointer]:
+                - /url: blog.html
+            - listitem [ref=e429]:
+              - link "Contact Us" [ref=e430] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e431]:
+          - generic [ref=e432]: INDUSTRIES
+          - list [ref=e433]:
+            - listitem [ref=e434]:
+              - link "Clinics & MedSpas" [ref=e435] [cursor=pointer]:
+                - /url: industry-clinics.html
+            - listitem [ref=e436]:
+              - link "Salons & Barbers" [ref=e437] [cursor=pointer]:
+                - /url: industry-salons.html
+            - listitem [ref=e438]:
+              - link "Home Services" [ref=e439] [cursor=pointer]:
+                - /url: industry-services.html
+      - generic [ref=e441]:
+        - generic [ref=e442]:
+          - generic [ref=e443]: CONTACT
+          - paragraph [ref=e444]: +1 (403) 555-0167
+          - link "INFO@INNOVAITION.CA" [ref=e445] [cursor=pointer]:
+            - /url: mailto:info@innovaition.ca
+        - generic [ref=e446]:
+          - generic [ref=e447]: LOCATION
+          - paragraph [ref=e448]:
+            - text: Proudly based in Calgary, AB.
+            - text: Serving clients across North America.
+        - generic [ref=e449]:
+          - generic [ref=e450]: SOCIAL
+          - generic [ref=e451]:
+            - link "" [ref=e452] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e453]: 
+            - link "" [ref=e454] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e455]: 
+            - link "" [ref=e456] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e457]: 
+        - generic [ref=e458]:
+          - generic [ref=e459]: LEGAL
+          - paragraph [ref=e460]:
+            - text: © 2026 INNOVAITION.
+            - text: All rights reserved.
