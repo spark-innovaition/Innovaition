@@ -1955,12 +1955,17 @@ a {
 
 @media (max-width: 768px) {
   .process-section {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   .process-header {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     padding: 0 20px;
+  }
+
+  .process-title {
+    font-size: 1.7rem;
+    margin-top: 8px;
   }
 
   .process-slider-container {
@@ -1969,7 +1974,6 @@ a {
 
   .process-track {
     width: 100% !important;
-    /* CRITICAL: Overrides max-content so native scrolling activates */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -1984,8 +1988,43 @@ a {
 
   .process-card {
     flex: 0 0 80vw !important;
-    /* Reduced from 85vw so the next card peeks at the edge — visual cue that more cards exist */
+    min-height: 0;
     scroll-snap-align: center;
+  }
+
+  .card-image-col {
+    height: 140px;
+  }
+
+  .card-info-col {
+    padding: 20px;
+  }
+
+  .card-info-col h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .card-info-col p {
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  .process-list li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .card-footer {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .card-footer .number {
+    font-size: 3rem;
+    bottom: 12px;
+    right: 20px;
   }
 
   .process-header::after {
@@ -8546,22 +8585,20 @@ a {
   /* ============================================================= */
 
   .bento-section {
-    padding: 80px 0 !important;
-    /* Removes side padding so cards bleed off the edge smoothly */
+    padding: 50px 0 !important;
     overflow: hidden;
   }
 
   .bento-header {
-    margin: 30px 20px 40px !important;
-    /* Adds the padding back to the text */
+    margin: 20px 20px 24px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centers the badge under the text */
   }
 
   .bento-header h2 {
-    font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+    font-size: 1.8rem !important;
+    line-height: 1.05 !important;
   }
 
   .bento-header::after {
@@ -8597,7 +8634,8 @@ a {
     flex: 0 0 80% !important;
     min-width: 80% !important;
     scroll-snap-align: center;
-    min-height: 420px !important;
+    min-height: 340px !important;
+    padding: 28px !important;
     border-radius: 16px !important;
   }
 
@@ -8605,18 +8643,17 @@ a {
   .bento-split-col {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 12px !important;
     padding: 0 !important;
     background: transparent !important;
   }
 
   .bento-mini {
     flex: 1 !important;
-    min-height: 202px !important;
-    /* Half height minus the gap */
+    min-height: 164px !important;
     width: 100% !important;
     border-radius: 16px !important;
-    /* Mini cards need border radius too */
+    padding: 24px !important;
   }
 
   /* Image formatting fixes for the mobile bounds */
@@ -8636,14 +8673,12 @@ a {
   }
 
   .bento-col-right-bot {
-    min-height: 420px !important;
-    /* Match other cards */
+    min-height: 340px !important;
     justify-content: flex-start !important;
   }
 
   .bento-col-mid-top {
-    min-height: 420px !important;
-    /* Match other cards */
+    min-height: 340px !important;
   }
 
   /* ============================================================= */
@@ -10187,13 +10222,17 @@ spline-viewer::part(logo) {
 /* ============================================================= */
 @media (max-width: 768px) {
   .footer-section {
-    padding: 0 0 200px !important;
+    padding: 0 !important;
+  }
+
+  .footer-watermark {
+    display: none !important;
   }
 
   .footer-column-stack {
     width: calc(100% - 24px);
     margin: 0 12px;
-    padding: 24px 0 0;
+    padding: 24px 0;
     gap: 12px;
   }
 
