@@ -7965,47 +7965,50 @@ a {
 
   /* --- 1. Hero Section (Mobile) --- */
   .hero {
-    height: 100svh;
+    height: 100svh !important;
     /* Uses dynamic mobile viewport height */
-    min-height: 550px;
-    /* Lowered from 700px to prevent forced cutoff */
+    min-height: 600px !important;
     width: 100%;
     overflow: hidden;
   }
 
   .hero-container {
     justify-content: flex-start !important;
-    padding-top: 100px;
-    /* Tightened from 120px */
+    padding-top: 110px !important;
   }
 
+  /* Centered, wrapped title layout */
   .hero-text-wrapper {
     margin-top: 0 !important;
     z-index: 20;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 
+  /* Shrink rows to hug the text so "NEVER" and "MISS" sit side-by-side */
   .hero-title-row {
-    flex-wrap: wrap;
-    padding: 0 20px !important;
-    gap: 10px;
+    width: auto !important;
+    padding: 0 8px !important;
+    justify-content: center !important;
+    margin: 0 !important;
   }
 
-  .hero-title-row.indent {
-    padding-left: 20px !important;
-    margin-top: 10px;
-    justify-content: flex-start;
-    position: relative;
+  /* Force 'A LEAD' onto the next line and center it */
+  .hero-text-wrapper>.hero-title-row:nth-child(3) {
+    width: 100% !important;
+    margin-top: -5px !important;
   }
 
   .hero-title {
-    font-size: clamp(3rem, 13vw, 5rem);
-    /* Slightly smaller to save vertical space */
+    font-size: clamp(3rem, 14vw, 5rem) !important;
     line-height: 0.9;
   }
 
   .hero-lock-icon {
-    font-size: clamp(2.5rem, 10vw, 4.5rem);
-    margin: 0 8px;
+    font-size: clamp(2.5rem, 12vw, 4.5rem) !important;
+    margin: 0 0 0 10px !important;
     transform: translateY(-4px);
   }
 
@@ -8016,28 +8019,31 @@ a {
   /* Robot 3D Canvas Background */
   .hero-robot-3d {
     width: 150vw !important;
-    /* Scaled up */
     right: -40vw !important;
-    /* Pushed hard to the right */
     left: auto !important;
-    bottom: -15vh !important;
-    /* Pushed further down */
+    bottom: -22vh !important;
+    /* Moved down further */
     top: auto !important;
     opacity: 0.4 !important;
-    /* Dimmed to prevent text clashing */
     transform: none !important;
     pointer-events: none;
     z-index: 1 !important;
   }
 
-  /* Lower Content (Stats, Text, Buttons) */
+  /* Lower Content Centered & Pushed Up */
   .hero-content-left {
     position: absolute;
-    bottom: 25px;
-    /* Anchored tighter to the bottom */
-    left: 20px;
-    padding: 0;
-    max-width: 85%;
+    bottom: 40px !important;
+    /* Safely above the screen edge */
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+    padding: 0 20px !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
     z-index: 100 !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -8045,10 +8051,11 @@ a {
   }
 
   .client-stats {
-    margin-bottom: 16px;
-    /* Tightened */
+    margin-bottom: 16px !important;
     transform: scale(0.9);
-    transform-origin: left center;
+    transform-origin: center center !important;
+    /* Centered origin */
+    justify-content: center !important;
   }
 
   .review-stars span {
@@ -8057,12 +8064,12 @@ a {
   }
 
   .hero-desc {
-    font-size: 0.95rem;
-    /* Slightly smaller */
-    margin-bottom: 20px;
-    max-width: 280px;
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+    max-width: 320px !important;
     color: #ffffff !important;
     opacity: 1 !important;
+    text-align: center !important;
   }
 
   .hero-desc strong {
@@ -8073,11 +8080,12 @@ a {
     position: relative;
     z-index: 100;
     opacity: 1 !important;
+    justify-content: center !important;
   }
 
   .btn-group .btn-main {
-    padding: 12px 20px;
-    font-size: 0.85rem;
+    padding: 14px 24px !important;
+    font-size: 0.9rem !important;
     background-color: #ffffff !important;
     color: #000000 !important;
     opacity: 1 !important;
@@ -8089,33 +8097,13 @@ a {
     opacity: 1 !important;
   }
 
-  /* Social Icons Stacked on Right */
+  /* Hide Socials to save space and reduce clutter on mobile */
   .hero-social-float {
-    position: absolute;
-    bottom: 25px;
-    /* Matched with content-left */
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 100 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-  }
-
-  .hero-social-float a {
-    width: 32px;
-    height: 32px;
-    font-size: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    opacity: 1 !important;
+    display: none !important;
   }
 
   .hero-bottom-bar {
-    display: none;
+    display: none !important;
   }
 
   /* ============================================================= */
