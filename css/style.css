@@ -8026,9 +8026,10 @@ a {
     width: 150vw !important;
     right: -40vw !important;
     left: auto !important;
-    bottom: -28vh !important;
-    /* Pushed down further so the face clears the text */
-    top: auto !important;
+    bottom: auto !important;
+    /* Reset bottom */
+    top: 30vh !important;
+    /* Forces it down from the top of the screen */
     opacity: 0.4 !important;
     transform: none !important;
     pointer-events: none;
@@ -9263,13 +9264,16 @@ a {
   }
 
   /* ==================================================== */
-  /* --- MOBILE MENU REDESIGN (MATCHING REFERENCE)  --- */
+  /* --- MOBILE MENU REDESIGN (COMPACT 1-SCREEN FIT)  --- */
   /* ==================================================== */
 
   .menu-grid {
     padding-top: 60px !important;
-    /* Ensure it clears the navbar */
     align-content: flex-start;
+    height: 100svh !important;
+    /* Locks to exact screen height */
+    overflow: hidden !important;
+    /* Prevents scrolling */
   }
 
   .menu-col-left {
@@ -9277,7 +9281,6 @@ a {
     border-bottom: none !important;
   }
 
-  /* Create the 2-column grid for links */
   .menu-nav-list {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -9287,28 +9290,27 @@ a {
 
   .menu-nav-item {
     width: 100% !important;
-    padding: 24px 20px !important;
+    padding: 16px 20px !important;
+    /* Tighter link padding */
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
 
-  /* Add border between the two columns */
   .menu-nav-item:nth-child(odd) {
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
-  /* Remove top border for the first row to keep it clean */
   .menu-nav-item:nth-child(1),
   .menu-nav-item:nth-child(2) {
     border-top: none !important;
   }
 
-  /* Style the links to match the clean Sans-Serif reference */
   .menu-nav-item a {
     font-family: var(--font-body, sans-serif) !important;
-    font-size: 1.05rem !important;
+    font-size: 0.95rem !important;
+    /* Smaller links */
     font-weight: 600 !important;
     color: #ccc !important;
     text-transform: uppercase;
@@ -9316,56 +9318,64 @@ a {
     padding: 0 !important;
   }
 
-  /* Hide the diagonal arrows on mobile */
   .menu-nav-item a i {
     display: none !important;
   }
 
   /* --- Lower Menu Info Section --- */
   .menu-col-right {
-    padding: 40px 20px 0 !important;
-    /* No bottom padding so social row bleeds */
+    padding: 20px 20px 0 !important;
+    /* Tighter top padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    /* Pushes the social row to the absolute bottom */
   }
 
   .menu-info-top {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 24px !important;
+    gap: 12px !important;
+    /* Tighter gap */
     border-bottom: none !important;
     padding-bottom: 0 !important;
   }
 
   .menu-vision-text {
-    font-size: 1.35rem !important;
+    font-size: 1.15rem !important;
+    /* Smaller text */
     font-weight: 600 !important;
     color: #fff !important;
-    line-height: 1.4 !important;
+    line-height: 1.3 !important;
   }
 
   .menu-globe-widget {
     align-items: flex-start !important;
-    gap: 12px !important;
+    gap: 8px !important;
   }
 
   .menu-globe-widget i {
-    font-size: 2.5rem !important;
+    font-size: 1.8rem !important;
+    /* Smaller globe */
     color: #888 !important;
-    /* Muted globe */
   }
 
   .menu-globe-widget .coords {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
     color: #888 !important;
   }
 
   .menu-info-bottom {
-    gap: 30px !important;
-    margin-top: 40px !important;
+    gap: 15px !important;
+    margin-top: 15px !important;
+    /* Tighter margins */
   }
 
   .menu-contact-grid {
     grid-template-columns: 1fr !important;
-    gap: 30px !important;
+    gap: 15px !important;
+    /* Tighter grid */
   }
 
   .menu-contact-grid .location-block,
@@ -9374,35 +9384,38 @@ a {
     border: none !important;
   }
 
-  /* The vertical line next to LOCATION / CONTACT ON */
   .menu-contact-grid .meta-label {
     border-left: 1px solid #555 !important;
     border-bottom: none !important;
     padding-left: 12px !important;
     padding-bottom: 0 !important;
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
     color: #666 !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 8px !important;
     display: inline-block !important;
   }
 
   .location-block p,
   .contact-block p {
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
+    /* Smaller text */
     color: #aaa !important;
-    line-height: 1.5 !important;
-    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 5px !important;
+    /* Tighter margins */
   }
 
   .menu-time {
-    font-size: 2.8rem !important;
+    font-size: 2.2rem !important;
+    /* Smaller clock */
     color: #fff !important;
-    margin-top: 15px !important;
+    margin-top: 5px !important;
     margin-bottom: 0 !important;
   }
 
   .menu-email {
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
+    /* Smaller email */
     font-weight: 600 !important;
     color: #fff !important;
     text-decoration: none !important;
@@ -9413,19 +9426,19 @@ a {
   .menu-social-row {
     grid-template-columns: repeat(4, 1fr) !important;
     width: calc(100% + 40px) !important;
-    /* Bleeds to the edges */
     margin-left: -20px !important;
-    margin-top: 40px !important;
+    margin-top: auto !important;
+    /* Auto pushes it to the bottom */
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 0 !important;
   }
 
   .menu-social-row a {
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 20px 0 !important;
+    padding: 15px 0 !important;
+    /* Tighter buttons */
     justify-content: center !important;
     font-size: 0 !important;
-    /* MAGIC TRICK: Hides the text (e.g. 'LinkedIn') without altering HTML */
   }
 
   .menu-social-row a:last-child {
@@ -9433,8 +9446,7 @@ a {
   }
 
   .menu-social-row a i {
-    font-size: 1.2rem !important;
-    /* Keeps the icons visible and sized properly */
+    font-size: 1.1rem !important;
     color: #ccc !important;
   }
 }
