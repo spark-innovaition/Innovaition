@@ -206,33 +206,33 @@ a {
 
 .logo-img {
   display: block;
-  height: 32px;
+  height: 44px;
   width: auto;
 }
 
 .fm-footer-logo {
   display: block;
-  height: 36px;
+  height: 56px;
   width: auto;
   margin-bottom: 24px;
 }
 
 .brand-col .fm-footer-logo {
-  height: 32px;
+  height: 56px;
   margin-bottom: 28px;
 }
 
 .navbar .logo-img {
-  height: 28px;
+  height: 44px;
 }
 
 .founder-logo-overlay .logo-img {
-  height: 26px;
+  height: 32px;
 }
 
 @media (max-width: 768px) {
   .navbar .logo-img {
-    height: 24px;
+    height: 36px;
   }
 }
 
