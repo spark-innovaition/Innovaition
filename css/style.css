@@ -10592,4 +10592,62 @@ spline-viewer::part(logo) {
   .horizontal-divider.divider-flex .line-seg:nth-child(3) {
     margin-left: -2px;
   }
+
+  /* ==================================================== */
+  /* LIGHT-THEME mobile-menu readability overrides.       */
+  /* The mobile redesign hardcodes light text with        */
+  /* !important; mirror those rules with dark colors on   */
+  /* light-theme pages so the menu is legible.            */
+  /* ==================================================== */
+  .light-theme .menu-nav-list {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .light-theme .menu-nav-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .light-theme .menu-nav-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .light-theme .menu-nav-item a {
+    color: #1a1a1a !important;
+  }
+
+  .light-theme .menu-vision-text {
+    color: #1a1a1a !important;
+  }
+
+  .light-theme .menu-globe-widget i,
+  .light-theme .menu-globe-widget .coords {
+    color: #555 !important;
+  }
+
+  .light-theme .menu-contact-grid .meta-label {
+    color: #1a1a1a !important;
+    border-left-color: #999 !important;
+  }
+
+  .light-theme .location-block p,
+  .light-theme .contact-block p {
+    color: #444 !important;
+  }
+
+  .light-theme .menu-time,
+  .light-theme .menu-email {
+    color: #111 !important;
+  }
+
+  .light-theme .menu-social-row {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .light-theme .menu-social-row a {
+    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .light-theme .menu-social-row a i {
+    color: #555 !important;
+  }
 }
