@@ -9870,12 +9870,12 @@ spline-viewer::part(logo) {
     padding-right: 20px !important;
   }
 
-  .hero-container > .hero-title-row:nth-of-type(2),
-  .hero-text-wrapper > .hero-title-row:nth-child(2) {
+  .hero-container>.hero-title-row:nth-of-type(2),
+  .hero-text-wrapper>.hero-title-row:nth-child(2) {
     padding-left: 20px !important;
   }
 
-  .hero-text-wrapper > .hero-title-row:nth-child(3) {
+  .hero-text-wrapper>.hero-title-row:nth-child(3) {
     padding-left: 20px !important;
   }
 
