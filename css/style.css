@@ -218,7 +218,10 @@ a {
 }
 
 .brand-col .fm-footer-logo {
-  height: 76px;
+  height: 52px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
   margin-bottom: 28px;
 }
 
