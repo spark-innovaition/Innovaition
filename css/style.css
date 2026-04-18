@@ -7570,10 +7570,8 @@ a {
 }
 
 .connect-list li i {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #fff;
-  transform: rotate(45deg);
-  /* Architectural arrow style */
 }
 
 .contact-form-wrap {
@@ -9031,7 +9029,7 @@ a {
   /* ============================================================= */
 
   .blog-section {
-    padding: 80px 20px 60px !important;
+    padding: 140px 20px 60px !important;
   }
 
   /* Stack title and button vertically */
@@ -10423,5 +10421,107 @@ spline-viewer::part(logo) {
   .fm-frame,
   .fm-info-block {
     display: none;
+  }
+}
+
+/* Default styling for the form title (used on desktop and mobile) */
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 32px;
+  color: #fff;
+}
+
+/* ============================================================= */
+/* ===== MOBILE CONTACT SECTION (matches reference layout) ==== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 20px !important;
+    align-items: flex-start !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 80px;
+  }
+
+  .contact-title {
+    font-size: 2.4rem !important;
+    line-height: 1.05 !important;
+    margin-bottom: 32px !important;
+  }
+
+  .contact-connect {
+    margin-top: 0 !important;
+  }
+
+  .connect-label {
+    font-size: 0.7rem !important;
+    margin-bottom: 18px !important;
+  }
+
+  .connect-list {
+    gap: 14px !important;
+  }
+
+  .connect-list li {
+    font-size: 1rem !important;
+    gap: 14px !important;
+  }
+
+  .connect-list li i {
+    font-size: 0.75rem !important;
+    color: #ffffff !important;
+    transform: none !important;
+  }
+
+  .contact-form-wrap {
+    padding: 28px 24px !important;
+    border-radius: 8px !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .form-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 24px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .contact-form {
+    gap: 20px !important;
+  }
+
+  .input-group label {
+    font-size: 0.85rem !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.95rem !important;
+    padding: 10px 0 !important;
+  }
+
+  .input-group textarea {
+    min-height: 110px;
+  }
+
+  .submit-btn {
+    width: auto !important;
+    align-self: flex-start !important;
+    padding: 14px 28px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    border-radius: 2px !important;
+    margin-top: 12px !important;
   }
 }
