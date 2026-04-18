@@ -1085,7 +1085,7 @@
   </script>
 
   <script>
-    // Mobile-only: Swipeable Carousel with Auto-Play Loop
+    // Mobile-only: Swipeable Carousel with Auto-Play Loop (FASTER)
     document.addEventListener('DOMContentLoaded', () => {
       const pillarGrid = document.querySelector('.about-pillars-grid');
       if (pillarGrid && window.innerWidth <= 768) {
@@ -1111,7 +1111,7 @@
                 pillarGrid.scrollTo({ left: scrollPos, behavior: 'smooth' });
               }
             }
-          }, 3000); // Swipes every 3 seconds
+          }, 1500); // Swipes every 1.5 seconds for a much faster feel
         };
 
         const stopAutoScroll = () => {
@@ -1123,11 +1123,11 @@
           const cardWidth = cards[0].offsetWidth;
           currentIndex = Math.round(pillarGrid.scrollLeft / cardWidth);
 
-          // Resume auto-play 4 seconds after the user stops touching it
+          // Resume auto-play quickly (2.5 seconds) after the user stops touching it
           resumeTimer = setTimeout(() => {
             isInteracting = false;
             startAutoScroll();
-          }, 4000);
+          }, 2500);
         };
 
         pillarGrid.addEventListener('touchstart', stopAutoScroll, { passive: true });
