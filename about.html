@@ -1085,39 +1085,49 @@
   </script>
 
   <script>
-    // Mobile-only: Swipeable Carousel with Auto-Play
+    // Mobile-only: Swipeable Carousel with Auto-Play Loop
     document.addEventListener('DOMContentLoaded', () => {
       const pillarGrid = document.querySelector('.about-pillars-grid');
       if (pillarGrid && window.innerWidth <= 768) {
         let isInteracting = false;
         let autoScrollTimer;
         let resumeTimer;
+        let currentIndex = 0;
+        const cards = pillarGrid.querySelectorAll('.pillar-card');
 
         const startAutoScroll = () => {
           autoScrollTimer = setInterval(() => {
             if (!isInteracting) {
-              const cardWidth = pillarGrid.querySelector('.pillar-card').offsetWidth + 16;
-              const maxScroll = pillarGrid.scrollWidth - pillarGrid.clientWidth;
+              currentIndex++;
 
-              // If at the end, scroll smoothly back to the start
-              if (pillarGrid.scrollLeft + cardWidth >= maxScroll + 10) {
+              // If we reach the end, rewind smoothly to the start
+              if (currentIndex >= cards.length) {
+                currentIndex = 0;
                 pillarGrid.scrollTo({ left: 0, behavior: 'smooth' });
               } else {
-                pillarGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                // Scroll to the exact position of the next card
+                const targetCard = cards[currentIndex];
+                const scrollPos = targetCard.offsetLeft - 20; // 20px padding offset
+                pillarGrid.scrollTo({ left: scrollPos, behavior: 'smooth' });
               }
             }
-          }, 3500); // Swipes every 3.5 seconds
+          }, 3000); // Swipes every 3 seconds
         };
 
         const stopAutoScroll = () => {
           isInteracting = true;
           clearInterval(autoScrollTimer);
           clearTimeout(resumeTimer);
-          // Resume auto-play after 5 seconds of not touching it
+
+          // Update the index so the auto-play knows where the user manually swiped to
+          const cardWidth = cards[0].offsetWidth;
+          currentIndex = Math.round(pillarGrid.scrollLeft / cardWidth);
+
+          // Resume auto-play 4 seconds after the user stops touching it
           resumeTimer = setTimeout(() => {
             isInteracting = false;
             startAutoScroll();
-          }, 5000);
+          }, 4000);
         };
 
         pillarGrid.addEventListener('touchstart', stopAutoScroll, { passive: true });

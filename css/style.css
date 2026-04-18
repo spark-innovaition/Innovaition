@@ -10804,6 +10804,8 @@ spline-viewer::part(logo) {
     padding: 0 20px 40px;
     margin: 0;
     border-top: none;
+    align-items: stretch;
+    /* FIX: Forces all cards to stretch to the exact same height */
   }
 
   .about-pillars-grid::-webkit-scrollbar {
@@ -10817,10 +10819,23 @@ spline-viewer::part(logo) {
     border-radius: 16px;
     background: #111;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* FIX: Allows the stretch to determine the height */
   }
 
   .pillar-img {
     height: 220px;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Pushes content to fill the stretched card uniformly */
   }
 }
 
