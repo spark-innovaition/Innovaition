@@ -151,62 +151,64 @@
         FINALLY CLOCK OUT.</h2>
     </div>
 
-    <div class="about-bento-grid">
-      <div class="bento-cell border-right border-bottom gs-reveal-up">
-        <span class="small-heading">OUR PROMISE</span>
-        <p class="bento-p mt-30">To cut through the tech hype and build reliable, localized tools that actually solve
-          your real-world business bottlenecks.</p>
-      </div>
-
-      <div class="bento-cell border-right border-bottom img-cell gs-reveal">
-        <img src="images/about-promise.webp.webp" alt="Our Promise">
-      </div>
-
-      <div class="bento-cell border-right border-bottom img-cell gs-reveal">
-        <img src="images/about-principles.webp.webp" alt="Core Principles">
-      </div>
-
-      <div class="bento-cell border-bottom gs-reveal-up">
-        <span class="small-heading">CORE PRINCIPLES</span>
-        <ul class="vision-list mt-30">
-          <li><i class="fa-solid fa-play"></i> Keeping patient/client data secure.</li>
-          <li><i class="fa-solid fa-play"></i> Answering every single missed call.</li>
-          <li><i class="fa-solid fa-play"></i> Syncing systems so you don't have to.</li>
-          <li><i class="fa-solid fa-play"></i> Focusing on real, booked revenue.</li>
-          <li><i class="fa-solid fa-play"></i> Giving your front desk superpowers.</li>
-        </ul>
-      </div>
-
-      <div class="bento-cell border-right img-cell gs-reveal">
-        <img src="images/about-connect.webp.webp" alt="Let's Connect">
-      </div>
-
-      <div class="bento-cell border-right action-cell gs-reveal">
-        <h3 class="bento-title" style="color:#fff;">LET'S CONNECT</h3>
-        <div class="action-bottom">
-          <span class="small-heading" style="border:none; padding:0; margin-bottom:16px; color:#fff;">BOOK A FREE
-            DISCOVERY CALL TO SEE HOW WE CAN HELP.</span>
-          <a href="contact.html" class="btn-main quote-btn cta-btn"
-            style="background: #fff; color: #000; width: max-content;">
-            <span style="margin-right: 16px;">Book a discovery call</span>
-            <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2); padding: 12px;"><i
-                class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
-          </a>
+    <div class="about-pillars-grid">
+      <div class="pillar-card gs-reveal-up">
+        <div class="pillar-img">
+          <img src="images/about-promise.webp.webp" alt="Our Promise">
+        </div>
+        <div class="pillar-content">
+          <span class="small-heading">OUR PROMISE</span>
+          <p class="pillar-p mt-30">To cut through the tech hype and build reliable, localized tools that actually solve
+            your real-world business bottlenecks.</p>
         </div>
       </div>
 
-      <div class="bento-cell border-right goal-cell gs-reveal">
-        <span class="small-heading">OUR FOCUS</span>
-        <p class="bento-p mt-30">To build reliable, easy-to-use AI receptionists and workflows that become the smartest
-          part of your daily routine.</p>
-        <div class="goal-stats mt-auto" style="color:#fff;">
-          <h3><span class="counter" data-target="100">0</span>%</h3>
-          <p class="stat-label">Custom Built</p>
+      <div class="pillar-card gs-reveal-up">
+        <div class="pillar-img">
+          <img src="images/about-principles.webp.webp" alt="Core Principles">
+        </div>
+        <div class="pillar-content">
+          <span class="small-heading">CORE PRINCIPLES</span>
+          <ul class="vision-list mt-30">
+            <li><i class="fa-solid fa-play"></i> Keeping patient/client data secure.</li>
+            <li><i class="fa-solid fa-play"></i> Answering every single missed call.</li>
+            <li><i class="fa-solid fa-play"></i> Syncing systems seamlessly.</li>
+            <li><i class="fa-solid fa-play"></i> Focusing on real revenue.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="bento-cell img-cell gs-reveal">
-        <img src="images/about-focus.webp.webp" alt="Our Focus">
+      <div class="pillar-card gs-reveal-up">
+        <div class="pillar-img">
+          <img src="images/about-connect.webp.webp" alt="Let's Connect">
+        </div>
+        <div class="pillar-content action-cell">
+          <h3 class="pillar-title" style="color:#fff; margin-bottom: auto;">LET'S CONNECT</h3>
+          <div class="action-bottom">
+            <span class="small-heading" style="border:none; padding:0; margin-bottom:16px; color:#fff;">BOOK A DISCOVERY
+              CALL.</span>
+            <a href="contact.html" class="btn-main quote-btn cta-btn"
+              style="background: #fff; color: #000; width: max-content;">
+              <span style="margin-right: 16px;">Book a call</span>
+              <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2); padding: 12px;"><i
+                  class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card gs-reveal-up">
+        <div class="pillar-img">
+          <img src="images/about-focus.webp.webp" alt="Our Focus">
+        </div>
+        <div class="pillar-content goal-cell">
+          <span class="small-heading">OUR FOCUS</span>
+          <p class="pillar-p mt-30">To build reliable, easy-to-use AI receptionists and workflows.</p>
+          <div class="goal-stats mt-auto" style="color:#fff;">
+            <h3><span class="counter" data-target="100">0</span>%</h3>
+            <p class="stat-label">Custom Built</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1083,40 +1085,47 @@
   </script>
 
   <script>
-    // Mobile-only: convert the About bento grid into a looping horizontal carousel.
-    (function setupAboutBentoCarousel() {
-      function init() {
-        if (window.innerWidth > 768) return;
-        const grid = document.querySelector('.about-page .about-bento-grid');
-        if (!grid || grid.dataset.carouselReady === '1') return;
-
-        const cells = Array.from(grid.children);
-        if (!cells.length) return;
-
-        const track = document.createElement('div');
-        track.className = 'about-bento-carousel-track';
-        cells.forEach(c => track.appendChild(c));
-        // Duplicate the set so the -50% keyframe wraps seamlessly.
-        cells.forEach(c => track.appendChild(c.cloneNode(true)));
-        grid.appendChild(track);
-        grid.dataset.carouselReady = '1';
-
-        // Pause on touch, resume after a short idle.
+    // Mobile-only: Swipeable Carousel with Auto-Play
+    document.addEventListener('DOMContentLoaded', () => {
+      const pillarGrid = document.querySelector('.about-pillars-grid');
+      if (pillarGrid && window.innerWidth <= 768) {
+        let isInteracting = false;
+        let autoScrollTimer;
         let resumeTimer;
-        const pause = () => {
-          track.classList.add('is-paused');
-          clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(() => track.classList.remove('is-paused'), 2500);
-        };
-        track.addEventListener('touchstart', pause, { passive: true });
-      }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
+        const startAutoScroll = () => {
+          autoScrollTimer = setInterval(() => {
+            if (!isInteracting) {
+              const cardWidth = pillarGrid.querySelector('.pillar-card').offsetWidth + 16;
+              const maxScroll = pillarGrid.scrollWidth - pillarGrid.clientWidth;
+
+              // If at the end, scroll smoothly back to the start
+              if (pillarGrid.scrollLeft + cardWidth >= maxScroll + 10) {
+                pillarGrid.scrollTo({ left: 0, behavior: 'smooth' });
+              } else {
+                pillarGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+              }
+            }
+          }, 3500); // Swipes every 3.5 seconds
+        };
+
+        const stopAutoScroll = () => {
+          isInteracting = true;
+          clearInterval(autoScrollTimer);
+          clearTimeout(resumeTimer);
+          // Resume auto-play after 5 seconds of not touching it
+          resumeTimer = setTimeout(() => {
+            isInteracting = false;
+            startAutoScroll();
+          }, 5000);
+        };
+
+        pillarGrid.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        pillarGrid.addEventListener('scroll', stopAutoScroll, { passive: true });
+
+        startAutoScroll();
       }
-    })();
+    });
   </script>
 </body>
 
