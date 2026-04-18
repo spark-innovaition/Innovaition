@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon & Barber Automation - Innovaition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="pricing-page dark-theme">
+
+    <div class="global-grid">
+        <div class="grid-line left"></div>
+        <div class="grid-line right"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i> MENU
+            </button>
+        </div>
+
+        <div class="nav-center">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+                    <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="16" cy="14" r="2" fill="white" />
+                </svg>
+                Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-avatar"></div>
+            <a href="contact.html" class="nav-cta">BOOK A CALL</a>
+            <a href="contact.html" class="nav-cta-icon">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="menu-overlay">
+        <div class="menu-grid">
+            <div class="menu-col-left">
+                <ul class="menu-nav-list">
+                    <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="about.html">ABOUT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="services.html">SERVICES <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="industries.html">INDUSTRIES <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="blog.html">BLOG <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="contact.html">CONTACT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-col-right">
+                <div class="menu-info-top">
+                    <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+                    <div class="menu-globe-widget">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="coords">62.328° N - 15.845° E</span>
+                    </div>
+                </div>
+                <div class="menu-info-bottom">
+                    <div class="menu-contact-grid">
+                        <div class="location-block">
+                            <span class="meta-label">LOCATION</span>
+                            <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+                            <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+                        </div>
+                        <div class="contact-block">
+                            <span class="meta-label">CONTACT ON</span>
+                            <p>+1 (403) 555-0167</p>
+                            <a href="mailto:info@innovaition.ca" class="menu-email">INFO@INNOVAITION.CA</a>
+                        </div>
+                    </div>
+                    <div class="menu-social-row">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pricing-hero-sec dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line left"></span><span class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+        </div>
+
+        <canvas id="hero-waves-canvas"></canvas>
+
+        <div class="ph-content-wrapper">
+            <div class="ph-badge">
+                <i class="fa-solid fa-cube" style="color: #22c55e;"></i> FOR SALONS & BARBERS
+            </div>
+
+            <h1 class="ph-title">
+                Keep Your Chairs<br>
+                <span>Always Full</span>
+            </h1>
+
+            <p class="ph-desc">
+                Stop losing bookings to unanswered calls and ignored Instagram DMs while you're with a client. We deploy
+                automated ecosystems that sync with Fresha, capture every lead, and bring clients back on autopilot.
+            </p>
+
+            <div class="ph-btn-group">
+                <a href="#pricing" class="btn-main quote-btn cta-btn"
+                    style="background: #fff; color: #000; border-radius: 100px; padding-left: 32px;">
+                    <span style="margin-right: 24px;">VIEW PACKAGES</span>
+                    <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+                </a>
+            </div>
+
+            <ul class="ph-highlights" style="margin-top: 40px;">
+                <li>FRESHA & SQUARE SYNC</li>
+                <li>IG DM AUTOMATION</li>
+                <li>VIP RETENTION LOOPS</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bento-section dark-theme section-framed" id="salon-value"
+        style="background-color: var(--bg-dark); padding: 100px 0 100px;">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span><span class="sf-dia bl"></span><span
+                class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">THE EMPTY CHAIR BOTTLENECK</div>
+            <div class="line-seg"></div>
+        </div>
+
+        <div class="bento-header gs-reveal-up"
+            style="margin-bottom: 80px; padding: 0 20px; flex-direction: column; align-items: center;">
+            <h2 class="section-title text-center" style="color: #fff; margin: 0;">STOP LOSING CLIENTS TO<br>THE
+                COMPETITION</h2>
+            <p
+                style="text-align: center; color: #aaa; max-width: 700px; margin: 24px auto 0; font-size: 1.1rem; line-height: 1.6;">
+                You can't cut hair and answer Instagram DMs at the same time. Here is how our ecosystem acts as your
+                ultimate front-of-house manager, completely on autopilot.
+            </p>
+        </div>
+
+        <div class="bento-grid gs-reveal-up">
+
+            <div class="bento-card dark-card bento-col-left"
+                style="background: linear-gradient(135deg, #151515 0%, #050505 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">THE SOCIAL MEDIA RESCUE</h3>
+                    <p style="color: #aaa; font-size: 1.05rem;">Clients expect instant replies when they message your
+                        Instagram or Facebook. Our AI instantly engages them, answers questions about pricing, and drops
+                        them a direct booking link.</p>
+                    <ul class="bento-list" style="margin-top: 30px;">
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Converts IG
+                            comments to DMs</li>
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Books directly
+                            into Fresha/Square</li>
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Unifies SMS,
+                            IG, FB in one app</li>
+                    </ul>
+                </div>
+                <div class="bento-footer-text">CONVERT FOLLOWERS TO BOOKINGS</div>
+            </div>
+
+            <div class="bento-card dark-card bento-col-right-top"
+                style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">AUTOMATED VIP RETENTION</h3>
+                    <p style="color: #aaa;">Getting a client once is easy; keeping them is hard. Our system
+                        automatically texts clients 4, 6, or 8 weeks after their appointment to rebook before their
+                        roots show or their fade grows out.</p>
+                </div>
+            </div>
+
+            <div class="bento-split-col">
+                <div class="bento-card dark-card bento-mini center-text"
+                    style="background: #111; border: 1px solid rgba(255,255,255,0.1); justify-content: center;">
+                    <i class="fa-solid fa-star" style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;"></i>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">5-STAR<br>REVIEWS</h3>
+                    <p
+                        style="font-size: 0.75rem; margin-top: 8px; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Auto-Google Requests</p>
+                </div>
+                <div class="bento-card dark-card bento-mini center-text"
+                    style="background: #111; border: 1px solid rgba(255,255,255,0.1); justify-content: center;">
+                    <i class="fa-solid fa-phone-slash" style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;"></i>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">MISSED CALL<br>RESCUE</h3>
+                    <p
+                        style="font-size: 0.75rem; margin-top: 8px; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Instant Text-Back</p>
+                </div>
+            </div>
+
+            <div class="bento-card dark-card bento-col-right-bot"
+                style="background: linear-gradient(135deg, #111 0%, #000 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">POS & PAYROLL SYNC</h3>
+                    <p style="color: #aaa;">Stop fighting with spreadsheets. We pull closed tickets from Square or
+                        Fresha, calculate exact stylist commission splits, and push it all cleanly into QuickBooks for
+                        accounting.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="pricing-section dark-theme section-framed" id="pricing">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">ECOSYSTEM TIERS</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="pricing-header-row gs-reveal-up">
+            <div class="pricing-title-block">
+                <h2 class="section-title">SCALE YOUR<br>SALON OPERATIONS</h2>
+            </div>
+        </div>
+
+        <style>
+            #pricing .p-card.dark::before {
+                display: none !important;
+            }
+
+            .salon-card-1 {
+                background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%) !important;
+            }
+
+            .salon-card-3 {
+                background: linear-gradient(135deg, #1a1a1a 0%, #050505 100%) !important;
+            }
+        </style>
+
+        <div class="pricing-grid">
+
+            <div class="p-card dark p-card-anim salon-card-1" style="border: 1px solid rgba(255,255,255,0.1);">
+                <div class="p-card-top">
+                    <h3 class="p-plan-name">ESSENTIAL SALON</h3>
+                    <p class="p-plan-desc">Consolidate your communications and stop losing clients to voicemail while
+                        you're busy.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency">$</span>
+                        <span class="amount">297</span>
+                        <span class="period">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #888; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$499 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title">INCLUDED FEATURES</span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Unified Inbox (IG, FB, SMS)
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Missed Call Text-Back</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Automated Google Reviews</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Basic Calendar Integration
+                    </li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #fff; color: #000; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-card light p-card-anim" style="background: #fff; color: #000;">
+                <div class="p-card-top">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 class="p-plan-name" style="color: #000; margin: 0;">GROWTH SALON</h3>
+                        <span
+                            style="background: #22c55e; color: #fff; padding: 4px 10px; font-size: 0.65rem; font-weight: 700; border-radius: 50px; letter-spacing: 0.05em;">MOST
+                            POPULAR</span>
+                    </div>
+                    <p class="p-plan-desc" style="color: #444;">Automate your social media DMs, fill your books, and
+                        bring clients back automatically.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency" style="color: #000;">$</span>
+                        <span class="amount" style="color: #000;">597</span>
+                        <span class="period" style="color: #666;">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #666; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$1,499 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title" style="color: #888;">EVERYTHING IN ESSENTIAL, PLUS:</span>
+                <ul class="p-features">
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Instagram/FB
+                        DM Auto-Replies</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> VIP
+                        Rebooking Sequences</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Fresha /
+                        Square Deep Sync</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> AI Web
+                        Chatbot (Booking Assistant)</li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #000; color: #fff; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-card dark p-card-anim salon-card-3"
+                style="border: 1px solid rgba(255,255,255,0.1); border-right: none;">
+                <div class="p-card-top">
+                    <h3 class="p-plan-name">AUTONOMOUS SALON</h3>
+                    <p class="p-plan-desc" style="min-height: auto; margin-bottom: 20px;">The ultimate ecosystem.
+                        Hands-free phone answering and automated financial splits for your stylists.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency">$</span>
+                        <span class="amount">997</span>
+                        <span class="period">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #888; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$2,999 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title">EVERYTHING IN GROWTH, PLUS:</span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> AI Voice Receptionist &
+                        Booking</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> QuickBooks Ledger Sync</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Stylist Commission Automation
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Dedicated Performance Manager
+                    </li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #fff; color: #000; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="compare-section dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">ECOSYSTEM BREAKDOWN</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="compare-container gs-reveal-up">
+            <h2 class="compare-title">FEATURE COMPARISON</h2>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col-header">FEATURES</th>
+                        <th>ESSENTIAL</th>
+                        <th>GROWTH</th>
+                        <th>AUTONOMOUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Missed Call Auto-Text</td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Automated Reviews</td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">IG/FB Direct Message Bots</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">VIP Rebooking Texts</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI Voice Receptionist</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Stylist Commission to QBO</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="faq-sec light-theme section-framed">
+        <div class="section-frame">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider dark-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">SALON FAQ</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="faq-container">
+            <h2 class="faq-title gs-reveal-up">ANSWERS FOR<br>OWNERS & MANAGERS</h2>
+
+            <div class="faq-split-layout gs-reveal-up">
+
+                <div class="faq-left">
+                    <div class="faq-row-header">
+                        <span>QUESTIONS</span>
+                    </div>
+
+                    <div class="faq-question-item active" data-target="ans-1">
+                        DOES IT WORK WITH FRESHA OR SQUARE? <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="faq-question-item" data-target="ans-2">
+                        CAN CLIENTS BOOK WITH A SPECIFIC STYLIST? <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-question-item" data-target="ans-3">
+                        WILL IT SOUND LIKE A ROBOT ON INSTAGRAM? <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-question-item no-border" data-target="ans-4">
+                        HOW DO COMMISSION SPLITS WORK? <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+
+                <div class="faq-right">
+                    <div class="faq-row-header desktop-only">
+                        <span>ANSWERS</span>
+                    </div>
+
+                    <div class="faq-answer-display">
+                        <div class="faq-answer-text active" id="ans-1">
+                            <p>Yes. We build API bridges directly into Fresha, Square Appointments, Vagaro, and Mindbody
+                                so the AI can read live availability and push bookings right into your existing
+                                calendar.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-2">
+                            <p>Absolutely. The AI asks questions like, "Do you have a preferred stylist or barber?" and
+                                will only pull available times for that specific team member's schedule.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-3">
+                            <p>No. We train the AI on your brand's specific tone of voice. Whether your vibe is high-end
+                                luxury salon or casual neighborhood barbershop, the bot will use emojis and language
+                                that perfectly match your brand.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-4">
+                            <p>In our Autonomous tier, we pull closed checkout data from your POS, apply your custom
+                                tier splits (e.g., 50/50, sliding scales), and push the final payout numbers to
+                                QuickBooks so you don't have to do the math on Sunday night.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-react-translated-sec dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">LET'S CONNECT</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <canvas id="cta-warp-canvas"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.85;"></canvas>
+
+        <div class="react-glass-card gs-reveal-up" style="position: relative; z-index: 10;">
+            <h1 class="react-title">Secure Your Bookings</h1>
+            <p class="react-desc">Stop missing calls while you're with clients. Let's build an ecosystem that fills your
+                chairs automatically.</p>
+
+            <div class="react-ping-badge">
+                <span class="ping-wrapper">
+                    <span class="ping-anim"></span>
+                    <span class="ping-core"></span>
+                </span>
+                <p>Accepting New Salons</p>
+            </div>
+
+            <div class="react-btn-wrap">
+                <a href="contact.html" class="liquid-button">
+                    <div class="liquid-button-bg"></div>
+                    <div class="liquid-button-glass"></div>
+                    <span>Book a Demo Call</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <svg style="position: absolute; width: 0; height: 0; visibility: hidden;">
+        <defs>
+            <filter id="container-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1"
+                    result="turbulence" />
+                <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+                <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R"
+                    yChannelSelector="B" result="displaced" />
+                <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+                <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <footer class="footer-section">
+        <div class="footer-watermark">innovAItion</div>
+
+        <div class="footer-column-stack">
+            <div class="brand-col footer-col">
+                <a href="index.html" class="logo footer-logo-mobile">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+                        <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="16" cy="14" r="2" fill="white" />
+                    </svg>
+                    Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+                </a>
+                <p><strong style="color: #fff; font-weight: 600;">End-to-end AI automation for inquiries,
+                        scheduling,</strong>
+                    and follow-up. Engineered to handle every inquiry, every time.</p>
+                <p>Ready to transform your operations?</p>
+                <a href="contact.html" class="footer-cta-mobile">
+                    <span class="btn-text">Book a Free Demo</span>
+                    <div class="profile-btn-icon"><i class="fa-solid fa-arrow-up"></i></div>
+                </a>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">COMPANY</span>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">SERVICES</span>
+                <ul class="footer-links">
+                    <li><a href="services.html">AI Receptionist</a></li>
+                    <li><a href="services.html">AI Chatbots</a></li>
+                    <li><a href="services.html">Workflow Automation</a></li>
+                    <li><a href="services.html">Integrations</a></li>
+                </ul>
+            </div>
+
+            <div class="main-contact-col footer-col">
+                <span class="footer-label">CONTACT</span>
+                <div class="contact-details">
+                    <a href="tel:+14035550167" class="footer-bot-link">+1 (403) 555-0167</a>
+                    <a href="mailto:info@innovaition.ca" class="footer-bot-link">INFO@INNOVAITION.CA</a>
+                </div>
+            </div>
+
+            <div class="address-col footer-col">
+                <span class="footer-label">LOCATION</span>
+                <p>Proudly serving businesses in<br>Calgary, Alberta and across Canada.</p>
+            </div>
+
+            <div class="social-col footer-col">
+                <span class="footer-label">SOCIAL</span>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="legal-col footer-col">
+                <span class="footer-label">LEGAL</span>
+                <p>© 2026 INNOVAITION.<br>All rights reserved.</p>
+            </div>
+        </div>
+
+        <div class="footer-framed-box gs-reveal-up">
+            <div class="footer-top">
+
+                <div class="footer-col brand-col">
+                    <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
+                            style="color: #fff; font-weight: 600;">End-to-end AI automation for inquiries,
+                            scheduling,</strong> and
+                        follow-up. Engineered to handle every inquiry, every time.</p>
+                    <div class="book-call-wrap" style="margin-top: 30px;">
+                        <p
+                            style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px;">
+                            Ready to transform your operations?</p>
+                        <a href="contact.html" class="footer-btn-modern">
+                            <span class="btn-text">Book a Free Demo</span>
+                            <div class="btn-icon-box"><i class="fa-solid fa-arrow-up-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col links-col">
+                    <span class="footer-label">COMPANY</span>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col links-col">
+                    <span class="footer-label">SERVICES</span>
+                    <ul class="footer-links">
+                        <li><a href="services.html">AI Receptionist</a></li>
+                        <li><a href="services.html">AI Chatbots</a></li>
+                        <li><a href="services.html">Workflow Automation</a></li>
+                        <li><a href="services.html">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col"></div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bot-col">
+                    <span class="footer-label">CONTACT</span>
+                    <p style="font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+1 (403) 555-0167
+                    </p>
+                    <a href="mailto:info@innovaition.ca"
+                        style="font-size: 1.3rem; font-weight: 700; color: #fff; text-transform: uppercase;">INFO@INNOVAITION.CA</a>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">LOCATION</span>
+                    <p style="font-size: 0.95rem; color: #aaa; line-height: 1.5; font-weight: 500;">Proudly serving
+                        businesses
+                        in<br>Calgary, Alberta and across Canada.</p>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">SOCIAL</span>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">LEGAL</span>
+                    <p style="font-size: 0.85rem; color: #888; line-height: 1.6;">© 2026 INNOVAITION.<br>All rights
+                        reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/glowy-waves.js"></script>
+
+    <script>
+        {
+            const canvas = document.getElementById('cta-warp-canvas');
+            if (canvas) {
+                const gl = canvas.getContext('webgl');
+                if (gl) {
+                    const vsSource = `
+            attribute vec2 position;
+            void main() {
+              gl_Position = vec4(position, 0.0, 1.0);
+            }
+          `;
+
+                    const fsSource = `
+            precision highp float;
+            uniform vec2 resolution;
+            uniform float time;
+
+            // Convert HSL to RGB
+            vec3 hsl2rgb(vec3 c) {
+                vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),6.0)-3.0)-1.0, 0.0, 1.0);
+                return c.z + c.y * (rgb-0.5)*(1.0-abs(2.0*c.z-1.0));
+            }
+
+            float random(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+            
+            float noise(vec2 p) {
+                vec2 i = floor(p); vec2 f = fract(p);
+                f = f * f * (3.0 - 2.0 * f);
+                return mix(mix(random(i), random(i + vec2(1.0, 0.0)), f.x),
+                           mix(random(i + vec2(0.0, 1.0)), random(i + vec2(1.0, 1.0)), f.x), f.y);
+            }
+            
+            float fbm(vec2 p) {
+                float v = 0.0; float a = 0.5;
+                mat2 rot = mat2(0.866, -0.5, 0.5, 0.866);
+                for (int i = 0; i < 6; i++) { 
+                    v += a * noise(p); p = rot * p * 2.0; a *= 0.5;
+                }
+                return v;
+            }
+
+            void main() {
+                vec2 uv = gl_FragCoord.xy / resolution.xy;
+                vec2 aspectUV = uv;
+                aspectUV.x *= resolution.x / resolution.y;
+
+                float t = time * 0.06;
+
+                vec2 q = vec2(0.0);
+                q.x = fbm(aspectUV + t);
+                q.y = fbm(aspectUV + vec2(1.0));
+
+                vec2 r = vec2(0.0);
+                r.x = fbm(aspectUV + q + vec2(1.7, 9.2) + t * 1.2);
+                r.y = fbm(aspectUV + q + vec2(8.3, 2.8) + t * 1.5);
+
+                vec2 s = vec2(0.0);
+                s.x = fbm(aspectUV + r + vec2(4.2, 1.5) + t * 0.8);
+                s.y = fbm(aspectUV + r + vec2(9.1, 3.4) + t * 1.1);
+
+                vec2 warpedUV = aspectUV + s * 0.35; 
+
+                float check = sin(warpedUV.x * 12.0) * cos(warpedUV.y * 12.0);
+                check = smoothstep(-0.8, 0.8, check); 
+
+                vec3 c1 = hsl2rgb(vec3(200.0/360.0, 1.0, 0.20)); 
+                vec3 c2 = hsl2rgb(vec3(160.0/360.0, 0.9, 0.65)); 
+                vec3 c3 = hsl2rgb(vec3(180.0/360.0, 0.9, 0.30)); 
+                vec3 c4 = hsl2rgb(vec3(170.0/360.0, 1.0, 0.80)); 
+
+                vec3 colorA = mix(c1, c3, smoothstep(0.2, 0.8, check));
+                vec3 colorB = mix(c2, c4, smoothstep(0.1, 0.9, check));
+                
+                float fluidMix = fbm(s * 1.5);
+                vec3 finalColor = mix(colorA, colorB, smoothstep(0.3, 0.7, fluidMix));
+
+                float grain = (random(gl_FragCoord.xy + mod(time, 10.0)) - 0.5) * 0.06;
+                finalColor += grain;
+
+                float vignette = length(uv - 0.5);
+                finalColor *= smoothstep(0.85, 0.2, vignette);
+
+                gl_FragColor = vec4(finalColor, 1.0);
+            }
+          `;
+
+                    const compileShader = (type, source) => {
+                        const shader = gl.createShader(type);
+                        gl.shaderSource(shader, source);
+                        gl.compileShader(shader);
+                        return shader;
+                    };
+
+                    const program = gl.createProgram();
+                    gl.attachShader(program, compileShader(gl.VERTEX_SHADER, vsSource));
+                    gl.attachShader(program, compileShader(gl.FRAGMENT_SHADER, fsSource));
+                    gl.linkProgram(program);
+                    gl.useProgram(program);
+
+                    const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+                    const buffer = gl.createBuffer();
+                    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+                    const posLocation = gl.getAttribLocation(program, "position");
+                    gl.enableVertexAttribArray(posLocation);
+                    gl.vertexAttribPointer(posLocation, 2, gl.FLOAT, false, 0, 0);
+
+                    const resLocation = gl.getUniformLocation(program, "resolution");
+                    const timeLocation = gl.getUniformLocation(program, "time");
+
+                    const resize = () => {
+                        const dpr = window.devicePixelRatio || 1;
+                        canvas.width = canvas.clientWidth * dpr;
+                        canvas.height = canvas.clientHeight * dpr;
+                        gl.viewport(0, 0, canvas.width, canvas.height);
+                        gl.uniform2f(resLocation, canvas.width, canvas.height);
+                    };
+
+                    window.addEventListener('resize', resize);
+                    resize();
+
+                    let startTime = performance.now();
+                    const render = (now) => {
+                        gl.uniform1f(timeLocation, (now - startTime) * 0.001);
+                        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                        requestAnimationFrame(render);
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) requestAnimationFrame(render);
+                        });
+                    });
+                    observer.observe(canvas);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

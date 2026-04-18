@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic & MedSpa Automation - Innovaition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="pricing-page dark-theme">
+
+    <div class="global-grid">
+        <div class="grid-line left"></div>
+        <div class="grid-line right"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i> MENU
+            </button>
+        </div>
+
+        <div class="nav-center">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+                    <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="16" cy="14" r="2" fill="white" />
+                </svg>
+                Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-avatar"></div>
+            <a href="contact.html" class="nav-cta">BOOK A CALL</a>
+            <a href="contact.html" class="nav-cta-icon">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="menu-overlay">
+        <div class="menu-grid">
+            <div class="menu-col-left">
+                <ul class="menu-nav-list">
+                    <li class="menu-nav-item"><a href="index.html">HOME <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="about.html">ABOUT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="services.html">SERVICES <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="industries.html">INDUSTRIES <i
+                                class="fa-solid fa-arrow-up-right"></i></a></li>
+                    <li class="menu-nav-item"><a href="blog.html">BLOG <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                    <li class="menu-nav-item"><a href="contact.html">CONTACT US <i
+                                class="fa-solid fa-arrow-up-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-col-right">
+                <div class="menu-info-top">
+                    <h3 class="menu-vision-text">Discover the vision and<br>values driving Innovaition<br>forward</h3>
+                    <div class="menu-globe-widget">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="coords">62.328° N - 15.845° E</span>
+                    </div>
+                </div>
+                <div class="menu-info-bottom">
+                    <div class="menu-contact-grid">
+                        <div class="location-block">
+                            <span class="meta-label">LOCATION</span>
+                            <p>1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States</p>
+                            <h2 id="menuTime" class="menu-time">00:00 AM</h2>
+                        </div>
+                        <div class="contact-block">
+                            <span class="meta-label">CONTACT ON</span>
+                            <p>+1 (403) 555-0167</p>
+                            <a href="mailto:info@innovaition.ca" class="menu-email">INFO@INNOVAITION.CA</a>
+                        </div>
+                    </div>
+                    <div class="menu-social-row">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pricing-hero-sec dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line left"></span><span class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+        </div>
+
+        <canvas id="hero-waves-canvas"></canvas>
+
+        <div class="ph-content-wrapper">
+            <div class="ph-badge">
+                <i class="fa-solid fa-cube" style="color: #22c55e;"></i> FOR CLINICS & MEDSPAS
+            </div>
+
+            <h1 class="ph-title">
+                HIPAA-Compliant<br>
+                <span>Automation</span>
+            </h1>
+
+            <p class="ph-desc">
+                Stop front-desk bottlenecking and empty last-minute slots. We deploy secure, unified systems that handle
+                your patient communications, JaneApp syncing, and practitioner payroll automatically.
+            </p>
+
+            <div class="ph-btn-group">
+                <a href="#pricing" class="btn-main quote-btn cta-btn"
+                    style="background: #fff; color: #000; border-radius: 100px; padding-left: 32px;">
+                    <span style="margin-right: 24px;">VIEW PACKAGES</span>
+                    <div class="profile-btn-icon" style="border-left: 1px solid rgba(0,0,0,0.2);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+                </a>
+            </div>
+
+            <ul class="ph-highlights" style="margin-top: 40px;">
+                <li>JANEAPP SYNC</li>
+                <li>100% HIPAA COMPLIANT</li>
+                <li>KERAGON MIDDLEWARE</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bento-section dark-theme section-framed" id="clinic-value"
+        style="background-color: var(--bg-dark); padding: 100px 0 100px;">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span><span class="sf-dia bl"></span><span
+                class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">THE CLINIC BOTTLENECK</div>
+            <div class="line-seg"></div>
+        </div>
+
+        <div class="bento-header gs-reveal-up"
+            style="margin-bottom: 80px; padding: 0 20px; flex-direction: column; align-items: center;">
+            <h2 class="section-title text-center" style="color: #fff; margin: 0;">STOP LOSING PATIENTS TO<br>VOICEMAIL &
+                BURNOUT</h2>
+            <p
+                style="text-align: center; color: #aaa; max-width: 700px; margin: 24px auto 0; font-size: 1.1rem; line-height: 1.6;">
+                Your practitioners should be focused on healing, and your front desk should focus on the human in front
+                of them. Here is how our ecosystem handles the rest automatically.
+            </p>
+        </div>
+
+        <div class="bento-grid gs-reveal-up">
+
+            <div class="bento-card dark-card bento-col-left"
+                style="background: linear-gradient(135deg, #151515 0%, #050505 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">THE FRONT DESK RESCUE</h3>
+                    <p style="color: #aaa; font-size: 1.05rem;">Your receptionist can't answer the phone while checking
+                        in a patient. Our AI voice and chat agents handle overflow calls, answer common questions, and
+                        book appointments directly into JaneApp.</p>
+                    <ul class="bento-list" style="margin-top: 30px;">
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Answers the
+                            phone 24/7/365</li>
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Answers FAQ
+                            (e.g. "Do you take Blue Cross?")</li>
+                        <li><i class="fa-solid fa-chevron-right arrow-icon" style="color: #22c55e;"></i> Books directly
+                            into your EHR</li>
+                    </ul>
+                </div>
+                <div class="bento-footer-text">ELIMINATE MISSED LEADS</div>
+            </div>
+
+            <div class="bento-card dark-card bento-col-right-top"
+                style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">THE WAITLIST MAXIMIZER</h3>
+                    <p style="color: #aaa;">Last-minute cancellations cost you thousands a month. When a slot opens up,
+                        our system instantly texts your waitlist and fills the gap before you even notice it was empty.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bento-split-col">
+                <div class="bento-card dark-card bento-mini center-text"
+                    style="background: #111; border: 1px solid rgba(255,255,255,0.1); justify-content: center;">
+                    <i class="fa-solid fa-shield-halved"
+                        style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;"></i>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">100% HIPAA<br>COMPLIANT</h3>
+                    <p
+                        style="font-size: 0.75rem; margin-top: 8px; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Secure PHI Scrubbing</p>
+                </div>
+                <div class="bento-card dark-card bento-mini center-text"
+                    style="background: #111; border: 1px solid rgba(255,255,255,0.1); justify-content: center;">
+                    <i class="fa-solid fa-arrows-rotate"
+                        style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;"></i>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">LIFECYCLE<br>NURTURE</h3>
+                    <p
+                        style="font-size: 0.75rem; margin-top: 8px; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Auto-Reactivation</p>
+                </div>
+            </div>
+
+            <div class="bento-card dark-card bento-col-right-bot"
+                style="background: linear-gradient(135deg, #111 0%, #000 100%); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="bento-content">
+                    <h3 style="color: #fff;">AUTOMATED PAYROLL SYNC</h3>
+                    <p style="color: #aaa;">Stop spending your Friday nights calculating practitioner splits. We pull
+                        daily sales from your EHR, securely strip out patient data, and push exact commission payouts to
+                        Wagepoint and QuickBooks.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="tech-bridge-sec dark-theme section-framed" style="padding: 160px 0;">
+        <div class="section-frame light-lines">
+            <span class="sf-line bottom"></span><span class="sf-line left"></span><span class="sf-line right"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex" style="margin-top: -40px;">
+            <div class="line-seg"></div>
+            <div class="badge" style="background: var(--bg-dark); z-index: 10; padding: 0 20px;">SYSTEM ARCHITECTURE
+            </div>
+            <div class="line-seg"></div>
+        </div>
+
+        <div class="container gs-reveal-up" style="max-width: 1100px; margin: 0 auto; padding: 60px 40px 0;">
+            <h2 class="section-title"
+                style="color: #fff; margin-bottom: 80px; font-size: clamp(3rem, 6vw, 5rem); line-height: 0.9; text-transform: uppercase;">
+                THE BRIDGE BETWEEN<br>PATIENTS & PROFIT</h2>
+
+            <div class="tech-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
+
+                <div class="tech-text-block">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div
+                            style="width: 44px; height: 44px; background: #22c55e; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa-solid fa-brain" style="color: #000; font-size: 1.2rem;"></i>
+                        </div>
+                        <h3 style="color: #fff; margin: 0; font-size: 1.6rem; letter-spacing: -0.02em;">THE CENTRAL CRM
+                            "BRAIN"</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 1.15rem; line-height: 1.6; margin-bottom: 25px;">
+                        We don't replace your medical records. We implement a **Smart CRM** that acts as the
+                        "receptionist brain." It tracks every lead from Instagram, Facebook, and Web Chat, and ensures
+                        they end up as a booked appointment in your calendar.
+                    </p>
+                    <ul class="bento-list" style="margin-top: 20px;">
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Tracks lead source (ROI visibility)
+                        </li>
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Automated follow-up for inquiries</li>
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Patient lifecycle nurturing</li>
+                    </ul>
+                </div>
+
+                <div class="tech-text-block">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div
+                            style="width: 44px; height: 44px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa-solid fa-file-invoice-dollar" style="color: #000; font-size: 1.2rem;"></i>
+                        </div>
+                        <h3 style="color: #fff; margin: 0; font-size: 1.6rem; letter-spacing: -0.02em;">QUICKBOOKS &
+                            PAYROLL SYNC</h3>
+                    </div>
+                    <p style="color: #aaa; font-size: 1.15rem; line-height: 1.6; margin-bottom: 25px;">
+                        The biggest headache for clinic owners is the Friday night "math session." Our automation
+                        extracts your daily billing from your EHR, matches it to commission tiers, and pushes it
+                        directly into **QuickBooks and Wagepoint**.
+                    </p>
+                    <ul class="bento-list" style="margin-top: 20px;">
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Zero manual data entry for bookkeepers
+                        </li>
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Error-free practitioner splits</li>
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-check"
+                                style="color: #22c55e; margin-right: 12px;"></i> Instant profit/loss visibility</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div
+                style="margin-top: 100px; display: flex; justify-content: center; align-items: center; gap: 30px; opacity: 0.4;">
+                <span
+                    style="color: #fff; font-size: 0.75rem; letter-spacing: 0.25em; font-weight: 700; text-transform: uppercase;">Works
+                    With</span>
+                <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.2);"></div>
+                <i class="fa-brands fa-google" style="color: #fff; font-size: 1.4rem;"></i>
+                <i class="fa-brands fa-facebook" style="color: #fff; font-size: 1.4rem;"></i>
+                <i class="fa-brands fa-instagram" style="color: #fff; font-size: 1.4rem;"></i>
+                <i class="fa-solid fa-phone" style="color: #fff; font-size: 1.4rem;"></i>
+                <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.2);"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section dark-theme section-framed" id="pricing">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">ECOSYSTEM TIERS</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="pricing-header-row gs-reveal-up">
+            <div class="pricing-title-block">
+                <h2 class="section-title">SECURE SYSTEM<br>DEPLOYMENT</h2>
+            </div>
+        </div>
+
+        <style>
+            #pricing .p-card.dark::before {
+                display: none !important;
+            }
+
+            .clinic-card-1 {
+                background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%) !important;
+            }
+
+            .clinic-card-3 {
+                background: linear-gradient(135deg, #1a1a1a 0%, #050505 100%) !important;
+            }
+        </style>
+
+        <div class="pricing-grid">
+
+            <div class="p-card dark p-card-anim clinic-card-1" style="border: 1px solid rgba(255,255,255,0.1);">
+                <div class="p-card-top">
+                    <h3 class="p-plan-name">ESSENTIAL CLINIC</h3>
+                    <p class="p-plan-desc">Establish a secure, unified communication baseline to stop losing patients to
+                        voicemail.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency">$</span>
+                        <span class="amount">297</span>
+                        <span class="period">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #888; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$499 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title">INCLUDED FEATURES</span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Unified Communications Inbox
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Missed Call Auto-Text Rescue
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> HIPAA-Compliant Calendar Sync
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Automated Review Engine</li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #fff; color: #000; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-card light p-card-anim" style="background: #fff; color: #000;">
+                <div class="p-card-top">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 class="p-plan-name" style="color: #000; margin: 0;">GROWTH CLINIC</h3>
+                        <span
+                            style="background: #22c55e; color: #fff; padding: 4px 10px; font-size: 0.65rem; font-weight: 700; border-radius: 50px; letter-spacing: 0.05em;">MOST
+                            POPULAR</span>
+                    </div>
+                    <p class="p-plan-desc" style="color: #444;">Automate your booking flow and integrate financial
+                        ledgers directly with your accounting software.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency" style="color: #000;">$</span>
+                        <span class="amount" style="color: #000;">597</span>
+                        <span class="period" style="color: #666;">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #666; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$1,499 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title" style="color: #888;">EVERYTHING IN ESSENTIAL, PLUS:</span>
+                <ul class="p-features">
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> 24/7 AI Chat
+                        Receptionist (Web)</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Ledger
+                        Automation (Jane to QBO/Xero)</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Automated
+                        Waitlist Reactivation</li>
+                    <li style="color: #000;"><i class="fa-solid fa-chevron-right" style="color: #000;"></i> Secure PHI
+                        Scrubbing (via Keragon)</li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #000; color: #fff; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-card dark p-card-anim clinic-card-3"
+                style="border: 1px solid rgba(255,255,255,0.1); border-right: none;">
+                <div class="p-card-top">
+                    <h3 class="p-plan-name">AUTONOMOUS CLINIC</h3>
+                    <p class="p-plan-desc" style="min-height: auto; margin-bottom: 20px;">The ultimate ecosystem. Let AI
+                        handle inbound triage and automate complex practitioner commission splits.</p>
+                    <div class="price-wrap" style="margin-bottom: 10px;">
+                        <span class="currency">$</span>
+                        <span class="amount">997</span>
+                        <span class="period">/Per month</span>
+                    </div>
+                    <p
+                        style="font-size: 0.8rem; color: #888; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;">
+                        +$2,999 One-Time Setup Fee</p>
+                </div>
+
+                <span class="included-title">EVERYTHING IN GROWTH, PLUS:</span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> AI Voice Receptionist & Triage
+                    </li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Practitioner Payroll
+                        Automation (Wagepoint)</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Long-term Patient Lifecycle
+                        Marketing</li>
+                    <li><i class="fa-solid fa-chevron-right" style="color: #22c55e;"></i> Dedicated Engineering Support
+                        Pod</li>
+                </ul>
+
+                <div class="p-card-bot">
+                    <a href="contact.html" class="btn-custom-quote"
+                        style="background: #fff; color: #000; width: 100%; margin-bottom: 0;">
+                        <span class="text" style="flex-grow: 1; text-align: center;">Book Deployment Call</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="compare-section dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">ECOSYSTEM BREAKDOWN</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="compare-container gs-reveal-up">
+            <h2 class="compare-title">FEATURE COMPARISON</h2>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col-header">FEATURES</th>
+                        <th>ESSENTIAL</th>
+                        <th>GROWTH</th>
+                        <th>AUTONOMOUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Missed Call Text-Back</td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">JaneApp Calendar Sync</td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI Web Chatbot</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Ledger Sync (QBO/Xero)</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI Voice Triage & Booking</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Payroll Sync (Wagepoint)</td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-minus minus"></i></td>
+                        <td><i class="fa-solid fa-check check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="faq-sec light-theme section-framed">
+        <div class="section-frame">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider dark-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">CLINIC FAQ</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <div class="faq-container">
+            <h2 class="faq-title gs-reveal-up">ANSWERS FOR<br>HEALTHCARE PROVIDERS</h2>
+
+            <div class="faq-split-layout gs-reveal-up">
+
+                <div class="faq-left">
+                    <div class="faq-row-header">
+                        <span>QUESTIONS</span>
+                    </div>
+
+                    <div class="faq-question-item active" data-target="ans-1">
+                        HOW DO YOU ENSURE HIPAA COMPLIANCE? <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="faq-question-item" data-target="ans-2">
+                        DOES THIS REPLACE JANEAPP? <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-question-item" data-target="ans-3">
+                        HOW DOES THE COMMISSION SPLITTING WORK? <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-question-item no-border" data-target="ans-4">
+                        WHAT IF WE USE CLINIKO INSTEAD OF JANEAPP? <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+
+                <div class="faq-right">
+                    <div class="faq-row-header desktop-only">
+                        <span>ANSWERS</span>
+                    </div>
+
+                    <div class="faq-answer-display">
+                        <div class="faq-answer-text active" id="ans-1">
+                            <p>We use Business Associate Agreements (BAAs) with GoHighLevel and employ secure,
+                                specialized middleware like Keragon. Patient Health Information (PHI) is scrubbed before
+                                any data is sent to external accounting or payroll tools.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-2">
+                            <p>No. JaneApp remains your core EHR and scheduling tool. Our system acts as an intelligent
+                                layer on top of JaneApp—answering phones, replying to texts, and automatically pushing
+                                appointments into your existing Jane calendar.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-3">
+                            <p>In our Autonomous tier, our middleware extracts practitioner billing reports from your
+                                EHR, calculates their exact commission splits securely, strips out the PHI, and pushes
+                                the final dollar amounts directly into Wagepoint or your payroll API.</p>
+                        </div>
+                        <div class="faq-answer-text" id="ans-4">
+                            <p>We are fully equipped to build integrations for Cliniko, Mindbody, and other major EHR
+                                platforms. The underlying automation infrastructure remains the same.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-react-translated-sec dark-theme section-framed">
+        <div class="section-frame light-lines">
+            <span class="sf-line top"></span><span class="sf-line bottom"></span><span class="sf-line left"></span><span
+                class="sf-line right"></span>
+            <span class="sf-dia tl"></span><span class="sf-dia tr"></span>
+            <span class="sf-dia bl"></span><span class="sf-dia br"></span>
+        </div>
+
+        <div class="horizontal-divider light-lines divider-flex">
+            <div class="line-seg"></div>
+            <div class="badge">LET'S CONNECT</div>
+            <div class="line-seg"></div>
+            <div class="diamond left"></div>
+            <div class="diamond right"></div>
+        </div>
+
+        <canvas id="cta-warp-canvas"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.85;"></canvas>
+
+        <div class="react-glass-card gs-reveal-up">
+            <h1 class="react-title">Secure Your Operations</h1>
+            <p class="react-desc">Stop losing patients to voicemail and wasting hours on data entry. Let's build a
+                secure ecosystem for your clinic.</p>
+
+            <div class="react-ping-badge">
+                <span class="ping-wrapper">
+                    <span class="ping-anim"></span>
+                    <span class="ping-core"></span>
+                </span>
+                <p>Accepting New Clinics</p>
+            </div>
+
+            <div class="react-btn-wrap">
+                <a href="contact.html" class="liquid-button">
+                    <div class="liquid-button-bg"></div>
+                    <div class="liquid-button-glass"></div>
+                    <span>Book a Demo Call</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <svg style="position: absolute; width: 0; height: 0; visibility: hidden;">
+        <defs>
+            <filter id="container-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1"
+                    result="turbulence" />
+                <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+                <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R"
+                    yChannelSelector="B" result="displaced" />
+                <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+                <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <footer class="footer-section">
+        <div class="footer-watermark">innovAItion</div>
+
+        <div class="footer-column-stack">
+            <div class="brand-col footer-col">
+                <a href="index.html" class="logo footer-logo-mobile">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="white" stroke-width="2" />
+                        <path d="M10 20L16 10L22 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="16" cy="14" r="2" fill="white" />
+                    </svg>
+                    Innovaition<sup style="font-size: 0.5em; margin-left: 2px;">®</sup>
+                </a>
+                <p><strong style="color: #fff; font-weight: 600;">End-to-end AI automation for inquiries,
+                        scheduling,</strong>
+                    and follow-up. Engineered to handle every inquiry, every time.</p>
+                <p>Ready to transform your operations?</p>
+                <a href="contact.html" class="footer-cta-mobile">
+                    <span class="btn-text">Book a Free Demo</span>
+                    <div class="profile-btn-icon"><i class="fa-solid fa-arrow-up"></i></div>
+                </a>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">COMPANY</span>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="links-col footer-col">
+                <span class="footer-label">SERVICES</span>
+                <ul class="footer-links">
+                    <li><a href="services.html">AI Receptionist</a></li>
+                    <li><a href="services.html">AI Chatbots</a></li>
+                    <li><a href="services.html">Workflow Automation</a></li>
+                    <li><a href="services.html">Integrations</a></li>
+                </ul>
+            </div>
+
+            <div class="main-contact-col footer-col">
+                <span class="footer-label">CONTACT</span>
+                <div class="contact-details">
+                    <a href="tel:+14035550167" class="footer-bot-link">+1 (403) 555-0167</a>
+                    <a href="mailto:info@innovaition.ca" class="footer-bot-link">INFO@INNOVAITION.CA</a>
+                </div>
+            </div>
+
+            <div class="address-col footer-col">
+                <span class="footer-label">LOCATION</span>
+                <p>Proudly serving businesses in<br>Calgary, Alberta and across Canada.</p>
+            </div>
+
+            <div class="social-col footer-col">
+                <span class="footer-label">SOCIAL</span>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="legal-col footer-col">
+                <span class="footer-label">LEGAL</span>
+                <p>© 2026 INNOVAITION.<br>All rights reserved.</p>
+            </div>
+        </div>
+
+        <div class="footer-framed-box gs-reveal-up">
+            <div class="footer-top">
+
+                <div class="footer-col brand-col">
+                    <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
+                            style="color: #fff; font-weight: 600;">End-to-end AI automation for inquiries,
+                            scheduling,</strong> and
+                        follow-up. Engineered to handle every inquiry, every time.</p>
+                    <div class="book-call-wrap" style="margin-top: 30px;">
+                        <p
+                            style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px;">
+                            Ready to transform your operations?</p>
+                        <a href="contact.html" class="footer-btn-modern">
+                            <span class="btn-text">Book a Free Demo</span>
+                            <div class="btn-icon-box"><i class="fa-solid fa-arrow-up-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col links-col">
+                    <span class="footer-label">COMPANY</span>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col links-col">
+                    <span class="footer-label">SERVICES</span>
+                    <ul class="footer-links">
+                        <li><a href="services.html">AI Receptionist</a></li>
+                        <li><a href="services.html">AI Chatbots</a></li>
+                        <li><a href="services.html">Workflow Automation</a></li>
+                        <li><a href="services.html">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col"></div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bot-col">
+                    <span class="footer-label">CONTACT</span>
+                    <p style="font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 5px;">+1 (403) 555-0167
+                    </p>
+                    <a href="mailto:info@innovaition.ca"
+                        style="font-size: 1.3rem; font-weight: 700; color: #fff; text-transform: uppercase;">INFO@INNOVAITION.CA</a>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">LOCATION</span>
+                    <p style="font-size: 0.95rem; color: #aaa; line-height: 1.5; font-weight: 500;">Proudly serving
+                        businesses
+                        in<br>Calgary, Alberta and across Canada.</p>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">SOCIAL</span>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-bot-col">
+                    <span class="footer-label">LEGAL</span>
+                    <p style="font-size: 0.85rem; color: #888; line-height: 1.6;">© 2026 INNOVAITION.<br>All rights
+                        reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/glowy-waves.js"></script>
+    <script>
+        {
+            const canvas = document.getElementById('cta-warp-canvas');
+            if (canvas) {
+                const gl = canvas.getContext('webgl');
+                if (gl) {
+                    const vsSource = `
+            attribute vec2 position;
+            void main() {
+              gl_Position = vec4(position, 0.0, 1.0);
+            }
+          `;
+
+                    const fsSource = `
+            precision highp float;
+            uniform vec2 resolution;
+            uniform float time;
+
+            // Convert HSL to RGB
+            vec3 hsl2rgb(vec3 c) {
+                vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),6.0)-3.0)-1.0, 0.0, 1.0);
+                return c.z + c.y * (rgb-0.5)*(1.0-abs(2.0*c.z-1.0));
+            }
+
+            // Noise functions
+            float random(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+            
+            float noise(vec2 p) {
+                vec2 i = floor(p);
+                vec2 f = fract(p);
+                f = f * f * (3.0 - 2.0 * f);
+                return mix(mix(random(i), random(i + vec2(1.0, 0.0)), f.x),
+                           mix(random(i + vec2(0.0, 1.0)), random(i + vec2(1.0, 1.0)), f.x), f.y);
+            }
+            
+            float fbm(vec2 p) {
+                float v = 0.0; float a = 0.5;
+                mat2 rot = mat2(0.866, -0.5, 0.5, 0.866);
+                for (int i = 0; i < 6; i++) { // Increased iterations for richer detail
+                    v += a * noise(p); p = rot * p * 2.0; a *= 0.5;
+                }
+                return v;
+            }
+
+            void main() {
+                vec2 uv = gl_FragCoord.xy / resolution.xy;
+                vec2 aspectUV = uv;
+                aspectUV.x *= resolution.x / resolution.y;
+
+                // Slow down the time for a more luxurious, silky pace
+                float t = time * 0.06;
+
+                // Multi-layered domain warping (Warping the warp)
+                vec2 q = vec2(0.0);
+                q.x = fbm(aspectUV + t);
+                q.y = fbm(aspectUV + vec2(1.0));
+
+                vec2 r = vec2(0.0);
+                r.x = fbm(aspectUV + q + vec2(1.7, 9.2) + t * 1.2);
+                r.y = fbm(aspectUV + q + vec2(8.3, 2.8) + t * 1.5);
+
+                vec2 s = vec2(0.0);
+                s.x = fbm(aspectUV + r + vec2(4.2, 1.5) + t * 0.8);
+                s.y = fbm(aspectUV + r + vec2(9.1, 3.4) + t * 1.1);
+
+                vec2 warpedUV = aspectUV + s * 0.35; // Apply deeper distortion
+
+                // Premium Soft Checks using Smoothstep
+                float check = sin(warpedUV.x * 12.0) * cos(warpedUV.y * 12.0);
+                check = smoothstep(-0.8, 0.8, check); // Creates glossy peaks and soft valleys
+
+                // Premium HSL Colors (Matches the React component)
+                vec3 c1 = hsl2rgb(vec3(200.0/360.0, 1.0, 0.20)); // Deep Blue
+                vec3 c2 = hsl2rgb(vec3(160.0/360.0, 0.9, 0.65)); // Rich Teal
+                vec3 c3 = hsl2rgb(vec3(180.0/360.0, 0.9, 0.30)); // Ocean Blue
+                vec3 c4 = hsl2rgb(vec3(170.0/360.0, 1.0, 0.80)); // Soft Highlight
+
+                // Non-linear color blending for a "liquid glass" look
+                vec3 colorA = mix(c1, c3, smoothstep(0.2, 0.8, check));
+                vec3 colorB = mix(c2, c4, smoothstep(0.1, 0.9, check));
+                
+                float fluidMix = fbm(s * 1.5);
+                vec3 finalColor = mix(colorA, colorB, smoothstep(0.3, 0.7, fluidMix));
+
+                // 🌟 Premium Secret: Cinematic Film Grain
+                // This breaks up color banding and adds physical texture
+                float grain = (random(gl_FragCoord.xy + mod(time, 10.0)) - 0.5) * 0.06;
+                finalColor += grain;
+
+                // Deep edge vignette to focus attention on your text/button
+                float vignette = length(uv - 0.5);
+                finalColor *= smoothstep(0.85, 0.2, vignette);
+
+                gl_FragColor = vec4(finalColor, 1.0);
+            }
+          `;
+
+                    const compileShader = (type, source) => {
+                        const shader = gl.createShader(type);
+                        gl.shaderSource(shader, source);
+                        gl.compileShader(shader);
+                        return shader;
+                    };
+
+                    const program = gl.createProgram();
+                    gl.attachShader(program, compileShader(gl.VERTEX_SHADER, vsSource));
+                    gl.attachShader(program, compileShader(gl.FRAGMENT_SHADER, fsSource));
+                    gl.linkProgram(program);
+                    gl.useProgram(program);
+
+                    const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+                    const buffer = gl.createBuffer();
+                    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+                    const posLocation = gl.getAttribLocation(program, "position");
+                    gl.enableVertexAttribArray(posLocation);
+                    gl.vertexAttribPointer(posLocation, 2, gl.FLOAT, false, 0, 0);
+
+                    const resLocation = gl.getUniformLocation(program, "resolution");
+                    const timeLocation = gl.getUniformLocation(program, "time");
+
+                    const resize = () => {
+                        const dpr = window.devicePixelRatio || 1;
+                        canvas.width = canvas.clientWidth * dpr;
+                        canvas.height = canvas.clientHeight * dpr;
+                        gl.viewport(0, 0, canvas.width, canvas.height);
+                        gl.uniform2f(resLocation, canvas.width, canvas.height);
+                    };
+
+                    window.addEventListener('resize', resize);
+                    resize();
+
+                    let startTime = performance.now();
+                    const render = (now) => {
+                        gl.uniform1f(timeLocation, (now - startTime) * 0.001);
+                        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                        requestAnimationFrame(render);
+                    };
+
+                    // Performance: only render when the section is visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) requestAnimationFrame(render);
+                        });
+                    });
+                    observer.observe(canvas);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
