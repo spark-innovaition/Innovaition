@@ -8996,56 +8996,91 @@ a {
   /* ============================================================= */
 
   .blog-section {
-    padding: 80px 20px 40px !important;
+    padding: 80px 20px 60px !important;
   }
 
   /* Stack title and button vertically */
   .blog-header {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 24px !important;
-    margin-bottom: 40px !important;
+    gap: 32px !important;
+    margin-bottom: 60px !important;
   }
 
   .blog-header .section-title {
-    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    font-size: clamp(2.5rem, 11vw, 3.8rem) !important;
     line-height: 1 !important;
   }
 
-  /* Style the button to match the mockup */
-  .blog-header .cta-btn {
-    padding: 0 0 0 20px !important;
-    background-color: var(--text-dark) !important;
-    color: var(--text-white) !important;
+  /* Black "View all blogs" button with white arrow tile (matches reference) */
+  .blog-header .blog-btn-modern {
+    display: inline-flex !important;
+    align-items: stretch !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000 !important;
+    border-radius: 2px !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+    width: fit-content !important;
+    overflow: hidden;
+  }
+
+  .blog-header .blog-btn-modern .btn-text {
+    padding: 16px 28px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .blog-header .blog-btn-modern .btn-icon-box {
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 56px !important;
     display: inline-flex !important;
     align-items: center !important;
-    width: auto !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    border-left: 1px solid #000 !important;
   }
 
-  .blog-header .cta-btn .profile-btn-icon {
-    background-color: var(--text-white) !important;
-    color: var(--text-dark) !important;
-    border: 1px solid rgba(0, 0, 0, 0.2) !important;
-    padding: 12px 16px !important;
-    margin-left: 20px !important;
-  }
-
-  .blog-header .cta-btn .profile-btn-icon i {
-    transform: rotate(-45deg) !important;
-    /* Top-right pointing arrow */
-  }
-
+  /* List-style blog items: no images, separated by hairlines */
   .blog-grid {
-    gap: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-card {
+    padding: 32px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-card .blog-img-wrap {
+    display: none !important;
+  }
+
+  .blog-meta {
+    padding-top: 0 !important;
   }
 
   .blog-title {
-    font-size: 1.3rem !important;
-    margin-bottom: 8px !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 16px !important;
+    letter-spacing: -0.01em !important;
   }
 
   .blog-date {
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
+    color: #888 !important;
+    font-weight: 500 !important;
   }
 }
 
