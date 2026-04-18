@@ -6320,8 +6320,8 @@ a {
 /* ==================================================== */
 
 .approach-sec {
-  padding: 150px 0 60px;
-  /* Reduced bottom padding for a tighter transition */
+  padding: 150px 0 120px;
+  /* Increased bottom padding from 60px to 120px */
   background-color: var(--bg-dark);
   color: var(--text-white);
   position: relative;
