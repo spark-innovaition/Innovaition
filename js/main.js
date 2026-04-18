@@ -1046,34 +1046,42 @@ if (document.readyState === 'loading') {
     heroScene.add(particleMesh);
 
     window.threeScrollProgress = 0;
-    gsap.set('.phase-1, .phase-2', { autoAlpha: 0, y: 50 });
 
-    // Initialize ScrollTrigger
-    const svcTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroPinWrapper,
-        start: "top top",
-        end: "+=300%",
-        pin: true,
-        scrub: 1,
-        onUpdate: (self) => {
-          window.threeScrollProgress = self.progress;
-          const progressFill = document.querySelector('.progress-fill');
-          const counterCurrent = document.querySelector('.section-counter-current');
+    // Only run the complex pinned animation on desktop screens
+    if (window.innerWidth > 768) {
+      gsap.set('.phase-1, .phase-2', { autoAlpha: 0, y: 50 });
 
-          if (progressFill) progressFill.style.height = `${self.progress * 100}%`;
-          if (counterCurrent) {
-            const sectionNum = Math.min(Math.floor(self.progress * 3) + 1, 3);
-            counterCurrent.innerText = String(sectionNum).padStart(2, '0');
+      const svcTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroPinWrapper,
+          start: "top top",
+          end: "+=300%",
+          pin: true,
+          scrub: 1,
+          onUpdate: (self) => {
+            window.threeScrollProgress = self.progress;
+            const progressFill = document.querySelector('.progress-fill');
+            const counterCurrent = document.querySelector('.section-counter-current');
+
+            if (progressFill) progressFill.style.height = `${self.progress * 100}%`;
+            if (counterCurrent) {
+              const sectionNum = Math.min(Math.floor(self.progress * 3) + 1, 3);
+              counterCurrent.innerText = String(sectionNum).padStart(2, '0');
+            }
           }
         }
-      }
-    });
+      });
 
-    svcTl.to('.phase-0', { autoAlpha: 0, y: -50, duration: 0.5 }, 0.5)
-      .fromTo('.phase-1', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
-      .to('.phase-1', { autoAlpha: 0, y: -50, duration: 0.5 }, 2.0)
-      .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0);
+      svcTl.to('.phase-0', { autoAlpha: 0, y: -50, duration: 0.5 }, 0.5)
+        .fromTo('.phase-1', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
+        .to('.phase-1', { autoAlpha: 0, y: -50, duration: 0.5 }, 2.0)
+        .fromTo('.phase-2', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 2.0);
+    } else {
+      // On mobile, just link the 3D starfield zoom to standard scrolling
+      window.addEventListener('scroll', () => {
+        window.threeScrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      });
+    }
 
     let smoothCamPos = { x: 0, y: 0, z: 1200 };
 
@@ -1920,3 +1928,51 @@ void main(void) {
   }
 }
 
+/* ============================================================= */
+/* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
+/* ============================================================= */
+#services - pin - wrapper {
+  height: auto!important;
+}
+  .services - hero - sec {
+  height: auto!important;
+  min - height: 100vh;
+  padding: 140px 20px 80px!important;
+  align - items: flex - start!important;
+}
+  .svc - content - wrapper {
+  position: relative!important;
+  display: flex!important;
+  flex - direction: column!important;
+  gap: 50px!important;
+  height: auto!important;
+  align - items: flex - start!important;
+  text - align: left!important;
+}
+  .content - section {
+  position: relative!important;
+  opacity: 1!important;
+  visibility: visible!important;
+  transform: none!important;
+  padding: 0!important;
+  text - align: left!important;
+  align - items: flex - start!important;
+}
+  .content - section.hero - title {
+  font - size: clamp(2.5rem, 10vw, 4rem)!important;
+  margin - bottom: 12px!important;
+  text - align: left!important;
+  background: linear - gradient(180deg, #ffffff 0 %, rgba(255, 255, 255, 0.4) 100 %);
+  -webkit - background - clip: text;
+  -webkit - text - fill - color: transparent;
+}
+  .content - section.hero - subtitle p {
+  font - size: 1.05rem!important;
+  text - align: left!important;
+  color: rgba(255, 255, 255, 0.7)!important;
+}
+
+  /* Hide the desktop scroll bar and side menu text on mobile */
+  .svc - side - menu, .svc - scroll - progress {
+  display: none!important;
+}
