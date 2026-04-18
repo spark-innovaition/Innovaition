@@ -212,7 +212,7 @@ a {
 
 .fm-footer-logo {
   display: block;
-  height: 56px;
+  height: 76px;
   width: auto;
   margin-bottom: 24px;
 }
@@ -232,7 +232,7 @@ a {
 
 @media (max-width: 768px) {
   .navbar .logo-img {
-    height: 36px;
+    height: 52px;
   }
 }
 
