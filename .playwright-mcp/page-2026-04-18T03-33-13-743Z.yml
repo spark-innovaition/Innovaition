@@ -1,0 +1,227 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - generic [ref=e6]: MENU
+    - link "Innovaition ®" [ref=e8] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e9]
+      - text: Innovaition
+      - superscript [ref=e13]: ®
+    - link "" [ref=e15] [cursor=pointer]:
+      - /url: contact.html
+      - generic [ref=e16]: 
+  - generic [ref=e18]:
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "HOME" [ref=e22] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e23]:
+        - link "ABOUT US" [ref=e24] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e25]:
+        - link "SERVICES" [ref=e26] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e27]:
+        - link "PRICING" [ref=e28] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e29]:
+        - link "BLOG" [ref=e30] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e31]:
+        - link "CONTACT US" [ref=e32] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e35]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e36]:
+          - generic [ref=e37]: 
+          - generic [ref=e38]: 62.328° N - 15.845° E
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: LOCATION
+            - paragraph [ref=e43]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "09:33 PM" [level=2] [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: CONTACT ON
+            - paragraph [ref=e47]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e48] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e49]:
+          - link "X Twitter - X" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e52]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e54]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e56]: 
+            - text: Instagram
+  - generic [ref=e58]:
+    - heading "GET IN" [level=1] [ref=e59]
+    - heading "TOUCH" [level=1] [ref=e60]
+  - generic [ref=e61]:
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - heading "“EVERY GREAT COLLABORATION BEGINS WITH A SIMPLE CONVERSATION. REACH OUT AND LET'S CREATE SOMETHING MEANINGFUL TOGETHER.”" [level=3] [ref=e64]
+        - generic [ref=e65]:
+          - img "Ethan Parker" [ref=e66]
+          - generic [ref=e67]:
+            - strong [ref=e68]: Ethan Parker
+            - text: Founder & CEO
+      - generic [ref=e69]:
+        - generic [ref=e70]: CONTACT
+        - generic [ref=e71]: +1 (415) 555-0167
+        - generic [ref=e72]: EXAMPLE@GMAIL.COM
+      - generic [ref=e73]:
+        - generic [ref=e74]: OFFICE LOCATION
+        - strong [ref=e76]: Altrion consulting Agency
+        - generic [ref=e77]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+        - generic [ref=e78]: 09:33 PM
+    - generic [ref=e79]:
+      - heading "WE'D LOVE TO HEAR FROM YOU" [level=2] [ref=e80]
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]: Hey, I am*
+            - textbox "Enter your name" [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]: I am from
+            - textbox "Enter your location" [ref=e88]
+        - generic [ref=e89]:
+          - generic [ref=e90]: My email is*
+          - textbox "Enter your email" [ref=e91]
+        - generic [ref=e92]:
+          - generic [ref=e93]: I need help with
+          - textbox "Enter your subject" [ref=e94]
+        - generic [ref=e95]:
+          - generic [ref=e96]: Service I would like to explore
+          - generic [ref=e97]:
+            - generic [ref=e98] [cursor=pointer]:
+              - radio "Data integration" [ref=e99]
+              - generic [ref=e100]: Data integration
+            - generic [ref=e101] [cursor=pointer]:
+              - radio "Process automation" [ref=e102]
+              - generic [ref=e103]: Process automation
+            - generic [ref=e104] [cursor=pointer]:
+              - radio "Intelligent chatbots" [ref=e105]
+              - generic [ref=e106]: Intelligent chatbots
+        - generic [ref=e107]:
+          - generic [ref=e108]: Here's the brief
+          - textbox "Write what's on your mind" [ref=e109]
+        - button "Send message" [ref=e110] [cursor=pointer]
+  - generic [ref=e111]:
+    - generic [ref=e116]: FAQS
+    - generic [ref=e117]:
+      - heading "ANSWERS TO COMMON QUERIES" [level=2] [ref=e118]:
+        - text: ANSWERS TO
+        - text: COMMON QUERIES
+      - generic [ref=e120]:
+        - generic [ref=e121]: QUESTIONS
+        - generic [ref=e122] [cursor=pointer]:
+          - text: WHAT INDUSTRIES DO YOU WORK WITH?
+          - generic [ref=e123]: 
+        - generic [ref=e124] [cursor=pointer]:
+          - text: HOW LONG DOES A TYPICAL ENGAGEMENT TAKE?
+          - generic [ref=e125]: +
+        - generic [ref=e126] [cursor=pointer]:
+          - text: DO YOU PROVIDE ONGOING SUPPORT?
+          - generic [ref=e127]: +
+        - generic [ref=e128] [cursor=pointer]:
+          - text: WHERE IS YOUR TEAM LOCATED?
+          - generic [ref=e129]: +
+  - contentinfo [ref=e130]:
+    - generic: innovAItion
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - link "Innovaition ®" [ref=e133] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e134]
+          - text: Innovaition
+          - superscript [ref=e138]: ®
+        - paragraph [ref=e139]:
+          - strong [ref=e140]: End-to-end AI automation for inquiries, scheduling,
+          - text: and follow-up. Engineered to handle every inquiry, every time.
+        - paragraph [ref=e141]: Ready to transform your operations?
+        - link "Book a Free Demo " [ref=e142] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e143]: Book a Free Demo
+          - generic [ref=e145]: 
+      - generic [ref=e146]:
+        - generic [ref=e147]: COMPANY
+        - list [ref=e148]:
+          - listitem [ref=e149]:
+            - link "Home" [ref=e150] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e151]:
+            - link "About Us" [ref=e152] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e153]:
+            - link "Services" [ref=e154] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e155]:
+            - link "Industries" [ref=e156] [cursor=pointer]:
+              - /url: "#industries"
+          - listitem [ref=e157]:
+            - link "Contact" [ref=e158] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e159]:
+        - generic [ref=e160]: SERVICES
+        - list [ref=e161]:
+          - listitem [ref=e162]:
+            - link "AI Receptionist" [ref=e163] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e164]:
+            - link "AI Chatbots" [ref=e165] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e166]:
+            - link "Workflow Automation" [ref=e167] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e168]:
+            - link "Integrations" [ref=e169] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e170]:
+        - generic [ref=e171]: CONTACT
+        - generic [ref=e172]:
+          - link "+1 (403) 555-0167" [ref=e173] [cursor=pointer]:
+            - /url: tel:+14035550167
+          - link "INFO@INNOVAITION.CA" [ref=e174] [cursor=pointer]:
+            - /url: mailto:info@innovaition.ca
+      - generic [ref=e175]:
+        - generic [ref=e176]: LOCATION
+        - paragraph [ref=e177]:
+          - text: Proudly serving businesses in
+          - text: Calgary, Alberta and across Canada.
+      - generic [ref=e178]:
+        - generic [ref=e179]: SOCIAL
+        - generic [ref=e180]:
+          - link "" [ref=e181] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e182]: 
+          - link "" [ref=e183] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e184]: 
+          - link "" [ref=e185] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e186]: 
+      - generic [ref=e187]:
+        - generic [ref=e188]: LEGAL
+        - paragraph [ref=e189]:
+          - text: © 2026 INNOVAITION.
+          - text: All rights reserved.
+    - text:   

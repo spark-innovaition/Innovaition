@@ -1,0 +1,391 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - generic [ref=e6]: MENU
+    - link "Innovaition ®" [ref=e8] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e9]
+      - text: Innovaition
+      - superscript [ref=e13]: ®
+    - link "" [ref=e15] [cursor=pointer]:
+      - /url: contact.html
+      - generic [ref=e16]: 
+  - generic [ref=e18]:
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "HOME" [ref=e22] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e23]:
+        - link "ABOUT US" [ref=e24] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e25]:
+        - link "SERVICES" [ref=e26] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e27]:
+        - link "PRICING" [ref=e28] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e29]:
+        - link "BLOG" [ref=e30] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e31]:
+        - link "CONTACT US" [ref=e32] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e35]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e36]:
+          - generic [ref=e37]: 
+          - generic [ref=e38]: 62.328° N - 15.845° E
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: LOCATION
+            - paragraph [ref=e43]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "09:32 PM" [level=2] [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: CONTACT ON
+            - paragraph [ref=e47]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e48] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e49]:
+          - link "X Twitter - X" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e52]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e54]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e56]: 
+            - text: Instagram
+  - generic [ref=e57]:
+    - link "See How We Work" [ref=e58] [cursor=pointer]:
+      - /url: "#contact"
+    - link "" [ref=e59] [cursor=pointer]:
+      - /url: "#statement-sec"
+      - generic [ref=e60]: 
+  - generic [ref=e61]:
+    - generic [ref=e64]: WHO WE ARE
+    - heading "AT INNOVAITION®, WE DON'T JUST TALK ABOUT AI. WE BUILD SIMPLE, SECURE, AND CUSTOM TOOLS THAT REMOVE EVERYDAY ROADBLOCKS SO YOUR TEAM CAN DO THEIR ABSOLUTE BEST WORK." [level=2] [ref=e67]
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: OUR PROMISE
+        - paragraph [ref=e71]: To cut through the AI hype and build safe, reliable tools that actually solve your real-world business problems.
+      - img "Our Promise" [ref=e73]
+      - img "Core Principles" [ref=e75]
+      - generic [ref=e76]:
+        - generic [ref=e77]: CORE PRINCIPLES
+        - list [ref=e78]:
+          - listitem [ref=e79]:
+            - generic [ref=e80]: 
+            - text: Keeping your data completely private.
+          - listitem [ref=e81]:
+            - generic [ref=e82]: 
+            - text: Automating your most repetitive tasks.
+          - listitem [ref=e83]:
+            - generic [ref=e84]: 
+            - text: Building systems that grow with you.
+          - listitem [ref=e85]:
+            - generic [ref=e86]: 
+            - text: Focusing on real, measurable results.
+          - listitem [ref=e87]:
+            - generic [ref=e88]: 
+            - text: Giving your team superpowers.
+      - img "Let's Connect" [ref=e90]
+      - generic [ref=e91]:
+        - heading "LET'S CONNECT" [level=3] [ref=e92]
+        - generic [ref=e93]:
+          - generic [ref=e94]: BOOK A FREE DISCOVERY CALL TO SEE HOW WE CAN HELP.
+          - link "Book a discovery call " [ref=e95] [cursor=pointer]:
+            - /url: contact.html
+            - generic [ref=e96]: Book a discovery call
+            - generic [ref=e98]: 
+      - generic [ref=e99]:
+        - generic [ref=e100]: OUR FOCUS
+        - paragraph [ref=e101]: To build reliable, easy-to-use AI solutions that become the smartest part of your daily routine.
+        - generic [ref=e102]:
+          - heading "0%" [level=3] [ref=e103]
+          - paragraph [ref=e104]: Custom Built
+      - img "Our Focus" [ref=e106]
+  - generic [ref=e107]:
+    - generic [ref=e110]: OUR TOOLKIT
+    - heading "BUILT WITH THE BEST TOOLS AVAILABLE" [level=2] [ref=e113]:
+      - text: BUILT WITH THE BEST
+      - text: TOOLS AVAILABLE
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]: SYS
+        - generic [ref=e117]: OpenAI
+      - generic [ref=e118]:
+        - generic [ref=e119]: CORE
+        - generic [ref=e120]: Anthropic
+      - generic [ref=e121]:
+        - generic [ref=e122]: ML
+        - generic [ref=e123]: PyTorch
+      - generic [ref=e124]:
+        - generic [ref=e125]: ML
+        - generic [ref=e126]: TensorFlow
+      - generic [ref=e127]:
+        - generic [ref=e128]: CLOUD
+        - generic [ref=e129]: AWS
+      - generic [ref=e130]:
+        - generic [ref=e131]: CLOUD
+        - generic [ref=e132]: Google Cloud
+      - generic [ref=e133]:
+        - generic [ref=e134]: CLOUD
+        - generic [ref=e135]: Azure
+      - generic [ref=e136]:
+        - generic [ref=e137]: DB
+        - generic [ref=e138]: Pinecone
+      - generic [ref=e139]:
+        - generic [ref=e140]: INT
+        - generic [ref=e141]: LangChain
+      - generic [ref=e142]:
+        - generic [ref=e143]: DB
+        - generic [ref=e144]: Databricks
+      - link " Innovaition® BUILD YOUR CUSTOM AI SOLUTION Let's Get Started   100% Secure & Private" [ref=e145] [cursor=pointer]:
+        - /url: contact.html
+        - generic [ref=e146]:
+          - generic [ref=e147]: 
+          - text: Innovaition®
+        - heading "BUILD YOUR CUSTOM AI SOLUTION" [level=4] [ref=e148]
+        - generic [ref=e149]:
+          - text: Let's Get Started
+          - generic [ref=e150]: 
+        - generic [ref=e151]:
+          - generic [ref=e152]: 
+          - generic [ref=e153]: 100% Secure & Private
+  - generic [ref=e154]:
+    - heading "HOW WE WORK TOGETHER" [level=2] [ref=e156]:
+      - text: HOW WE WORK
+      - text: TOGETHER
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - heading "DISCOVERY & STRATEGY" [level=3] [ref=e160]
+        - generic [ref=e161]: PHASE 01
+        - paragraph [ref=e162]: We sit down with you to learn how your business runs and find exactly where AI can help the most.
+      - img "Discovery & Strategy" [ref=e164]
+      - generic [ref=e165]:
+        - heading "PLANNING & DESIGN" [level=3] [ref=e166]
+        - generic [ref=e167]: PHASE 02
+        - paragraph [ref=e168]: We create a clear, step-by-step plan for a custom AI tool built just for your unique needs.
+      - img "Planning & Design" [ref=e170]
+      - generic [ref=e171]:
+        - heading "DEVELOPMENT & LAUNCH" [level=3] [ref=e172]
+        - generic [ref=e173]: PHASE 03
+        - paragraph [ref=e174]: We build, test, and launch your new AI tools so they fit perfectly into your daily routine.
+      - img "Development & Launch" [ref=e176]
+      - generic [ref=e177]:
+        - heading "DISCOVERY & STRATEGY" [level=3] [ref=e178]
+        - generic [ref=e179]: PHASE 01
+        - paragraph [ref=e180]: We sit down with you to learn how your business runs and find exactly where AI can help the most.
+      - img "Discovery & Strategy" [ref=e182]
+      - generic [ref=e183]:
+        - heading "PLANNING & DESIGN" [level=3] [ref=e184]
+        - generic [ref=e185]: PHASE 02
+        - paragraph [ref=e186]: We create a clear, step-by-step plan for a custom AI tool built just for your unique needs.
+      - img "Planning & Design" [ref=e188]
+      - generic [ref=e189]:
+        - heading "DEVELOPMENT & LAUNCH" [level=3] [ref=e190]
+        - generic [ref=e191]: PHASE 03
+        - paragraph [ref=e192]: We build, test, and launch your new AI tools so they fit perfectly into your daily routine.
+      - img "Development & Launch" [ref=e194]
+  - generic [ref=e196]:
+    - generic [ref=e197]:
+      - heading "ZERO LIMITS" [level=2] [ref=e198]:
+        - generic [ref=e199]: ZERO
+        - generic [ref=e200]: LIMITS
+      - generic [ref=e201]:
+        - generic [ref=e202]:
+          - generic [ref=e203]: 
+          - text: Innovaition®
+        - paragraph [ref=e204]: “WE DON'T BUILD AI TO REPLACE YOUR TEAM. WE BUILD IT TO GIVE THEM THE TIME AND TOOLS TO DO THEIR VERY BEST WORK.”
+        - generic [ref=e205]: BOOK A CALL, AND LET'S SEE WHAT WE CAN DO.
+        - link "Book a call " [ref=e206] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e207]: Book a call
+          - generic [ref=e209]: 
+    - generic [ref=e210]:
+      - generic [ref=e211]:
+        - heading "0X" [level=3] [ref=e212]
+        - paragraph [ref=e213]:
+          - text: Faster daily
+          - text: workflows
+      - generic [ref=e214]:
+        - heading "0%" [level=3] [ref=e215]
+        - paragraph [ref=e216]:
+          - text: Custom-built
+          - text: tools
+      - generic [ref=e217]:
+        - heading "0%" [level=3] [ref=e218]
+        - paragraph [ref=e219]:
+          - text: Safe and
+          - text: reliable
+      - generic [ref=e220]:
+        - heading "24/7" [level=3] [ref=e221]
+        - paragraph [ref=e222]:
+          - text: Around-the-clock
+          - text: support
+      - generic [ref=e223]:
+        - heading "0%" [level=3] [ref=e224]
+        - paragraph [ref=e225]:
+          - text: Total data
+          - text: privacy
+  - generic [ref=e226]:
+    - generic [ref=e229]: FAQ
+    - generic [ref=e231]:
+      - heading "ANSWERS TO COMMON QUESTIONS" [level=2] [ref=e232]:
+        - text: ANSWERS TO
+        - text: COMMON QUESTIONS
+      - generic [ref=e234]:
+        - generic [ref=e235]: QUESTIONS
+        - generic [ref=e236] [cursor=pointer]:
+          - text: WHAT INDUSTRIES DOES INNOVAITION WORK WITH?
+          - generic [ref=e237]: 
+        - generic [ref=e238] [cursor=pointer]:
+          - text: HOW LONG DOES IT TAKE TO IMPLEMENT AN AI SOLUTION?
+          - generic [ref=e239]: +
+        - generic [ref=e240] [cursor=pointer]:
+          - text: DO YOU HANDLE EVERYTHING FROM START TO FINISH?
+          - generic [ref=e241]: +
+        - generic [ref=e242] [cursor=pointer]:
+          - text: IS AI RIGHT FOR SMALL BUSINESSES?
+          - generic [ref=e243]: +
+        - generic [ref=e244] [cursor=pointer]:
+          - text: WHAT MAKES INNOVAITION DIFFERENT FROM OTHER AGENCIES?
+          - generic [ref=e245]: +
+  - generic [ref=e246]:
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic [ref=e250]: WE'RE HERE TO HELP
+    - generic [ref=e252]:
+      - generic [ref=e253]:
+        - heading "LET'S TALK ABOUT YOUR NEXT AI PROJECT AUTOMATION GOALS DATA STRATEGY BUSINESS GROWTH SMART WORKFLOWS" [level=2] [ref=e254]:
+          - text: LET'S TALK ABOUT YOUR
+          - generic [ref=e255]:
+            - generic [ref=e256]: NEXT AI PROJECT
+            - generic [ref=e257]: AUTOMATION GOALS
+            - generic [ref=e258]: DATA STRATEGY
+            - generic [ref=e259]: BUSINESS GROWTH
+            - generic [ref=e260]: SMART WORKFLOWS
+        - generic [ref=e261]:
+          - generic [ref=e262]: HOW DO WE CONNECT?
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - generic [ref=e265]: 
+              - text: Keep your data totally secure
+            - listitem [ref=e266]:
+              - generic [ref=e267]: 
+              - text: Build tools tailored to your needs
+            - listitem [ref=e268]:
+              - generic [ref=e269]: 
+              - text: Launch quickly and reliably
+      - generic [ref=e270]:
+        - heading "START YOUR AI JOURNEY" [level=3] [ref=e271]
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - generic [ref=e274]: Name*
+            - textbox "Enter your name" [ref=e275]
+          - generic [ref=e276]:
+            - generic [ref=e277]: Email*
+            - textbox "Enter your email" [ref=e278]
+          - generic [ref=e279]:
+            - generic [ref=e280]: Message
+            - textbox "Message" [ref=e281]
+          - button "Send Message" [ref=e282]
+  - contentinfo [ref=e283]:
+    - generic: innovAItion
+    - generic [ref=e284]:
+      - generic [ref=e285]:
+        - link "Innovaition ®" [ref=e286] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e287]
+          - text: Innovaition
+          - superscript [ref=e291]: ®
+        - paragraph [ref=e292]:
+          - strong [ref=e293]: End-to-end AI automation for inquiries, scheduling,
+          - text: and follow-up. Engineered to handle every inquiry, every time.
+        - paragraph [ref=e294]: Ready to transform your operations?
+        - link "Book a Free Demo " [ref=e295] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e296]: Book a Free Demo
+          - generic [ref=e298]: 
+      - generic [ref=e299]:
+        - generic [ref=e300]: COMPANY
+        - list [ref=e301]:
+          - listitem [ref=e302]:
+            - link "Home" [ref=e303] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e304]:
+            - link "About Us" [ref=e305] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e306]:
+            - link "Services" [ref=e307] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e308]:
+            - link "Industries" [ref=e309] [cursor=pointer]:
+              - /url: "#industries"
+          - listitem [ref=e310]:
+            - link "Contact" [ref=e311] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e312]:
+        - generic [ref=e313]: SERVICES
+        - list [ref=e314]:
+          - listitem [ref=e315]:
+            - link "AI Receptionist" [ref=e316] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e317]:
+            - link "AI Chatbots" [ref=e318] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e319]:
+            - link "Workflow Automation" [ref=e320] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e321]:
+            - link "Integrations" [ref=e322] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e323]:
+        - generic [ref=e324]: CONTACT
+        - generic [ref=e325]:
+          - link "+1 (403) 555-0167" [ref=e326] [cursor=pointer]:
+            - /url: tel:+14035550167
+          - link "INFO@INNOVAITION.CA" [ref=e327] [cursor=pointer]:
+            - /url: mailto:info@innovaition.ca
+      - generic [ref=e328]:
+        - generic [ref=e329]: LOCATION
+        - paragraph [ref=e330]:
+          - text: Proudly serving businesses in
+          - text: Calgary, Alberta and across Canada.
+      - generic [ref=e331]:
+        - generic [ref=e332]: SOCIAL
+        - generic [ref=e333]:
+          - link "" [ref=e334] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e335]: 
+          - link "" [ref=e336] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e337]: 
+          - link "" [ref=e338] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e339]: 
+      - generic [ref=e340]:
+        - generic [ref=e341]: LEGAL
+        - paragraph [ref=e342]:
+          - text: © 2026 INNOVAITION.
+          - text: All rights reserved.
+    - text:   

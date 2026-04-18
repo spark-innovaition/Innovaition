@@ -616,7 +616,8 @@ a {
 .hero-robot-3d {
   position: absolute;
   bottom: 0;
-  left: 68%;
+  left: 72%;
+  /* Increased to push the robot to the right */
   transform: translateX(-50%);
   width: 65vw;
   max-width: 1100px;
@@ -626,16 +627,17 @@ a {
 }
 
 /* Fix for 16:10 laptops (like 1920x1200) */
-/* Media query for robot positioning on wide monitors to keep him centered with text */
 @media (min-width: 1400px) {
   .hero-robot-3d {
-    left: 65%;
+    left: 68%;
+    /* Increased for wider screens */
   }
 }
 
 @media (min-width: 2000px) {
   .hero-robot-3d {
-    left: 60%;
+    left: 64%;
+    /* Increased for ultra-wide screens */
   }
 }
 
@@ -9813,4 +9815,14 @@ a {
 .footer-socials a:hover {
   background: rgba(255, 255, 255, 0.1) !important;
   color: #fff !important;
+}
+
+/* === HIDE SPLINE WATERMARK === */
+spline-viewer::part(logo) {
+  display: none !important;
+}
+
+/* === HIDE SPLINE WATERMARK === */
+spline-viewer::part(logo) {
+  display: none !important;
 }

@@ -1,0 +1,374 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - text: MENU
+    - link "Innovaition ®" [ref=e7] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e8]
+      - text: Innovaition
+      - superscript [ref=e12]: ®
+    - link "" [ref=e14] [cursor=pointer]:
+      - /url: contact.html
+      - generic [ref=e15]: 
+  - generic [ref=e17]:
+    - list [ref=e19]:
+      - listitem [ref=e20]:
+        - link "HOME" [ref=e21] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e22]:
+        - link "ABOUT US" [ref=e23] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e24]:
+        - link "SERVICES" [ref=e25] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e26]:
+        - link "PRICING" [ref=e27] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e28]:
+        - link "BLOG" [ref=e29] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e30]:
+        - link "CONTACT US" [ref=e31] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e34]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e35]:
+          - generic [ref=e36]: 
+          - generic [ref=e37]: 62.328° N - 15.845° E
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: LOCATION
+            - paragraph [ref=e42]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "09:32 PM" [level=2] [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: CONTACT ON
+            - paragraph [ref=e46]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e47] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e48]:
+          - link "X Twitter - X" [ref=e49] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e51]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e53]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e55]: 
+            - text: Instagram
+  - generic [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e60]: 
+      - text: PRICING PLANS
+    - heading "Simple and transparent pricing models" [level=1] [ref=e61]:
+      - text: Simple and transparent
+      - text: pricing models
+    - paragraph [ref=e62]: We offer flexible pricing plans to suit your business needs. No hidden fees. Just measurable AI results and seamless integration.
+    - generic [ref=e63]:
+      - link "VIEW ALL PLANS " [ref=e64] [cursor=pointer]:
+        - /url: "#pricing"
+        - generic [ref=e65]: VIEW ALL PLANS
+        - generic [ref=e67]: 
+      - link "CUSTOM QUOTE" [ref=e68] [cursor=pointer]:
+        - /url: contact.html
+    - list [ref=e69]:
+      - listitem [ref=e70]: NO HIDDEN FEES
+      - listitem [ref=e71]: FLEXIBLE SCALING
+      - listitem [ref=e72]: MEASURABLE ROI
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e75]: LIVE INSTALLATIONS
+        - generic [ref=e76]: 320+
+      - generic [ref=e77]:
+        - generic [ref=e78]: LATENCY
+        - generic [ref=e79]: 8ms
+      - generic [ref=e80]:
+        - generic [ref=e81]: TEAMS ONBOARDED
+        - generic [ref=e82]: 120+
+  - generic [ref=e83]:
+    - generic [ref=e86]: ENGAGEMENT MODELS
+    - generic [ref=e90]:
+      - heading "CHOOSE YOUR ENGAGEMENT TIER" [level=2] [ref=e92]:
+        - text: CHOOSE YOUR
+        - text: ENGAGEMENT TIER
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - button "GENERAL" [ref=e95] [cursor=pointer]
+          - button "HEALTHCARE" [ref=e96] [cursor=pointer]
+          - button "E-COMMERCE" [ref=e97] [cursor=pointer]
+          - button "LOGISTICS" [ref=e98] [cursor=pointer]
+        - generic [ref=e100] [cursor=pointer]:
+          - generic [ref=e102]: MONTHLY
+          - generic [ref=e103]: YEARLY
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - heading "STARTER PLAN" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Small to mid-size businesses exploring AI adoption.
+          - generic [ref=e109]:
+            - generic [ref=e110]: $
+            - generic [ref=e111]: 1,200
+            - generic [ref=e112]: /Per month
+        - generic [ref=e113]: INCLUDED FEATURES
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - generic [ref=e116]: 
+            - text: AI readiness and opportunity assessment
+          - listitem [ref=e117]:
+            - generic [ref=e118]: 
+            - text: Strategic consultation sessions (up to 3)
+          - listitem [ref=e119]:
+            - generic [ref=e120]: 
+            - text: Workflow automation blueprint
+          - listitem [ref=e121]:
+            - generic [ref=e122]: 
+            - text: Data preparation guidance
+          - listitem [ref=e123]:
+            - generic [ref=e124]: 
+            - text: Basic AI tool recommendations
+          - listitem [ref=e125]:
+            - generic [ref=e126]: 
+            - text: 2-week implementation roadmap
+        - link "Get started" [ref=e128] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - heading "ENTERPRISE PLAN" [level=3] [ref=e131]
+          - paragraph [ref=e132]: Established companies needing deep AI integration.
+          - generic [ref=e133]:
+            - generic [ref=e134]: $
+            - generic [ref=e135]: 3,000
+            - generic [ref=e136]: /Per month
+        - generic [ref=e137]: INCLUDED FEATURES
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - generic [ref=e140]: 
+            - text: In-depth AI strategy and roadmap design
+          - listitem [ref=e141]:
+            - generic [ref=e142]: 
+            - text: Custom AI model and automation development
+          - listitem [ref=e143]:
+            - generic [ref=e144]: 
+            - text: Integration with internal tools and systems
+          - listitem [ref=e145]:
+            - generic [ref=e146]: 
+            - text: Predictive analytics and dashboard setup
+          - listitem [ref=e147]:
+            - generic [ref=e148]: 
+            - text: Continuous performance monitoring
+          - listitem [ref=e149]:
+            - generic [ref=e150]: 
+            - text: Team training and onboarding
+          - listitem [ref=e151]:
+            - generic [ref=e152]: 
+            - text: Ongoing technical support
+        - link "Request proposal" [ref=e154] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - heading "CUSTOM PLAN" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Get a fully tailored AI solution designed around your unique needs.
+        - generic [ref=e159]: INCLUDED FEATURES
+        - list [ref=e160]:
+          - listitem [ref=e161]:
+            - generic [ref=e162]: 
+            - text: Fully tailored AI setup
+          - listitem [ref=e163]:
+            - generic [ref=e164]: 
+            - text: Advanced integrations & workflows
+          - listitem [ref=e165]:
+            - generic [ref=e166]: 
+            - text: Priority support & consultation
+          - listitem [ref=e167]:
+            - generic [ref=e168]: 
+            - text: Flexible deliverables and pricing
+        - link "Get a custom quote " [ref=e169] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e170]: Get a custom quote
+          - generic [ref=e172]: 
+        - generic [ref=e173]:
+          - paragraph [ref=e174]: "\"Every business is unique, and your AI solution should reflect that vision perfectly.\""
+          - generic [ref=e175]:
+            - img "Ethan Parker" [ref=e176]
+            - generic [ref=e177]:
+              - strong [ref=e178]: Ethan Parker,
+              - generic [ref=e179]: CEO, Innovaition
+  - generic [ref=e180]:
+    - generic [ref=e183]: HOW WE WORK
+    - generic [ref=e187]:
+      - heading "FEATURE BREAKDOWN" [level=2] [ref=e188]
+      - table [ref=e189]:
+        - rowgroup [ref=e190]:
+          - row "FEATURES STARTER ENTERPRISE CUSTOM" [ref=e191]:
+            - columnheader "FEATURES" [ref=e192]
+            - columnheader "STARTER" [ref=e193]
+            - columnheader "ENTERPRISE" [ref=e194]
+            - columnheader "CUSTOM" [ref=e195]
+        - rowgroup [ref=e196]:
+          - row "AI Opportunity Mapping   " [ref=e197]:
+            - cell "AI Opportunity Mapping" [ref=e198]
+            - cell "" [ref=e199]:
+              - generic [ref=e200]: 
+            - cell "" [ref=e201]:
+              - generic [ref=e202]: 
+            - cell "" [ref=e203]:
+              - generic [ref=e204]: 
+          - row "Process Automation Basic Workflows Deep Integration Bespoke Bots" [ref=e205]:
+            - cell "Process Automation" [ref=e206]
+            - cell "Basic Workflows" [ref=e207]
+            - cell "Deep Integration" [ref=e208]
+            - cell "Bespoke Bots" [ref=e209]
+          - row "Custom Model Training   " [ref=e210]:
+            - cell "Custom Model Training" [ref=e211]
+            - cell "" [ref=e212]:
+              - generic [ref=e213]: 
+            - cell "" [ref=e214]:
+              - generic [ref=e215]: 
+            - cell "" [ref=e216]:
+              - generic [ref=e217]: 
+          - row "Dedicated Engineering Pod   " [ref=e218]:
+            - cell "Dedicated Engineering Pod" [ref=e219]
+            - cell "" [ref=e220]:
+              - generic [ref=e221]: 
+            - cell "" [ref=e222]:
+              - generic [ref=e223]: 
+            - cell "" [ref=e224]:
+              - generic [ref=e225]: 
+          - row "Predictive Dashboards   " [ref=e226]:
+            - cell "Predictive Dashboards" [ref=e227]
+            - cell "" [ref=e228]:
+              - generic [ref=e229]: 
+            - cell "" [ref=e230]:
+              - generic [ref=e231]: 
+            - cell "" [ref=e232]:
+              - generic [ref=e233]: 
+          - row "SLA Support Email Support Priority 24/7 Custom SLA" [ref=e234]:
+            - cell "SLA Support" [ref=e235]
+            - cell "Email Support" [ref=e236]
+            - cell "Priority 24/7" [ref=e237]
+            - cell "Custom SLA" [ref=e238]
+  - generic [ref=e239]:
+    - generic [ref=e242]: FREQUENTLY ASKED
+    - generic [ref=e246]:
+      - heading "ANSWERS TO COMMON PRICING QUERIES" [level=2] [ref=e247]:
+        - text: ANSWERS TO
+        - text: COMMON PRICING QUERIES
+      - generic [ref=e249]:
+        - generic [ref=e250]: QUESTIONS
+        - generic [ref=e251] [cursor=pointer]:
+          - text: CAN WE UPGRADE OR DOWNGRADE OUR PLAN?
+          - generic [ref=e252]: 
+        - generic [ref=e253] [cursor=pointer]:
+          - text: ARE THERE ANY HIDDEN SETUP FEES?
+          - generic [ref=e254]: +
+        - generic [ref=e255] [cursor=pointer]:
+          - text: HOW DO CUSTOM PLANS WORK?
+          - generic [ref=e256]: +
+        - generic [ref=e257] [cursor=pointer]:
+          - text: DO YOU OFFER YEARLY BILLING DISCOUNTS?
+          - generic [ref=e258]: +
+  - generic [ref=e259]:
+    - generic [ref=e262]: LET'S CONNECT
+    - generic [ref=e266]:
+      - heading "Innovation is Everything" [level=1] [ref=e267]
+      - paragraph [ref=e268]: Unleashing intelligence through bold architectures, seamless automation, and limitless scaling possibilities.
+      - paragraph [ref=e273]: Available for New Projects
+      - link "Let's Go" [ref=e275] [cursor=pointer]:
+        - /url: contact.html
+        - generic [ref=e278]: Let's Go
+  - contentinfo [ref=e279]:
+    - generic: innovAItion
+    - generic [ref=e280]:
+      - generic [ref=e281]:
+        - link "Innovaition ®" [ref=e282] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e283]
+          - text: Innovaition
+          - superscript [ref=e287]: ®
+        - paragraph [ref=e288]:
+          - strong [ref=e289]: End-to-end AI automation for inquiries, scheduling,
+          - text: and follow-up. Engineered to handle every inquiry, every time.
+        - paragraph [ref=e290]: Ready to transform your operations?
+        - link "Book a Free Demo " [ref=e291] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e292]: Book a Free Demo
+          - generic [ref=e294]: 
+      - generic [ref=e295]:
+        - generic [ref=e296]: COMPANY
+        - list [ref=e297]:
+          - listitem [ref=e298]:
+            - link "Home" [ref=e299] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e300]:
+            - link "About Us" [ref=e301] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e302]:
+            - link "Services" [ref=e303] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e304]:
+            - link "Industries" [ref=e305] [cursor=pointer]:
+              - /url: "#industries"
+          - listitem [ref=e306]:
+            - link "Contact" [ref=e307] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e308]:
+        - generic [ref=e309]: SERVICES
+        - list [ref=e310]:
+          - listitem [ref=e311]:
+            - link "AI Receptionist" [ref=e312] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e313]:
+            - link "AI Chatbots" [ref=e314] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e315]:
+            - link "Workflow Automation" [ref=e316] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e317]:
+            - link "Integrations" [ref=e318] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e319]:
+        - generic [ref=e320]: CONTACT
+        - generic [ref=e321]:
+          - link "+1 (403) 555-0167" [ref=e322] [cursor=pointer]:
+            - /url: tel:+14035550167
+          - link "INFO@INNOVAITION.CA" [ref=e323] [cursor=pointer]:
+            - /url: mailto:info@innovaition.ca
+      - generic [ref=e324]:
+        - generic [ref=e325]: LOCATION
+        - paragraph [ref=e326]:
+          - text: Proudly serving businesses in
+          - text: Calgary, Alberta and across Canada.
+      - generic [ref=e327]:
+        - generic [ref=e328]: SOCIAL
+        - generic [ref=e329]:
+          - link "" [ref=e330] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e331]: 
+          - link "" [ref=e332] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e333]: 
+          - link "" [ref=e334] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e335]: 
+      - generic [ref=e336]:
+        - generic [ref=e337]: LEGAL
+        - paragraph [ref=e338]:
+          - text: © 2026 INNOVAITION.
+          - text: All rights reserved.
+    - text:   

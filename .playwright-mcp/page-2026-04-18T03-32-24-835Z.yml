@@ -1,0 +1,256 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - button " MENU" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 
+      - generic [ref=e6]: MENU
+    - link "Innovaition ®" [ref=e8] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e9]
+      - text: Innovaition
+      - superscript [ref=e13]: ®
+    - link "" [ref=e15] [cursor=pointer]:
+      - /url: contact.html
+      - generic [ref=e16]: 
+  - generic [ref=e18]:
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "HOME" [ref=e22] [cursor=pointer]:
+          - /url: index.html
+          - text: HOME
+      - listitem [ref=e23]:
+        - link "ABOUT US" [ref=e24] [cursor=pointer]:
+          - /url: about.html
+          - text: ABOUT US
+      - listitem [ref=e25]:
+        - link "SERVICES" [ref=e26] [cursor=pointer]:
+          - /url: services.html
+          - text: SERVICES
+      - listitem [ref=e27]:
+        - link "PRICING" [ref=e28] [cursor=pointer]:
+          - /url: pricing.html
+          - text: PRICING
+      - listitem [ref=e29]:
+        - link "BLOG" [ref=e30] [cursor=pointer]:
+          - /url: blog.html
+          - text: BLOG
+      - listitem [ref=e31]:
+        - link "CONTACT US" [ref=e32] [cursor=pointer]:
+          - /url: contact.html
+          - text: CONTACT US
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Discover the vision and values driving Innovaition forward" [level=3] [ref=e35]:
+          - text: Discover the vision and
+          - text: values driving Innovaition
+          - text: forward
+        - generic [ref=e36]:
+          - generic [ref=e37]: 
+          - generic [ref=e38]: 62.328° N - 15.845° E
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: LOCATION
+            - paragraph [ref=e43]: 1238 Echo Ridge Blvd, Suite 400, San Francisco, CA 94103, United States
+            - heading "09:32 PM" [level=2] [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: CONTACT ON
+            - paragraph [ref=e47]: +1 (415) 555-0167
+            - link "SUPPORT@INNOVAITION.CA" [ref=e48] [cursor=pointer]:
+              - /url: mailto:SUPPORT@INNOVAITION.CA
+        - generic [ref=e49]:
+          - link "X Twitter - X" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+          - link " Facebook" [ref=e51] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e52]: 
+            - text: Facebook
+          - link " LinkedIn" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e54]: 
+            - text: LinkedIn
+          - link " Instagram" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e56]: 
+            - text: Instagram
+  - generic [ref=e59]:
+    - generic [ref=e65]: SERVICES
+    - generic [ref=e66]:
+      - generic [ref=e67]: SCROLL
+      - generic [ref=e69]: 01 / 03
+    - generic [ref=e71]:
+      - heading "INTELLIGENCE" [level=1] [ref=e72]
+      - generic [ref=e73]:
+        - paragraph [ref=e74]: Engineering autonomous workflows,
+        - paragraph [ref=e75]: built for enterprise scalability.
+  - generic [ref=e76]:
+    - generic [ref=e79]: THE ADVANTAGE
+    - heading "ENGINEERED FOR MEASURABLE IMPACT" [level=2] [ref=e82]:
+      - text: ENGINEERED FOR
+      - text: MEASURABLE IMPACT
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e86]: 
+        - heading "DATA-DRIVEN ROI" [level=3] [ref=e87]
+        - paragraph [ref=e88]: We build solutions focused on tangible business value, optimizing complex workflows and accelerating revenue growth without the bloat.
+      - generic [ref=e89]:
+        - generic [ref=e91]: 
+        - heading "AGILE DEPLOYMENT" [level=3] [ref=e92]
+        - paragraph [ref=e93]: Our lean engineering principles ensure rapid prototyping and seamless integration, getting your custom AI systems operational faster.
+      - generic [ref=e94]:
+        - generic [ref=e96]: 
+        - heading "SECURE & SCALABLE" [level=3] [ref=e97]
+        - paragraph [ref=e98]: We construct robust, closed-loop systems designed to evolve securely with emerging technologies, ensuring your proprietary data remains safe.
+  - generic [ref=e99]:
+    - generic [ref=e102]: DEPLOYMENT FRAMEWORK
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - heading "A RIGOROUS FRAMEWORK FOR INTEGRATION" [level=2] [ref=e106]:
+          - text: A RIGOROUS FRAMEWORK
+          - text: FOR INTEGRATION
+        - paragraph [ref=e107]: We combine strategic foresight with uncompromising technical standards to deliver secure, scalable AI architectures that drive sustainable growth.
+        - list [ref=e108]:
+          - listitem [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]: "01"
+            - generic [ref=e111]: Discovery & Architecture
+            - generic [ref=e112]: 
+          - listitem [ref=e113] [cursor=pointer]:
+            - generic [ref=e114]: "02"
+            - generic [ref=e115]: Data Structuring & Security
+            - generic [ref=e116]: 
+          - listitem [ref=e117] [cursor=pointer]:
+            - generic [ref=e118]: "03"
+            - generic [ref=e119]: Model Fine-Tuning
+            - generic [ref=e120]: 
+          - listitem [ref=e121] [cursor=pointer]:
+            - generic [ref=e122]: "04"
+            - generic [ref=e123]: Deployment & Optimization
+            - generic [ref=e124]: 
+      - generic [ref=e127]: Drag to rotate • Scroll to zoom
+  - generic [ref=e128]:
+    - generic [ref=e131]: CORE CAPABILITIES
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]: 01 / CAPABILITY
+        - heading "PREDICTIVE MODELING" [level=2] [ref=e137]:
+          - text: PREDICTIVE
+          - text: MODELING
+        - paragraph [ref=e138]: Harness your proprietary data to forecast trends, anticipate market shifts, and make proactive, algorithmic decisions with absolute clarity.
+      - generic [ref=e139]:
+        - generic [ref=e140]: 02 / CAPABILITY
+        - heading "AUTONOMOUS WORKFLOWS" [level=2] [ref=e141]:
+          - text: AUTONOMOUS
+          - text: WORKFLOWS
+        - paragraph [ref=e142]: Eliminate operational bottlenecks by deploying intelligent agents that streamline core processes, sync APIs, and minimize human error.
+      - generic [ref=e143]:
+        - generic [ref=e144]: 03 / CAPABILITY
+        - heading "ENTERPRISE LLMs" [level=2] [ref=e145]:
+          - text: ENTERPRISE
+          - text: LLMs
+        - paragraph [ref=e146]: Integrate state-of-the-art, fine-tuned language models into your secure tech stack to supercharge data querying and internal communications.
+      - generic [ref=e147]:
+        - generic [ref=e148]: 04 / CAPABILITY
+        - heading "DATA INFRASTRUCTURE" [level=2] [ref=e149]:
+          - text: DATA
+          - text: INFRASTRUCTURE
+        - paragraph [ref=e150]: Build unbreakable, scalable data pipelines that guarantee your AI models are continuously trained on clean, structured, and sanitized intelligence.
+  - generic [ref=e151]:
+    - generic [ref=e154]: INITIATE DEPLOYMENT
+    - generic [ref=e156]:
+      - generic [ref=e159]: AI INNOVATION
+      - heading "Engineer your Future Future" [level=2] [ref=e161]:
+        - generic [ref=e162]: Engineer your
+        - generic [ref=e163]:
+          - text: Future
+          - generic [ref=e164]: Future
+      - generic [ref=e165]:
+        - paragraph [ref=e166]: Transform your operational capabilities with our bespoke AI architectures
+        - paragraph [ref=e167]: From autonomous workflows to secure data pipelines, we build intelligent systems designed for scale.
+      - generic [ref=e168]:
+        - link "Book a discovery call " [ref=e169] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e171]: Book a discovery call
+          - generic [ref=e172]: 
+        - link " Explore our services" [ref=e173] [cursor=pointer]:
+          - /url: services.html
+          - generic [ref=e175]: 
+          - generic [ref=e176]: Explore our services
+  - contentinfo [ref=e177]:
+    - generic: innovAItion
+    - generic [ref=e178]:
+      - generic [ref=e179]:
+        - link "Innovaition ®" [ref=e180] [cursor=pointer]:
+          - /url: index.html
+          - img [ref=e181]
+          - text: Innovaition
+          - superscript [ref=e185]: ®
+        - paragraph [ref=e186]:
+          - strong [ref=e187]: End-to-end AI automation for inquiries, scheduling,
+          - text: and follow-up. Engineered to handle every inquiry, every time.
+        - paragraph [ref=e188]: Ready to transform your operations?
+        - link "Book a Free Demo " [ref=e189] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e190]: Book a Free Demo
+          - generic [ref=e192]: 
+      - generic [ref=e193]:
+        - generic [ref=e194]: COMPANY
+        - list [ref=e195]:
+          - listitem [ref=e196]:
+            - link "Home" [ref=e197] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e198]:
+            - link "About Us" [ref=e199] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e200]:
+            - link "Services" [ref=e201] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e202]:
+            - link "Industries" [ref=e203] [cursor=pointer]:
+              - /url: "#industries"
+          - listitem [ref=e204]:
+            - link "Contact" [ref=e205] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e206]:
+        - generic [ref=e207]: SERVICES
+        - list [ref=e208]:
+          - listitem [ref=e209]:
+            - link "AI Receptionist" [ref=e210] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e211]:
+            - link "AI Chatbots" [ref=e212] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e213]:
+            - link "Workflow Automation" [ref=e214] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e215]:
+            - link "Integrations" [ref=e216] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e217]:
+        - generic [ref=e218]: CONTACT
+        - generic [ref=e219]:
+          - link "+1 (403) 555-0167" [ref=e220] [cursor=pointer]:
+            - /url: tel:+14035550167
+          - link "INFO@INNOVAITION.CA" [ref=e221] [cursor=pointer]:
+            - /url: mailto:info@innovaition.ca
+      - generic [ref=e222]:
+        - generic [ref=e223]: LOCATION
+        - paragraph [ref=e224]:
+          - text: Proudly serving businesses in
+          - text: Calgary, Alberta and across Canada.
+      - generic [ref=e225]:
+        - generic [ref=e226]: SOCIAL
+        - generic [ref=e227]:
+          - link "" [ref=e228] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e229]: 
+          - link "" [ref=e230] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e231]: 
+          - link "" [ref=e232] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e233]: 
+      - generic [ref=e234]:
+        - generic [ref=e235]: LEGAL
+        - paragraph [ref=e236]:
+          - text: © 2026 INNOVAITION.
+          - text: All rights reserved.
+    - text:   
