@@ -1983,22 +1983,13 @@ a {
   }
 
   .process-card {
-    flex: 0 0 85vw !important;
-    /* Ensures cards maintain exact width inside the flex container */
+    flex: 0 0 80vw !important;
+    /* Reduced from 85vw so the next card peeks at the edge — visual cue that more cards exist */
     scroll-snap-align: center;
   }
 
   .process-header::after {
-    content: 'SWIPE \2192';
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #888;
-    letter-spacing: 0.1em;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 50px;
+    display: none;
   }
 }
 
@@ -8573,20 +8564,8 @@ a {
     font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
   }
 
-  /* Injects a subtle, animated swipe hint below the Bento title */
   .bento-header::after {
-    content: 'SWIPE \2192';
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #888;
-    letter-spacing: 0.1em;
-    background: rgba(0, 0, 0, 0.05);
-    /* Darker translucent background for light theme */
-    padding: 6px 12px;
-    border-radius: 50px;
-    animation: swipePulse 2s ease-in-out infinite;
+    display: none;
   }
 
   /* Converts the grid into a horizontal swiping track */
@@ -8612,15 +8591,14 @@ a {
     /* Hides scrollbar in Chrome/Safari for a native app feel */
   }
 
-  /* Each card becomes a slide taking up 85% of the screen width */
+  /* Each card takes ~80% of viewport so the next card peeks at the edge */
   .bento-card,
   .bento-split-col {
-    flex: 0 0 85% !important;
-    min-width: 85% !important;
+    flex: 0 0 80% !important;
+    min-width: 80% !important;
     scroll-snap-align: center;
     min-height: 420px !important;
     border-radius: 16px !important;
-    /* Re-applies nice rounded corners */
   }
 
   /* The split column holds two smaller cards */
@@ -10104,5 +10082,67 @@ spline-viewer::part(logo) {
   .impact-section {
     padding-top: 80px !important;
     padding-bottom: 60px !important;
+  }
+}
+
+/* ============================================================= */
+/* ===== MOBILE CAROUSEL PAGINATION (process + bento)      ===== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .carousel-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+  }
+
+  .carousel-pagination .pag-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: width 0.3s ease, background 0.3s ease, border-radius 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .carousel-pagination .pag-dot.active {
+    width: 28px;
+    border-radius: 4px;
+    background: #ffffff;
+  }
+
+  .carousel-pagination .pag-counter {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 12px;
+    min-width: 36px;
+    text-align: left;
+  }
+
+  /* Light theme variant for the bento section (white background) */
+  .bento-section .carousel-pagination .pag-dot {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .bento-section .carousel-pagination .pag-dot.active {
+    background: #000000;
+  }
+
+  .bento-section .carousel-pagination .pag-counter {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-pagination {
+    display: none;
   }
 }

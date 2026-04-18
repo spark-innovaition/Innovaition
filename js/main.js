@@ -899,6 +899,87 @@ window.addEventListener('load', () => {
   });
 });
 
+// =================================================================
+// ===== MOBILE CAROUSEL PAGINATION (process + bento sections) =====
+// =================================================================
+function initMobileCarouselPagination() {
+  if (window.innerWidth > 768) return;
+
+  const carousels = [
+    {
+      track: document.querySelector('#process-track'),
+      itemSelector: '.process-card',
+      insertAfter: document.querySelector('.process-slider-container')
+    },
+    {
+      track: document.querySelector('.bento-grid'),
+      itemSelector: ':scope > .bento-card, :scope > .bento-split-col',
+      insertAfter: document.querySelector('.bento-grid')
+    }
+  ];
+
+  carousels.forEach(({ track, itemSelector, insertAfter }) => {
+    if (!track || !insertAfter || track.dataset.paginationInit) return;
+    track.dataset.paginationInit = '1';
+
+    const items = track.querySelectorAll(itemSelector);
+    const total = items.length;
+    if (total < 2) return;
+
+    const pagination = document.createElement('div');
+    pagination.className = 'carousel-pagination';
+
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'pag-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1} of ${total}`);
+      dot.addEventListener('click', () => {
+        const target = items[i];
+        const left = target.offsetLeft - (track.offsetWidth - target.offsetWidth) / 2;
+        track.scrollTo({ left, behavior: 'smooth' });
+      });
+      pagination.appendChild(dot);
+    }
+
+    const counter = document.createElement('span');
+    counter.className = 'pag-counter';
+    counter.textContent = `1 / ${total}`;
+    pagination.appendChild(counter);
+
+    insertAfter.parentNode.insertBefore(pagination, insertAfter.nextSibling);
+
+    let scrollTimeout;
+    const syncActive = () => {
+      const trackRect = track.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+      items.forEach((item, idx) => {
+        const r = item.getBoundingClientRect();
+        const c = r.left + r.width / 2;
+        const d = Math.abs(c - trackCenter);
+        if (d < closestDist) { closestDist = d; closestIdx = idx; }
+      });
+      pagination.querySelectorAll('.pag-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === closestIdx);
+      });
+      counter.textContent = `${closestIdx + 1} / ${total}`;
+    };
+
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(syncActive, 60);
+    }, { passive: true });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileCarouselPagination);
+} else {
+  initMobileCarouselPagination();
+}
+
 // ====================================================
 // ===== ISOLATED THREE.JS CANVAS ENGINES         =====
 // ====================================================
