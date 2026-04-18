@@ -7939,28 +7939,33 @@ a {
 
   /* --- Navbar (Mobile) --- */
   .navbar {
-    padding: 0 20px;
+    padding: 0 20px !important;
   }
 
-  .nav-cta {
-    display: none !important;
+  /* Move Menu to the Right */
+  .nav-left {
+    order: 2;
   }
 
-  /* Hide 'Book a Call' text */
-  .nav-avatar {
-    display: none !important;
+  /* Move Logo to the Left and push Menu to the edge */
+  .nav-center {
+    order: 1;
+    margin-right: auto;
   }
 
-  /* Hide Avatar on mobile */
+  /* Completely hide the Arrow / CTA section */
   .nav-right {
-    gap: 10px;
+    display: none !important;
   }
 
-  .nav-cta-icon {
-    border: 1px solid var(--border-color) !important;
-    border-radius: 4px;
-    padding: 0 16px;
-    height: 36px;
+  /* Decrease Logo Size */
+  .navbar .logo {
+    font-size: 1.25rem !important;
+  }
+
+  .navbar .logo svg {
+    width: 20px !important;
+    height: 20px !important;
   }
 
   /* --- 1. Hero Section (Mobile) --- */
