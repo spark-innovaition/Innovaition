@@ -11296,720 +11296,727 @@ spline-viewer::part(logo) {
     }
 
     .faq-answer-text p {
-      font-size: 1rem !important;
-      text-align: center !important;
+      font-size: 0.9rem !important;
     }
 
-    .faq-question-item {
-      padding: 16px 20px !important;
-      /* Reduced vertical padding for a more compact card */
-      font-size: 0.85rem !important;
-      /* Reduced font size to help text fit onto two lines */
-      line-height: 1.25 !important;
-      /* Tightened line-height to fix the vertical gap between wrapped lines */
-    }
-
-    /* Active State matches reference (Black BG, White Text) */
-    .faq-question-item.active {
-      background-color: #111 !important;
-      color: #fff !important;
-    }
-
-    .faq-question-item.active i {
-      color: #fff !important;
-    }
-
-    /* --- "ZERO MISSED LEADS" Section Mobile Fixes --- */
-    .since-top {
-      align-items: flex-start !important;
-      gap: 30px !important;
+    /* 6. Mobile CTA Section Gap Fix */
+    .cta-react-translated-sec {
+      padding-top: 80px !important;
       padding-bottom: 40px !important;
-    }
-
-    /* Headline sized so "MISSED LEADS" fits on one line — 2-line layout like the reference */
-    .massive-since {
-      font-size: clamp(2.6rem, 12.5vw, 4.5rem) !important;
-      line-height: 0.92 !important;
-      letter-spacing: -0.02em !important;
-    }
-
-    .massive-since .line-2 {
-      padding-left: 0 !important;
-      white-space: nowrap !important;
-    }
-
-    /* Right-align the quote block to match reference */
-    .since-quote-box {
-      align-items: flex-end !important;
-      text-align: right !important;
-      padding-right: 20px !important;
-      /* FIX: Added space to pull the text and button away from the right edge */
-      width: 100% !important;
-    }
-
-    .since-quote-box .logo-small {
-      display: none !important;
-      /* FIX: Hides the Innovaition logo entirely in this section */
-    }
-
-    .since-quote-box p {
-      font-size: 1rem !important;
-      margin: 15px 0 20px !important;
-      line-height: 1.5 !important;
-    }
-
-    .since-quote-box .small-heading {
-      text-align: right !important;
-      margin-bottom: 16px !important;
-      color: #ffffff !important;
-      /* FIX: Brightened the text to pure white for readability */
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
-      /* FIX: Added a dark shadow so it pops against the glowing background */
-    }
-
-    /* 2-Column Stats Grid with internal borders */
-    .since-stats-row {
-      grid-template-columns: repeat(2, 1fr) !important;
-      margin: 0 !important;
-      border-left: none !important;
-    }
-
-    .stat-col {
-      padding: 30px 20px !important;
-      border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-    }
-
-    .stat-col:nth-child(even) {
-      border-right: none !important;
-    }
-
-    .stat-col h3 {
-      font-size: 3.5rem !important;
-      /* Massive numbers */
-      margin-bottom: 8px !important;
-    }
-
-    /* --- "WHO WE ARE" / massive-statement — compact on mobile --- */
-    .massive-statement {
-      padding: 70px 0 50px !important;
-    }
-
-    .massive-statement .statement-container {
-      padding: 0 20px !important;
-      margin-bottom: 40px !important;
-      margin-top: 40px !important;
-      /* FIX: Pushes the text down, safely away from the badge */
-    }
-
-    .statement-text {
-      font-size: 1.35rem !important;
-      line-height: 1.25 !important;
-      letter-spacing: -0.005em !important;
+      min-height: auto !important;
     }
   }
 
-  /* ============================================================= */
-  /* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
-  /* ============================================================= */
-  @media (max-width: 768px) {
-    #services-pin-wrapper {
-      height: auto !important;
-    }
-
-    .services-hero-sec {
-      height: auto !important;
-      min-height: 100vh;
-      padding: 140px 20px 80px !important;
-      align-items: flex-start !important;
-    }
-
-    /* ADDED: Dark gradient overlay to restore contrast against the bright background */
-    .services-hero-sec::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .svc-content-wrapper {
-      position: relative !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 28px !important;
-      height: auto !important;
-      align-items: flex-start !important;
-      text-align: left !important;
-      z-index: 10 !important;
-      /* Ensure content sits above the new overlay */
-    }
-
-    .content-section {
-      position: relative !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important;
-      padding: 0 !important;
-      text-align: left !important;
-      align-items: flex-start !important;
-    }
-
-    .content-section .hero-title {
-      font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
-      margin-bottom: 6px !important;
-      text-align: left !important;
-      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      /* ADDED: Drop shadow for punchy contrast */
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
-    }
-
-    .content-section .hero-subtitle p {
-      font-size: 1rem !important;
-      text-align: left !important;
-      color: #ffffff !important;
-      /* Brightened text */
-      /* ADDED: Text shadow for legibility */
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-    }
-
-    .svc-side-menu,
-    .svc-scroll-progress {
-      display: none !important;
-    }
+  .faq-question-item {
+    padding: 16px 20px !important;
+    /* Reduced vertical padding for a more compact card */
+    font-size: 0.85rem !important;
+    /* Reduced font size to help text fit onto two lines */
+    line-height: 1.25 !important;
+    /* Tightened line-height to fix the vertical gap between wrapped lines */
   }
 
-  /* ============================================================= */
-  /* ===== MOBILE: Replace videos & canvases with static images === */
-  /* ============================================================= */
+  /* Active State matches reference (Black BG, White Text) */
+  .faq-question-item.active {
+    background-color: #111 !important;
+    color: #fff !important;
+  }
+
+  .faq-question-item.active i {
+    color: #fff !important;
+  }
+
+  /* --- "ZERO MISSED LEADS" Section Mobile Fixes --- */
+  .since-top {
+    align-items: flex-start !important;
+    gap: 30px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Headline sized so "MISSED LEADS" fits on one line — 2-line layout like the reference */
+  .massive-since {
+    font-size: clamp(2.6rem, 12.5vw, 4.5rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .massive-since .line-2 {
+    padding-left: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Right-align the quote block to match reference */
+  .since-quote-box {
+    align-items: flex-end !important;
+    text-align: right !important;
+    padding-right: 20px !important;
+    /* FIX: Added space to pull the text and button away from the right edge */
+    width: 100% !important;
+  }
+
+  .since-quote-box .logo-small {
+    display: none !important;
+    /* FIX: Hides the Innovaition logo entirely in this section */
+  }
+
+  .since-quote-box p {
+    font-size: 1rem !important;
+    margin: 15px 0 20px !important;
+    line-height: 1.5 !important;
+  }
+
+  .since-quote-box .small-heading {
+    text-align: right !important;
+    margin-bottom: 16px !important;
+    color: #ffffff !important;
+    /* FIX: Brightened the text to pure white for readability */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    /* FIX: Added a dark shadow so it pops against the glowing background */
+  }
+
+  /* 2-Column Stats Grid with internal borders */
+  .since-stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 0 !important;
+    border-left: none !important;
+  }
+
+  .stat-col {
+    padding: 30px 20px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .stat-col:nth-child(even) {
+    border-right: none !important;
+  }
+
+  .stat-col h3 {
+    font-size: 3.5rem !important;
+    /* Massive numbers */
+    margin-bottom: 8px !important;
+  }
+
+  /* --- "WHO WE ARE" / massive-statement — compact on mobile --- */
+  .massive-statement {
+    padding: 70px 0 50px !important;
+  }
+
+  .massive-statement .statement-container {
+    padding: 0 20px !important;
+    margin-bottom: 40px !important;
+    margin-top: 40px !important;
+    /* FIX: Pushes the text down, safely away from the badge */
+  }
+
+  .statement-text {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.005em !important;
+  }
+}
+
+/* ============================================================= */
+/* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  #services-pin-wrapper {
+    height: auto !important;
+  }
+
+  .services-hero-sec {
+    height: auto !important;
+    min-height: 100vh;
+    padding: 140px 20px 80px !important;
+    align-items: flex-start !important;
+  }
+
+  /* ADDED: Dark gradient overlay to restore contrast against the bright background */
+  .services-hero-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .svc-content-wrapper {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    height: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    z-index: 10 !important;
+    /* Ensure content sits above the new overlay */
+  }
+
+  .content-section {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .content-section .hero-title {
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    margin-bottom: 6px !important;
+    text-align: left !important;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* ADDED: Drop shadow for punchy contrast */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+  }
+
+  .content-section .hero-subtitle p {
+    font-size: 1rem !important;
+    text-align: left !important;
+    color: #ffffff !important;
+    /* Brightened text */
+    /* ADDED: Text shadow for legibility */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .svc-side-menu,
+  .svc-scroll-progress {
+    display: none !important;
+  }
+}
+
+/* ============================================================= */
+/* ===== MOBILE: Replace videos & canvases with static images === */
+/* ============================================================= */
+.canvas-mobile-bg,
+.exc-mobile-bg,
+.contact-mobile-bg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  /* Hide every animated canvas + the homepage video on mobile.
+     JS init is also gated to skip on viewports ≤768px. */
+  .excellence-section .exc-video-bg,
+  #hero-canvas,
+  #d3-globe-canvas,
+  #cta-globe-canvas,
+  #cta-liquid-canvas,
+  #paper-shader-canvas,
+  #shader-canvas,
+  #hero-waves-canvas,
+  #beams-canvas,
+  #zero-limits-canvas,
+  #about-dither-canvas,
+  #cta-warp-canvas {
+    display: none !important;
+  }
+
+  /* Universal absolute-fill background for any mobile image fallback. */
   .canvas-mobile-bg,
   .exc-mobile-bg,
   .contact-mobile-bg {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-
-    /* Hide every animated canvas + the homepage video on mobile.
-     JS init is also gated to skip on viewports ≤768px. */
-    .excellence-section .exc-video-bg,
-    #hero-canvas,
-    #d3-globe-canvas,
-    #cta-globe-canvas,
-    #cta-liquid-canvas,
-    #paper-shader-canvas,
-    #shader-canvas,
-    #hero-waves-canvas,
-    #beams-canvas,
-    #zero-limits-canvas,
-    #about-dither-canvas,
-    #cta-warp-canvas {
-      display: none !important;
-    }
-
-    /* Universal absolute-fill background for any mobile image fallback. */
-    .canvas-mobile-bg,
-    .exc-mobile-bg,
-    .contact-mobile-bg {
-      display: block;
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      pointer-events: none;
-    }
-  }
-
-  /* ============================================================== */
-  /* ===== SERVICES PAGE: MOBILE TOOLKIT GRID (About Match)   ===== */
-  /* ============================================================== */
-  @media (max-width: 768px) {
-    .services-page .capabilities-sec {
-      padding: 80px 0 80px !important;
-    }
-
-    .services-page .capabilities-sec .section-title {
-      font-size: 1.9rem !important;
-      line-height: 1.1 !important;
-      margin-bottom: 32px !important;
-      margin-top: 40px !important;
-      padding: 0 20px !important;
-      text-align: center !important;
-    }
-
-    .services-page .capabilities-sec .cap-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-      margin: 0 16px !important;
-      gap: 0 !important;
-    }
-
-    .services-page .capabilities-sec .cap-item {
-      aspect-ratio: 0.85 / 1 !important;
-      min-height: 0 !important;
-      margin: 4px !important;
-      padding: 18px 12px !important;
-      background-color: #ebebeb !important;
-      border: 1px solid rgba(0, 0, 0, 0.03) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      border-radius: 0 !important;
-    }
-
-    .services-page .capabilities-sec .cap-number {
-      position: absolute !important;
-      top: 10px !important;
-      right: 12px !important;
-      font-size: 0.6rem !important;
-      color: #999 !important;
-      margin: 0 !important;
-    }
-
-    .services-page .capabilities-sec .cap-logo {
-      gap: 6px !important;
-      text-align: center !important;
-      word-break: break-word !important;
-      margin: 0 !important;
-    }
-
-    .services-page .capabilities-sec .cap-desc {
-      display: none !important;
-    }
-
-    /* Perfect logo scaling to match the About page Toolkit */
-    .services-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
-      font-size: 0.78rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
-      font-size: 1.15rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
-      font-size: 1.45rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
-      font-size: 1.05rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
-      font-size: 1.05rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
-      font-size: 0.78rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
-      font-size: 1.05rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
-      font-size: 1.45rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
-      font-size: 1.1rem !important;
-    }
-
-    .services-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
-      font-size: 1.1rem !important;
-    }
-
-    /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
-  }
-
-  /* Closes the mobile media query so this next part applies to desktop */
-
-  /* --- INDUSTRIES PAGE: Global Header (Visible on Desktop & Mobile) --- */
-  .industries-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    padding: 0 var(--layout-pad);
+    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+/* ============================================================== */
+/* ===== SERVICES PAGE: MOBILE TOOLKIT GRID (About Match)   ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+  .services-page .capabilities-sec {
+    padding: 80px 0 80px !important;
+  }
+
+  .services-page .capabilities-sec .section-title {
+    font-size: 1.9rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 32px !important;
+    margin-top: 40px !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+  }
+
+  .services-page .capabilities-sec .cap-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 0 16px !important;
+    gap: 0 !important;
+  }
+
+  .services-page .capabilities-sec .cap-item {
+    aspect-ratio: 0.85 / 1 !important;
+    min-height: 0 !important;
+    margin: 4px !important;
+    padding: 18px 12px !important;
+    background-color: #ebebeb !important;
+    border: 1px solid rgba(0, 0, 0, 0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0 !important;
+  }
+
+  .services-page .capabilities-sec .cap-number {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    font-size: 0.6rem !important;
+    color: #999 !important;
+    margin: 0 !important;
+  }
+
+  .services-page .capabilities-sec .cap-logo {
+    gap: 6px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    margin: 0 !important;
+  }
+
+  .services-page .capabilities-sec .cap-desc {
+    display: none !important;
+  }
+
+  /* Perfect logo scaling to match the About page Toolkit */
+  .services-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
+    font-size: 0.78rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
+    font-size: 1.15rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
+    font-size: 1.45rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
+    font-size: 1.05rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
+    font-size: 1.05rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
+    font-size: 0.78rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
+    font-size: 1.05rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
+    font-size: 1.45rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
+    font-size: 1.1rem !important;
+  }
+
+  .services-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
+    font-size: 1.1rem !important;
+  }
+
+  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+}
+
+/* Closes the mobile media query so this next part applies to desktop */
+
+/* --- INDUSTRIES PAGE: Global Header (Visible on Desktop & Mobile) --- */
+.industries-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding: 0 var(--layout-pad);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.industries-header .section-title {
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.pricing-desc {
+  font-size: 1.05rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+  .industries-header {
+    align-items: center !important;
+    text-align: center !important;
+    margin-top: 60px !important;
+    margin-bottom: -10px !important;
+    padding: 0 20px !important;
   }
 
   .industries-header .section-title {
-    margin-bottom: 16px;
-    color: #fff;
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    margin-bottom: 12px !important;
   }
 
   .pricing-desc {
-    font-size: 1.05rem;
-    color: #aaa;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0;
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
   }
 
-  @media (max-width: 768px) {
-
-    /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
-    .industries-header {
-      align-items: center !important;
-      text-align: center !important;
-      margin-top: 60px !important;
-      margin-bottom: -10px !important;
-      padding: 0 20px !important;
-    }
-
-    .industries-header .section-title {
-      font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
-      margin-bottom: 12px !important;
-    }
-
-    .pricing-desc {
-      font-size: 0.95rem !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-    }
-
-    /* 1. Bento / Bottleneck Section - Compact Side-by-Side Mobile Grid */
-    .bento-section {
-      padding-top: 80px !important;
-      padding-bottom: 40px !important;
-    }
-
-    .bento-header {
-      margin-top: 50px !important;
-      margin-bottom: 30px !important;
-    }
-
-    .bento-header p {
-      font-size: 0.95rem !important;
-    }
-
-    /* Force the main grid into 2 columns on mobile so we can pair cards up */
-    .bento-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 12px !important;
-    }
-
-    /* 1st Card: Full width */
-    .bento-col-left {
-      grid-column: span 2 !important;
-      order: 1 !important;
-    }
-
-    /* 2nd Card: Half width (Left side) */
-    .bento-col-right-top {
-      grid-column: span 1 !important;
-      order: 2 !important;
-    }
-
-    /* 4th Card: Half width (Right side) - Snapped next to the 2nd card! */
-    .bento-col-right-bot {
-      grid-column: span 1 !important;
-      order: 3 !important;
-    }
-
-    /* 3rd Container (Mini Cards): Pushed to bottom, internal 2-column grid */
-    .bento-split-col {
-      grid-column: span 2 !important;
-      order: 4 !important;
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 12px !important;
-      padding: 0 !important;
-      /* Remove outer padding so internal cards align */
-      background: transparent !important;
-      border: none !important;
-    }
-
-    /* Tighter padding and scaled text for the new half-width layout */
-    .bento-card {
-      min-height: auto !important;
-      height: 100% !important;
-      padding: 20px !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .bento-card h3 {
-      margin-bottom: 10px !important;
-      font-size: 1.05rem !important;
-      line-height: 1.2 !important;
-    }
-
-    .bento-card p {
-      font-size: 0.85rem !important;
-      line-height: 1.4 !important;
-    }
-
-    .bento-list {
-      margin-top: 16px !important;
-    }
-
-    /* 2. Tech Bridge / Architecture Section */
-    .tech-bridge-sec {
-      padding: 80px 0 !important;
-    }
-
-    .tech-bridge-sec .container {
-      padding: 40px 20px 0 !important;
-    }
-
-    .tech-bridge-sec .section-title {
-      font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
-      margin-bottom: 40px !important;
-    }
-
-    .tech-row {
-      grid-template-columns: 1fr !important;
-      gap: 40px !important;
-    }
-
-    .tech-text-block h3 {
-      font-size: 1.25rem !important;
-    }
-
-    .tech-text-block p {
-      font-size: 0.95rem !important;
-      margin-bottom: 16px !important;
-    }
-
-    .tech-text-block .bento-list li {
-      font-size: 0.9rem !important;
-      margin-bottom: 12px !important;
-    }
-
-    .tech-bridge-sec .container>div:last-child {
-      margin-top: 50px !important;
-      gap: 10px !important;
-      flex-wrap: nowrap !important;
-      justify-content: center !important;
-      width: 100% !important;
-    }
-
-    .tech-bridge-sec .container>div:last-child>div {
-      width: 20px !important;
-      /* Shrinks the decorative lines to save space */
-    }
-
-    .tech-bridge-sec .container>div:last-child>span {
-      font-size: 0.65rem !important;
-      letter-spacing: 0.15em !important;
-      white-space: nowrap !important;
-      /* Prevents text from breaking */
-    }
-
-    .tech-bridge-sec .container>div:last-child>i {
-      font-size: 1.2rem !important;
-      /* Slightly scales down icons to fit */
-    }
-
-    /* 3. Pricing Section */
-    .pricing-section {
-      padding: 80px 0 60px !important;
-    }
-
-    .pricing-header-row {
-      margin-top: 50px !important;
-      /* Fixes overlap with section badge */
-      margin-bottom: 40px !important;
-    }
-
-    .pricing-grid {
-      gap: 16px !important;
-      padding: 0 20px !important;
-      border: none !important;
-    }
-
-    .pricing-grid .p-card {
-      padding: 32px 24px !important;
-      border-radius: 12px !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    }
-
-    .p-plan-name {
-      font-size: 1.25rem !important;
-    }
-
-    .p-plan-desc {
-      font-size: 0.9rem !important;
-      margin-bottom: 20px !important;
-    }
-
-    .price-wrap {
-      margin-bottom: 10px !important;
-    }
-
-    .price-wrap .amount {
-      font-size: 3rem !important;
-    }
-
-    .p-card .included-title {
-      margin-bottom: 16px !important;
-    }
-
-    .p-features {
-      margin-bottom: 24px !important;
-    }
-
-    .p-features li {
-      font-size: 0.9rem !important;
-      margin-bottom: 12px !important;
-    }
-
-    /* 4. Feature Comparison & Pricing Tabs */
-    .compare-section {
-      padding: 80px 0 40px !important;
-    }
-
-    .compare-title {
-      font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
-      margin-top: 50px !important;
-      /* Fixes overlap with section badge */
-      margin-bottom: 30px !important;
-    }
-
-    /* Mobile Tab UI */
-    .mobile-tab-container {
-      display: flex !important;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 100px;
-      padding: 4px;
-      margin: 0 20px 30px;
-      justify-content: space-between;
-      width: calc(100% - 40px);
-    }
-
-    .mobile-tab-btn {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.6);
-      padding: 12px 0;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-radius: 100px;
-      transition: all 0.3s;
-    }
-
-    .mobile-tab-btn.active {
-      background: #fff;
-      color: #000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Table layout for tabbed view */
-    .compare-table {
-      min-width: 100% !important;
-      display: table !important;
-    }
-
-    .compare-table thead {
-      display: none !important;
-      /* Hide column headers since tabs act as headers */
-    }
-
-    .compare-table tbody tr {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      padding: 0 20px !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    }
-
-    .compare-table td.feature-name {
-      flex: 1 !important;
-      text-align: left !important;
-      font-size: 0.9rem !important;
-      border: none !important;
-      padding: 20px 0 !important;
-    }
-
-    .compare-table td:not(.feature-name) {
-      width: 50px !important;
-      text-align: center !important;
-      border: none !important;
-      padding: 20px 0 !important;
-    }
-
-    /* 5. Mobile FAQ Section Compaction */
-    .faq-sec {
-      padding: 60px 0 !important;
-    }
-
-    .faq-title {
-      font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
-      margin-bottom: 30px !important;
-    }
-
-    .faq-question-item {
-      padding: 16px 20px !important;
-      font-size: 0.9rem !important;
-    }
-
-    .faq-answer-text {
-      padding: 16px 20px !important;
-    }
-
-    .faq-answer-text p {
-      font-size: 0.9rem !important;
-    }
+  /* 1. Bento / Bottleneck Section - Compact Side-by-Side Mobile Grid */
+  .bento-section {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
   }
 
-  .industries-grid-wrapper {
-    margin-top: 40px !important;
-    gap: 16px !important;
-    padding: 0 16px !important;
-    border-top: none !important;
-    border-bottom: none !important;
+  .bento-header {
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
   }
 
-  .industries-grid-wrapper .p-card {
-    padding: 32px 24px !important;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  .bento-header p {
+    font-size: 0.95rem !important;
   }
 
-  .industries-grid-wrapper .p-plan-name {
-    font-size: 1.3rem !important;
+  /* Force the main grid into 2 columns on mobile so we can pair cards up */
+  .bento-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
   }
 
-  .industries-grid-wrapper .p-plan-desc {
-    margin-bottom: 24px !important;
+  /* 1st Card: Full width */
+  .bento-col-left {
+    grid-column: span 2 !important;
+    order: 1 !important;
+  }
+
+  /* 2nd Card: Half width (Left side) */
+  .bento-col-right-top {
+    grid-column: span 1 !important;
+    order: 2 !important;
+  }
+
+  /* 4th Card: Half width (Right side) - Snapped next to the 2nd card! */
+  .bento-col-right-bot {
+    grid-column: span 1 !important;
+    order: 3 !important;
+  }
+
+  /* 3rd Container (Mini Cards): Pushed to bottom, internal 2-column grid */
+  .bento-split-col {
+    grid-column: span 2 !important;
+    order: 4 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    /* Remove outer padding so internal cards align */
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Tighter padding and scaled text for the new half-width layout */
+  .bento-card {
     min-height: auto !important;
-    font-size: 0.9rem !important;
+    height: 100% !important;
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
-  .industries-grid-wrapper .included-title {
+  .bento-card h3 {
+    margin-bottom: 10px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .bento-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .bento-list {
+    margin-top: 16px !important;
+  }
+
+  /* 2. Tech Bridge / Architecture Section */
+  .tech-bridge-sec {
+    padding: 80px 0 !important;
+  }
+
+  .tech-bridge-sec .container {
+    padding: 40px 20px 0 !important;
+  }
+
+  .tech-bridge-sec .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
+    margin-bottom: 40px !important;
+  }
+
+  .tech-row {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .tech-text-block h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .tech-text-block p {
+    font-size: 0.95rem !important;
     margin-bottom: 16px !important;
   }
 
-  .industries-grid-wrapper .p-features {
-    margin-bottom: 24px !important;
-  }
-
-  .industries-grid-wrapper .p-features li {
+  .tech-text-block .bento-list li {
     font-size: 0.9rem !important;
     margin-bottom: 12px !important;
   }
 
-  .industries-grid-wrapper .p-card-bot {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  .tech-bridge-sec .container>div:last-child {
+    margin-top: 50px !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    width: 100% !important;
   }
 
-  .industries-grid-wrapper .btn-custom-quote {
-    margin-bottom: 0 !important;
+  .tech-bridge-sec .container>div:last-child>div {
+    width: 20px !important;
+    /* Shrinks the decorative lines to save space */
   }
+
+  .tech-bridge-sec .container>div:last-child>span {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.15em !important;
+    white-space: nowrap !important;
+    /* Prevents text from breaking */
+  }
+
+  .tech-bridge-sec .container>div:last-child>i {
+    font-size: 1.2rem !important;
+    /* Slightly scales down icons to fit */
+  }
+
+  /* 3. Pricing Section */
+  .pricing-section {
+    padding: 80px 0 60px !important;
+  }
+
+  .pricing-header-row {
+    margin-top: 50px !important;
+    /* Fixes overlap with section badge */
+    margin-bottom: 40px !important;
+  }
+
+  .pricing-grid {
+    gap: 16px !important;
+    padding: 0 20px !important;
+    border: none !important;
+  }
+
+  .pricing-grid .p-card {
+    padding: 32px 24px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .p-plan-name {
+    font-size: 1.25rem !important;
+  }
+
+  .p-plan-desc {
+    font-size: 0.9rem !important;
+    margin-bottom: 20px !important;
+  }
+
+  .price-wrap {
+    margin-bottom: 10px !important;
+  }
+
+  .price-wrap .amount {
+    font-size: 3rem !important;
+  }
+
+  .p-card .included-title {
+    margin-bottom: 16px !important;
+  }
+
+  .p-features {
+    margin-bottom: 24px !important;
+  }
+
+  .p-features li {
+    font-size: 0.9rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* 4. Feature Comparison & Pricing Tabs */
+  .compare-section {
+    padding: 80px 0 40px !important;
+  }
+
+  .compare-title {
+    font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+    margin-top: 50px !important;
+    /* Fixes overlap with section badge */
+    margin-bottom: 30px !important;
+  }
+
+  /* Mobile Tab UI */
+  .mobile-tab-container {
+    display: flex !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 4px;
+    margin: 0 20px 30px;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+  }
+
+  .mobile-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .mobile-tab-btn.active {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Table layout for tabbed view */
+  .compare-table {
+    min-width: 100% !important;
+    display: table !important;
+  }
+
+  .compare-table thead {
+    display: none !important;
+    /* Hide column headers since tabs act as headers */
+  }
+
+  .compare-table tbody tr {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .compare-table td.feature-name {
+    flex: 1 !important;
+    text-align: left !important;
+    font-size: 0.9rem !important;
+    border: none !important;
+    padding: 20px 0 !important;
+  }
+
+  .compare-table td:not(.feature-name) {
+    width: 50px !important;
+    text-align: center !important;
+    border: none !important;
+    padding: 20px 0 !important;
+  }
+
+  /* 5. Mobile FAQ Section Compaction */
+  .faq-sec {
+    padding: 60px 0 !important;
+  }
+
+  .faq-title {
+    font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+    margin-bottom: 30px !important;
+  }
+
+  .faq-question-item {
+    padding: 16px 20px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .faq-answer-text {
+    padding: 16px 20px !important;
+  }
+
+  .faq-answer-text p {
+    font-size: 0.9rem !important;
+  }
+}
+
+.industries-grid-wrapper {
+  margin-top: 40px !important;
+  gap: 16px !important;
+  padding: 0 16px !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.industries-grid-wrapper .p-card {
+  padding: 32px 24px !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.industries-grid-wrapper .p-plan-name {
+  font-size: 1.3rem !important;
+}
+
+.industries-grid-wrapper .p-plan-desc {
+  margin-bottom: 24px !important;
+  min-height: auto !important;
+  font-size: 0.9rem !important;
+}
+
+.industries-grid-wrapper .included-title {
+  margin-bottom: 16px !important;
+}
+
+.industries-grid-wrapper .p-features {
+  margin-bottom: 24px !important;
+}
+
+.industries-grid-wrapper .p-features li {
+  font-size: 0.9rem !important;
+  margin-bottom: 12px !important;
+}
+
+.industries-grid-wrapper .p-card-bot {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.industries-grid-wrapper .btn-custom-quote {
+  margin-bottom: 0 !important;
+}
 }
