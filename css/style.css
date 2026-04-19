@@ -12126,4 +12126,25 @@ body .blog-main-grid .b-card .b-date {
   margin: 0 !important;
   text-align: left !important;
 }
+
+@media (max-width: 768px) {
+  /* ============================================================= */
+  /* ===== BLOG HERO MOBILE RESIZE                           ===== */
+  /* ============================================================= */
+
+  body .blog-hero-sec {
+    min-height: auto !important;
+    padding-top: 120px !important;
+    padding-bottom: 40px !important;
+  }
+
+  body .blog-hero-title {
+    font-size: clamp(3.5rem, 18vw, 5.5rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  body .blog-hero-title.right {
+    margin-top: -5px !important;
+  }
 }
