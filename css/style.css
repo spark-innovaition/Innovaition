@@ -6406,7 +6406,7 @@ a {
   z-index: 20;
 }
 
-/* FIX: Better spacing for the Deployment section on mobile */
+/* FIX: Better spacing and removes the image from the Deployment section on mobile */
 @media (max-width: 768px) {
   .approach-sec {
     padding-top: 0 !important;
@@ -6420,6 +6420,11 @@ a {
   .approach-content .section-title {
     margin-top: 100px !important;
     /* PUSHED: Moves the title lower to maintain the gap from the badge */
+  }
+
+  /* REMOVED: Hides the globe/rings image sitting at the bottom of the section on mobile */
+  .approach-globe-wrap {
+    display: none !important;
   }
 }
 
@@ -6743,6 +6748,38 @@ a {
   z-index: 0;
 }
 
+/* FIX: Moves title higher and adds a dark "shade" overlay for mobile readability */
+@media (max-width: 768px) {
+  .cta-globe-sec {
+    padding-top: 60px !important;
+    /* FIX: Pulls the "Initiate Deployment" title significantly higher */
+  }
+
+  .cta-globe-sec::after {
+    background: rgba(0, 0, 0, 0.8) !important;
+    /* FIX: Deepens the background "shade" for contrast */
+    z-index: 1 !important;
+  }
+
+  .cta-globe-content {
+    position: relative;
+    z-index: 2 !important;
+    /* Ensures the text sits safely on top of the dark shade */
+  }
+
+  /* Polishing the text readability further */
+  .cta-desc-main {
+    color: #ffffff !important;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 1) !important;
+    font-weight: 600 !important;
+  }
+
+  .cta-desc-sub {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+  }
+}
+
 #cta-globe-canvas {
   position: absolute;
   top: 0;
@@ -6816,6 +6853,13 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* FIX: Removes the badge from mobile view only */
+@media (max-width: 768px) {
+  .cta-badge {
+    display: none !important;
+  }
 }
 
 .cta-badge span {
@@ -6928,6 +6972,21 @@ a {
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   font-weight: 500;
+}
+
+/* FIX: Significantly improves readability on mobile by boosting contrast and adding a subtle shadow */
+@media (max-width: 768px) {
+  .cta-desc-main {
+    color: #ffffff !important;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 1) !important;
+    /* Boosted shadow to make text pop */
+    font-weight: 600 !important;
+  }
+
+  .cta-desc-sub {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+  }
 }
 
 .cta-desc-main span {
