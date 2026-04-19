@@ -732,15 +732,18 @@ a {
   justify-content: flex-start;
   gap: 30px;
   font-size: clamp(4rem, 11vw, 200px);
-  margin-top: -0.25em;
+  margin-top: -0.1em;
+  /* FIX: Reduced negative margin to prevent lines from overlapping vertically */
 }
 
 .hero-title {
   font-family: var(--font-heading);
   font-size: clamp(4rem, 11vw, 200px);
   font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.03em;
+  line-height: 0.95;
+  /* FIX: Increased line height to give letters more vertical breathing room */
+  letter-spacing: -0.01em;
+  /* FIX: Loosened kerning so letters don't crush together horizontally */
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -5717,17 +5720,16 @@ a {
 
 .massive-since {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 15vw, 250px);
-  /* Increased max size */
+  font-size: clamp(5rem, 12vw, 180px);
+  /* FIX: Reduced max size to prevent crowding on large laptops */
   font-weight: 700;
-  line-height: 0.9;
-  /* Tighter line height */
+  line-height: 1.05;
+  /* FIX: Increased line-height so the words no longer overlap vertically */
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding-left: 40px;
-  /* Aligns with global vertical grid gap */
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -12429,24 +12431,29 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
   }
 }
 
-/* Reduce the main hero font size so it fits better */
-.hero-title {
-  font-size: clamp(2.5rem, 5.5vw, 85px) !important;
-  line-height: 1;
-}
+/* ========================================================== */
+/* ===== STRICTLY LAPTOP HERO SIZING (1025px to 1920px) ===== */
+/* ========================================================== */
+@media (min-width: 1025px) and (max-width: 1920px) {
 
-/* Force the text wrapper to stay on the left side and not overlap the 3D canvas */
-.hero-text-wrapper {
-  max-width: 55%;
-  /* Prevents text from stretching into the robot's area */
-  position: relative;
-  z-index: 10;
-}
+  .hero-title,
+  .ai-text,
+  .hero-lock-icon {
+    font-size: clamp(2.5rem, 5vw, 75px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: normal !important;
+  }
 
-/* On mobile, allow it to take up more space since the layout stacks */
-@media (max-width: 768px) {
+  .hero-title-row.indent {
+    margin-top: 10px !important;
+    font-size: clamp(2.5rem, 5vw, 75px) !important;
+  }
+
   .hero-text-wrapper {
-    max-width: 100%;
+    max-width: 55% !important;
+    position: relative !important;
+    z-index: 10 !important;
+    margin-top: -20vh !important;
   }
 }
 
