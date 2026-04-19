@@ -11749,9 +11749,27 @@ spline-viewer::part(logo) {
 
   .tech-bridge-sec .container>div:last-child {
     margin-top: 50px !important;
-    gap: 15px !important;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .tech-bridge-sec .container>div:last-child>div {
+    width: 20px !important;
+    /* Shrinks the decorative lines to save space */
+  }
+
+  .tech-bridge-sec .container>div:last-child>span {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.15em !important;
+    white-space: nowrap !important;
+    /* Prevents text from breaking */
+  }
+
+  .tech-bridge-sec .container>div:last-child>i {
+    font-size: 1.2rem !important;
+    /* Slightly scales down icons to fit */
   }
 
   /* 3. Pricing Section */
