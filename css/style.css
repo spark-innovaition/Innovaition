@@ -11684,8 +11684,6 @@ spline-viewer::part(logo) {
     margin: 0 auto !important;
   }
 
-  /* --- INDUSTRY SPECIFIC PAGES: Mobile Compact Overrides --- */
-
   /* 1. Bento / Bottleneck Section */
   .bento-section {
     padding-top: 80px !important;
@@ -11693,6 +11691,8 @@ spline-viewer::part(logo) {
   }
 
   .bento-header {
+    margin-top: 50px !important;
+    /* Fixes overlap with section badge */
     margin-bottom: 30px !important;
   }
 
@@ -11778,6 +11778,8 @@ spline-viewer::part(logo) {
   }
 
   .pricing-header-row {
+    margin-top: 50px !important;
+    /* Fixes overlap with section badge */
     margin-bottom: 40px !important;
   }
 
@@ -11823,7 +11825,6 @@ spline-viewer::part(logo) {
     margin-bottom: 12px !important;
   }
 
-  /* 4. Feature Comparison Section - Converted to Mobile Cards */
   /* 4. Feature Comparison & Pricing Tabs */
   .compare-section {
     padding: 80px 0 40px !important;
@@ -11831,12 +11832,9 @@ spline-viewer::part(logo) {
 
   .compare-title {
     font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+    margin-top: 50px !important;
+    /* Fixes overlap with section badge */
     margin-bottom: 30px !important;
-  }
-
-  .compare-container {
-    padding: 0 !important;
-    overflow-x: hidden !important;
   }
 
   /* Mobile Tab UI */
