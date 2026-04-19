@@ -10460,1532 +10460,1556 @@ spline-viewer::part(logo) {
   }
 
   /* Dark theme variant for the bento section (industry pages) */
-  .bento-section.dark-theme .carousel-pagination .pag-dot {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  .bento-section.dark-theme .carousel-pagination .pag-dot.active {
-    background: #ffffff;
-  }
-
-  .bento-section.dark-theme .carousel-pagination .pag-counter {
-    color: rgba(255, 255, 255, 0.6);
-  }
-}
-
-@media (min-width: 769px) {
-  .carousel-pagination {
-    display: none;
-  }
-}
-
-/* ============================================================= */
-/* ===== MOBILE FOOTER REBUILD (matches reference layout)  ===== */
-/* ============================================================= */
-@media (max-width: 768px) {
-  .footer-section {
-    padding: 0 !important;
-  }
-
-  .footer-watermark {
+  /* Hiding the pagination (the 1-4 counter and dots) since we use a stacked grid now */
+  .bento-section.dark-theme .carousel-pagination {
     display: none !important;
   }
 
-  .footer-column-stack {
-    width: calc(100% - 24px);
-    margin: 0 12px;
-    padding: 24px 0;
-    gap: 12px;
+  @media (min-width: 769px) {
+    .carousel-pagination {
+      display: none;
+    }
   }
 
-  /* --- Top framed box: tagline + CTA + 2 link cols --- */
-  .fm-frame {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 32px 24px;
-    background: rgba(255, 255, 255, 0.01);
+  /* ============================================================= */
+  /* ===== MOBILE FOOTER REBUILD (matches reference layout)  ===== */
+  /* ============================================================= */
+  @media (max-width: 768px) {
+    .footer-section {
+      padding: 0 !important;
+    }
+
+    .footer-watermark {
+      display: none !important;
+    }
+
+    .footer-column-stack {
+      width: calc(100% - 24px);
+      margin: 0 12px;
+      padding: 24px 0;
+      gap: 12px;
+    }
+
+    /* --- Top framed box: tagline + CTA + 2 link cols --- */
+    .fm-frame {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .fm-tagline {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #888;
+      margin: 0 0 36px;
+    }
+
+    .fm-tagline strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .fm-cta-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin: 0 0 14px;
+    }
+
+    .fm-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      color: #000000;
+      padding: 6px 6px 6px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-bottom: 44px;
+      transition: background 0.3s ease;
+    }
+
+    .fm-cta-btn span:first-child {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .fm-cta-arrow {
+      width: 40px;
+      height: 40px;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .fm-cta-btn:hover {
+      background: #f0f0f0;
+    }
+
+    /* --- Two-column links inside frame --- */
+    .fm-links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .fm-links-col .footer-label {
+      margin-bottom: 22px;
+    }
+
+    .fm-links-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .fm-links-col a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.3s ease;
+    }
+
+    .fm-links-col a:hover {
+      opacity: 0.7;
+    }
+
+    .fm-link-icon {
+      font-size: 0.7rem;
+      color: #888;
+    }
+
+    /* --- Below-frame info blocks --- */
+    .fm-info-block {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .fm-info-block .footer-label {
+      margin-bottom: 18px;
+    }
+
+    .fm-info-line {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .fm-info-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .fm-info-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px;
+    }
+
+    .fm-info-text {
+      font-size: 0.95rem;
+      color: #aaaaaa;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .fm-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .fm-socials a {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .fm-socials a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .fm-copyright {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 4px;
+    }
+
+    .fm-credit {
+      font-size: 0.85rem;
+      color: #888;
+      margin: 0;
+    }
   }
 
-  .fm-tagline {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #888;
-    margin: 0 0 36px;
+  /* Hide the new mobile footer markup on desktop (desktop uses .footer-framed-box) */
+  @media (min-width: 769px) {
+
+    .fm-frame,
+    .fm-info-block {
+      display: none;
+    }
   }
 
-  .fm-tagline strong {
-    color: #ffffff;
-    font-weight: 600;
-  }
-
-  .fm-cta-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #888;
-    margin: 0 0 14px;
-  }
-
-  .fm-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    background: #ffffff;
-    color: #000000;
-    padding: 6px 6px 6px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-bottom: 44px;
-    transition: background 0.3s ease;
-  }
-
-  .fm-cta-btn span:first-child {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-
-  .fm-cta-arrow {
-    width: 40px;
-    height: 40px;
-    background: #000000;
-    color: #ffffff;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-  }
-
-  .fm-cta-btn:hover {
-    background: #f0f0f0;
-  }
-
-  /* --- Two-column links inside frame --- */
-  .fm-links-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .fm-links-col .footer-label {
-    margin-bottom: 22px;
-  }
-
-  .fm-links-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .fm-links-col a {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #ffffff;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: opacity 0.3s ease;
-  }
-
-  .fm-links-col a:hover {
-    opacity: 0.7;
-  }
-
-  .fm-link-icon {
-    font-size: 0.7rem;
-    color: #888;
-  }
-
-  /* --- Below-frame info blocks --- */
-  .fm-info-block {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.01);
-  }
-
-  .fm-info-block .footer-label {
-    margin-bottom: 18px;
-  }
-
-  .fm-info-line {
-    display: block;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    letter-spacing: 0.01em;
-  }
-
-  .fm-info-line:last-child {
-    margin-bottom: 0;
-  }
-
-  .fm-info-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 10px;
-  }
-
-  .fm-info-text {
-    font-size: 0.95rem;
-    color: #aaaaaa;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .fm-socials {
-    display: flex;
-    gap: 12px;
-  }
-
-  .fm-socials a {
-    width: 56px;
-    height: 56px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 1.05rem;
-    text-decoration: none;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }
-
-  .fm-socials a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-
-  .fm-copyright {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0 0 4px;
-  }
-
-  .fm-credit {
-    font-size: 0.85rem;
-    color: #888;
-    margin: 0;
-  }
-}
-
-/* Hide the new mobile footer markup on desktop (desktop uses .footer-framed-box) */
-@media (min-width: 769px) {
-
-  .fm-frame,
-  .fm-info-block {
-    display: none;
-  }
-}
-
-/* Default styling for the form title (used on desktop and mobile) */
-.form-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 32px;
-  color: #fff;
-}
-
-/* ============================================================= */
-/* ===== MOBILE CONTACT SECTION (matches reference layout) ==== */
-/* ============================================================= */
-@media (max-width: 768px) {
-
-  /* Trim FAQ section's huge bottom padding so contact section starts higher */
-  .faq-sec {
-    padding-bottom: 60px !important;
-  }
-
-  .contact-section {
-    padding: 60px 20px !important;
-    align-items: flex-start !important;
-  }
-
-  /* Darken the bright background image so white text stays readable */
-  .about-page .contact-section .canvas-mobile-bg {
-    filter: brightness(0.55) saturate(0.9) !important;
-  }
-
-  /* Subtle dark gradient on top for extra contrast behind the headline + form */
-  .contact-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0.25) 40%,
-        rgba(0, 0, 0, 0.55) 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-    padding-top: 80px;
-    position: relative;
-    z-index: 5;
-  }
-
-  .contact-title {
-    font-size: 2.4rem !important;
-    line-height: 1.05 !important;
-    margin-bottom: 32px !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 0, 0, 0.6);
-  }
-
-  .contact-connect {
-    margin-top: 0 !important;
-  }
-
-  .connect-label {
-    font-size: 0.7rem !important;
-    margin-bottom: 18px !important;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
-  }
-
-  .connect-list {
-    gap: 14px !important;
-  }
-
-  .connect-list li {
-    font-size: 1rem !important;
-    gap: 14px !important;
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
-  }
-
-  .connect-list li i {
-    font-size: 0.75rem !important;
-    color: #ffffff !important;
-    transform: none !important;
-  }
-
-  .contact-form-wrap {
-    padding: 28px 24px !important;
-    border-radius: 8px !important;
-    background: rgba(0, 0, 0, 0.35) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  }
-
+  /* Default styling for the form title (used on desktop and mobile) */
   .form-title {
-    font-size: 1.05rem !important;
-    margin-bottom: 24px !important;
-    letter-spacing: 0.04em !important;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0 0 32px;
+    color: #fff;
   }
 
-  .contact-form {
-    gap: 20px !important;
+  /* ============================================================= */
+  /* ===== MOBILE CONTACT SECTION (matches reference layout) ==== */
+  /* ============================================================= */
+  @media (max-width: 768px) {
+
+    /* Trim FAQ section's huge bottom padding so contact section starts higher */
+    .faq-sec {
+      padding-bottom: 60px !important;
+    }
+
+    .contact-section {
+      padding: 60px 20px !important;
+      align-items: flex-start !important;
+    }
+
+    /* Darken the bright background image so white text stays readable */
+    .about-page .contact-section .canvas-mobile-bg {
+      filter: brightness(0.55) saturate(0.9) !important;
+    }
+
+    /* Subtle dark gradient on top for extra contrast behind the headline + form */
+    .contact-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0.45) 0%,
+          rgba(0, 0, 0, 0.25) 40%,
+          rgba(0, 0, 0, 0.55) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+      padding-top: 80px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .contact-title {
+      font-size: 2.4rem !important;
+      line-height: 1.05 !important;
+      margin-bottom: 32px !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .contact-connect {
+      margin-top: 0 !important;
+    }
+
+    .connect-label {
+      font-size: 0.7rem !important;
+      margin-bottom: 18px !important;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+    }
+
+    .connect-list {
+      gap: 14px !important;
+    }
+
+    .connect-list li {
+      font-size: 1rem !important;
+      gap: 14px !important;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
+    }
+
+    .connect-list li i {
+      font-size: 0.75rem !important;
+      color: #ffffff !important;
+      transform: none !important;
+    }
+
+    .contact-form-wrap {
+      padding: 28px 24px !important;
+      border-radius: 8px !important;
+      background: rgba(0, 0, 0, 0.35) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .form-title {
+      font-size: 1.05rem !important;
+      margin-bottom: 24px !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    .contact-form {
+      gap: 20px !important;
+    }
+
+    .input-group label {
+      font-size: 0.85rem !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      font-size: 0.95rem !important;
+      padding: 10px 0 !important;
+    }
+
+    .input-group textarea {
+      min-height: 110px;
+    }
+
+    .submit-btn {
+      width: auto !important;
+      align-self: flex-start !important;
+      padding: 14px 28px !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      border-radius: 2px !important;
+      margin-top: 12px !important;
+    }
   }
 
-  .input-group label {
-    font-size: 0.85rem !important;
-    color: #ffffff !important;
-    font-weight: 600 !important;
-  }
+  /* ============================================================= */
+  /* ===== MOBILE: section-title badge spacing & gap fixes  ====== */
+  /* ============================================================= */
+  @media (max-width: 768px) {
 
-  .input-group input,
-  .input-group textarea {
-    font-size: 0.95rem !important;
-    padding: 10px 0 !important;
-  }
-
-  .input-group textarea {
-    min-height: 110px;
-  }
-
-  .submit-btn {
-    width: auto !important;
-    align-self: flex-start !important;
-    padding: 14px 28px !important;
-    background: #ffffff !important;
-    color: #000000 !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    border-radius: 2px !important;
-    margin-top: 12px !important;
-  }
-}
-
-/* ============================================================= */
-/* ===== MOBILE: section-title badge spacing & gap fixes  ====== */
-/* ============================================================= */
-@media (max-width: 768px) {
-
-  /* Push the bento + process titles below the absolute badge so it
+    /* Push the bento + process titles below the absolute badge so it
      stops overlapping the section heading. The badge sits at top:80px
      with line-height 26px, so titles need to start below ~110px. */
-  .bento-section {
-    padding-top: 130px !important;
-  }
+    .bento-section {
+      padding-top: 130px !important;
+    }
 
-  .process-section {
-    padding-top: 130px !important;
-  }
+    .process-section {
+      padding-top: 130px !important;
+    }
 
-  .bento-header,
-  .process-header {
-    margin-top: 0 !important;
-  }
+    .bento-header,
+    .process-header {
+      margin-top: 0 !important;
+    }
 
-  /* Close the visible gap between the horizontal line and the badge's
+    /* Close the visible gap between the horizontal line and the badge's
      vertical border bars on mobile. Tight padding + a small overlap pulls
      the line flush against each vertical bar so they read as one mark. */
-  .horizontal-divider.divider-flex .badge {
-    padding: 0 10px !important;
-    margin-left: 0 !important;
-    /* FIX: Removes the stubborn gap between the left line and the badge */
+    .horizontal-divider.divider-flex .badge {
+      padding: 0 10px !important;
+      margin-left: 0 !important;
+      /* FIX: Removes the stubborn gap between the left line and the badge */
+    }
+
+    .horizontal-divider.divider-flex .line-seg:first-child {
+      width: 20px !important;
+      /* FIX: Shortens the line so the badge aligns perfectly with the 20px padding of the text below */
+      margin-right: -2px;
+    }
+
+    .horizontal-divider.divider-flex .line-seg:nth-child(3) {
+      margin-left: -2px;
+    }
+
+    /* ==================================================== */
+    /* LIGHT-THEME mobile-menu readability overrides.       */
+    /* The mobile redesign hardcodes light text with        */
+    /* !important; mirror those rules with dark colors on   */
+    /* light-theme pages so the menu is legible.            */
+    /* ==================================================== */
+    .light-theme .menu-nav-list {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .light-theme .menu-nav-item {
+      border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .light-theme .menu-nav-item:nth-child(odd) {
+      border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .light-theme .menu-nav-item a {
+      color: #1a1a1a !important;
+    }
+
+    .light-theme .menu-vision-text {
+      color: #1a1a1a !important;
+    }
+
+    .light-theme .menu-globe-widget i,
+    .light-theme .menu-globe-widget .coords {
+      color: #555 !important;
+    }
+
+    .light-theme .menu-contact-grid .meta-label {
+      color: #1a1a1a !important;
+      border-left-color: #999 !important;
+    }
+
+    .light-theme .location-block p,
+    .light-theme .contact-block p {
+      color: #444 !important;
+    }
+
+    .light-theme .menu-time,
+    .light-theme .menu-email {
+      color: #111 !important;
+    }
+
+    .light-theme .menu-social-row {
+      border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .light-theme .menu-social-row a {
+      border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .light-theme .menu-social-row a i {
+      color: #555 !important;
+    }
   }
 
-  .horizontal-divider.divider-flex .line-seg:first-child {
-    width: 20px !important;
-    /* FIX: Shortens the line so the badge aligns perfectly with the 20px padding of the text below */
-    margin-right: -2px;
-  }
+  /* ============================================================= */
+  /* ===== MOBILE: About Hero — fit in one vertical screen ======= */
+  /* ============================================================= */
+  @media (max-width: 768px) {
+    .about-page .about-hero-sec {
+      min-height: 100svh;
+      height: 100svh;
+      padding: 96px 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-  .horizontal-divider.divider-flex .line-seg:nth-child(3) {
-    margin-left: -2px;
+    /* ADDED: Full section dark gradient overlay to replace the ugly box scrim */
+    .about-page .about-hero-sec::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .about-page .about-hero-centered {
+      padding-top: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* REMOVED: The blocky .about-hero-centered::before radial-gradient scrim */
+
+    .about-page .about-hero-centered .trust-badge {
+      font-size: 0.62rem;
+      padding: 6px 12px;
+      margin-bottom: 18px;
+      letter-spacing: 0.08em;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .about-page .about-hero-centered h1 {
+      font-size: clamp(2.1rem, 10.5vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .about-page .about-hero-centered p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 auto 22px;
+      max-width: 92%;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .about-page .about-hero-centered .hero-actions {
+      gap: 10px;
+    }
+
+    .about-page .about-hero-centered .hero-actions .btn-main {
+      padding: 12px 22px !important;
+      font-size: 0.9rem !important;
+    }
+
+    .about-page .about-hero-centered .hero-actions .btn-icon {
+      width: 44px !important;
+      height: 44px !important;
+    }
+
+    /* Tame the lamp effect so it doesn't push layout / overflow on mobile */
+    .about-page .about-hero-sec .lamp-container {
+      transform: scale(0.7);
+      transform-origin: center top;
+    }
   }
 
   /* ==================================================== */
-  /* LIGHT-THEME mobile-menu readability overrides.       */
-  /* The mobile redesign hardcodes light text with        */
-  /* !important; mirror those rules with dark colors on   */
-  /* light-theme pages so the menu is legible.            */
+  /* ===== NEW: ABOUT PILLARS GRID (REPLACES BENTO) ===== */
   /* ==================================================== */
-  .light-theme .menu-nav-list {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .light-theme .menu-nav-item {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .light-theme .menu-nav-item:nth-child(odd) {
-    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .light-theme .menu-nav-item a {
-    color: #1a1a1a !important;
-  }
-
-  .light-theme .menu-vision-text {
-    color: #1a1a1a !important;
-  }
-
-  .light-theme .menu-globe-widget i,
-  .light-theme .menu-globe-widget .coords {
-    color: #555 !important;
-  }
-
-  .light-theme .menu-contact-grid .meta-label {
-    color: #1a1a1a !important;
-    border-left-color: #999 !important;
-  }
-
-  .light-theme .location-block p,
-  .light-theme .contact-block p {
-    color: #444 !important;
-  }
-
-  .light-theme .menu-time,
-  .light-theme .menu-email {
-    color: #111 !important;
-  }
-
-  .light-theme .menu-social-row {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .light-theme .menu-social-row a {
-    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .light-theme .menu-social-row a i {
-    color: #555 !important;
-  }
-}
-
-/* ============================================================= */
-/* ===== MOBILE: About Hero — fit in one vertical screen ======= */
-/* ============================================================= */
-@media (max-width: 768px) {
-  .about-page .about-hero-sec {
-    min-height: 100svh;
-    height: 100svh;
-    padding: 96px 0 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* ADDED: Full section dark gradient overlay to replace the ugly box scrim */
-  .about-page .about-hero-sec::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .about-page .about-hero-centered {
-    padding-top: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-  }
-
-  /* REMOVED: The blocky .about-hero-centered::before radial-gradient scrim */
-
-  .about-page .about-hero-centered .trust-badge {
-    font-size: 0.62rem;
-    padding: 6px 12px;
-    margin-bottom: 18px;
-    letter-spacing: 0.08em;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .about-page .about-hero-centered h1 {
-    font-size: clamp(2.1rem, 10.5vw, 3rem);
-    line-height: 1.05;
-    margin-bottom: 16px;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-  }
-
-  .about-page .about-hero-centered p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0 auto 22px;
-    max-width: 92%;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-  }
-
-  .about-page .about-hero-centered .hero-actions {
-    gap: 10px;
-  }
-
-  .about-page .about-hero-centered .hero-actions .btn-main {
-    padding: 12px 22px !important;
-    font-size: 0.9rem !important;
-  }
-
-  .about-page .about-hero-centered .hero-actions .btn-icon {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  /* Tame the lamp effect so it doesn't push layout / overflow on mobile */
-  .about-page .about-hero-sec .lamp-container {
-    transform: scale(0.7);
-    transform-origin: center top;
-  }
-}
-
-/* ==================================================== */
-/* ===== NEW: ABOUT PILLARS GRID (REPLACES BENTO) ===== */
-/* ==================================================== */
-.about-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 var(--grid-edge);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.pillar-card {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  height: 100%;
-}
-
-.pillar-card:last-child {
-  border-right: none;
-}
-
-.pillar-img {
-  height: 280px;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.pillar-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(30%);
-}
-
-.pillar-content {
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.pillar-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2vw, 30px);
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.pillar-p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #aaa;
-  margin: 0;
-}
-
-/* Mobile Carousel Overrides */
-@media (max-width: 1024px) {
   .about-pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pillar-card:nth-child(even) {
-    border-right: none;
-  }
-
-  .pillar-card:nth-child(1),
-  .pillar-card:nth-child(2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-}
-
-@media (max-width: 768px) {
-  .about-pillars-grid {
-    display: block;
-    grid-template-columns: none;
-    margin: 0;
-    padding: 0 0 24px;
-    border-top: none;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-
-  .pillars-marquee {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 16px;
-    padding: 0 16px;
-    width: max-content;
-    animation: pillarsMarquee 32s linear infinite;
-    will-change: transform;
-  }
-
-  .pillars-marquee.is-paused {
-    animation-play-state: paused;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 var(--grid-edge);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .pillar-card {
-    flex: 0 0 82vw;
-    width: 82vw;
-    height: 500px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    background: #111;
-    overflow: hidden;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    height: 100%;
+  }
+
+  .pillar-card:last-child {
+    border-right: none;
   }
 
   .pillar-img {
-    height: 220px;
-    flex-shrink: 0;
+    height: 280px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .pillar-content {
-    flex: 1;
-    overflow: hidden;
-    padding: 22px 22px 28px;
-  }
-
-  .pillar-content .vision-list li {
-    font-size: 0.9rem;
-    padding: 6px 0;
-  }
-
-  .pillar-p {
-    font-size: 0.9rem;
-  }
-
-  @keyframes pillarsMarquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(calc(-50% - 8px));
-    }
-  }
-}
-
-/* ============================================================= */
-/* ===== MOBILE: About OUR TOOLKIT — 2×2 compact grid ========== */
-/* ============================================================= */
-@media (max-width: 768px) {
-  .about-page .capabilities-sec {
-    padding: 80px 0 80px;
-  }
-
-  .about-page .capabilities-sec .cap-header h2 {
-    font-size: 1.9rem;
-    line-height: 1.1;
-    margin-bottom: 32px;
-    margin-top: 40px !important;
-    /* FIX: Pushes the title down, safely away from the badge */
-    padding: 0 20px;
-    text-align: center !important;
-  }
-
-  .about-page .capabilities-sec .cap-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    margin: 0 16px;
-    gap: 0;
-  }
-
-  .about-page .capabilities-sec .cap-item {
-    aspect-ratio: 0.85 / 1;
-    min-height: 0;
-    margin: 4px;
-    padding: 18px 12px;
-    background-color: #ebebeb;
-  }
-
-  .about-page .capabilities-sec .cap-number {
-    top: 10px;
-    right: 12px;
-    font-size: 0.6rem;
-  }
-
-  .about-page .capabilities-sec .cap-logo {
-    gap: 6px;
-    text-align: center;
-    word-break: break-word;
-  }
-
-  /* Shrink each variant logo size to suit the smaller tile */
-  .about-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
-    font-size: 0.78rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
-    font-size: 1.15rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
-    font-size: 1.45rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
-    font-size: 1.05rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
-    font-size: 1.05rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
-    font-size: 0.78rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
-    font-size: 1.05rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
-    font-size: 1.45rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
-    font-size: 1.1rem;
-  }
-
-  .about-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
-    font-size: 1.1rem;
-  }
-
-  /* Join-us CTA spans the full 2-column row */
-  .about-page .capabilities-sec .cap-item.join-us-card {
-    grid-column: span 2 !important;
-    aspect-ratio: auto;
-    padding: 28px 22px;
-    margin: 4px;
-  }
-
-  .about-page .capabilities-sec .cap-item.join-us-card h4 {
-    font-size: 1.15rem;
-    margin: 14px 0;
-  }
-
-  .about-page .capabilities-sec .cap-item.join-us-card .join-btn {
-    font-size: 0.72rem;
-    padding: 9px 16px;
-  }
-
-  .about-page .capabilities-sec .cap-item.join-us-card .rating {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin-top: 16px;
-    font-size: 0.72rem;
-  }
-}
-
-/* ==================================================== */
-/* ===== MOBILE REFINEMENTS: FAQ & SINCE SECTION  ===== */
-/* ==================================================== */
-@media (max-width: 768px) {
-
-  /* --- FAQ Section Mobile Fixes --- */
-  .faq-title {
-    font-size: clamp(2.2rem, 9vw, 3rem) !important;
-    line-height: 0.95 !important;
-    margin-bottom: 30px !important;
-    padding-left: 0 !important;
-    /* FIX: Removed left padding so it centers perfectly */
-    text-align: center !important;
-    /* FIX: Centers the title */
-  }
-
-  /* FIX: Centers the FAQ badge above the title */
-  .faq-sec .horizontal-divider.divider-flex::before {
-    display: none !important;
-  }
-
-  .faq-sec .horizontal-divider.divider-flex .line-seg:first-child,
-  .faq-sec .horizontal-divider.divider-flex .line-seg:nth-child(3) {
-    flex-grow: 1 !important;
-    width: auto !important;
-  }
-
-  .faq-sec .horizontal-divider.divider-flex {
-    justify-content: center !important;
-  }
-
-  .faq-split-layout {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .faq-right {
-    display: flex !important;
-    /* Unhides the answers on mobile */
-    background-color: #f4f4f4 !important;
-    /* Light grey box from reference */
-  }
-
-  .faq-answer-display {
-    padding: 30px 20px !important;
-  }
-
-  .faq-answer-text p {
-    font-size: 1rem !important;
-    text-align: center !important;
-  }
-
-  .faq-question-item {
-    padding: 16px 20px !important;
-    /* Reduced vertical padding for a more compact card */
-    font-size: 0.85rem !important;
-    /* Reduced font size to help text fit onto two lines */
-    line-height: 1.25 !important;
-    /* Tightened line-height to fix the vertical gap between wrapped lines */
-  }
-
-  /* Active State matches reference (Black BG, White Text) */
-  .faq-question-item.active {
-    background-color: #111 !important;
-    color: #fff !important;
-  }
-
-  .faq-question-item.active i {
-    color: #fff !important;
-  }
-
-  /* --- "ZERO MISSED LEADS" Section Mobile Fixes --- */
-  .since-top {
-    align-items: flex-start !important;
-    gap: 30px !important;
-    padding-bottom: 40px !important;
-  }
-
-  /* Headline sized so "MISSED LEADS" fits on one line — 2-line layout like the reference */
-  .massive-since {
-    font-size: clamp(2.6rem, 12.5vw, 4.5rem) !important;
-    line-height: 0.92 !important;
-    letter-spacing: -0.02em !important;
-  }
-
-  .massive-since .line-2 {
-    padding-left: 0 !important;
-    white-space: nowrap !important;
-  }
-
-  /* Right-align the quote block to match reference */
-  .since-quote-box {
-    align-items: flex-end !important;
-    text-align: right !important;
-    padding-right: 20px !important;
-    /* FIX: Added space to pull the text and button away from the right edge */
-    width: 100% !important;
-  }
-
-  .since-quote-box .logo-small {
-    display: none !important;
-    /* FIX: Hides the Innovaition logo entirely in this section */
-  }
-
-  .since-quote-box p {
-    font-size: 1rem !important;
-    margin: 15px 0 20px !important;
-    line-height: 1.5 !important;
-  }
-
-  .since-quote-box .small-heading {
-    text-align: right !important;
-    margin-bottom: 16px !important;
-    color: #ffffff !important;
-    /* FIX: Brightened the text to pure white for readability */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
-    /* FIX: Added a dark shadow so it pops against the glowing background */
-  }
-
-  /* 2-Column Stats Grid with internal borders */
-  .since-stats-row {
-    grid-template-columns: repeat(2, 1fr) !important;
-    margin: 0 !important;
-    border-left: none !important;
-  }
-
-  .stat-col {
-    padding: 30px 20px !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-  }
-
-  .stat-col:nth-child(even) {
-    border-right: none !important;
-  }
-
-  .stat-col h3 {
-    font-size: 3.5rem !important;
-    /* Massive numbers */
-    margin-bottom: 8px !important;
-  }
-
-  /* --- "WHO WE ARE" / massive-statement — compact on mobile --- */
-  .massive-statement {
-    padding: 70px 0 50px !important;
-  }
-
-  .massive-statement .statement-container {
-    padding: 0 20px !important;
-    margin-bottom: 40px !important;
-    margin-top: 40px !important;
-    /* FIX: Pushes the text down, safely away from the badge */
-  }
-
-  .statement-text {
-    font-size: 1.35rem !important;
-    line-height: 1.25 !important;
-    letter-spacing: -0.005em !important;
-  }
-}
-
-/* ============================================================= */
-/* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
-/* ============================================================= */
-@media (max-width: 768px) {
-  #services-pin-wrapper {
-    height: auto !important;
-  }
-
-  .services-hero-sec {
-    height: auto !important;
-    min-height: 100vh;
-    padding: 140px 20px 80px !important;
-    align-items: flex-start !important;
-  }
-
-  /* ADDED: Dark gradient overlay to restore contrast against the bright background */
-  .services-hero-sec::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .svc-content-wrapper {
-    position: relative !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 28px !important;
-    height: auto !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-    z-index: 10 !important;
-    /* Ensure content sits above the new overlay */
-  }
-
-  .content-section {
-    position: relative !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    padding: 0 !important;
-    text-align: left !important;
-    align-items: flex-start !important;
-  }
-
-  .content-section .hero-title {
-    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
-    margin-bottom: 6px !important;
-    text-align: left !important;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* ADDED: Drop shadow for punchy contrast */
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
-  }
-
-  .content-section .hero-subtitle p {
-    font-size: 1rem !important;
-    text-align: left !important;
-    color: #ffffff !important;
-    /* Brightened text */
-    /* ADDED: Text shadow for legibility */
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-  }
-
-  .svc-side-menu,
-  .svc-scroll-progress {
-    display: none !important;
-  }
-}
-
-/* ============================================================= */
-/* ===== MOBILE: Replace videos & canvases with static images === */
-/* ============================================================= */
-.canvas-mobile-bg,
-.exc-mobile-bg,
-.contact-mobile-bg {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  /* Hide every animated canvas + the homepage video on mobile.
-     JS init is also gated to skip on viewports ≤768px. */
-  .excellence-section .exc-video-bg,
-  #hero-canvas,
-  #d3-globe-canvas,
-  #cta-globe-canvas,
-  #cta-liquid-canvas,
-  #paper-shader-canvas,
-  #shader-canvas,
-  #hero-waves-canvas,
-  #beams-canvas,
-  #zero-limits-canvas,
-  #about-dither-canvas,
-  #cta-warp-canvas {
-    display: none !important;
-  }
-
-  /* Universal absolute-fill background for any mobile image fallback. */
-  .canvas-mobile-bg,
-  .exc-mobile-bg,
-  .contact-mobile-bg {
-    display: block;
-    position: absolute;
-    inset: 0;
+  .pillar-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
-    pointer-events: none;
-  }
-}
-
-/* ============================================================== */
-/* ===== SERVICES PAGE: MOBILE TOOLKIT GRID (About Match)   ===== */
-/* ============================================================== */
-@media (max-width: 768px) {
-  .services-page .capabilities-sec {
-    padding: 80px 0 80px !important;
+    filter: grayscale(30%);
   }
 
-  .services-page .capabilities-sec .section-title {
-    font-size: 1.9rem !important;
-    line-height: 1.1 !important;
-    margin-bottom: 32px !important;
-    margin-top: 40px !important;
-    padding: 0 20px !important;
-    text-align: center !important;
+  .pillar-content {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
-  .services-page .capabilities-sec .cap-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    margin: 0 16px !important;
-    gap: 0 !important;
+  .pillar-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2vw, 30px);
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
   }
 
-  .services-page .capabilities-sec .cap-item {
-    aspect-ratio: 0.85 / 1 !important;
-    min-height: 0 !important;
-    margin: 4px !important;
-    padding: 18px 12px !important;
-    background-color: #ebebeb !important;
-    border: 1px solid rgba(0, 0, 0, 0.03) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 0 !important;
+  .pillar-p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #aaa;
+    margin: 0;
   }
 
-  .services-page .capabilities-sec .cap-number {
-    position: absolute !important;
-    top: 10px !important;
-    right: 12px !important;
-    font-size: 0.6rem !important;
-    color: #999 !important;
-    margin: 0 !important;
+  /* Mobile Carousel Overrides */
+  @media (max-width: 1024px) {
+    .about-pillars-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pillar-card:nth-child(even) {
+      border-right: none;
+    }
+
+    .pillar-card:nth-child(1),
+    .pillar-card:nth-child(2) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
   }
 
-  .services-page .capabilities-sec .cap-logo {
-    gap: 6px !important;
-    text-align: center !important;
-    word-break: break-word !important;
-    margin: 0 !important;
+  @media (max-width: 768px) {
+    .about-pillars-grid {
+      display: block;
+      grid-template-columns: none;
+      margin: 0;
+      padding: 0 0 24px;
+      border-top: none;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .pillars-marquee {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 16px;
+      padding: 0 16px;
+      width: max-content;
+      animation: pillarsMarquee 32s linear infinite;
+      will-change: transform;
+    }
+
+    .pillars-marquee.is-paused {
+      animation-play-state: paused;
+    }
+
+    .pillar-card {
+      flex: 0 0 82vw;
+      width: 82vw;
+      height: 500px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      background: #111;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-img {
+      height: 220px;
+      flex-shrink: 0;
+    }
+
+    .pillar-content {
+      flex: 1;
+      overflow: hidden;
+      padding: 22px 22px 28px;
+    }
+
+    .pillar-content .vision-list li {
+      font-size: 0.9rem;
+      padding: 6px 0;
+    }
+
+    .pillar-p {
+      font-size: 0.9rem;
+    }
+
+    @keyframes pillarsMarquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 8px));
+      }
+    }
   }
 
-  .services-page .capabilities-sec .cap-desc {
-    display: none !important;
+  /* ============================================================= */
+  /* ===== MOBILE: About OUR TOOLKIT — 2×2 compact grid ========== */
+  /* ============================================================= */
+  @media (max-width: 768px) {
+    .about-page .capabilities-sec {
+      padding: 80px 0 80px;
+    }
+
+    .about-page .capabilities-sec .cap-header h2 {
+      font-size: 1.9rem;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      margin-top: 40px !important;
+      /* FIX: Pushes the title down, safely away from the badge */
+      padding: 0 20px;
+      text-align: center !important;
+    }
+
+    .about-page .capabilities-sec .cap-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      margin: 0 16px;
+      gap: 0;
+    }
+
+    .about-page .capabilities-sec .cap-item {
+      aspect-ratio: 0.85 / 1;
+      min-height: 0;
+      margin: 4px;
+      padding: 18px 12px;
+      background-color: #ebebeb;
+    }
+
+    .about-page .capabilities-sec .cap-number {
+      top: 10px;
+      right: 12px;
+      font-size: 0.6rem;
+    }
+
+    .about-page .capabilities-sec .cap-logo {
+      gap: 6px;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    /* Shrink each variant logo size to suit the smaller tile */
+    .about-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
+      font-size: 0.78rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
+      font-size: 1.15rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
+      font-size: 1.45rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
+      font-size: 1.05rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
+      font-size: 1.05rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
+      font-size: 0.78rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
+      font-size: 1.05rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
+      font-size: 1.45rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
+      font-size: 1.1rem;
+    }
+
+    .about-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
+      font-size: 1.1rem;
+    }
+
+    /* Join-us CTA spans the full 2-column row */
+    .about-page .capabilities-sec .cap-item.join-us-card {
+      grid-column: span 2 !important;
+      aspect-ratio: auto;
+      padding: 28px 22px;
+      margin: 4px;
+    }
+
+    .about-page .capabilities-sec .cap-item.join-us-card h4 {
+      font-size: 1.15rem;
+      margin: 14px 0;
+    }
+
+    .about-page .capabilities-sec .cap-item.join-us-card .join-btn {
+      font-size: 0.72rem;
+      padding: 9px 16px;
+    }
+
+    .about-page .capabilities-sec .cap-item.join-us-card .rating {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: 16px;
+      font-size: 0.72rem;
+    }
   }
 
-  /* Perfect logo scaling to match the About page Toolkit */
-  .services-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
-    font-size: 0.78rem !important;
+  /* ==================================================== */
+  /* ===== MOBILE REFINEMENTS: FAQ & SINCE SECTION  ===== */
+  /* ==================================================== */
+  @media (max-width: 768px) {
+
+    /* --- FAQ Section Mobile Fixes --- */
+    .faq-title {
+      font-size: clamp(2.2rem, 9vw, 3rem) !important;
+      line-height: 0.95 !important;
+      margin-bottom: 30px !important;
+      padding-left: 0 !important;
+      /* FIX: Removed left padding so it centers perfectly */
+      text-align: center !important;
+      /* FIX: Centers the title */
+    }
+
+    /* FIX: Centers the FAQ badge above the title */
+    .faq-sec .horizontal-divider.divider-flex::before {
+      display: none !important;
+    }
+
+    .faq-sec .horizontal-divider.divider-flex .line-seg:first-child,
+    .faq-sec .horizontal-divider.divider-flex .line-seg:nth-child(3) {
+      flex-grow: 1 !important;
+      width: auto !important;
+    }
+
+    .faq-sec .horizontal-divider.divider-flex {
+      justify-content: center !important;
+    }
+
+    .faq-split-layout {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .faq-right {
+      display: flex !important;
+      /* Unhides the answers on mobile */
+      background-color: #f4f4f4 !important;
+      /* Light grey box from reference */
+    }
+
+    .faq-answer-display {
+      padding: 30px 20px !important;
+    }
+
+    .faq-answer-text p {
+      font-size: 1rem !important;
+      text-align: center !important;
+    }
+
+    .faq-question-item {
+      padding: 16px 20px !important;
+      /* Reduced vertical padding for a more compact card */
+      font-size: 0.85rem !important;
+      /* Reduced font size to help text fit onto two lines */
+      line-height: 1.25 !important;
+      /* Tightened line-height to fix the vertical gap between wrapped lines */
+    }
+
+    /* Active State matches reference (Black BG, White Text) */
+    .faq-question-item.active {
+      background-color: #111 !important;
+      color: #fff !important;
+    }
+
+    .faq-question-item.active i {
+      color: #fff !important;
+    }
+
+    /* --- "ZERO MISSED LEADS" Section Mobile Fixes --- */
+    .since-top {
+      align-items: flex-start !important;
+      gap: 30px !important;
+      padding-bottom: 40px !important;
+    }
+
+    /* Headline sized so "MISSED LEADS" fits on one line — 2-line layout like the reference */
+    .massive-since {
+      font-size: clamp(2.6rem, 12.5vw, 4.5rem) !important;
+      line-height: 0.92 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .massive-since .line-2 {
+      padding-left: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    /* Right-align the quote block to match reference */
+    .since-quote-box {
+      align-items: flex-end !important;
+      text-align: right !important;
+      padding-right: 20px !important;
+      /* FIX: Added space to pull the text and button away from the right edge */
+      width: 100% !important;
+    }
+
+    .since-quote-box .logo-small {
+      display: none !important;
+      /* FIX: Hides the Innovaition logo entirely in this section */
+    }
+
+    .since-quote-box p {
+      font-size: 1rem !important;
+      margin: 15px 0 20px !important;
+      line-height: 1.5 !important;
+    }
+
+    .since-quote-box .small-heading {
+      text-align: right !important;
+      margin-bottom: 16px !important;
+      color: #ffffff !important;
+      /* FIX: Brightened the text to pure white for readability */
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+      /* FIX: Added a dark shadow so it pops against the glowing background */
+    }
+
+    /* 2-Column Stats Grid with internal borders */
+    .since-stats-row {
+      grid-template-columns: repeat(2, 1fr) !important;
+      margin: 0 !important;
+      border-left: none !important;
+    }
+
+    .stat-col {
+      padding: 30px 20px !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .stat-col:nth-child(even) {
+      border-right: none !important;
+    }
+
+    .stat-col h3 {
+      font-size: 3.5rem !important;
+      /* Massive numbers */
+      margin-bottom: 8px !important;
+    }
+
+    /* --- "WHO WE ARE" / massive-statement — compact on mobile --- */
+    .massive-statement {
+      padding: 70px 0 50px !important;
+    }
+
+    .massive-statement .statement-container {
+      padding: 0 20px !important;
+      margin-bottom: 40px !important;
+      margin-top: 40px !important;
+      /* FIX: Pushes the text down, safely away from the badge */
+    }
+
+    .statement-text {
+      font-size: 1.35rem !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.005em !important;
+    }
   }
 
-  .services-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
-    font-size: 1.15rem !important;
+  /* ============================================================= */
+  /* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
+  /* ============================================================= */
+  @media (max-width: 768px) {
+    #services-pin-wrapper {
+      height: auto !important;
+    }
+
+    .services-hero-sec {
+      height: auto !important;
+      min-height: 100vh;
+      padding: 140px 20px 80px !important;
+      align-items: flex-start !important;
+    }
+
+    /* ADDED: Dark gradient overlay to restore contrast against the bright background */
+    .services-hero-sec::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .svc-content-wrapper {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 28px !important;
+      height: auto !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      z-index: 10 !important;
+      /* Ensure content sits above the new overlay */
+    }
+
+    .content-section {
+      position: relative !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      padding: 0 !important;
+      text-align: left !important;
+      align-items: flex-start !important;
+    }
+
+    .content-section .hero-title {
+      font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+      margin-bottom: 6px !important;
+      text-align: left !important;
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* ADDED: Drop shadow for punchy contrast */
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+    }
+
+    .content-section .hero-subtitle p {
+      font-size: 1rem !important;
+      text-align: left !important;
+      color: #ffffff !important;
+      /* Brightened text */
+      /* ADDED: Text shadow for legibility */
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .svc-side-menu,
+    .svc-scroll-progress {
+      display: none !important;
+    }
   }
 
-  .services-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
-    font-size: 1.45rem !important;
+  /* ============================================================= */
+  /* ===== MOBILE: Replace videos & canvases with static images === */
+  /* ============================================================= */
+  .canvas-mobile-bg,
+  .exc-mobile-bg,
+  .contact-mobile-bg {
+    display: none;
   }
 
-  .services-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
-    font-size: 1.05rem !important;
+  @media (max-width: 768px) {
+
+    /* Hide every animated canvas + the homepage video on mobile.
+     JS init is also gated to skip on viewports ≤768px. */
+    .excellence-section .exc-video-bg,
+    #hero-canvas,
+    #d3-globe-canvas,
+    #cta-globe-canvas,
+    #cta-liquid-canvas,
+    #paper-shader-canvas,
+    #shader-canvas,
+    #hero-waves-canvas,
+    #beams-canvas,
+    #zero-limits-canvas,
+    #about-dither-canvas,
+    #cta-warp-canvas {
+      display: none !important;
+    }
+
+    /* Universal absolute-fill background for any mobile image fallback. */
+    .canvas-mobile-bg,
+    .exc-mobile-bg,
+    .contact-mobile-bg {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+    }
   }
 
-  .services-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
-    font-size: 1.05rem !important;
+  /* ============================================================== */
+  /* ===== SERVICES PAGE: MOBILE TOOLKIT GRID (About Match)   ===== */
+  /* ============================================================== */
+  @media (max-width: 768px) {
+    .services-page .capabilities-sec {
+      padding: 80px 0 80px !important;
+    }
+
+    .services-page .capabilities-sec .section-title {
+      font-size: 1.9rem !important;
+      line-height: 1.1 !important;
+      margin-bottom: 32px !important;
+      margin-top: 40px !important;
+      padding: 0 20px !important;
+      text-align: center !important;
+    }
+
+    .services-page .capabilities-sec .cap-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      margin: 0 16px !important;
+      gap: 0 !important;
+    }
+
+    .services-page .capabilities-sec .cap-item {
+      aspect-ratio: 0.85 / 1 !important;
+      min-height: 0 !important;
+      margin: 4px !important;
+      padding: 18px 12px !important;
+      background-color: #ebebeb !important;
+      border: 1px solid rgba(0, 0, 0, 0.03) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 0 !important;
+    }
+
+    .services-page .capabilities-sec .cap-number {
+      position: absolute !important;
+      top: 10px !important;
+      right: 12px !important;
+      font-size: 0.6rem !important;
+      color: #999 !important;
+      margin: 0 !important;
+    }
+
+    .services-page .capabilities-sec .cap-logo {
+      gap: 6px !important;
+      text-align: center !important;
+      word-break: break-word !important;
+      margin: 0 !important;
+    }
+
+    .services-page .capabilities-sec .cap-desc {
+      display: none !important;
+    }
+
+    /* Perfect logo scaling to match the About page Toolkit */
+    .services-page .capabilities-sec .cap-item:nth-child(1) .cap-logo {
+      font-size: 0.78rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(2) .cap-logo {
+      font-size: 1.15rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(3) .cap-logo {
+      font-size: 1.45rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(4) .cap-logo {
+      font-size: 1.05rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(5) .cap-logo {
+      font-size: 1.05rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
+      font-size: 0.78rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
+      font-size: 1.05rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
+      font-size: 1.45rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
+      font-size: 1.1rem !important;
+    }
+
+    .services-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
+      font-size: 1.1rem !important;
+    }
+
+    /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
   }
 
-  .services-page .capabilities-sec .cap-item:nth-child(6) .cap-logo {
-    font-size: 0.78rem !important;
-  }
+  /* Closes the mobile media query so this next part applies to desktop */
 
-  .services-page .capabilities-sec .cap-item:nth-child(7) .cap-logo {
-    font-size: 1.05rem !important;
-  }
-
-  .services-page .capabilities-sec .cap-item:nth-child(8) .cap-logo {
-    font-size: 1.45rem !important;
-  }
-
-  .services-page .capabilities-sec .cap-item:nth-child(9) .cap-logo {
-    font-size: 1.1rem !important;
-  }
-
-  .services-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
-    font-size: 1.1rem !important;
-  }
-
-  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
-}
-
-/* Closes the mobile media query so this next part applies to desktop */
-
-/* --- INDUSTRIES PAGE: Global Header (Visible on Desktop & Mobile) --- */
-.industries-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  margin-top: 80px;
-  margin-bottom: 40px;
-  padding: 0 var(--layout-pad);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.industries-header .section-title {
-  margin-bottom: 16px;
-  color: #fff;
-}
-
-.pricing-desc {
-  font-size: 1.05rem;
-  color: #aaa;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-
-  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+  /* --- INDUSTRIES PAGE: Global Header (Visible on Desktop & Mobile) --- */
   .industries-header {
-    align-items: center !important;
-    text-align: center !important;
-    margin-top: 60px !important;
-    margin-bottom: -10px !important;
-    padding: 0 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding: 0 var(--layout-pad);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .industries-header .section-title {
-    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 16px;
+    color: #fff;
   }
 
   .pricing-desc {
-    font-size: 0.95rem !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
+    font-size: 1.05rem;
+    color: #aaa;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0;
   }
 
-  /* 1. Bento / Bottleneck Section */
-  .bento-section {
-    padding-top: 80px !important;
-    padding-bottom: 40px !important;
+  @media (max-width: 768px) {
+
+    /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+    .industries-header {
+      align-items: center !important;
+      text-align: center !important;
+      margin-top: 60px !important;
+      margin-bottom: -10px !important;
+      padding: 0 20px !important;
+    }
+
+    .industries-header .section-title {
+      font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+      margin-bottom: 12px !important;
+    }
+
+    .pricing-desc {
+      font-size: 0.95rem !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    /* 1. Bento / Bottleneck Section - Compact Side-by-Side Mobile Grid */
+    .bento-section {
+      padding-top: 80px !important;
+      padding-bottom: 40px !important;
+    }
+
+    .bento-header {
+      margin-top: 50px !important;
+      margin-bottom: 30px !important;
+    }
+
+    .bento-header p {
+      font-size: 0.95rem !important;
+    }
+
+    /* Force the main grid into 2 columns on mobile so we can pair cards up */
+    .bento-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px !important;
+    }
+
+    /* 1st Card: Full width */
+    .bento-col-left {
+      grid-column: span 2 !important;
+      order: 1 !important;
+    }
+
+    /* 2nd Card: Half width (Left side) */
+    .bento-col-right-top {
+      grid-column: span 1 !important;
+      order: 2 !important;
+    }
+
+    /* 4th Card: Half width (Right side) - Snapped next to the 2nd card! */
+    .bento-col-right-bot {
+      grid-column: span 1 !important;
+      order: 3 !important;
+    }
+
+    /* 3rd Container (Mini Cards): Pushed to bottom, internal 2-column grid */
+    .bento-split-col {
+      grid-column: span 2 !important;
+      order: 4 !important;
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px !important;
+      padding: 0 !important;
+      /* Remove outer padding so internal cards align */
+      background: transparent !important;
+      border: none !important;
+    }
+
+    /* Tighter padding and scaled text for the new half-width layout */
+    .bento-card {
+      min-height: auto !important;
+      height: 100% !important;
+      padding: 20px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .bento-card h3 {
+      margin-bottom: 10px !important;
+      font-size: 1.05rem !important;
+      line-height: 1.2 !important;
+    }
+
+    .bento-card p {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .bento-list {
+      margin-top: 16px !important;
+    }
+
+    /* 2. Tech Bridge / Architecture Section */
+    .tech-bridge-sec {
+      padding: 80px 0 !important;
+    }
+
+    .tech-bridge-sec .container {
+      padding: 40px 20px 0 !important;
+    }
+
+    .tech-bridge-sec .section-title {
+      font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
+      margin-bottom: 40px !important;
+    }
+
+    .tech-row {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+
+    .tech-text-block h3 {
+      font-size: 1.25rem !important;
+    }
+
+    .tech-text-block p {
+      font-size: 0.95rem !important;
+      margin-bottom: 16px !important;
+    }
+
+    .tech-text-block .bento-list li {
+      font-size: 0.9rem !important;
+      margin-bottom: 12px !important;
+    }
+
+    .tech-bridge-sec .container>div:last-child {
+      margin-top: 50px !important;
+      gap: 10px !important;
+      flex-wrap: nowrap !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    .tech-bridge-sec .container>div:last-child>div {
+      width: 20px !important;
+      /* Shrinks the decorative lines to save space */
+    }
+
+    .tech-bridge-sec .container>div:last-child>span {
+      font-size: 0.65rem !important;
+      letter-spacing: 0.15em !important;
+      white-space: nowrap !important;
+      /* Prevents text from breaking */
+    }
+
+    .tech-bridge-sec .container>div:last-child>i {
+      font-size: 1.2rem !important;
+      /* Slightly scales down icons to fit */
+    }
+
+    /* 3. Pricing Section */
+    .pricing-section {
+      padding: 80px 0 60px !important;
+    }
+
+    .pricing-header-row {
+      margin-top: 50px !important;
+      /* Fixes overlap with section badge */
+      margin-bottom: 40px !important;
+    }
+
+    .pricing-grid {
+      gap: 16px !important;
+      padding: 0 20px !important;
+      border: none !important;
+    }
+
+    .pricing-grid .p-card {
+      padding: 32px 24px !important;
+      border-radius: 12px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .p-plan-name {
+      font-size: 1.25rem !important;
+    }
+
+    .p-plan-desc {
+      font-size: 0.9rem !important;
+      margin-bottom: 20px !important;
+    }
+
+    .price-wrap {
+      margin-bottom: 10px !important;
+    }
+
+    .price-wrap .amount {
+      font-size: 3rem !important;
+    }
+
+    .p-card .included-title {
+      margin-bottom: 16px !important;
+    }
+
+    .p-features {
+      margin-bottom: 24px !important;
+    }
+
+    .p-features li {
+      font-size: 0.9rem !important;
+      margin-bottom: 12px !important;
+    }
+
+    /* 4. Feature Comparison & Pricing Tabs */
+    .compare-section {
+      padding: 80px 0 40px !important;
+    }
+
+    .compare-title {
+      font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+      margin-top: 50px !important;
+      /* Fixes overlap with section badge */
+      margin-bottom: 30px !important;
+    }
+
+    /* Mobile Tab UI */
+    .mobile-tab-container {
+      display: flex !important;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      padding: 4px;
+      margin: 0 20px 30px;
+      justify-content: space-between;
+      width: calc(100% - 40px);
+    }
+
+    .mobile-tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 12px 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+      transition: all 0.3s;
+    }
+
+    .mobile-tab-btn.active {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Table layout for tabbed view */
+    .compare-table {
+      min-width: 100% !important;
+      display: table !important;
+    }
+
+    .compare-table thead {
+      display: none !important;
+      /* Hide column headers since tabs act as headers */
+    }
+
+    .compare-table tbody tr {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 0 20px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .compare-table td.feature-name {
+      flex: 1 !important;
+      text-align: left !important;
+      font-size: 0.9rem !important;
+      border: none !important;
+      padding: 20px 0 !important;
+    }
+
+    .compare-table td:not(.feature-name) {
+      width: 50px !important;
+      text-align: center !important;
+      border: none !important;
+      padding: 20px 0 !important;
+    }
+
+    /* 5. Mobile FAQ Section Compaction */
+    .faq-sec {
+      padding: 60px 0 !important;
+    }
+
+    .faq-title {
+      font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+      margin-bottom: 30px !important;
+    }
+
+    .faq-question-item {
+      padding: 16px 20px !important;
+      font-size: 0.9rem !important;
+    }
+
+    .faq-answer-text {
+      padding: 16px 20px !important;
+    }
+
+    .faq-answer-text p {
+      font-size: 0.9rem !important;
+    }
   }
 
-  .bento-header {
-    margin-top: 50px !important;
-    /* Fixes overlap with section badge */
-    margin-bottom: 30px !important;
-  }
-
-  .bento-header p {
-    font-size: 0.95rem !important;
-  }
-
-  .bento-card,
-  .bento-split-col {
-    min-height: 280px !important;
-    padding: 24px !important;
-  }
-
-  .bento-card h3 {
-    font-size: 1.15rem !important;
-  }
-
-  .bento-card p {
-    font-size: 0.9rem !important;
-  }
-
-  /* 2. Tech Bridge / Architecture Section */
-  .tech-bridge-sec {
-    padding: 80px 0 !important;
-  }
-
-  .tech-bridge-sec .container {
-    padding: 40px 20px 0 !important;
-  }
-
-  .tech-bridge-sec .section-title {
-    font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
-    margin-bottom: 40px !important;
-  }
-
-  .tech-row {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-
-  .tech-text-block h3 {
-    font-size: 1.25rem !important;
-  }
-
-  .tech-text-block p {
-    font-size: 0.95rem !important;
-    margin-bottom: 16px !important;
-  }
-
-  .tech-text-block .bento-list li {
-    font-size: 0.9rem !important;
-    margin-bottom: 12px !important;
-  }
-
-  .tech-bridge-sec .container>div:last-child {
-    margin-top: 50px !important;
-    gap: 10px !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .tech-bridge-sec .container>div:last-child>div {
-    width: 20px !important;
-    /* Shrinks the decorative lines to save space */
-  }
-
-  .tech-bridge-sec .container>div:last-child>span {
-    font-size: 0.65rem !important;
-    letter-spacing: 0.15em !important;
-    white-space: nowrap !important;
-    /* Prevents text from breaking */
-  }
-
-  .tech-bridge-sec .container>div:last-child>i {
-    font-size: 1.2rem !important;
-    /* Slightly scales down icons to fit */
-  }
-
-  /* 3. Pricing Section */
-  .pricing-section {
-    padding: 80px 0 60px !important;
-  }
-
-  .pricing-header-row {
-    margin-top: 50px !important;
-    /* Fixes overlap with section badge */
-    margin-bottom: 40px !important;
-  }
-
-  .pricing-grid {
+  .industries-grid-wrapper {
+    margin-top: 40px !important;
     gap: 16px !important;
-    padding: 0 20px !important;
-    border: none !important;
+    padding: 0 16px !important;
+    border-top: none !important;
+    border-bottom: none !important;
   }
 
-  .pricing-grid .p-card {
+  .industries-grid-wrapper .p-card {
     padding: 32px 24px !important;
-    border-radius: 12px !important;
+    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
 
-  .p-plan-name {
-    font-size: 1.25rem !important;
+  .industries-grid-wrapper .p-plan-name {
+    font-size: 1.3rem !important;
   }
 
-  .p-plan-desc {
+  .industries-grid-wrapper .p-plan-desc {
+    margin-bottom: 24px !important;
+    min-height: auto !important;
     font-size: 0.9rem !important;
-    margin-bottom: 20px !important;
   }
 
-  .price-wrap {
-    margin-bottom: 10px !important;
-  }
-
-  .price-wrap .amount {
-    font-size: 3rem !important;
-  }
-
-  .p-card .included-title {
+  .industries-grid-wrapper .included-title {
     margin-bottom: 16px !important;
   }
 
-  .p-features {
+  .industries-grid-wrapper .p-features {
     margin-bottom: 24px !important;
   }
 
-  .p-features li {
+  .industries-grid-wrapper .p-features li {
     font-size: 0.9rem !important;
     margin-bottom: 12px !important;
   }
 
-  /* 4. Feature Comparison & Pricing Tabs */
-  .compare-section {
-    padding: 80px 0 40px !important;
+  .industries-grid-wrapper .p-card-bot {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
-  .compare-title {
-    font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
-    margin-top: 50px !important;
-    /* Fixes overlap with section badge */
-    margin-bottom: 30px !important;
+  .industries-grid-wrapper .btn-custom-quote {
+    margin-bottom: 0 !important;
   }
-
-  /* Mobile Tab UI */
-  .mobile-tab-container {
-    display: flex !important;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    padding: 4px;
-    margin: 0 20px 30px;
-    justify-content: space-between;
-    width: calc(100% - 40px);
-  }
-
-  .mobile-tab-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 12px 0;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 100px;
-    transition: all 0.3s;
-  }
-
-  .mobile-tab-btn.active {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Table layout for tabbed view */
-  .compare-table {
-    min-width: 100% !important;
-    display: table !important;
-  }
-
-  .compare-table thead {
-    display: none !important;
-    /* Hide column headers since tabs act as headers */
-  }
-
-  .compare-table tbody tr {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 0 20px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .compare-table td.feature-name {
-    flex: 1 !important;
-    text-align: left !important;
-    font-size: 0.9rem !important;
-    border: none !important;
-    padding: 20px 0 !important;
-  }
-
-  .compare-table td:not(.feature-name) {
-    width: 50px !important;
-    text-align: center !important;
-    border: none !important;
-    padding: 20px 0 !important;
-  }
-
-  /* 5. Mobile Tighter Steps (All Industry Pages) */
-  body.pricing-page.dark-theme .steps-section {
-    padding-top: 60px !important;
-    padding-bottom: 30px !important;
-  }
-
-  body.pricing-page.dark-theme .steps-section .step {
-    padding: 24px !important;
-    margin-bottom: 16px !important;
-  }
-
-  body.pricing-page.dark-theme .steps-section .step-num-icon {
-    margin-bottom: 12px !important;
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.1rem !important;
-  }
-
-  body.pricing-page.dark-theme .steps-section .step-info h3 {
-    margin-bottom: 6px !important;
-    font-size: clamp(1.6rem, 7vw, 1.9rem) !important;
-  }
-
-  body.pricing-page.dark-theme .steps-section .step-info p {
-    font-size: 0.95rem !important;
-    margin-bottom: 16px !important;
-  }
-
-  body.pricing-page.dark-theme .steps-section .view-details-btn {
-    padding: 10px 18px !important;
-    font-size: 0.85rem !important;
-  }
-
-  /* Ensure details text is also compact when shown */
-  body.pricing-page.dark-theme .steps-section .step-details {
-    font-size: 0.9rem !important;
-    margin-top: 12px !important;
-  }
-}
-
-.industries-grid-wrapper {
-  margin-top: 40px !important;
-  gap: 16px !important;
-  padding: 0 16px !important;
-  border-top: none !important;
-  border-bottom: none !important;
-}
-
-.industries-grid-wrapper .p-card {
-  padding: 32px 24px !important;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-.industries-grid-wrapper .p-plan-name {
-  font-size: 1.3rem !important;
-}
-
-.industries-grid-wrapper .p-plan-desc {
-  margin-bottom: 24px !important;
-  min-height: auto !important;
-  font-size: 0.9rem !important;
-}
-
-.industries-grid-wrapper .included-title {
-  margin-bottom: 16px !important;
-}
-
-.industries-grid-wrapper .p-features {
-  margin-bottom: 24px !important;
-}
-
-.industries-grid-wrapper .p-features li {
-  font-size: 0.9rem !important;
-  margin-bottom: 12px !important;
-}
-
-.industries-grid-wrapper .p-card-bot {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.industries-grid-wrapper .btn-custom-quote {
-  margin-bottom: 0 !important;
-}
 }
