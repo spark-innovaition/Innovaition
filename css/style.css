@@ -10099,6 +10099,21 @@ a {
     min-height: 100svh !important;
     height: 100svh !important;
     padding: 100px 20px 40px !important;
+    position: relative !important;
+  }
+
+  .pricing-hero-sec::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .ph-content-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
   }
 
   .ph-badge {
@@ -11612,12 +11627,13 @@ spline-viewer::part(logo) {
 .industries-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   margin-top: 80px;
   margin-bottom: 40px;
-  padding: 0 20px;
+  padding: 0 var(--layout-pad);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .industries-header .section-title {
@@ -11630,15 +11646,18 @@ spline-viewer::part(logo) {
   color: #aaa;
   line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
 
   /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
   .industries-header {
+    align-items: center !important;
+    text-align: center !important;
     margin-top: 60px !important;
     margin-bottom: -10px !important;
+    padding: 0 20px !important;
   }
 
   .industries-header .section-title {
@@ -11649,6 +11668,7 @@ spline-viewer::part(logo) {
   .pricing-desc {
     font-size: 0.95rem !important;
     max-width: 100% !important;
+    margin: 0 auto !important;
   }
 
   .industries-grid-wrapper {
