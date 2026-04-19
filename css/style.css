@@ -11122,6 +11122,22 @@ spline-viewer::part(logo) {
     /* Massive numbers */
     margin-bottom: 8px !important;
   }
+
+  /* --- "WHO WE ARE" / massive-statement — compact on mobile --- */
+  .massive-statement {
+    padding: 70px 0 50px !important;
+  }
+
+  .massive-statement .statement-container {
+    padding: 0 20px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .statement-text {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.005em !important;
+  }
 }
 
 /* ============================================================= */
