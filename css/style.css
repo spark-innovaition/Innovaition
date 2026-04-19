@@ -11127,3 +11127,43 @@ spline-viewer::part(logo) {
     display: none !important;
   }
 }
+
+/* ============================================================= */
+/* ===== MOBILE: Replace homepage video/canvas with images ===== */
+/* ============================================================= */
+.exc-mobile-bg,
+.contact-mobile-bg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .excellence-section .exc-video-bg {
+    display: none !important;
+  }
+
+  .excellence-section .exc-mobile-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .contact-section #shader-canvas {
+    display: none !important;
+  }
+
+  .contact-section .contact-mobile-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+}

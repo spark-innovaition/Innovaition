@@ -643,9 +643,10 @@
       <span class="sf-dia bl"></span><span class="sf-dia br"></span>
     </div>
 
-    <video autoplay loop muted playsinline class="exc-video-bg">
-      <source src="images/COMMITTED TO YOUR SUCCESS.webm" type="video/webm">
+    <video autoplay loop muted playsinline preload="none" class="exc-video-bg">
+      <source data-src="images/COMMITTED TO YOUR SUCCESS.webm" type="video/webm">
     </video>
+    <img src="images/new images/Vibrant Light Streaks.webp" alt="" class="exc-mobile-bg" aria-hidden="true">
 
     <div class="exc-overlay"></div>
     <div class="exc-content-wrap">
@@ -735,6 +736,7 @@
     </div>
     <canvas id="shader-canvas"
       style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; background: black; touch-action: none;"></canvas>
+    <img src="images/new images/Ethereal Abstract Glow.webp" alt="" class="contact-mobile-bg" aria-hidden="true">
     <div class="contact-divider-wrap">
       <div class="horizontal-divider light-lines divider-flex">
         <div class="line-seg"></div>
@@ -924,6 +926,18 @@
     </div>
   </footer>
 
+  <script>
+    // Desktop only: activate the excellence-section background video.
+    // On mobile we leave data-src untouched so the .webm is never fetched.
+    if (window.innerWidth > 768) {
+      const src = document.querySelector('.exc-video-bg source[data-src]');
+      if (src) {
+        src.src = src.dataset.src;
+        const video = src.closest('video');
+        if (video) video.load();
+      }
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>

@@ -1657,7 +1657,7 @@ if (document.readyState === 'loading') {
 {
   const canvas = document.getElementById('shader-canvas');
 
-  if (canvas) {
+  if (canvas && window.innerWidth > 768) {
     const defaultShaderSource = `#version 300 es
 precision highp float;
 out vec4 O;
