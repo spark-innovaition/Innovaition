@@ -5469,6 +5469,19 @@ a {
   /* Aligns with the mission statement gap */
 }
 
+/* FIX: Removes massive white gap above "How We Work" exclusively on mobile */
+@media (max-width: 768px) {
+  .growth-marquee-sec {
+    padding-top: 20px !important;
+  }
+
+  .growth-header {
+    margin-bottom: 40px !important;
+    padding-left: 20px !important;
+    /* Ensures it aligns cleanly on mobile grids */
+  }
+}
+
 .growth-header .section-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 65px);
@@ -10970,7 +10983,10 @@ spline-viewer::part(logo) {
     font-size: 1.9rem;
     line-height: 1.1;
     margin-bottom: 32px;
+    margin-top: 40px !important;
+    /* FIX: Pushes the title down, safely away from the badge */
     padding: 0 20px;
+    text-align: center !important;
   }
 
   .about-page .capabilities-sec .cap-grid {
@@ -11161,12 +11177,14 @@ spline-viewer::part(logo) {
   .since-quote-box {
     align-items: flex-end !important;
     text-align: right !important;
-    padding-right: 0 !important;
+    padding-right: 20px !important;
+    /* FIX: Added space to pull the text and button away from the right edge */
     width: 100% !important;
   }
 
   .since-quote-box .logo-small {
-    margin-bottom: 10px !important;
+    display: none !important;
+    /* FIX: Hides the Innovaition logo entirely in this section */
   }
 
   .since-quote-box p {
@@ -11178,6 +11196,10 @@ spline-viewer::part(logo) {
   .since-quote-box .small-heading {
     text-align: right !important;
     margin-bottom: 16px !important;
+    color: #ffffff !important;
+    /* FIX: Brightened the text to pure white for readability */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    /* FIX: Added a dark shadow so it pops against the glowing background */
   }
 
   /* 2-Column Stats Grid with internal borders */
@@ -11211,6 +11233,8 @@ spline-viewer::part(logo) {
   .massive-statement .statement-container {
     padding: 0 20px !important;
     margin-bottom: 40px !important;
+    margin-top: 40px !important;
+    /* FIX: Pushes the text down, safely away from the badge */
   }
 
   .statement-text {
