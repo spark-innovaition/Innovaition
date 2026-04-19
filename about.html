@@ -94,6 +94,7 @@
 
     <canvas id="beams-canvas"
       style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; filter: blur(15px); pointer-events: none;"></canvas>
+    <img src="images/new images/Ethereal Light Play.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
     <div class="lamp-container">
       <div class="lamp-blur-top"></div>
@@ -380,6 +381,7 @@
 
     <canvas id="zero-limits-canvas"
       style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+    <img src="images/new images/Luminous Sphere Art.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
     <div class="since-overlay"
       style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, transparent 70%, var(--bg-dark) 100%); z-index: 2; pointer-events: none;">
     </div>
@@ -517,6 +519,7 @@
 
     <canvas id="about-dither-canvas"
       style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; background: black; touch-action: none;"></canvas>
+    <img src="images/new images/Surreal Tree Motion Art.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
     <div class="contact-divider-wrap">
       <div class="horizontal-divider light-lines divider-flex">
@@ -723,7 +726,7 @@
   <script>
     {
       const canvas = document.getElementById('beams-canvas');
-      if (canvas) {
+      if (canvas && window.innerWidth > 768) {
         const ctx = canvas.getContext('2d');
         const MINIMUM_BEAMS = 20;
         let beams = [];
@@ -824,7 +827,7 @@
   <script>
     {
       const canvas = document.getElementById('zero-limits-canvas');
-      if (canvas) {
+      if (canvas && window.innerWidth > 768) {
         const gl = canvas.getContext('webgl');
         if (gl) {
           const vsSource = `
@@ -952,7 +955,7 @@
   <script>
     {
       const canvas = document.getElementById('about-dither-canvas');
-      if (canvas) {
+      if (canvas && window.innerWidth > 768) {
         const gl = canvas.getContext('webgl');
         if (gl) {
           const vsSource = `

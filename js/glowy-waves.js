@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("hero-waves-canvas");
-    if (!canvas) return;
+    if (!canvas || window.innerWidth <= 768) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;

@@ -11129,34 +11129,36 @@ spline-viewer::part(logo) {
 }
 
 /* ============================================================= */
-/* ===== MOBILE: Replace homepage video/canvas with images ===== */
+/* ===== MOBILE: Replace videos & canvases with static images === */
 /* ============================================================= */
+.canvas-mobile-bg,
 .exc-mobile-bg,
 .contact-mobile-bg {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .excellence-section .exc-video-bg {
+  /* Hide every animated canvas + the homepage video on mobile.
+     JS init is also gated to skip on viewports ≤768px. */
+  .excellence-section .exc-video-bg,
+  #hero-canvas,
+  #d3-globe-canvas,
+  #cta-globe-canvas,
+  #cta-liquid-canvas,
+  #paper-shader-canvas,
+  #shader-canvas,
+  #hero-waves-canvas,
+  #beams-canvas,
+  #zero-limits-canvas,
+  #about-dither-canvas,
+  #cta-warp-canvas {
     display: none !important;
   }
 
-  .excellence-section .exc-mobile-bg {
-    display: block;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .contact-section #shader-canvas {
-    display: none !important;
-  }
-
-  .contact-section .contact-mobile-bg {
+  /* Universal absolute-fill background for any mobile image fallback. */
+  .canvas-mobile-bg,
+  .exc-mobile-bg,
+  .contact-mobile-bg {
     display: block;
     position: absolute;
     inset: 0;
