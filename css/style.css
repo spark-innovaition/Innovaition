@@ -10932,3 +10932,165 @@ spline-viewer::part(logo) {
     font-size: 0.72rem;
   }
 }
+
+/* ==================================================== */
+/* ===== MOBILE REFINEMENTS: FAQ & SINCE SECTION  ===== */
+/* ==================================================== */
+@media (max-width: 768px) {
+
+  /* --- FAQ Section Mobile Fixes --- */
+  .faq-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .faq-right {
+    display: flex !important;
+    /* Unhides the answers on mobile */
+    background-color: #f4f4f4 !important;
+    /* Light grey box from reference */
+  }
+
+  .faq-answer-display {
+    padding: 30px 20px !important;
+  }
+
+  .faq-answer-text p {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  .faq-question-item {
+    padding: 20px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Active State matches reference (Black BG, White Text) */
+  .faq-question-item.active {
+    background-color: #111 !important;
+    color: #fff !important;
+  }
+
+  .faq-question-item.active i {
+    color: #fff !important;
+  }
+
+  /* --- "ZERO MISSED LEADS" Section Mobile Fixes --- */
+  .since-top {
+    align-items: flex-start !important;
+    gap: 30px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Make "ZERO MISSED LEADS" massive like "SINCE 2019" */
+  .massive-since {
+    font-size: clamp(4.5rem, 20vw, 8rem) !important;
+    line-height: 0.85 !important;
+  }
+
+  .massive-since .line-2 {
+    padding-left: 0 !important;
+  }
+
+  /* Right-align the quote block to match reference */
+  .since-quote-box {
+    align-items: flex-end !important;
+    text-align: right !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .since-quote-box .logo-small {
+    margin-bottom: 10px !important;
+  }
+
+  .since-quote-box p {
+    font-size: 1rem !important;
+    margin: 15px 0 20px !important;
+    line-height: 1.5 !important;
+  }
+
+  .since-quote-box .small-heading {
+    text-align: right !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* 2-Column Stats Grid with internal borders */
+  .since-stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 0 !important;
+    border-left: none !important;
+  }
+
+  .stat-col {
+    padding: 30px 20px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .stat-col:nth-child(even) {
+    border-right: none !important;
+  }
+
+  .stat-col h3 {
+    font-size: 3.5rem !important;
+    /* Massive numbers */
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ============================================================= */
+/* ===== SERVICES HERO — Mobile Fix (Stack instead of Pin) ===== */
+/* ============================================================= */
+@media (max-width: 768px) {
+  #services-pin-wrapper {
+    height: auto !important;
+  }
+
+  .services-hero-sec {
+    height: auto !important;
+    min-height: 100vh;
+    padding: 140px 20px 80px !important;
+    align-items: flex-start !important;
+  }
+
+  .svc-content-wrapper {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 50px !important;
+    height: auto !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .content-section {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .content-section .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .content-section .hero-subtitle p {
+    font-size: 1.05rem !important;
+    text-align: left !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .svc-side-menu,
+  .svc-scroll-progress {
+    display: none !important;
+  }
+}
