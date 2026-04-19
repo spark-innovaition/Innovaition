@@ -174,9 +174,9 @@ a {
 }
 
 .menu-btn {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
   padding: 8px 16px;
   border-radius: 4px;
   font-family: var(--font-heading);
@@ -191,7 +191,7 @@ a {
 }
 
 .menu-btn:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   color: #000;
 }
 
@@ -246,18 +246,16 @@ a {
 }
 
 .nav-avatar {
-  width: 36px;
-  height: 36px;
-  background: url('https://ui-avatars.com/api/?name=US&background=333&color=fff') center/cover;
-  border-radius: 50%;
-  margin-right: 16px;
+  display: none;
 }
 
 .nav-cta {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -268,14 +266,16 @@ a {
   display: grid;
   place-items: center;
   padding: 0 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
   border-left: none;
+  background: #fff;
+  color: #000;
   transition: var(--transition);
 }
 
 .nav-right:hover .nav-cta,
 .nav-right:hover .nav-cta-icon {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   color: #000;
 }
 
@@ -316,6 +316,21 @@ a {
 .light-theme .menu-btn:hover {
   background: #000;
   color: #fff;
+}
+
+/* Force readable styling whenever the menu is open, on any theme */
+.menu-btn.is-open,
+.light-theme .menu-btn.is-open,
+.menu-btn.is-open:hover,
+.light-theme .menu-btn.is-open:hover {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.menu-btn.is-open i,
+.light-theme .menu-btn.is-open i {
+  color: #fff !important;
 }
 
 .light-theme .nav-cta,

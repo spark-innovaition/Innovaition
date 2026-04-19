@@ -13,9 +13,15 @@ if (navbar) {
 const menuBtn = document.querySelector('.menu-btn');
 const menuOverlay = document.querySelector('.menu-overlay');
 const menuLinks = document.querySelectorAll('.menu-nav-item a');
-const btnText = menuBtn ? menuBtn.querySelector('span') : null;
-const btnIcon = menuBtn ? menuBtn.querySelector('i') : null;
 let isMenuOpen = false;
+
+const setMenuBtnState = (open) => {
+  if (!menuBtn) return;
+  menuBtn.innerHTML = open
+    ? '<i class="fa-solid fa-xmark"></i> CLOSE'
+    : '<i class="fa-solid fa-bars"></i> MENU';
+  menuBtn.classList.toggle('is-open', open);
+};
 
 const menuTl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
 
@@ -39,20 +45,12 @@ if (menuBtn && menuOverlay) {
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if (btnText) btnText.textContent = 'CLOSE';
-      if (btnIcon) {
-        btnIcon.classList.remove('fa-bars');
-        btnIcon.classList.add('fa-xmark');
-      }
+      setMenuBtnState(true);
       menuTl.timeScale(1).play();
     } else {
       menuOverlay.classList.remove('active');
       document.body.style.overflow = '';
-      if (btnText) btnText.textContent = 'MENU';
-      if (btnIcon) {
-        btnIcon.classList.remove('fa-xmark');
-        btnIcon.classList.add('fa-bars');
-      }
+      setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     }
   });
@@ -62,11 +60,7 @@ if (menuBtn && menuOverlay) {
       isMenuOpen = false;
       menuOverlay.classList.remove('active');
       document.body.style.overflow = '';
-      if (btnText) btnText.textContent = 'MENU';
-      if (btnIcon) {
-        btnIcon.classList.remove('fa-xmark');
-        btnIcon.classList.add('fa-bars');
-      }
+      setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     });
   });
