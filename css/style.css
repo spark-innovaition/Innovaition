@@ -12317,3 +12317,30 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     text-align: left !important;
   }
 }
+
+@media (max-width: 768px) {
+  /* ============================================================= */
+  /* ===== CONTACT HERO MOBILE RESIZE & GAP FIX              ===== */
+  /* ============================================================= */
+
+  body .contact-hero-sec {
+    min-height: auto !important;
+    padding-top: 100px !important;
+    /* Pulls the section up slightly */
+    padding-bottom: 80px !important;
+    /* Pushes the black box further down */
+  }
+
+  body .contact-hero-title {
+    font-size: clamp(3.5rem, 18vw, 5.5rem) !important;
+    /* Shrinks the text */
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 40px !important;
+    /* Extra safety gap below the text */
+  }
+
+  body .contact-hero-title.right {
+    margin-top: -5px !important;
+  }
+}
