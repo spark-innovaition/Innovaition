@@ -11346,8 +11346,8 @@ spline-viewer::part(logo) {
 
   .services-hero-sec {
     height: auto !important;
-    min-height: auto !important;
-    padding: 110px 20px 60px !important;
+    min-height: 100vh;
+    padding: 140px 20px 80px !important;
     align-items: flex-start !important;
   }
 
