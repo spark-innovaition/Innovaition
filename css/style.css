@@ -11823,7 +11823,8 @@ spline-viewer::part(logo) {
     margin-bottom: 12px !important;
   }
 
-  /* 4. Feature Comparison Section */
+  /* 4. Feature Comparison Section - Converted to Mobile Cards */
+  /* 4. Feature Comparison & Pricing Tabs */
   .compare-section {
     padding: 80px 0 40px !important;
   }
@@ -11834,21 +11835,74 @@ spline-viewer::part(logo) {
   }
 
   .compare-container {
-    padding: 0 20px !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
   }
 
+  /* Mobile Tab UI */
+  .mobile-tab-container {
+    display: flex !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 4px;
+    margin: 0 20px 30px;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+  }
+
+  .mobile-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .mobile-tab-btn.active {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Table layout for tabbed view */
   .compare-table {
-    min-width: 600px !important;
+    min-width: 100% !important;
+    display: table !important;
   }
 
-  .compare-table th,
-  .compare-table td {
-    padding: 16px 12px !important;
-    font-size: 0.85rem !important;
+  .compare-table thead {
+    display: none !important;
+    /* Hide column headers since tabs act as headers */
+  }
+
+  .compare-table tbody tr {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
   .compare-table td.feature-name {
+    flex: 1 !important;
+    text-align: left !important;
     font-size: 0.9rem !important;
+    border: none !important;
+    padding: 20px 0 !important;
+  }
+
+  .compare-table td:not(.feature-name) {
+    width: 50px !important;
+    text-align: center !important;
+    border: none !important;
+    padding: 20px 0 !important;
   }
 }
 

@@ -1927,3 +1927,91 @@ void main(void) {
     }
   }
 }
+
+// =============================================================
+// ===== MOBILE TABS FOR PRICING & COMPARE TABLE           =====
+// =============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 768) return;
+
+  // 1. Pricing Cards Tabs
+  const pricingGrids = document.querySelectorAll('.pricing-grid');
+  pricingGrids.forEach(grid => {
+    // Only target grids that have exactly 3 pricing cards
+    const cards = grid.querySelectorAll('.p-card');
+    if (cards.length !== 3) return;
+
+    if (grid.dataset.tabsInit) return;
+    grid.dataset.tabsInit = '1';
+
+    const tabContainer = document.createElement('div');
+    tabContainer.className = 'mobile-tab-container';
+
+    const tabNames = ['Essential', 'Growth', 'Autonomous'];
+    const tabs = [];
+
+    tabNames.forEach((name, index) => {
+      const tab = document.createElement('button');
+      tab.className = 'mobile-tab-btn' + (index === 1 ? ' active' : ''); // Default Growth
+      tab.textContent = name;
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        cards.forEach((c, i) => {
+          c.style.display = i === index ? 'flex' : 'none';
+        });
+      });
+      tabs.push(tab);
+      tabContainer.appendChild(tab);
+    });
+
+    // Insert above the grid
+    grid.parentNode.insertBefore(tabContainer, grid);
+
+    // Set initial state
+    cards.forEach((c, i) => {
+      c.style.display = i === 1 ? 'flex' : 'none';
+    });
+  });
+
+  // 2. Compare Table Tabs
+  const compareTables = document.querySelectorAll('.compare-table');
+  compareTables.forEach(table => {
+    if (table.dataset.tabsInit) return;
+    table.dataset.tabsInit = '1';
+
+    const tabContainer = document.createElement('div');
+    tabContainer.className = 'mobile-tab-container';
+
+    const tabNames = ['Essential', 'Growth', 'Autonomous'];
+    const tabs = [];
+
+    const updateTableCols = (index) => {
+      const rows = table.querySelectorAll('tr');
+      rows.forEach(row => {
+        const cells = row.children;
+        if (cells.length >= 4) {
+          cells[1].style.display = index === 0 ? '' : 'none';
+          cells[2].style.display = index === 1 ? '' : 'none';
+          cells[3].style.display = index === 2 ? '' : 'none';
+        }
+      });
+    };
+
+    tabNames.forEach((name, index) => {
+      const tab = document.createElement('button');
+      tab.className = 'mobile-tab-btn' + (index === 1 ? ' active' : '');
+      tab.textContent = name;
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        updateTableCols(index);
+      });
+      tabs.push(tab);
+      tabContainer.appendChild(tab);
+    });
+
+    table.parentNode.insertBefore(tabContainer, table);
+    updateTableCols(1); // Default to Growth
+  });
+});
