@@ -11083,9 +11083,19 @@ spline-viewer::part(logo) {
     /* FIX: Centers the title */
   }
 
-  .faq-split-layout {
-    display: flex !important;
-    flex-direction: column !important;
+  /* FIX: Centers the FAQ badge above the title */
+  .faq-sec .horizontal-divider.divider-flex::before {
+    display: none !important;
+  }
+
+  .faq-sec .horizontal-divider.divider-flex .line-seg:first-child,
+  .faq-sec .horizontal-divider.divider-flex .line-seg:nth-child(3) {
+    flex-grow: 1 !important;
+    width: auto !important;
+  }
+
+  .faq-sec .horizontal-divider.divider-flex {
+    justify-content: center !important;
   }
 
   .faq-split-layout {
