@@ -10447,16 +10447,29 @@ spline-viewer::part(logo) {
   }
 
   /* Light theme variant for the bento section (white background) */
-  .bento-section .carousel-pagination .pag-dot {
+  .bento-section.light-theme .carousel-pagination .pag-dot {
     background: rgba(0, 0, 0, 0.2);
   }
 
-  .bento-section .carousel-pagination .pag-dot.active {
+  .bento-section.light-theme .carousel-pagination .pag-dot.active {
     background: #000000;
   }
 
-  .bento-section .carousel-pagination .pag-counter {
+  .bento-section.light-theme .carousel-pagination .pag-counter {
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Dark theme variant for the bento section (industry pages) */
+  .bento-section.dark-theme .carousel-pagination .pag-dot {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .bento-section.dark-theme .carousel-pagination .pag-dot.active {
+    background: #ffffff;
+  }
+
+  .bento-section.dark-theme .carousel-pagination .pag-counter {
+    color: rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -11671,49 +11684,199 @@ spline-viewer::part(logo) {
     margin: 0 auto !important;
   }
 
-  .industries-grid-wrapper {
-    margin-top: 40px !important;
-    gap: 16px !important;
-    padding: 0 16px !important;
-    border-top: none !important;
-    border-bottom: none !important;
+  /* --- INDUSTRY SPECIFIC PAGES: Mobile Compact Overrides --- */
+
+  /* 1. Bento / Bottleneck Section */
+  .bento-section {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
   }
 
-  .industries-grid-wrapper .p-card {
-    padding: 32px 24px !important;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  .bento-header {
+    margin-bottom: 30px !important;
   }
 
-  .industries-grid-wrapper .p-plan-name {
-    font-size: 1.3rem !important;
+  .bento-header p {
+    font-size: 0.95rem !important;
   }
 
-  .industries-grid-wrapper .p-plan-desc {
-    margin-bottom: 24px !important;
-    min-height: auto !important;
+  .bento-card,
+  .bento-split-col {
+    min-height: 280px !important;
+    padding: 24px !important;
+  }
+
+  .bento-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .bento-card p {
     font-size: 0.9rem !important;
   }
 
-  .industries-grid-wrapper .included-title {
+  /* 2. Tech Bridge / Architecture Section */
+  .tech-bridge-sec {
+    padding: 80px 0 !important;
+  }
+
+  .tech-bridge-sec .container {
+    padding: 40px 20px 0 !important;
+  }
+
+  .tech-bridge-sec .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
+    margin-bottom: 40px !important;
+  }
+
+  .tech-row {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .tech-text-block h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .tech-text-block p {
+    font-size: 0.95rem !important;
     margin-bottom: 16px !important;
   }
 
-  .industries-grid-wrapper .p-features {
-    margin-bottom: 24px !important;
-  }
-
-  .industries-grid-wrapper .p-features li {
+  .tech-text-block .bento-list li {
     font-size: 0.9rem !important;
     margin-bottom: 12px !important;
   }
 
-  .industries-grid-wrapper .p-card-bot {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  .tech-bridge-sec .container>div:last-child {
+    margin-top: 50px !important;
+    gap: 15px !important;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .industries-grid-wrapper .btn-custom-quote {
-    margin-bottom: 0 !important;
+  /* 3. Pricing Section */
+  .pricing-section {
+    padding: 80px 0 60px !important;
   }
+
+  .pricing-header-row {
+    margin-bottom: 40px !important;
+  }
+
+  .pricing-grid {
+    gap: 16px !important;
+    padding: 0 20px !important;
+    border: none !important;
+  }
+
+  .pricing-grid .p-card {
+    padding: 32px 24px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .p-plan-name {
+    font-size: 1.25rem !important;
+  }
+
+  .p-plan-desc {
+    font-size: 0.9rem !important;
+    margin-bottom: 20px !important;
+  }
+
+  .price-wrap {
+    margin-bottom: 10px !important;
+  }
+
+  .price-wrap .amount {
+    font-size: 3rem !important;
+  }
+
+  .p-card .included-title {
+    margin-bottom: 16px !important;
+  }
+
+  .p-features {
+    margin-bottom: 24px !important;
+  }
+
+  .p-features li {
+    font-size: 0.9rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* 4. Feature Comparison Section */
+  .compare-section {
+    padding: 80px 0 40px !important;
+  }
+
+  .compare-title {
+    font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+    margin-bottom: 30px !important;
+  }
+
+  .compare-container {
+    padding: 0 20px !important;
+  }
+
+  .compare-table {
+    min-width: 600px !important;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 16px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .compare-table td.feature-name {
+    font-size: 0.9rem !important;
+  }
+}
+
+.industries-grid-wrapper {
+  margin-top: 40px !important;
+  gap: 16px !important;
+  padding: 0 16px !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.industries-grid-wrapper .p-card {
+  padding: 32px 24px !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.industries-grid-wrapper .p-plan-name {
+  font-size: 1.3rem !important;
+}
+
+.industries-grid-wrapper .p-plan-desc {
+  margin-bottom: 24px !important;
+  min-height: auto !important;
+  font-size: 0.9rem !important;
+}
+
+.industries-grid-wrapper .included-title {
+  margin-bottom: 16px !important;
+}
+
+.industries-grid-wrapper .p-features {
+  margin-bottom: 24px !important;
+}
+
+.industries-grid-wrapper .p-features li {
+  font-size: 0.9rem !important;
+  margin-bottom: 12px !important;
+}
+
+.industries-grid-wrapper .p-card-bot {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.industries-grid-wrapper .btn-custom-quote {
+  margin-bottom: 0 !important;
+}
 }
