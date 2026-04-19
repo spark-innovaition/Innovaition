@@ -1085,72 +1085,30 @@
   </script>
 
   <script>
-    // Mobile-only: Pillar carousel with seamless infinite loop.
+    // Mobile-only: Wrap pillar cards in a marquee track and clone for a
+    // seamless CSS-driven infinite loop. Touch pauses the animation briefly.
     document.addEventListener('DOMContentLoaded', () => {
-      const pillarGrid = document.querySelector('.about-pillars-grid');
-      if (!pillarGrid || window.innerWidth > 768) return;
+      const grid = document.querySelector('.about-pillars-grid');
+      if (!grid || window.innerWidth > 768) return;
 
-      const originals = Array.from(pillarGrid.querySelectorAll('.pillar-card'));
-      if (!originals.length) return;
+      const originals = Array.from(grid.querySelectorAll('.pillar-card'));
+      if (!originals.length || grid.dataset.marqueeReady === '1') return;
 
-      // Clone the set once so we can loop seamlessly: when the scroll passes
-      // the original set, snap back by exactly that distance (invisible jump).
-      originals.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.dataset.clone = '1';
-        pillarGrid.appendChild(clone);
-      });
+      const track = document.createElement('div');
+      track.className = 'pillars-marquee';
+      originals.forEach(card => track.appendChild(card));
+      // Duplicate the set so the -50% keyframe wraps invisibly.
+      originals.forEach(card => track.appendChild(card.cloneNode(true)));
+      grid.appendChild(track);
+      grid.dataset.marqueeReady = '1';
 
-      const stepDistance = () => {
-        const styles = getComputedStyle(pillarGrid);
-        const gap = parseFloat(styles.columnGap || styles.gap || '16') || 16;
-        return originals[0].offsetWidth + gap;
-      };
-
-      const originalsWidth = () => stepDistance() * originals.length;
-
-      let isInteracting = false;
-      let autoTimer;
       let resumeTimer;
-
-      const advance = () => {
-        if (isInteracting) return;
-        const next = pillarGrid.scrollLeft + stepDistance();
-        pillarGrid.scrollTo({ left: next, behavior: 'smooth' });
-      };
-
-      // After any scroll settles, if we've crossed into the cloned set,
-      // jump back instantly by the original-set width — looks continuous.
-      let settleTimer;
-      const onScroll = () => {
-        clearTimeout(settleTimer);
-        settleTimer = setTimeout(() => {
-          const w = originalsWidth();
-          if (pillarGrid.scrollLeft >= w) {
-            pillarGrid.scrollTo({ left: pillarGrid.scrollLeft - w, behavior: 'instant' });
-          }
-        }, 120);
-      };
-
-      const startAuto = () => {
-        clearInterval(autoTimer);
-        autoTimer = setInterval(advance, 2200);
-      };
-
-      const pauseAuto = () => {
-        isInteracting = true;
-        clearInterval(autoTimer);
+      const pause = () => {
+        track.classList.add('is-paused');
         clearTimeout(resumeTimer);
-        resumeTimer = setTimeout(() => {
-          isInteracting = false;
-          startAuto();
-        }, 2500);
+        resumeTimer = setTimeout(() => track.classList.remove('is-paused'), 2500);
       };
-
-      pillarGrid.addEventListener('touchstart', pauseAuto, { passive: true });
-      pillarGrid.addEventListener('scroll', onScroll, { passive: true });
-
-      startAuto();
+      track.addEventListener('touchstart', pause, { passive: true });
     });
   </script>
 </body>

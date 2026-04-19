@@ -10793,31 +10793,35 @@ spline-viewer::part(logo) {
 
 @media (max-width: 768px) {
   .about-pillars-grid {
+    display: block;
+    grid-template-columns: none;
+    margin: 0;
+    padding: 0 0 24px;
+    border-top: none;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .pillars-marquee {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    grid-template-columns: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     gap: 16px;
-    padding: 0 20px 24px;
-    margin: 0;
-    border-top: none;
-    -webkit-overflow-scrolling: touch;
+    padding: 0 16px;
+    width: max-content;
+    animation: pillarsMarquee 32s linear infinite;
+    will-change: transform;
   }
 
-  .about-pillars-grid::-webkit-scrollbar {
-    display: none;
+  .pillars-marquee.is-paused {
+    animation-play-state: paused;
   }
 
   .pillar-card {
     flex: 0 0 82vw;
     width: 82vw;
-    height: 480px;
-    scroll-snap-align: center;
+    height: 500px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     background: #111;
@@ -10835,7 +10839,7 @@ spline-viewer::part(logo) {
   .pillar-content {
     flex: 1;
     overflow: hidden;
-    padding: 22px 20px;
+    padding: 22px 22px 28px;
   }
 
   .pillar-content .vision-list li {
@@ -10845,6 +10849,11 @@ spline-viewer::part(logo) {
 
   .pillar-p {
     font-size: 0.9rem;
+  }
+
+  @keyframes pillarsMarquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50% - 8px)); }
   }
 }
 
