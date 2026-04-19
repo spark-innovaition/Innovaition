@@ -1937,7 +1937,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Pricing Cards Tabs
   const pricingGrids = document.querySelectorAll('.pricing-grid');
   pricingGrids.forEach(grid => {
-    // Only target grids that have exactly 3 pricing cards
+    // FIX: Completely ignore the grid if we are on a blog page
+    if (document.body.classList.contains('blog-page')) return;
+
     const cards = grid.querySelectorAll('.p-card');
     if (cards.length !== 3) return;
 
@@ -1952,7 +1954,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tabNames.forEach((name, index) => {
       const tab = document.createElement('button');
-      tab.className = 'mobile-tab-btn' + (index === 1 ? ' active' : ''); // Default Growth
+      tab.className = 'mobile-tab-btn' + (index === 1 ? ' active' : '');
       tab.textContent = name;
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -1965,10 +1967,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tabContainer.appendChild(tab);
     });
 
-    // Insert above the grid
     grid.parentNode.insertBefore(tabContainer, grid);
 
-    // Set initial state
     cards.forEach((c, i) => {
       c.style.display = i === 1 ? 'flex' : 'none';
     });
@@ -2012,6 +2012,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     table.parentNode.insertBefore(tabContainer, table);
-    updateTableCols(1); // Default to Growth
+    updateTableCols(1);
   });
 });

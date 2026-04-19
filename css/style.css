@@ -9259,41 +9259,70 @@ a {
     border-left: 1px solid #000 !important;
   }
 
-  /* List-style blog items: no images, separated by hairlines */
+  /* List-style blog items: Updated to match main blog page structure */
   .blog-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0 !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    gap: 24px !important;
+    border-top: none !important;
   }
 
   .blog-card {
-    padding: 32px 0 !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 0 32px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
   }
 
+  .blog-card:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Force Images to appear */
   .blog-card .blog-img-wrap {
-    display: none !important;
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    opacity: 1 !important;
+    margin-bottom: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 4px !important;
   }
 
+  .blog-card .blog-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Stack Title and Date */
   .blog-meta {
+    display: flex !important;
+    flex-direction: column !important;
     padding-top: 0 !important;
+    gap: 8px !important;
+    align-items: flex-start !important;
   }
 
   .blog-title {
     font-family: var(--font-heading) !important;
-    font-size: 1.4rem !important;
+    font-size: 1.15rem !important;
     font-weight: 700 !important;
-    line-height: 1.2 !important;
+    line-height: 1.3 !important;
     text-transform: uppercase !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 0 !important;
     letter-spacing: -0.01em !important;
+    text-align: left !important;
   }
 
   .blog-date {
-    font-size: 0.95rem !important;
+    font-size: 0.85rem !important;
     color: #888 !important;
     font-weight: 500 !important;
+    margin-top: 0 !important;
+    text-align: left !important;
   }
 }
 
@@ -11341,7 +11370,8 @@ spline-viewer::part(logo) {
 
     /* 6. Mobile CTA Section Gap Fix */
     .cta-react-translated-sec {
-      padding-top: 80px !important;
+      padding-top: 130px !important;
+      /* Increased from 80px to give the title more breathing room */
       padding-bottom: 40px !important;
       min-height: auto !important;
     }
@@ -12146,5 +12176,144 @@ body .blog-main-grid .b-card .b-date {
 
   body .blog-hero-title.right {
     margin-top: -5px !important;
+  }
+}
+
+/* ============================================================= */
+/* ===== "MORE INSIGHTS" FIX FOR INDIVIDUAL BLOG PAGES     ===== */
+/* ============================================================= */
+
+/* Target the pricing grid specifically on blog pages */
+body.blog-page .pricing-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  padding: 0 20px !important;
+  border: none !important;
+}
+
+/* Override the heavy inline styling on the cards */
+body.blog-page .pricing-grid .p-card {
+  padding: 0 0 32px 0 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.blog-page .pricing-grid .p-card:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* Fix the image container (which is the first div inside the card) */
+body.blog-page .pricing-grid .p-card>div:first-child {
+  height: 220px !important;
+  margin-bottom: 16px !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+}
+
+/* Format the Title */
+body.blog-page .pricing-grid .p-card .p-plan-name {
+  font-family: var(--font-heading) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+}
+
+/* Format the Date */
+body.blog-page .pricing-grid .p-card .p-plan-desc {
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem !important;
+  color: #888888 !important;
+  margin-bottom: 0 !important;
+  text-align: left !important;
+}
+
+/* Hide the "Read Article" button to match the clean reference look */
+body.blog-page .pricing-grid .p-card .p-card-bot {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+
+  /* ============================================================= */
+  /* ===== INSIGHTS & UPDATES (BOTTOM OF BLOG PAGES) MOBILE ===== */
+  /* ============================================================= */
+
+  body .blog-section .blog-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    border-top: none !important;
+  }
+
+  body .blog-section .blog-card {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 0 32px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    height: auto !important;
+    width: 100% !important;
+    border-right: none !important;
+  }
+
+  body .blog-section .blog-card:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 1. Force Image Visibility & Sizing */
+  body .blog-section .blog-card .blog-img-wrap {
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-bottom: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+  body .blog-section .blog-card .blog-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* 2. Force Stacked Meta Text (Title top, Date bottom) */
+  body .blog-section .blog-card .blog-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  body .blog-section .blog-card .blog-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+  }
+
+  body .blog-section .blog-card .blog-date {
+    font-size: 0.85rem !important;
+    color: #888888 !important;
+    margin: 0 !important;
+    text-align: left !important;
   }
 }
