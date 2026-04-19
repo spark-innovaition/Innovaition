@@ -10475,6 +10475,7 @@ spline-viewer::part(logo) {
 /* ===== MOBILE CONTACT SECTION (matches reference layout) ==== */
 /* ============================================================= */
 @media (max-width: 768px) {
+
   /* Trim FAQ section's huge bottom padding so contact section starts higher */
   .faq-sec {
     padding-bottom: 60px !important;
@@ -10902,8 +10903,13 @@ spline-viewer::part(logo) {
   }
 
   @keyframes pillarsMarquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(calc(-50% - 8px)); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-50% - 8px));
+    }
   }
 }
 
@@ -11155,6 +11161,16 @@ spline-viewer::part(logo) {
     align-items: flex-start !important;
   }
 
+  /* ADDED: Dark gradient overlay to restore contrast against the bright background */
+  .services-hero-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
   .svc-content-wrapper {
     position: relative !important;
     display: flex !important;
@@ -11163,6 +11179,8 @@ spline-viewer::part(logo) {
     height: auto !important;
     align-items: flex-start !important;
     text-align: left !important;
+    z-index: 10 !important;
+    /* Ensure content sits above the new overlay */
   }
 
   .content-section {
@@ -11179,15 +11197,20 @@ spline-viewer::part(logo) {
     font-size: clamp(2.5rem, 10vw, 4rem) !important;
     margin-bottom: 12px !important;
     text-align: left !important;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%);
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* ADDED: Drop shadow for punchy contrast */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
   }
 
   .content-section .hero-subtitle p {
     font-size: 1.05rem !important;
     text-align: left !important;
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: #ffffff !important;
+    /* Brightened text */
+    /* ADDED: Text shadow for legibility */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
   }
 
   .svc-side-menu,
@@ -11206,6 +11229,7 @@ spline-viewer::part(logo) {
 }
 
 @media (max-width: 768px) {
+
   /* Hide every animated canvas + the homepage video on mobile.
      JS init is also gated to skip on viewports ≤768px. */
   .excellence-section .exc-video-bg,
