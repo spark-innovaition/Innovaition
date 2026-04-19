@@ -904,11 +904,6 @@ function initMobileCarouselPagination() {
       track: document.querySelector('#process-track'),
       itemSelector: '.process-card',
       insertAfter: document.querySelector('.process-slider-container')
-    },
-    {
-      track: document.querySelector('.bento-grid'),
-      itemSelector: ':scope > .bento-card, :scope > .bento-split-col',
-      insertAfter: document.querySelector('.bento-grid')
     }
   ];
 

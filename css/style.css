@@ -233,7 +233,7 @@ a {
 }
 
 .navbar .logo-img {
-  height: 76px;
+  height: 60px;
 }
 
 .navbar .logo-img[src*="white sections"] {
@@ -246,7 +246,7 @@ a {
 
 @media (max-width: 768px) {
   .navbar .logo-img {
-    height: 64px;
+    height: 50px;
   }
 
   .navbar .logo-img[src*="white sections"] {
@@ -1521,15 +1521,17 @@ a {
   display: flex;
   width: 100%;
   height: 600px;
-  gap: 16px;
+  gap: 20px;
+  /* Increased for breathing room */
   z-index: 5;
 }
 
 .accordion-item {
   flex: 1;
   background-color: var(--text-white);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  /* Slightly softer corners */
   padding: clamp(30px, 4vw, 50px);
   display: flex;
   flex-direction: column;
@@ -1538,14 +1540,28 @@ a {
   overflow: hidden;
   cursor: pointer;
   z-index: 1;
-  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+
+  /* NEW ANIMATION BASE */
+  transform: translateY(0) scale(1);
+  filter: grayscale(40%) brightness(0.9);
+  transition: flex 0.8s cubic-bezier(0.25, 1, 0.1, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.1, 1),
+    filter 0.8s ease,
+    box-shadow 0.8s ease;
+}
+
+/* Subtle lift when hovering over an inactive card */
+.accordion-item:hover:not(.active) {
+  filter: grayscale(10%) brightness(0.95);
+  transform: translateY(-5px);
 }
 
 .accordion-item .bg-image {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: scale(1);
+  transition: opacity 0.8s ease, transform 1.5s cubic-bezier(0.25, 1, 0.1, 1);
   z-index: -2;
   background-size: cover;
   background-position: center;
@@ -1591,7 +1607,7 @@ a {
   color: var(--text-dark);
   text-transform: uppercase;
   margin: 0;
-  transition: transform 0.6s ease, writing-mode 0.6s ease, color 0.4s ease;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.1, 1), writing-mode 0.8s ease, color 0.4s ease;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -1617,8 +1633,9 @@ a {
   margin-top: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+  transform: translateY(40px);
+  /* Starts further down to slide up */
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 1, 0.1, 1), visibility 0.6s ease;
 }
 
 .tab-content p {
@@ -1650,12 +1667,24 @@ a {
 
 /* --- Active State Styling (Phase 5) --- */
 .accordion-item.active {
-  flex: 3;
+  flex: 4;
+  /* Opens wider for more emphasis */
   border-color: transparent;
   cursor: default;
+
+  /* 3D Lift */
+  transform: translateY(-10px) scale(1.02);
+  filter: grayscale(0%) brightness(1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  z-index: 10;
 }
 
-.accordion-item.active .bg-image,
+/* Triggers the image zoom */
+.accordion-item.active .bg-image {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
 .accordion-item.active::after {
   opacity: 1;
 }
@@ -1677,7 +1706,8 @@ a {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  transition-delay: 0.2s;
+  transition-delay: 0.3s;
+  /* Waits for the card to expand before showing text */
 }
 
 /* --- Static CTA Card (Phase 5) --- */
@@ -2470,6 +2500,15 @@ a {
   justify-content: center;
   text-align: center;
   min-height: 380px;
+}
+
+.mid-top-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
 }
 
 .avatar-scatter {
@@ -8812,44 +8851,30 @@ a {
     display: none;
   }
 
-  /* Converts the grid into a horizontal swiping track */
+  /* Vertical stack — full-width cards, content-driven height */
   .bento-grid {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory;
+    flex-direction: column !important;
     gap: 16px !important;
-    padding: 0 20px 40px !important;
-    /* Side padding for the first and last card */
+    padding: 0 20px 0 !important;
     margin: 0 !important;
-    scrollbar-width: none;
-    /* Hides scrollbar in Firefox */
-    -ms-overflow-style: none;
-    /* Hides scrollbar in IE/Edge */
+    overflow: visible !important;
   }
 
-  .bento-grid::-webkit-scrollbar {
-    display: none;
-    /* Hides scrollbar in Chrome/Safari for a native app feel */
-  }
-
-  /* Each card takes ~80% of viewport so the next card peeks at the edge */
   .bento-card,
   .bento-split-col {
-    flex: 0 0 80% !important;
-    min-width: 80% !important;
-    scroll-snap-align: center;
-    min-height: 340px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
     padding: 28px !important;
     border-radius: 16px !important;
   }
 
-  /* The split column holds two smaller cards */
+  /* The split column holds two smaller cards side-by-side */
   .bento-split-col {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
     padding: 0 !important;
     background: transparent !important;
@@ -8857,7 +8882,7 @@ a {
 
   .bento-mini {
     flex: 1 !important;
-    min-height: 164px !important;
+    min-height: 0 !important;
     width: 100% !important;
     border-radius: 16px !important;
     padding: 24px !important;
@@ -8880,12 +8905,23 @@ a {
   }
 
   .bento-col-right-bot {
-    min-height: 340px !important;
+    min-height: 0 !important;
     justify-content: flex-start !important;
   }
 
   .bento-col-mid-top {
-    min-height: 340px !important;
+    min-height: 0 !important;
+  }
+
+  .bento-col-mid-top .mid-top-inner {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .bento-col-mid-top h3,
+  .bento-col-mid-top p {
+    width: 100% !important;
+    text-align: left !important;
   }
 
   /* ============================================================= */
@@ -8894,7 +8930,7 @@ a {
 
   .history-section {
     flex-direction: column !important;
-    padding-top: 60px !important;
+    padding-top: 20px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     overflow: hidden !important;
@@ -8904,19 +8940,36 @@ a {
     background-color: #ffffff !important;
   }
 
+  .history-section .history-divider-wrap,
+  .history-section .bento-divider-wrap {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
   .history-grid {
     display: flex !important;
-    /* Switch to flex prevents grid blowout */
     flex-direction: column !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin: 96px 0 0 0 !important;
     overflow: hidden !important;
-    background-color: #f4f4f0 !important;
-    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
-    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    background-color: transparent !important;
+    border: none !important;
     box-sizing: border-box !important;
+    gap: 24px !important;
+  }
+
+  .history-section .history-left-content {
+    background-color: #f4f4f0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 12px !important;
+  }
+
+  .history-section .timeline-container {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-color: #fff !important;
   }
 
   .history-left,
@@ -8930,7 +8983,7 @@ a {
   }
 
   .history-section .history-left-content {
-    padding: 40px 20px !important;
+    padding: 28px 20px 28px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -10469,8 +10522,14 @@ spline-viewer::part(logo) {
     min-height: 280px !important;
   }
 
+  .tl-card .tl-year {
+    display: none !important;
+  }
+
   .tl-card h3 {
-    font-size: 1.25rem !important;
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
   }
 
   .tl-card p {
@@ -11172,9 +11231,16 @@ spline-viewer::part(logo) {
       margin: 0;
       padding: 0 0 24px;
       border-top: none;
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
       width: 100%;
       position: relative;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .about-pillars-grid::-webkit-scrollbar {
+      display: none;
     }
 
     .pillars-marquee {
@@ -11184,12 +11250,7 @@ spline-viewer::part(logo) {
       gap: 16px;
       padding: 0 16px;
       width: max-content;
-      animation: pillarsMarquee 32s linear infinite;
-      will-change: transform;
-    }
-
-    .pillars-marquee.is-paused {
-      animation-play-state: paused;
+      will-change: scroll-position;
     }
 
     .pillar-card {
@@ -11223,16 +11284,6 @@ spline-viewer::part(logo) {
 
     .pillar-p {
       font-size: 0.9rem;
-    }
-
-    @keyframes pillarsMarquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(calc(-50% - 8px));
-      }
     }
   }
 
@@ -11787,7 +11838,7 @@ spline-viewer::part(logo) {
   /* 1. Bento / Bottleneck Section - Compact Side-by-Side Mobile Grid */
   .bento-section {
     padding-top: 80px !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 20px !important;
   }
 
   .bento-header {
@@ -11799,40 +11850,28 @@ spline-viewer::part(logo) {
     font-size: 0.95rem !important;
   }
 
-  /* Force the main grid into 2 columns on mobile so we can pair cards up */
+  /* Vertical stack on mobile — every card is full width */
   .bento-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 12px !important;
   }
 
-  /* 1st Card: Full width */
-  .bento-col-left {
-    grid-column: span 2 !important;
-    order: 1 !important;
-  }
-
-  /* 2nd Card: Half width (Left side) */
-  .bento-col-right-top {
-    grid-column: span 1 !important;
-    order: 2 !important;
-  }
-
-  /* 4th Card: Half width (Right side) - Snapped next to the 2nd card! */
+  .bento-col-left,
+  .bento-col-mid-top,
+  .bento-col-right-top,
   .bento-col-right-bot {
-    grid-column: span 1 !important;
-    order: 3 !important;
+    width: 100% !important;
+    order: unset !important;
   }
 
-  /* 3rd Container (Mini Cards): Pushed to bottom, internal 2-column grid */
+  /* Mini cards stay side-by-side inside their container */
   .bento-split-col {
-    grid-column: span 2 !important;
-    order: 4 !important;
+    width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
     padding: 0 !important;
-    /* Remove outer padding so internal cards align */
     background: transparent !important;
     border: none !important;
   }
@@ -12337,15 +12376,27 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     font-weight: 700 !important;
     margin: 0 !important;
     text-align: left !important;
-    color: #ffffff !important;
+    color: #0a0a0a !important;
     text-transform: uppercase !important;
+  }
+
+  body .blog-section.dark-theme .blog-card .blog-title {
+    color: #ffffff !important;
   }
 
   body .blog-section .blog-card .blog-date {
     font-size: 0.85rem !important;
-    color: #888888 !important;
+    color: #555555 !important;
     margin: 0 !important;
     text-align: left !important;
+  }
+
+  body .blog-section.dark-theme .blog-card .blog-date {
+    color: #888888 !important;
+  }
+
+  body .blog-section.light-theme .blog-card {
+    border-bottom-color: rgba(0, 0, 0, 0.12) !important;
   }
 }
 
@@ -12394,5 +12445,73 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
 @media (max-width: 768px) {
   .hero-text-wrapper {
     max-width: 100%;
+  }
+}
+
+/* <--- This bracket was missing! */
+
+/* ========================================================== */
+/* SIMPLE STATIC CARDS (DESKTOP ONLY) — no expand, just fade   */
+/* ========================================================== */
+
+@media (min-width: 769px) {
+  .services-accordion-section .accordion-wrapper {
+    height: auto !important;
+  }
+
+  .services-accordion-section .accordion-item,
+  .services-accordion-section .accordion-item.active {
+    flex: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transition: none !important;
+    cursor: default !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    min-height: 380px !important;
+    padding: 28px !important;
+  }
+
+  .services-accordion-section .accordion-item .tab-icon {
+    display: none !important;
+  }
+
+  .services-accordion-section .accordion-item .tab-content {
+    margin-top: auto !important;
+  }
+
+  .services-accordion-section .accordion-item .bg-image {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .services-accordion-section .accordion-item::after {
+    opacity: 1 !important;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0.2) 0%, rgba(13, 13, 13, 0.85) 100%) !important;
+    transition: none !important;
+  }
+
+  .services-accordion-section .accordion-item .tab-header h3 {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    color: #fff !important;
+    transition: none !important;
+  }
+
+  .services-accordion-section .accordion-item .tab-icon {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background-color: transparent !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .services-accordion-section .accordion-item .tab-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

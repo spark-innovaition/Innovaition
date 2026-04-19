@@ -1088,8 +1088,9 @@
   </script>
 
   <script>
-    // Mobile-only: Wrap pillar cards in a marquee track and clone for a
-    // seamless CSS-driven infinite loop. Touch pauses the animation briefly.
+    // Mobile-only: native-scroll marquee. Auto-scrolls in a loop, but the
+    // user can swipe at any time. Wrap-around is invisible because we keep
+    // 3 copies and snap scrollLeft back to the middle set when it drifts.
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.querySelector('.about-pillars-grid');
       if (!grid || window.innerWidth > 768) return;
@@ -1100,18 +1101,48 @@
       const track = document.createElement('div');
       track.className = 'pillars-marquee';
       originals.forEach(card => track.appendChild(card));
-      // Duplicate the set so the -50% keyframe wraps invisibly.
+      originals.forEach(card => track.appendChild(card.cloneNode(true)));
       originals.forEach(card => track.appendChild(card.cloneNode(true)));
       grid.appendChild(track);
       grid.dataset.marqueeReady = '1';
 
-      let resumeTimer;
-      const pause = () => {
-        track.classList.add('is-paused');
-        clearTimeout(resumeTimer);
-        resumeTimer = setTimeout(() => track.classList.remove('is-paused'), 2500);
-      };
-      track.addEventListener('touchstart', pause, { passive: true });
+      requestAnimationFrame(() => {
+        const setWidth = track.scrollWidth / 3;
+        grid.scrollLeft = setWidth;
+
+        let isPaused = false;
+        let resumeTimer;
+        const speed = 0.6;
+
+        const tick = () => {
+          if (!isPaused) {
+            grid.scrollLeft += speed;
+          }
+          if (grid.scrollLeft >= setWidth * 2) {
+            grid.scrollLeft -= setWidth;
+          } else if (grid.scrollLeft <= 0) {
+            grid.scrollLeft += setWidth;
+          }
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+
+        const pause = () => {
+          isPaused = true;
+          clearTimeout(resumeTimer);
+        };
+        const scheduleResume = () => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => { isPaused = false; }, 2000);
+        };
+
+        grid.addEventListener('touchstart', pause, { passive: true });
+        grid.addEventListener('touchend', scheduleResume, { passive: true });
+        grid.addEventListener('touchcancel', scheduleResume, { passive: true });
+        grid.addEventListener('pointerdown', pause);
+        grid.addEventListener('pointerup', scheduleResume);
+        grid.addEventListener('pointercancel', scheduleResume);
+      });
     });
   </script>
 </body>
