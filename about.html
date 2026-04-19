@@ -1085,56 +1085,72 @@
   </script>
 
   <script>
-    // Mobile-only: Swipeable Carousel with Auto-Play Loop (FASTER)
+    // Mobile-only: Pillar carousel with seamless infinite loop.
     document.addEventListener('DOMContentLoaded', () => {
       const pillarGrid = document.querySelector('.about-pillars-grid');
-      if (pillarGrid && window.innerWidth <= 768) {
-        let isInteracting = false;
-        let autoScrollTimer;
-        let resumeTimer;
-        let currentIndex = 0;
-        const cards = pillarGrid.querySelectorAll('.pillar-card');
+      if (!pillarGrid || window.innerWidth > 768) return;
 
-        const startAutoScroll = () => {
-          autoScrollTimer = setInterval(() => {
-            if (!isInteracting) {
-              currentIndex++;
+      const originals = Array.from(pillarGrid.querySelectorAll('.pillar-card'));
+      if (!originals.length) return;
 
-              // If we reach the end, rewind smoothly to the start
-              if (currentIndex >= cards.length) {
-                currentIndex = 0;
-                pillarGrid.scrollTo({ left: 0, behavior: 'smooth' });
-              } else {
-                // Scroll to the exact position of the next card
-                const targetCard = cards[currentIndex];
-                const scrollPos = targetCard.offsetLeft - 20; // 20px padding offset
-                pillarGrid.scrollTo({ left: scrollPos, behavior: 'smooth' });
-              }
-            }
-          }, 1500); // Swipes every 1.5 seconds for a much faster feel
-        };
+      // Clone the set once so we can loop seamlessly: when the scroll passes
+      // the original set, snap back by exactly that distance (invisible jump).
+      originals.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.dataset.clone = '1';
+        pillarGrid.appendChild(clone);
+      });
 
-        const stopAutoScroll = () => {
-          isInteracting = true;
-          clearInterval(autoScrollTimer);
-          clearTimeout(resumeTimer);
+      const stepDistance = () => {
+        const styles = getComputedStyle(pillarGrid);
+        const gap = parseFloat(styles.columnGap || styles.gap || '16') || 16;
+        return originals[0].offsetWidth + gap;
+      };
 
-          // Update the index so the auto-play knows where the user manually swiped to
-          const cardWidth = cards[0].offsetWidth;
-          currentIndex = Math.round(pillarGrid.scrollLeft / cardWidth);
+      const originalsWidth = () => stepDistance() * originals.length;
 
-          // Resume auto-play quickly (2.5 seconds) after the user stops touching it
-          resumeTimer = setTimeout(() => {
-            isInteracting = false;
-            startAutoScroll();
-          }, 2500);
-        };
+      let isInteracting = false;
+      let autoTimer;
+      let resumeTimer;
 
-        pillarGrid.addEventListener('touchstart', stopAutoScroll, { passive: true });
-        pillarGrid.addEventListener('scroll', stopAutoScroll, { passive: true });
+      const advance = () => {
+        if (isInteracting) return;
+        const next = pillarGrid.scrollLeft + stepDistance();
+        pillarGrid.scrollTo({ left: next, behavior: 'smooth' });
+      };
 
-        startAutoScroll();
-      }
+      // After any scroll settles, if we've crossed into the cloned set,
+      // jump back instantly by the original-set width — looks continuous.
+      let settleTimer;
+      const onScroll = () => {
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(() => {
+          const w = originalsWidth();
+          if (pillarGrid.scrollLeft >= w) {
+            pillarGrid.scrollTo({ left: pillarGrid.scrollLeft - w, behavior: 'instant' });
+          }
+        }, 120);
+      };
+
+      const startAuto = () => {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(advance, 2200);
+      };
+
+      const pauseAuto = () => {
+        isInteracting = true;
+        clearInterval(autoTimer);
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => {
+          isInteracting = false;
+          startAuto();
+        }, 2500);
+      };
+
+      pillarGrid.addEventListener('touchstart', pauseAuto, { passive: true });
+      pillarGrid.addEventListener('scroll', onScroll, { passive: true });
+
+      startAuto();
     });
   </script>
 </body>

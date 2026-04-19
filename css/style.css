@@ -10796,14 +10796,17 @@ spline-viewer::part(logo) {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    grid-template-columns: none;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
     gap: 16px;
-    padding: 0 20px 40px;
+    padding: 0 20px 24px;
     margin: 0;
     border-top: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .about-pillars-grid::-webkit-scrollbar {
@@ -10811,16 +10814,37 @@ spline-viewer::part(logo) {
   }
 
   .pillar-card {
-    flex: 0 0 85vw;
+    flex: 0 0 82vw;
+    width: 82vw;
+    height: 480px;
     scroll-snap-align: center;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     background: #111;
     overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   .pillar-img {
     height: 220px;
+    flex-shrink: 0;
+  }
+
+  .pillar-content {
+    flex: 1;
+    overflow: hidden;
+    padding: 22px 20px;
+  }
+
+  .pillar-content .vision-list li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+
+  .pillar-p {
+    font-size: 0.9rem;
   }
 }
 
