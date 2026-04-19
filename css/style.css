@@ -226,7 +226,7 @@ a {
 }
 
 .navbar .logo-img {
-  height: 60px;
+  height: 76px;
 }
 
 .founder-logo-overlay .logo-img {
@@ -235,7 +235,7 @@ a {
 
 @media (max-width: 768px) {
   .navbar .logo-img {
-    height: 52px;
+    height: 64px;
   }
 }
 
