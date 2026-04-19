@@ -11346,8 +11346,8 @@ spline-viewer::part(logo) {
 
   .services-hero-sec {
     height: auto !important;
-    min-height: 100vh;
-    padding: 140px 20px 80px !important;
+    min-height: auto !important;
+    padding: 110px 20px 60px !important;
     align-items: flex-start !important;
   }
 
@@ -11365,7 +11365,7 @@ spline-viewer::part(logo) {
     position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 50px !important;
+    gap: 28px !important;
     height: auto !important;
     align-items: flex-start !important;
     text-align: left !important;
@@ -11384,8 +11384,8 @@ spline-viewer::part(logo) {
   }
 
   .content-section .hero-title {
-    font-size: clamp(2.5rem, 10vw, 4rem) !important;
-    margin-bottom: 12px !important;
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    margin-bottom: 6px !important;
     text-align: left !important;
     background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
     -webkit-background-clip: text;
@@ -11395,7 +11395,7 @@ spline-viewer::part(logo) {
   }
 
   .content-section .hero-subtitle p {
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
     text-align: left !important;
     color: #ffffff !important;
     /* Brightened text */
