@@ -4709,7 +4709,6 @@ a {
   color: #000;
   transform: rotate(0);
 }
-}
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .footer-framed-box .footer-top {
@@ -5100,10 +5099,12 @@ a {
 .massive-statement .statement-container {
   margin: 0 var(--grid-edge);
   padding: 0 40px;
-  /* Added internal gap from the vertical grid lines */
   display: flex;
+  flex-direction: column;
+  /* FIX: Forces the items to stack vertically */
+  align-items: flex-start;
+  /* FIX: Keeps the badge aligned to the left */
   margin-bottom: 80px;
-  /* Gap before bento grid */
 }
 
 .massive-statement .small-heading {
@@ -12164,67 +12165,68 @@ spline-viewer::part(logo) {
 /* ===== BLOG PAGE MOBILE FIX (MATCHES REFERENCE EXACTLY)  ===== */
 /* ============================================================= */
 
-body .blog-main-grid {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0 !important;
-  min-height: auto !important;
-}
+@media (max-width: 768px) {
+  body .blog-main-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    min-height: auto !important;
+  }
 
-body .blog-main-grid .b-card {
-  display: flex !important;
-  flex-direction: column !important;
-  border-right: none !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
-  padding: 30px 20px !important;
-  height: auto !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
+  body .blog-main-grid .b-card {
+    display: flex !important;
+    flex-direction: column !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+    padding: 30px 20px !important;
+    height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-/* 1. Force Image Visibility & Sizing */
-body .blog-main-grid .b-card .b-img-wrap {
-  display: block !important;
-  width: 100% !important;
-  height: 220px !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  margin-bottom: 16px !important;
-  position: relative !important;
-}
+  /* 1. Force Image Visibility & Sizing */
+  body .blog-main-grid .b-card .b-img-wrap {
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-bottom: 16px !important;
+    position: relative !important;
+  }
 
-body .blog-main-grid .b-card .b-img-wrap img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-}
+  body .blog-main-grid .b-card .b-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
 
-/* 2. Force Stacked Meta Text (Title on top, Date on bottom) */
-body .blog-main-grid .b-card .b-meta {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-  gap: 8px !important;
-  width: 100% !important;
-}
+  /* 2. Force Stacked Meta Text (Title on top, Date on bottom) */
+  body .blog-main-grid .b-card .b-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
 
-body .blog-main-grid .b-card .b-title {
-  font-size: 1.15rem !important;
-  line-height: 1.3 !important;
-  font-weight: 700 !important;
-  margin: 0 !important;
-  text-align: left !important;
-  color: #000 !important;
-  /* Ensures dark text on light background */
-}
+  body .blog-main-grid .b-card .b-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    color: #000 !important;
+  }
 
-body .blog-main-grid .b-card .b-date {
-  font-size: 0.85rem !important;
-  color: #666 !important;
-  margin: 0 !important;
-  text-align: left !important;
+  body .blog-main-grid .b-card .b-date {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -12513,5 +12515,203 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     visibility: visible !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+
+/* ========================================================== */
+/* FIX: ABOUT PILLARS GRID DESKTOP LAYOUT OVERRIDE            */
+/* ========================================================== */
+
+.about-pillars-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  margin: 0 var(--grid-edge) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  width: auto !important;
+}
+
+.pillar-card {
+  display: flex !important;
+  flex-direction: column !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+  height: 100% !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.pillar-card:last-child {
+  border-right: none !important;
+}
+
+.pillar-img {
+  height: 280px !important;
+  width: 100% !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  flex-shrink: 0 !important;
+}
+
+.pillar-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  filter: grayscale(30%) !important;
+}
+
+.pillar-content {
+  padding: 30px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.pillar-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.5rem, 2vw, 30px) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+}
+
+.pillar-p {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #aaa !important;
+  margin: 0 !important;
+}
+
+/* Restoring the internal layouts */
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.action-bottom {
+  margin-top: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+.goal-stats h3 {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.5rem, 3.5vw, 50px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.goal-stats .stat-label {
+  font-size: 0.85rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-top: 10px !important;
+  color: #aaa !important;
+}
+
+.vision-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vision-list li {
+  padding: 12px 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #fff !important;
+}
+
+.vision-list li i {
+  font-size: 0.65rem !important;
+  color: #fff !important;
+}
+
+/* ========================================= */
+/* TABLET RECOVERY                           */
+/* ========================================= */
+@media (max-width: 1024px) {
+  .about-pillars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .pillar-card:nth-child(even) {
+    border-right: none !important;
+  }
+
+  .pillar-card:nth-child(1),
+  .pillar-card:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+/* ========================================= */
+/* MOBILE RECOVERY                           */
+/* ========================================= */
+@media (max-width: 768px) {
+  .about-pillars-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    margin: 0 !important;
+    padding: 0 0 24px !important;
+    border-top: none !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .pillars-marquee {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+    width: max-content !important;
+  }
+
+  .pillar-card {
+    flex: 0 0 82vw !important;
+    width: 82vw !important;
+    height: 500px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    background: #111 !important;
+    overflow: hidden !important;
+  }
+
+  .pillar-img {
+    height: 220px !important;
+    border-bottom: none !important;
+  }
+
+  .pillar-content {
+    padding: 22px 22px 28px !important;
+  }
+}
+
+/* ========================================================== */
+/* FIX: FOOTER LOGO ALIGNMENT                                 */
+/* ========================================================== */
+.footer-framed-box .brand-col .fm-footer-logo {
+  object-position: left center !important;
+  /* Forces the image content to the left edge */
+  margin-left: -5px !important;
+  /* Tiny nudge to counter any built-in image padding */
+}
+
+/* ========================================================== */
+/* FIX: BIGGER DESKTOP MENU LOGO                              */
+/* ========================================================== */
+@media (min-width: 769px) {
+  .navbar .logo-img {
+    height: 120px !important;
+    /* Increase or decrease this number to dial in the perfect size */
+    max-width: none !important;
   }
 }
