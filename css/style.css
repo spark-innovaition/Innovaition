@@ -6748,16 +6748,16 @@ a {
   z-index: 0;
 }
 
-/* FIX: Moves title higher and adds a dark "shade" overlay for mobile readability */
+/* FIX: Prevents overlap and adjusts dark "shade" overlay for mobile readability */
 @media (max-width: 768px) {
-  .cta-globe-sec {
-    padding-top: 60px !important;
-    /* FIX: Pulls the "Initiate Deployment" title significantly higher */
+  section.cta-globe-sec {
+    padding-top: 130px !important;
+    /* FIX: Pushes content down so it doesn't overlap the "Initiate Deployment" badge */
   }
 
   .cta-globe-sec::after {
-    background: rgba(0, 0, 0, 0.8) !important;
-    /* FIX: Deepens the background "shade" for contrast */
+    background: rgba(0, 0, 0, 0.45) !important;
+    /* FIX: Lightens the background "shade" for better visibility */
     z-index: 1 !important;
   }
 
