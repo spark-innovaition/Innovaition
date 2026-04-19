@@ -12715,3 +12715,38 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     max-width: none !important;
   }
 }
+
+/* ========================================================== */
+/* FIX: ABOUT TOOLKIT GENERIC NAMES & SUBTEXT                 */
+/* ========================================================== */
+.cap-content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.cap-logo {
+  margin-bottom: 0 !important;
+}
+
+.cap-subtext {
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 0.85rem !important;
+  color: #666 !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  line-height: 1.4 !important;
+  margin-top: 10px !important;
+  max-width: 85% !important;
+}
+
+@media (max-width: 768px) {
+  .cap-subtext {
+    font-size: 0.75rem !important;
+    margin-top: 6px !important;
+    max-width: 95% !important;
+  }
+}
