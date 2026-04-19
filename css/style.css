@@ -11549,4 +11549,98 @@ spline-viewer::part(logo) {
   .services-page .capabilities-sec .cap-item:nth-child(10) .cap-logo {
     font-size: 1.1rem !important;
   }
+
+  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+}
+
+/* Closes the mobile media query so this next part applies to desktop */
+
+/* --- INDUSTRIES PAGE: Global Header (Visible on Desktop & Mobile) --- */
+.industries-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.industries-header .section-title {
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.pricing-desc {
+  font-size: 1.05rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+  /* --- INDUSTRIES PAGE: Compact Pricing Grid --- */
+  .industries-header {
+    margin-top: 60px !important;
+    margin-bottom: -10px !important;
+  }
+
+  .industries-header .section-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .pricing-desc {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+
+  .industries-grid-wrapper {
+    margin-top: 40px !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+
+  .industries-grid-wrapper .p-card {
+    padding: 32px 24px !important;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .industries-grid-wrapper .p-plan-name {
+    font-size: 1.3rem !important;
+  }
+
+  .industries-grid-wrapper .p-plan-desc {
+    margin-bottom: 24px !important;
+    min-height: auto !important;
+    font-size: 0.9rem !important;
+  }
+
+  .industries-grid-wrapper .included-title {
+    margin-bottom: 16px !important;
+  }
+
+  .industries-grid-wrapper .p-features {
+    margin-bottom: 24px !important;
+  }
+
+  .industries-grid-wrapper .p-features li {
+    font-size: 0.9rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .industries-grid-wrapper .p-card-bot {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .industries-grid-wrapper .btn-custom-quote {
+    margin-bottom: 0 !important;
+  }
 }
