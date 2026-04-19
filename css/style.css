@@ -12375,3 +12375,24 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     margin-top: -5px !important;
   }
 }
+
+/* Reduce the main hero font size so it fits better */
+.hero-title {
+  font-size: clamp(2.5rem, 5.5vw, 85px) !important;
+  line-height: 1;
+}
+
+/* Force the text wrapper to stay on the left side and not overlap the 3D canvas */
+.hero-text-wrapper {
+  max-width: 55%;
+  /* Prevents text from stretching into the robot's area */
+  position: relative;
+  z-index: 10;
+}
+
+/* On mobile, allow it to take up more space since the layout stacks */
+@media (max-width: 768px) {
+  .hero-text-wrapper {
+    max-width: 100%;
+  }
+}
