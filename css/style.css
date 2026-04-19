@@ -10660,9 +10660,13 @@ spline-viewer::part(logo) {
      the line flush against each vertical bar so they read as one mark. */
   .horizontal-divider.divider-flex .badge {
     padding: 0 10px !important;
+    margin-left: 0 !important;
+    /* FIX: Removes the stubborn gap between the left line and the badge */
   }
 
   .horizontal-divider.divider-flex .line-seg:first-child {
+    width: 20px !important;
+    /* FIX: Shortens the line so the badge aligns perfectly with the 20px padding of the text below */
     margin-right: -2px;
   }
 
@@ -11069,6 +11073,21 @@ spline-viewer::part(logo) {
 @media (max-width: 768px) {
 
   /* --- FAQ Section Mobile Fixes --- */
+  .faq-title {
+    font-size: clamp(2.2rem, 9vw, 3rem) !important;
+    line-height: 0.95 !important;
+    margin-bottom: 30px !important;
+    padding-left: 0 !important;
+    /* FIX: Removed left padding so it centers perfectly */
+    text-align: center !important;
+    /* FIX: Centers the title */
+  }
+
+  .faq-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
   .faq-split-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -11091,8 +11110,12 @@ spline-viewer::part(logo) {
   }
 
   .faq-question-item {
-    padding: 20px !important;
-    font-size: 0.95rem !important;
+    padding: 16px 20px !important;
+    /* Reduced vertical padding for a more compact card */
+    font-size: 0.85rem !important;
+    /* Reduced font size to help text fit onto two lines */
+    line-height: 1.25 !important;
+    /* Tightened line-height to fix the vertical gap between wrapped lines */
   }
 
   /* Active State matches reference (Black BG, White Text) */
