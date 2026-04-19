@@ -9782,9 +9782,8 @@ a {
   /* Since it's after a <br>, block is fine */
   height: 1.1em;
   /* Match the line-height of the h2 */
+  overflow: hidden;
   margin-top: 10px;
-  /* FIX: Changed to visible. 'hidden' was slicing the heavy text-shadows into a sharp grey box */
-  overflow: visible;
 }
 
 .rot-text {
@@ -9794,6 +9793,49 @@ a {
   white-space: nowrap;
   width: 100%;
   display: block;
+}
+
+/* Mobile-only fixes for rotating text */
+@media (max-width: 768px) {
+  .rotating-wrapper {
+    /* Keep overflow hidden so animated words don't overlap the text above */
+    overflow: hidden;
+    height: 1.25em;
+    /* Slightly taller so the bottom of letters don't clip */
+  }
+
+  .rot-text {
+    /* Scale down text dynamically so long phrases like 'SMART WORKFLOWS' fit horizontally */
+    font-size: clamp(1.5rem, 8vw, 2.2rem) !important;
+    /* Replace the massive glowing shadow with a tight drop-shadow to eliminate the sharp grey box */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+/* Mobile-only fixes for horizontal cutoff and shadow clipping */
+@media (max-width: 768px) {
+  .rotating-wrapper {
+    /* Slightly taller wrapper gives the heavy mobile drop-shadow room to fade out naturally, preventing the sharp grey box */
+    height: 1.4em;
+  }
+
+  .rot-text {
+    /* Dynamically scales text down on smaller screens so long phrases like 'SMART WORKFLOWS' fit without getting cut off */
+    font-size: clamp(1.5rem, 8.5vw, 2.4rem) !important;
+  }
+}
+
+/* Mobile-only fixes for horizontal cutoff and shadow clipping */
+@media (max-width: 768px) {
+  .rotating-wrapper {
+    /* Slightly taller wrapper gives the heavy mobile drop-shadow room to fade out naturally, preventing the sharp grey box */
+    height: 1.4em;
+  }
+
+  .rot-text {
+    /* Dynamically scales text down on smaller screens so long phrases like 'SMART WORKFLOWS' fit without getting cut off */
+    font-size: clamp(1.5rem, 8.5vw, 2.4rem) !important;
+  }
 }
 
 /* ==================================================== */
