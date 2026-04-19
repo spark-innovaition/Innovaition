@@ -1938,7 +1938,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContainer = document.createElement('div');
     tabContainer.className = 'mobile-tab-container';
 
-    const tabNames = ['Essential', 'Growth', 'Autonomous'];
+    const tabNames = Array.from(cards).map((card, i) => {
+      const override = card.dataset.tabLabel;
+      if (override) return override;
+      const name = card.querySelector('.p-plan-name');
+      if (name) return name.textContent.trim().split(/\s+/)[0];
+      return ['Essential', 'Growth', 'Autonomous'][i] || `Tab ${i + 1}`;
+    });
     const tabs = [];
 
     tabNames.forEach((name, index) => {
