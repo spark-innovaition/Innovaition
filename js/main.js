@@ -989,7 +989,7 @@ if (document.readyState === 'loading') {
   const heroCanvasEl = document.getElementById('hero-canvas');
   const heroPinWrapper = document.getElementById('services-pin-wrapper');
 
-  if (heroCanvasEl && heroPinWrapper && typeof THREE !== 'undefined') {
+  if (heroCanvasEl && heroPinWrapper && typeof THREE !== 'undefined' && window.innerWidth > 768) {
     const heroScene = new THREE.Scene();
     heroScene.fog = new THREE.FogExp2(0x0a0a1a, 0.0008);
 
@@ -1137,7 +1137,7 @@ if (document.readyState === 'loading') {
 {
   const globeCanvas = document.getElementById('d3-globe-canvas');
 
-  if (globeCanvas && typeof d3 !== 'undefined') {
+  if (globeCanvas && typeof d3 !== 'undefined' && window.innerWidth > 768) {
     const context = globeCanvas.getContext("2d");
     const container = globeCanvas.parentElement;
 
@@ -1355,7 +1355,7 @@ if (document.readyState === 'loading') {
 // 3. CTA GLOBE WIREFRAME
 {
   const ctaGlobeCanvas = document.getElementById('cta-globe-canvas');
-  if (ctaGlobeCanvas && typeof THREE !== 'undefined') {
+  if (ctaGlobeCanvas && typeof THREE !== 'undefined' && window.innerWidth > 768) {
 
     const ctaScene = new THREE.Scene();
 
@@ -1432,7 +1432,7 @@ if (document.readyState === 'loading') {
 {
   const ctaLiquidCanvas = document.getElementById('cta-liquid-canvas');
 
-  if (ctaLiquidCanvas && typeof THREE !== 'undefined') {
+  if (ctaLiquidCanvas && typeof THREE !== 'undefined' && window.innerWidth > 768) {
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ canvas: ctaLiquidCanvas, alpha: true, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -1532,7 +1532,7 @@ if (document.readyState === 'loading') {
 {
   const energyCanvas = document.getElementById('paper-shader-canvas');
 
-  if (energyCanvas && typeof THREE !== 'undefined') {
+  if (energyCanvas && typeof THREE !== 'undefined' && window.innerWidth > 768) {
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     const renderer = new THREE.WebGLRenderer({ canvas: energyCanvas, antialias: true, alpha: true });
