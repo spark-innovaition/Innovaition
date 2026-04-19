@@ -10475,21 +10475,47 @@ spline-viewer::part(logo) {
 /* ===== MOBILE CONTACT SECTION (matches reference layout) ==== */
 /* ============================================================= */
 @media (max-width: 768px) {
+  /* Trim FAQ section's huge bottom padding so contact section starts higher */
+  .faq-sec {
+    padding-bottom: 60px !important;
+  }
+
   .contact-section {
     padding: 60px 20px !important;
     align-items: flex-start !important;
+  }
+
+  /* Darken the bright background image so white text stays readable */
+  .about-page .contact-section .canvas-mobile-bg {
+    filter: brightness(0.55) saturate(0.9) !important;
+  }
+
+  /* Subtle dark gradient on top for extra contrast behind the headline + form */
+  .contact-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.25) 40%,
+        rgba(0, 0, 0, 0.55) 100%);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
     padding-top: 80px;
+    position: relative;
+    z-index: 5;
   }
 
   .contact-title {
     font-size: 2.4rem !important;
     line-height: 1.05 !important;
     margin-bottom: 32px !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 0, 0, 0.6);
   }
 
   .contact-connect {
@@ -10499,6 +10525,7 @@ spline-viewer::part(logo) {
   .connect-label {
     font-size: 0.7rem !important;
     margin-bottom: 18px !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
   }
 
   .connect-list {
@@ -10508,6 +10535,7 @@ spline-viewer::part(logo) {
   .connect-list li {
     font-size: 1rem !important;
     gap: 14px !important;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
   }
 
   .connect-list li i {
