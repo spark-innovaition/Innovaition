@@ -12987,3 +12987,84 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     color: #22c55e !important;
   }
 }
+
+/* ========================================================== */
+/* ===== LAPTOP ONLY: UNIFIED LOGO SIZING (1025-1920px) ===== */
+/* ========================================================== */
+@media (min-width: 1025px) and (max-width: 1920px) {
+
+  /* Forces the white section logo to match the standard 70px height */
+  .navbar .logo-img[src*="white sections"] {
+    height: 70px !important;
+  }
+
+  /* Ensures the standard logo is also exactly 70px */
+  .navbar .logo-img {
+    height: 70px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* ============================================================== */
+/* ===== FINAL FIX: MOBILE WHO WE ARE CARDS (ABOUT PAGE)    ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+  .about-pillars-grid {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    /* Allows natural thumb swiping */
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    /* Smooth iOS scrolling */
+    scrollbar-width: none !important;
+    padding: 0 0 40px 0 !important;
+    margin: 0 !important;
+    border-top: none !important;
+  }
+
+  .about-pillars-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .pillars-marquee {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 16px !important;
+    padding: 0 20px !important;
+  }
+
+  .about-pillars-grid .pillar-card {
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    min-width: 85vw !important;
+    max-width: 85vw !important;
+    height: auto !important;
+    min-height: 480px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    background: #111 !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    /* BRUTE FORCE VISIBILITY: Stops GSAP from keeping cloned cards hidden forever */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* Ensures internal images and padding stay intact */
+  .about-pillars-grid .pillar-img {
+    height: 220px !important;
+    flex-shrink: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .about-pillars-grid .pillar-content {
+    flex: 1 !important;
+    padding: 24px !important;
+  }
+}
