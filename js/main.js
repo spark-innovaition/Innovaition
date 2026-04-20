@@ -44,12 +44,16 @@ if (menuBtn && menuOverlay) {
 
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      // FIX: Lock BOTH the HTML and Body elements to stop mobile scrolling
+      document.documentElement.classList.add('menu-locked');
+      document.body.classList.add('menu-locked');
       setMenuBtnState(true);
       menuTl.timeScale(1).play();
     } else {
       menuOverlay.classList.remove('active');
-      document.body.style.overflow = '';
+      // FIX: Unlock BOTH the HTML and Body elements
+      document.documentElement.classList.remove('menu-locked');
+      document.body.classList.remove('menu-locked');
       setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     }
@@ -59,7 +63,9 @@ if (menuBtn && menuOverlay) {
     link.addEventListener('click', () => {
       isMenuOpen = false;
       menuOverlay.classList.remove('active');
-      document.body.style.overflow = '';
+      // FIX: Unlock BOTH the HTML and Body elements when a link is clicked
+      document.documentElement.classList.remove('menu-locked');
+      document.body.classList.remove('menu-locked');
       setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     });

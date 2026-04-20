@@ -13144,3 +13144,19 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     overflow: hidden !important;
   }
 }
+
+/* ============================================================== */
+/* ===== FINAL FIX: MOBILE MENU BACKGROUND SCROLL LOCK      ===== */
+/* ============================================================== */
+html.menu-locked,
+body.menu-locked {
+  overflow: hidden !important;
+  height: 100% !important;
+  overscroll-behavior: none !important;
+  /* Stops the screen from rubber-band bouncing */
+}
+
+.menu-overlay {
+  overscroll-behavior: contain !important;
+  /* Traps all scrolling securely inside the menu */
+}
