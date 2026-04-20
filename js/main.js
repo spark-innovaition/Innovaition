@@ -647,13 +647,15 @@ if (tlTrack && tlPrev && tlNext) {
   const tlCards = tlTrack.querySelectorAll('.tl-card');
 
   function updateTlCarousel() {
-    const cardsPerView = 2; // Locked to 2 cards per view to match CSS styling
+    const isMobile = window.innerWidth <= 768;
+    const cardsPerView = isMobile ? 1 : 2;
     const maxIndex = tlCards.length - cardsPerView;
 
     tlIndex = Math.max(0, Math.min(tlIndex, maxIndex));
 
-    const cardPercentage = 100 / cardsPerView;
-    tlTrack.style.transform = `translateX(-${tlIndex * cardPercentage}%)`;
+    // FIX: Uses exact pixel width and 'important' to smash through any stubborn CSS locks
+    const cardWidth = tlCards[0].offsetWidth;
+    tlTrack.style.setProperty('transform', `translateX(-${tlIndex * cardWidth}px)`, 'important');
 
     tlPrev.style.opacity = tlIndex === 0 ? '0.5' : '1';
     tlPrev.style.cursor = tlIndex === 0 ? 'not-allowed' : 'pointer';
@@ -663,7 +665,8 @@ if (tlTrack && tlPrev && tlNext) {
   }
 
   tlNext.addEventListener('click', () => {
-    const cardsPerView = 2; // Locked to 2
+    const isMobile = window.innerWidth <= 768;
+    const cardsPerView = isMobile ? 1 : 2;
     if (tlIndex < tlCards.length - cardsPerView) {
       tlIndex++;
       updateTlCarousel();
@@ -677,8 +680,13 @@ if (tlTrack && tlPrev && tlNext) {
     }
   });
 
-  window.addEventListener('resize', updateTlCarousel);
-  updateTlCarousel();
+  window.addEventListener('resize', () => {
+    tlIndex = 0;
+    updateTlCarousel();
+  });
+
+  // Initial call with a slight delay to ensure the browser has painted the exact pixel widths
+  setTimeout(updateTlCarousel, 100);
 }
 
 // ===== PRICING CARDS REVEAL =====
