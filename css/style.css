@@ -13479,3 +13479,16 @@ body.menu-locked {
     /* Optional: nudges it down slightly if the larger size makes it look too high */
   }
 }
+
+/* ============================================================== */
+/* ===== FINAL FIX: MOBILE FOOTER LOGO SIZING               ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+  .footer-section .fm-frame .fm-footer-logo {
+    height: 45px !important;
+    /* Decreased from 76px. Change this number to dial in the perfect size! */
+    width: auto !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+}
