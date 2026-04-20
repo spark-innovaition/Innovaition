@@ -1961,6 +1961,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const tabs = [];
 
+    const showCard = (index) => {
+      cards.forEach((c, i) => {
+        const active = i === index;
+        c.style.display = active ? 'flex' : 'none';
+        if (active) {
+          c.style.transform = 'none';
+          c.style.opacity = '1';
+          c.style.marginTop = '0';
+        }
+      });
+    };
+
     tabNames.forEach((name, index) => {
       const tab = document.createElement('button');
       tab.className = 'mobile-tab-btn' + (index === 1 ? ' active' : '');
@@ -1968,19 +1980,17 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        cards.forEach((c, i) => {
-          c.style.display = i === index ? 'flex' : 'none';
-        });
+        showCard(index);
       });
       tabs.push(tab);
       tabContainer.appendChild(tab);
     });
 
     grid.parentNode.insertBefore(tabContainer, grid);
+    grid.style.display = 'block';
+    grid.style.padding = '0 20px';
 
-    cards.forEach((c, i) => {
-      c.style.display = i === 1 ? 'flex' : 'none';
-    });
+    showCard(1);
   });
 
   // 2. Compare Table Tabs

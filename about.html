@@ -130,8 +130,10 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#contact" class="btn-main rounded-btn">See How We Work</a>
-        <a href="#statement-sec" class="btn-icon rounded-btn"><i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#contact" class="cta-pill">
+          <span class="cta-pill-text">See How We Work</span>
+          <span class="cta-pill-icon"><i class="fa-solid fa-arrow-up-right"></i></span>
+        </a>
       </div>
     </div>
   </section>
@@ -1168,21 +1170,40 @@
         };
         requestAnimationFrame(tick);
 
-        const pause = () => {
-          isPaused = true;
-          clearTimeout(resumeTimer);
-        };
         const scheduleResume = () => {
           clearTimeout(resumeTimer);
           resumeTimer = setTimeout(() => { isPaused = false; }, 2000);
         };
 
-        grid.addEventListener('touchstart', pause, { passive: true });
-        grid.addEventListener('touchend', scheduleResume, { passive: true });
-        grid.addEventListener('touchcancel', scheduleResume, { passive: true });
-        grid.addEventListener('pointerdown', pause);
-        grid.addEventListener('pointerup', scheduleResume);
-        grid.addEventListener('pointercancel', scheduleResume);
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let pausedThisTouch = false;
+
+        grid.addEventListener('touchstart', (e) => {
+          const t = e.touches[0];
+          touchStartX = t.clientX;
+          touchStartY = t.clientY;
+          pausedThisTouch = false;
+        }, { passive: true });
+
+        grid.addEventListener('touchmove', (e) => {
+          if (pausedThisTouch) return;
+          const t = e.touches[0];
+          const dx = Math.abs(t.clientX - touchStartX);
+          const dy = Math.abs(t.clientY - touchStartY);
+          if (dx > 8 && dx > dy) {
+            isPaused = true;
+            pausedThisTouch = true;
+            clearTimeout(resumeTimer);
+          }
+        }, { passive: true });
+
+        grid.addEventListener('touchend', () => {
+          if (pausedThisTouch) scheduleResume();
+        }, { passive: true });
+        grid.addEventListener('touchcancel', () => {
+          if (pausedThisTouch) scheduleResume();
+        }, { passive: true });
       });
     });
   </script>

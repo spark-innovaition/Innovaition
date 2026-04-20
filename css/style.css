@@ -13111,37 +13111,52 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
 
   /* 3. Formats the cards to be swipe-friendly and visible */
   .about-pillars-grid .pillar-card {
-    flex: 0 0 85vw !important;
-    /* Sets card width to 85% so the next card "peeks" in */
-    width: 85vw !important;
-    min-width: 85vw !important;
-    max-width: 85vw !important;
+    flex: 0 0 78vw !important;
+    width: 78vw !important;
+    min-width: 78vw !important;
+    max-width: 78vw !important;
     scroll-snap-align: center !important;
-    /* Snaps the card perfectly to the center when swiped */
     height: auto !important;
-    min-height: 480px !important;
+    min-height: 0 !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 16px !important;
     background: #111 !important;
     display: flex !important;
     flex-direction: column !important;
-
-    /* Force visibility to bypass GSAP/cloning issues shown in your screenshot */
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
   }
 
   .about-pillars-grid .pillar-img {
-    height: 220px !important;
+    height: 160px !important;
     flex-shrink: 0 !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
 
   .about-pillars-grid .pillar-content {
     flex: 1 !important;
-    padding: 24px !important;
+    padding: 18px 20px 22px !important;
     overflow: hidden !important;
+  }
+
+  .about-pillars-grid .pillar-content .small-heading {
+    margin-bottom: 10px !important;
+  }
+
+  .about-pillars-grid .pillar-content .pillar-p {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-top: 8px !important;
+  }
+
+  .about-pillars-grid .pillar-content .vision-list {
+    margin-top: 8px !important;
+  }
+
+  .about-pillars-grid .pillar-content .vision-list li {
+    font-size: 0.85rem !important;
+    padding: 4px 0 !important;
   }
 }
 
@@ -13258,4 +13273,101 @@ body.menu-locked {
     transform: none !important;
     /* Stops the arrow from moving off-center */
   }
+
+/* ============================================================== */
+/* ===== CTA PILL — animated text + sliding icon              ===== */
+/* ============================================================== */
+.cta-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 9999px;
+  height: 56px;
+  padding: 4px 64px 4px 28px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
+  border: 1px solid transparent;
+  background: #ffffff;
+  color: #0a0a0a;
+  transition: padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-pill:hover {
+  padding: 4px 28px 4px 64px;
+}
+
+.cta-pill .cta-pill-text {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.cta-pill .cta-pill-icon {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  color: #ffffff;
+  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-pill:hover .cta-pill-icon {
+  right: calc(100% - 52px);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.cta-pill .cta-pill-icon i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Dark-section variant: black pill, white circle, black icon */
+.dark-theme .cta-pill,
+.cta-pill.cta-pill-dark {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .cta-pill .cta-pill-icon,
+.cta-pill.cta-pill-dark .cta-pill-icon {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+@media (max-width: 768px) {
+  .cta-pill {
+    height: 52px;
+    font-size: 0.9rem;
+    padding: 4px 56px 4px 22px;
+  }
+
+  .cta-pill:hover {
+    padding: 4px 22px 4px 56px;
+  }
+
+  .cta-pill .cta-pill-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cta-pill:hover .cta-pill-icon {
+    right: calc(100% - 48px);
+  }
+}
 }
