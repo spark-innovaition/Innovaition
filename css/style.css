@@ -13380,15 +13380,13 @@ body.menu-locked {
   height: 12px;
 }
 
-/* Dark-section variant: black pill, white circle, black icon */
-.dark-theme .cta-pill,
+/* Dark-section variant: black pill, white circle, black icon (opt-in only) */
 .cta-pill.cta-pill-dark {
   background: #0a0a0a;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.dark-theme .cta-pill .cta-pill-icon,
 .cta-pill.cta-pill-dark .cta-pill-icon {
   background: #ffffff;
   color: #0a0a0a;
