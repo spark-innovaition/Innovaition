@@ -13160,3 +13160,102 @@ body.menu-locked {
   overscroll-behavior: contain !important;
   /* Traps all scrolling securely inside the menu */
 }
+
+/* ============================================================== */
+/* ===== FINAL FIX: MOBILE HERO SPACING & FONT SIZE         ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+
+  /* Shrinks the massive text so it stays away from the screen edges */
+  .hero-title {
+    font-size: clamp(2.5rem, 11vw, 4rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Scales the lock icon down to match the new text size */
+  .hero-lock-icon {
+    font-size: clamp(2rem, 9vw, 3.5rem) !important;
+    margin: 0 0 0 12px !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Pushes the "A LEAD" row down slightly for better vertical breathing room */
+  .hero-text-wrapper>.hero-title-row:nth-child(3) {
+    margin-top: 8px !important;
+  }
+}
+
+/* ============================================================== */
+/* ===== NUKE-LEVEL FIX: FOOTER CTA BUTTONS (ALL PAGES)     ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Force the parent wrappers to allow full width */
+  body .footer-section .book-call-wrap,
+  body .footer-section .fm-frame {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 2. Force both footer button variants to stretch full width */
+  body .footer-section .fm-cta-btn,
+  body .footer-section .footer-btn-modern {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    /* Forces it to ignore squished parents */
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    background: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* 3. Formats the text container */
+  body .footer-section .fm-cta-btn span:first-child,
+  body .footer-section .footer-btn-modern .btn-text {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 16px 20px !important;
+    text-align: left !important;
+    flex-grow: 1 !important;
+    white-space: normal !important;
+    align-self: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* 4. Completely locks the square icon box from being squished */
+  body .footer-section .fm-cta-arrow,
+  body .footer-section .footer-btn-modern .btn-icon-box {
+    width: 60px !important;
+    min-width: 60px !important;
+    /* CRITICAL: Stops the box from collapsing */
+    max-width: 60px !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  body .footer-section .fm-cta-arrow i,
+  body .footer-section .footer-btn-modern .btn-icon-box i {
+    font-size: 1.1rem !important;
+    color: #ffffff !important;
+    transform: none !important;
+    /* Stops the arrow from moving off-center */
+  }
+}
