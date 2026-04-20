@@ -13144,3 +13144,58 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     overflow: hidden !important;
   }
 }
+
+/* ============================================================== */
+/* ===== MOBILE "WHO WE ARE" INFINITE LOOP & SWIPE          ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Container: Must be block with horizontal overflow for the script to scroll */
+  .about-pillars-grid {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 0 0 40px 0 !important;
+    margin: 0 !important;
+    border-top: none !important;
+    touch-action: pan-x !important;
+    /* Allows horizontal swiping */
+  }
+
+  .about-pillars-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 2. Track: The flex wrapper created by the script for the loop */
+  .pillars-marquee {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    /* Vital: Allows the track to stretch infinitely */
+    gap: 16px !important;
+    padding: 0 20px !important;
+  }
+
+  /* 3. Cards: Sized for mobile swiping */
+  .about-pillars-grid .pillar-card {
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    min-width: 85vw !important;
+    height: auto !important;
+    min-height: 480px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    background: #111 !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    /* Force visibility for cloned cards */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
