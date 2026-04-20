@@ -13068,3 +13068,79 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
     padding: 24px !important;
   }
 }
+
+/* ============================================================== */
+/* ===== FINAL FIX: MOBILE WHO WE ARE SWIPE CAROUSEL        ===== */
+/* ============================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Sets up the container for horizontal swiping */
+  .about-pillars-grid {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    /* Enables horizontal scroll */
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    /* Enables the "swipe and snap" feel */
+    -webkit-overflow-scrolling: touch !important;
+    /* Smooth momentum scrolling on iOS */
+    scrollbar-width: none !important;
+    /* Hides scrollbar on Firefox */
+    padding: 0 0 40px 0 !important;
+    margin: 0 !important;
+    border-top: none !important;
+    touch-action: pan-x !important;
+    /* Explicitly allows horizontal swiping */
+  }
+
+  .about-pillars-grid::-webkit-scrollbar {
+    display: none !important;
+    /* Hides scrollbar on Chrome/Safari */
+  }
+
+  /* 2. Forces the track created by your script to stay in a single row */
+  .pillars-marquee {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 16px !important;
+    padding: 0 20px !important;
+  }
+
+  /* 3. Formats the cards to be swipe-friendly and visible */
+  .about-pillars-grid .pillar-card {
+    flex: 0 0 85vw !important;
+    /* Sets card width to 85% so the next card "peeks" in */
+    width: 85vw !important;
+    min-width: 85vw !important;
+    max-width: 85vw !important;
+    scroll-snap-align: center !important;
+    /* Snaps the card perfectly to the center when swiped */
+    height: auto !important;
+    min-height: 480px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    background: #111 !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    /* Force visibility to bypass GSAP/cloning issues shown in your screenshot */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .about-pillars-grid .pillar-img {
+    height: 220px !important;
+    flex-shrink: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .about-pillars-grid .pillar-content {
+    flex: 1 !important;
+    padding: 24px !important;
+    overflow: hidden !important;
+  }
+}
