@@ -13463,3 +13463,19 @@ body.menu-locked {
     transform: none !important;
   }
 }
+
+/* ========================================================== */
+/* ===== LAPTOP ONLY: INCREASE WHITE SECTION LOGO SIZE  ===== */
+/* ========================================================== */
+@media (min-width: 1025px) and (max-width: 1920px) {
+
+  /* Targets ONLY the logo used on light/white backgrounds */
+  .navbar .logo-img[src*="white sections"] {
+    height: 95px !important;
+    /* Increase or decrease this number to dial in the perfect size */
+    width: auto !important;
+    max-width: none !important;
+    transform: translateY(4px) !important;
+    /* Optional: nudges it down slightly if the larger size makes it look too high */
+  }
+}
