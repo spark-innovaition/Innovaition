@@ -13514,6 +13514,7 @@ body.menu-locked {
 /* ===== FINAL FIX: MOBILE FOOTER LOGO SIZING               ===== */
 /* ============================================================== */
 @media (max-width: 768px) {
+
   .footer-section .fm-frame .fm-footer-logo,
   .footer-section .brand-col .fm-footer-logo {
     height: 70px !important;
