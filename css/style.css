@@ -13619,3 +13619,10 @@ body.menu-locked {
   padding: 50px !important;
   /* Reduces internal empty space (default was 40px) */
 }
+
+/* Hide specific elements on mobile devices */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
