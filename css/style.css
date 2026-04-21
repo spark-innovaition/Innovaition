@@ -13492,3 +13492,98 @@ body.menu-locked {
     margin-bottom: 20px !important;
   }
 }
+
+/* ============================================================== */
+/* ===== FIX: SERVICES PAGE BENTO GRID BLOWOUT              ===== */
+/* ============================================================== */
+
+/* 1. Force grid tracks to strictly respect the 1/3 sizing */
+@media (min-width: 1025px) {
+  .bento-section .bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bento-section .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-section .bento-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* 2. Map the missing class from the HTML to the correct grid slots */
+.bento-col-wide-top {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+@media (max-width: 1024px) {
+  .bento-col-wide-top {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+}
+
+/* 3. Allow all bento cards to shrink inside their forced columns */
+.bento-card {
+  min-width: 0 !important;
+}
+
+/* ============================================================== */
+/* ===== FIX: SERVICES PAGE BENTO GRID BOUNDARY OVERFLOW    ===== */
+/* ============================================================== */
+
+/* 1. Lock the grid between the border lines AND push the cards inward */
+.bento-section .bento-grid {
+  width: calc(100% - (var(--grid-edge) * 2)) !important;
+  max-width: none !important;
+  margin: 0 var(--grid-edge) !important;
+  padding: 0 40px !important;
+  /* <--- PULLS CARDS AWAY FROM THE EDGE LINES */
+  box-sizing: border-box !important;
+  gap: 8px !important;
+}
+
+/* 2. Force columns to share space equally without blowing out */
+@media (min-width: 1025px) {
+  .bento-section .bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bento-section .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 3. Ensure internal cards shrink cleanly inside their columns */
+.bento-card,
+.bento-split-col {
+  min-width: 0 !important;
+}
+
+/* 4. Map the unmapped middle column so it doesn't overlap the right column */
+.bento-col-wide-top {
+  grid-column: 2 / 3 !important;
+  grid-row: 1 / 2 !important;
+}
+
+@media (max-width: 1024px) {
+  .bento-col-wide-top {
+    grid-column: 1 / 2 !important;
+    grid-row: auto !important;
+  }
+}
+
+/* 5. OPTIONAL: Reduce the inner padding to make the boxes themselves feel tighter */
+.bento-section .bento-card,
+.bento-section .bento-mini {
+  padding: 50px !important;
+  /* Reduces internal empty space (default was 40px) */
+}
