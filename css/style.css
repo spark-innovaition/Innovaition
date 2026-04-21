@@ -13410,6 +13410,18 @@ body.menu-locked {
   color: #0a0a0a;
 }
 
+/* Auto-darken navbar CTA on white-navbar pages (logo for white sections) */
+.navbar:has(.logo-img[src*="white sections"]) .cta-pill {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar:has(.logo-img[src*="white sections"]) .cta-pill .cta-pill-icon {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
 @media (max-width: 768px) {
   .cta-pill {
     height: 46px;
