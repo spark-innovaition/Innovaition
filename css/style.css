@@ -13626,3 +13626,14 @@ body.menu-locked {
     display: none !important;
   }
 }
+
+/* 1. Lock the grid near the vertical grid lines with a controlled gap */
+.bento-section .bento-grid {
+  width: auto !important;
+  max-width: none !important;
+  /* The + 24px creates the gap. Change 24px to 16px, 32px, etc., to dial it in */
+  margin: 0 calc(var(--grid-edge) - var(--layout-pad) + 24px) !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  gap: 20px !important;
+}
