@@ -5426,24 +5426,42 @@ a {
 /* Double-Width "Join Us" Card - Forced Dark Theme */
 .cap-item.join-us-card {
   grid-column: span 2;
-  aspect-ratio: auto;
-  padding: 40px;
+  aspect-ratio: 2.85 / 1;
+  min-height: 0;
+  height: auto;
+  padding: 20px 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   text-decoration: none;
+  overflow: hidden;
   background-color: var(--bg-dark) !important;
   color: var(--text-white) !important;
 }
 
+.cap-item.join-us-card .logo-small {
+  font-size: 0.75rem;
+}
+
 .cap-item.join-us-card h4 {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2vw, 26px);
+  font-size: clamp(0.95rem, 1.2vw, 17px);
   line-height: 1.2;
-  margin: 20px 0;
+  margin: 6px 0;
   text-transform: uppercase;
   color: var(--text-white) !important;
+}
+
+.cap-item.join-us-card .join-btn {
+  padding: 6px 14px !important;
+  font-size: 0.7rem !important;
+}
+
+.cap-item.join-us-card .rating {
+  bottom: 20px !important;
+  right: 32px !important;
+  font-size: 0.7rem !important;
 }
 
 .cap-item.join-us-card .join-btn {
