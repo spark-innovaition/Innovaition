@@ -13637,3 +13637,35 @@ body.menu-locked {
   box-sizing: border-box !important;
   gap: 20px !important;
 }
+
+/* ============================================================== */
+/* ===== UNIVERSAL BENTO GRID ALIGNMENT FIX                 ===== */
+/* ============================================================== */
+
+@media (min-width: 769px) {
+
+  /* 1. Force the section to respect global padding, overriding inline HTML styles on industry pages */
+  body .bento-section {
+    padding-left: var(--layout-pad) !important;
+    padding-right: var(--layout-pad) !important;
+  }
+
+  /* 2. Pull the grid outward from the safe content area to near the grid lines */
+  body .bento-section .bento-grid {
+    width: auto !important;
+    max-width: none !important;
+    /* var(--grid-buffer) is the exact distance between your content area and the line. 
+       Subtracting 24px leaves a perfect 24px gap between the line and the cards. */
+    margin-left: calc(-1 * (var(--grid-buffer) - 24px)) !important;
+    margin-right: calc(-1 * (var(--grid-buffer) - 24px)) !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    gap: 20px !important;
+  }
+
+  /* 3. Give the text inside the cards room to breathe */
+  body .bento-section .bento-card,
+  body .bento-section .bento-mini {
+    padding: 40px !important;
+  }
+}
