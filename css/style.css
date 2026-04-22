@@ -10310,6 +10310,8 @@ a {
 
   .ph-btn-group {
     flex-direction: column;
+    align-items: center !important;
+    /* This forces the button to the center */
     width: 100%;
     margin-bottom: 10px !important;
   }
@@ -13667,5 +13669,13 @@ body.menu-locked {
   body .bento-section .bento-card,
   body .bento-section .bento-mini {
     padding: 40px !important;
+  }
+}
+
+/* Creates a gap UNDER the CTA button in the mobile footer */
+@media (max-width: 768px) {
+  .footer-section .fm-frame .cta-pill {
+    margin-bottom: 32px !important;
+    /* Adjust this number for more or less gap */
   }
 }
