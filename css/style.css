@@ -13868,3 +13868,45 @@ body.blog-page section:first-of-type .section-frame .sf-dia.br {
     pointer-events: none !important;
   }
 }
+
+/* ============================================================== */
+/* ===== FOOTER WATERMARK: SCROLL-TRIGGERED NEON ANIMATION  ===== */
+/* ============================================================== */
+
+.footer-watermark {
+  /* 1. Hollow out the solid fill */
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  /* 2. Wait in an invisible state until scrolled into view */
+  opacity: 0;
+}
+
+/* 3. The class our JavaScript will add when the user scrolls down */
+.footer-watermark.start-anim {
+  animation: neonPowerOn 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes neonPowerOn {
+  0% {
+    opacity: 0;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0);
+    text-shadow: none;
+  }
+
+  40% {
+    /* The Bright Flash */
+    opacity: 1;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
+      0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    /* The Locked-In Resting State */
+    opacity: 1;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.06);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.03),
+      0 0 30px rgba(255, 255, 255, 0.02);
+  }
+}

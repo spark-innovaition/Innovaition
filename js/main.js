@@ -2034,3 +2034,28 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTableCols(1);
   });
 });
+
+/* ============================================================== */
+/* ===== FIRE FOOTER NEON ANIMATION ON SCROLL               ===== */
+/* ============================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const watermark = document.querySelector('.footer-watermark');
+
+  if (watermark) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // When the footer comes into the viewport...
+        if (entry.isIntersecting) {
+          // Add the animation class
+          entry.target.classList.add('start-anim');
+          // Stop watching it so it doesn't flash every time you scroll up and down
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1 // Triggers when at least 10% of the text is visible
+    });
+
+    observer.observe(watermark);
+  }
+});
