@@ -13832,3 +13832,39 @@ body.blog-page section:first-of-type .section-frame .sf-dia.br {
     /* Forces black headings */
   }
 }
+
+/* ============================================================== */
+/* ===== FIX: TIGHTER BLOG HERO SPACING & WHITE BOTTOM MASK ===== */
+/* ============================================================== */
+
+@media (min-width: 769px) {
+
+  /* 1. Tighten the overall height of the hero section */
+  body.blog-page section:first-of-type,
+  body .blog-hero-sec,
+  body .article-hero-sec {
+    padding-top: 180px !important;
+    /* Reduced to pull text up */
+    padding-bottom: 120px !important;
+    /* Safely clears the 80px line without excessive space */
+  }
+
+  /* 2. Create a solid white mask that covers the background image *below* the 80px line */
+  body.blog-page section:first-of-type .section-frame::after,
+  body .blog-hero-sec .section-frame::after,
+  body .article-hero-sec .section-frame::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: -100vw !important;
+    right: -100vw !important;
+    height: 80px !important;
+    /* Exact height from the bottom to the line */
+    background-color: #ffffff !important;
+    /* Solid white */
+    z-index: 490 !important;
+    /* Sits above the image but below the borderline */
+    pointer-events: none !important;
+  }
+}
