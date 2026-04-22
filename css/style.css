@@ -13819,3 +13819,16 @@ body.blog-page section:first-of-type .section-frame .sf-dia.br {
     transform: none !important;
   }
 }
+
+/* ============================================================== */
+/* ===== FIX: PRIVACY POLICY TEXT COLOR ON DARK BACKGROUND  ===== */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+
+  body.privacy-policy .policy-content h2,
+  body.privacy-policy .policy-content h3 {
+    color: #000000 !important;
+    /* Forces black headings */
+  }
+}
