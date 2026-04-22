@@ -12287,17 +12287,29 @@ spline-viewer::part(logo) {
   }
 }
 
-/* ============================================================= */
-/* ===== "MORE INSIGHTS" FIX FOR INDIVIDUAL BLOG PAGES     ===== */
-/* ============================================================= */
-
 /* Target the pricing grid specifically on blog pages */
 body.blog-page .pricing-grid {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 24px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  /* Forces 3 columns on desktop */
+  gap: 40px !important;
   padding: 0 20px !important;
   border: none !important;
+}
+
+/* Tablet: 2 Columns */
+@media (max-width: 1024px) {
+  body.blog-page .pricing-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Mobile: 1 Column */
+@media (max-width: 768px) {
+  body.blog-page .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
 }
 
 /* Override the heavy inline styling on the cards */
@@ -13677,5 +13689,114 @@ body.menu-locked {
   .footer-section .fm-frame .cta-pill {
     margin-bottom: 32px !important;
     /* Adjust this number for more or less gap */
+  }
+}
+
+/* Aligns the Let's Connect CTA and text to the left on the About page */
+.action-bottom {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* Restores the top and bottom horizontal frame lines on the Zero Missed Leads section */
+body .since-sec .section-frame .sf-line.top,
+body .since-sec .section-frame .sf-line.bottom {
+  display: block !important;
+}
+
+/* Restores the frame lines on the Blog Hero and forces them to be dark so they are visible */
+body .blog-hero-sec .section-frame .sf-line.top,
+body .blog-hero-sec .section-frame .sf-line.bottom,
+body .blog-hero-sec .sf-line.top,
+body .blog-hero-sec .sf-line.bottom {
+  display: block !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  /* Forces a dark grey line */
+}
+
+/* Restores the corner diamonds and forces them to be solid black */
+body .blog-hero-sec .section-frame .sf-dia.tl,
+body .blog-hero-sec .section-frame .sf-dia.tr,
+body .blog-hero-sec .section-frame .sf-dia.bl,
+body .blog-hero-sec .section-frame .sf-dia.br {
+  display: block !important;
+  background-color: #000000 !important;
+  /* Forces black diamonds */
+}
+
+/* Fixes the vertical spacing on the Blog Hero so the text stays inside the frame lines */
+@media (min-width: 769px) {
+  body .blog-hero-sec {
+    padding-top: 220px !important;
+    /* Pushes the text safely below the top line */
+    padding-bottom: 160px !important;
+    /* Pushes the bottom line safely below the text */
+  }
+}
+
+/* ============================================================== */
+/* ===== UNIVERSAL BLOG HERO FIX (ALL PAGES & ARTICLES)     ===== */
+/* ============================================================== */
+
+/* 1. Fix the spacing so text doesn't overlap lines */
+@media (min-width: 769px) {
+
+  body.blog-page section:first-of-type,
+  body .blog-hero-sec,
+  body .article-hero-sec {
+    padding-top: 220px !important;
+    padding-bottom: 160px !important;
+  }
+}
+
+/* 2. Force the horizontal lines to display in dark grey */
+body.blog-page section:first-of-type .section-frame .sf-line.top,
+body.blog-page section:first-of-type .section-frame .sf-line.bottom {
+  display: block !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 3. Force the diamonds to display in black */
+body.blog-page section:first-of-type .section-frame .sf-dia.tl,
+body.blog-page section:first-of-type .section-frame .sf-dia.tr,
+body.blog-page section:first-of-type .section-frame .sf-dia.bl,
+body.blog-page section:first-of-type .section-frame .sf-dia.br {
+  display: block !important;
+  background-color: #000000 !important;
+}
+
+/* ============================================================== */
+/* ===== HIDE BLOG HERO BORDERS ON MOBILE (SPECIFICITY FIX) ===== */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+
+  /* Hide the entire frame wrapper so the lines and diamonds inside instantly vanish */
+  body.blog-page .section-framed:first-of-type .section-frame,
+  body.blog-page .blog-hero-sec .section-frame,
+  body.blog-page .article-hero-sec .section-frame {
+    display: none !important;
+  }
+}
+
+/* ============================================================== */
+/* ===== FIX: CONTACT HERO MOBILE BOTTOM SPACING            ===== */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+
+  /* Shrink the padding at the bottom of the hero background */
+  body .contact-hero-sec {
+    padding-bottom: 30px !important;
+  }
+
+  /* Remove the extra margin pushing down from the title */
+  body .contact-hero-title {
+    margin-bottom: 0 !important;
+  }
+
+  /* Tighten the top padding of the white quote box below it */
+  body .contact-split-left {
+    padding-top: 30px !important;
   }
 }
