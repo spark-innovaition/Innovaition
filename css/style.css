@@ -706,6 +706,36 @@ a {
   }
 }
 
+/* Ultra-wide (e.g. 3440x1440): shrink the title and pin the robot inside
+   the right grid-edge border so nothing overlaps. Scoped to >=2560px only. */
+@media (min-width: 2560px) {
+  .hero-title-row {
+    padding-left: calc(var(--grid-edge) + 60px) !important;
+    padding-right: calc(var(--grid-edge) + 60px) !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-title {
+    font-size: 110px !important;
+    line-height: 1 !important;
+  }
+
+  .hero-lock-icon {
+    font-size: 80px !important;
+  }
+
+  .hero-content-left {
+    left: calc(var(--grid-edge) + 60px) !important;
+  }
+
+  .hero-robot-3d {
+    left: auto !important;
+    right: calc(var(--grid-edge) - 120px) !important;
+    transform: none !important;
+    width: 1100px !important;
+  }
+}
+
 .hero-text-wrapper {
   position: relative;
   width: 100%;
@@ -908,6 +938,26 @@ a {
 .hero-bottom-bar .time {
   color: var(--text-white);
   font-variant-numeric: tabular-nums;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.hero::before {
+  left: var(--grid-edge);
+}
+
+.hero::after {
+  left: calc(100% - var(--grid-edge));
 }
 
 
