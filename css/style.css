@@ -9741,8 +9741,8 @@ a {
 
   /* --- Lower Menu Info Section --- */
   .menu-col-right {
-    padding: 20px 20px 0 !important;
-    /* Tighter top padding */
+    padding: 20px 20px 100px !important;
+    /* Tighter top padding, extra bottom padding so social row clears mobile browser UI */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
