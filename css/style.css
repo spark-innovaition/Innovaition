@@ -380,6 +380,7 @@ a {
 
 @media (max-width: 1024px) {
   .menu-overlay {
+    height: 100dvh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -9741,13 +9742,12 @@ a {
 
   /* --- Lower Menu Info Section --- */
   .menu-col-right {
-    padding: 20px 20px 100px !important;
-    /* Tighter top padding, extra bottom padding so social row clears mobile browser UI */
+    padding: 20px 20px 40px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start !important;
+    gap: 20px !important;
     flex-grow: 1;
-    /* Pushes the social row to the absolute bottom */
   }
 
   .menu-info-top {
@@ -9845,8 +9845,7 @@ a {
     gap: 0 !important;
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
-    margin-top: auto !important;
-    /* Auto pushes it to the bottom */
+    margin-top: 0 !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-bottom: none !important;
     padding: 0 !important;
