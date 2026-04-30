@@ -580,9 +580,9 @@ a {
 
 .menu-social-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 30px;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0;
 }
 
 .menu-social-row a {
@@ -594,6 +594,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 18px 0;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -9834,24 +9835,22 @@ a {
   /* --- Social Row Footer --- */
   .menu-social-row {
     grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0 !important;
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
     margin-top: auto !important;
     /* Auto pushes it to the bottom */
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: none !important;
     padding: 0 !important;
   }
 
   .menu-social-row a {
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 15px 0 !important;
-    /* Tighter buttons */
     justify-content: center !important;
     font-size: 0 !important;
-  }
-
-  .menu-social-row a:last-child {
-    border-right: none !important;
   }
 
   .menu-social-row a i {
