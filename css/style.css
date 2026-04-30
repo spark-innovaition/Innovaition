@@ -378,6 +378,13 @@ a {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .menu-overlay {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .menu-overlay.active {
   transform: translateY(0);
 }
