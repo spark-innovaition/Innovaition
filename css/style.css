@@ -9686,10 +9686,12 @@ a {
   /* ==================================================== */
 
   .menu-grid {
-    padding-top: 64px !important;
+    padding-top: 80px !important;
+    /* Changed from 60px to exactly clear the Navbar */
     align-content: flex-start;
-    height: 100dvh !important;
-    overflow: hidden !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   .menu-col-left {
@@ -9724,12 +9726,12 @@ a {
 
   .menu-nav-item a {
     font-family: var(--font-body, sans-serif) !important;
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
     font-weight: 600 !important;
     color: #ccc !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 11px 16px !important;
+    padding: 16px 20px !important;
     display: flex !important;
     align-items: center;
     width: 100% !important;
@@ -9741,56 +9743,57 @@ a {
 
   /* --- Lower Menu Info Section --- */
   .menu-col-right {
-    padding: 14px 20px 16px !important;
+    padding: 20px 20px 40px !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-start !important;
-    gap: 12px !important;
+    gap: 20px !important;
     flex-grow: 1;
   }
 
   .menu-info-top {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 8px !important;
+    gap: 12px !important;
+    /* Tighter gap */
     border-bottom: none !important;
     padding-bottom: 0 !important;
   }
 
   .menu-vision-text {
-    font-size: 0.95rem !important;
+    font-size: 1.15rem !important;
+    /* Smaller text */
     font-weight: 600 !important;
     color: #fff !important;
-    line-height: 1.25 !important;
-  }
-
-  .menu-vision-text br {
-    display: none !important;
+    line-height: 1.3 !important;
   }
 
   .menu-globe-widget {
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 8px !important;
   }
 
   .menu-globe-widget i {
-    font-size: 1.2rem !important;
+    font-size: 1.8rem !important;
+    /* Smaller globe */
     color: #888 !important;
   }
 
   .menu-globe-widget .coords {
-    font-size: 0.65rem !important;
+    font-size: 0.7rem !important;
     color: #888 !important;
   }
 
   .menu-info-bottom {
-    gap: 10px !important;
-    margin-top: 0 !important;
+    gap: 15px !important;
+    margin-top: 15px !important;
+    /* Tighter margins */
   }
 
   .menu-contact-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    /* Tighter grid */
   }
 
   .menu-contact-grid .location-block,
@@ -9802,31 +9805,35 @@ a {
   .menu-contact-grid .meta-label {
     border-left: 1px solid #555 !important;
     border-bottom: none !important;
-    padding-left: 10px !important;
+    padding-left: 12px !important;
     padding-bottom: 0 !important;
-    font-size: 0.6rem !important;
+    font-size: 0.65rem !important;
     color: #666 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 8px !important;
     display: inline-block !important;
   }
 
   .location-block p,
   .contact-block p {
-    font-size: 0.78rem !important;
+    font-size: 0.85rem !important;
+    /* Smaller text */
     color: #aaa !important;
-    line-height: 1.3 !important;
-    margin-bottom: 2px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 5px !important;
+    /* Tighter margins */
   }
 
   .menu-time {
-    font-size: 1.4rem !important;
+    font-size: 2.2rem !important;
+    /* Smaller clock */
     color: #fff !important;
-    margin-top: 2px !important;
+    margin-top: 5px !important;
     margin-bottom: 0 !important;
   }
 
   .menu-email {
-    font-size: 0.78rem !important;
+    font-size: 0.95rem !important;
+    /* Smaller email */
     font-weight: 600 !important;
     color: #fff !important;
     text-decoration: none !important;
@@ -9848,7 +9855,7 @@ a {
   .menu-social-row a {
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 12px 0 !important;
+    padding: 15px 0 !important;
     justify-content: center !important;
     font-size: 0 !important;
   }
