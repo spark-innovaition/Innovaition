@@ -9689,8 +9689,9 @@ a {
     padding-top: 80px !important;
     /* Changed from 60px to exactly clear the Navbar */
     align-content: flex-start;
-    height: 100svh !important;
-    overflow: hidden !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   .menu-col-left {
