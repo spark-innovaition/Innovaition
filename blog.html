@@ -22,7 +22,8 @@
       flex-wrap: wrap;
       gap: 12px;
       justify-content: center;
-      margin: 0 auto 50px auto;
+      margin: 40px auto 50px auto;
+      /* Added 40px top margin to fix flush spacing */
       max-width: 1000px;
       padding: 0 20px;
     }
@@ -690,13 +691,18 @@
         const publishedCards = [];
 
         // 2. Hide future posts securely by adding the .hidden-post class
-        // This keeps the HTML intact but makes it display: none !important
         allCards.forEach(card => {
-          const pub = new Date(card.dataset.publish + 'T00:00:00');
+          const dateStr = card.dataset.publish; // "2026-06-27"
+          // Bulletproof cross-browser date parsing (solves the mobile Safari bug)
+          const [year, month, day] = dateStr.split('-');
+          const pub = new Date(year, month - 1, day);
+
           if (pub > today) {
             card.classList.add('hidden-post');
+            // Force hide directly via JS as an absolute fallback against mobile CSS overrides
+            card.style.setProperty('display', 'none', 'important');
           } else {
-            publishedCards.push({ element: card, dateObj: pub });
+            publishedCards.push({ element: card, dateObj: pub, yearStr: year });
           }
         });
 
@@ -713,12 +719,11 @@
           }
         }
 
-        // 4. Generate filter buttons dynamically based on available PUBLISHED months/years
-        const uniqueMonths = [...new Set(publishedCards.map(v => {
-          return v.dateObj.toLocaleString('default', { month: 'long', year: 'numeric' });
-        }))];
+        // 4. Generate filter buttons dynamically based on available PUBLISHED years
+        // Extract unique years and sort them descending (e.g., 2026, 2025)
+        const uniqueYears = [...new Set(publishedCards.map(v => v.yearStr))].sort((a, b) => b - a);
 
-        if (uniqueMonths.length > 1 && filterContainer) {
+        if (uniqueYears.length > 0 && filterContainer) {
           const filterWrap = document.createElement('div');
           filterWrap.className = 'blog-filter-wrap';
 
@@ -726,15 +731,15 @@
           const allBtn = document.createElement('button');
           allBtn.className = 'filter-btn active';
           allBtn.textContent = 'All Posts';
-          allBtn.dataset.month = 'all';
+          allBtn.dataset.filter = 'all';
           filterWrap.appendChild(allBtn);
 
-          // Month Buttons
-          uniqueMonths.forEach(monthLabel => {
+          // Year Buttons
+          uniqueYears.forEach(yearLabel => {
             const btn = document.createElement('button');
             btn.className = 'filter-btn';
-            btn.textContent = monthLabel;
-            btn.dataset.month = monthLabel;
+            btn.textContent = yearLabel;
+            btn.dataset.filter = yearLabel;
             filterWrap.appendChild(btn);
           });
 
@@ -747,15 +752,17 @@
               filterWrap.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
               e.target.classList.add('active');
 
-              const selectedMonth = e.target.dataset.month;
+              const selectedFilter = e.target.dataset.filter;
 
               // Hide/Show logic ONLY on published cards
               publishedCards.forEach(v => {
-                const cardMonthLabel = v.dateObj.toLocaleString('default', { month: 'long', year: 'numeric' });
-                if (selectedMonth === 'all' || selectedMonth === cardMonthLabel) {
+                if (selectedFilter === 'all' || selectedFilter === v.yearStr) {
                   v.element.classList.remove('hidden-post');
+                  // Remove the inline block so it defaults back to your stylesheet rules
+                  v.element.style.display = '';
                 } else {
                   v.element.classList.add('hidden-post');
+                  v.element.style.setProperty('display', 'none', 'important');
                 }
               });
 
