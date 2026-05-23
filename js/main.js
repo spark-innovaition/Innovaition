@@ -2059,3 +2059,33 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(watermark);
   }
 });
+
+/* ============================================================== */
+/* ===== HIDE FUTURE BLOG POSTS IN "CONTINUE READING"       ===== */
+/* ============================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  // Check the pricing-grid which contains the related blog posts
+  const pricingGrids = document.querySelectorAll('.pricing-grid');
+  
+  if (pricingGrids.length > 0) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    pricingGrids.forEach(grid => {
+      const cards = grid.querySelectorAll('a.p-card');
+      cards.forEach(card => {
+        const dateEl = card.querySelector('.p-plan-desc');
+        if (dateEl) {
+          const dateText = dateEl.textContent.trim(); // "June 08, 2026"
+          const pub = new Date(dateText);
+          
+          // Check if valid date and if it's in the future
+          if (!isNaN(pub) && pub > today) {
+            card.style.setProperty('display', 'none', 'important');
+            card.classList.add('hidden-post');
+          }
+        }
+      });
+    });
+  }
+});
