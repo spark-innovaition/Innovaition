@@ -169,7 +169,22 @@
                 data from being accidentally lost, used or accessed in an unauthorised way, altered, or disclosed. For
                 our healthcare and clinic clients, we employ specific HIPAA-compliant protocols where required.</p>
 
-            <h2 style="font-size: 1.5rem; color: #000; margin-top: 40px; margin-bottom: 15px;">5. Contact Us</h2>
+            <h2 style="font-size: 1.5rem; color: #000; margin-top: 40px; margin-bottom: 15px;">5. SMS / Text Messaging
+                and Mobile Information</h2>
+            <p style="margin-bottom: 20px;">If you provide your mobile phone number and opt in to receive SMS or text
+                messages from Innovaition, you may receive messages related to appointment scheduling, account updates,
+                service notifications, promotions, and customer support. Message frequency varies. Message and data
+                rates may apply. Reply <strong>STOP</strong> to opt out at any time, or reply <strong>HELP</strong> for
+                assistance.</p>
+            <p style="margin-bottom: 20px;"><strong>No mobile information will be shared with third parties or
+                    affiliates for marketing or promotional purposes.</strong> All the above categories exclude text
+                messaging originator opt-in data and consent; this information will not be shared with any third
+                parties.</p>
+            <p style="margin-bottom: 20px;">Consent to receive SMS messages is not a condition of any purchase or
+                service. You may withdraw your consent at any time by replying STOP to any message you receive from us,
+                or by contacting us using the details below.</p>
+
+            <h2 style="font-size: 1.5rem; color: #000; margin-top: 40px; margin-bottom: 15px;">6. Contact Us</h2>
             <p style="margin-bottom: 20px;">If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <ul style="margin-bottom: 20px; padding-left: 20px; list-style: none;">
@@ -240,9 +255,19 @@
                         <input type="email" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="input-group">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" placeholder="(optional) e.g., (587) 555-1234"
+                            autocomplete="tel" inputmode="tel">
+                    </div>
+                    <div class="input-group">
                         <label>Message</label>
                         <textarea name="message" placeholder="Message" rows="4"></textarea>
                     </div>
+                    <label class="sms-consent sms-consent-dark">
+                        <input type="checkbox" name="sms_consent" value="yes">
+                        <span class="sms-consent-text">I agree to receive SMS from Innovaition. Message and data rates
+                            may apply. Reply STOP to opt out.</span>
+                    </label>
                     <button type="submit" class="btn-main submit-btn">Send Message</button>
                 </form>
             </div>

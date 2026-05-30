@@ -7912,6 +7912,91 @@ a {
   align-self: flex-start;
 }
 
+/* ==================================================== */
+/* ===== SMS CONSENT CHECKBOX (10DLC compliance) =====   */
+/* ==================================================== */
+
+.sms-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-family: var(--font-body, sans-serif);
+  line-height: 1.5;
+  user-select: none;
+}
+
+.sms-consent input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin: 2px 0 0 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.sms-consent input[type="checkbox"]:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.sms-consent input[type="checkbox"]:checked {
+  background: #fff;
+  border-color: #fff;
+}
+
+.sms-consent input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.sms-consent input[type="checkbox"]:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.sms-consent-text {
+  font-size: 0.82rem;
+  color: #bbb;
+  letter-spacing: 0.01em;
+}
+
+.sms-consent-light .sms-consent-text {
+  color: #555;
+}
+
+.sms-consent-light input[type="checkbox"] {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.sms-consent-light input[type="checkbox"]:hover {
+  border-color: rgba(0, 0, 0, 0.7);
+}
+
+.sms-consent-light input[type="checkbox"]:checked {
+  background: #000;
+  border-color: #000;
+}
+
+.sms-consent-light input[type="checkbox"]:checked::after {
+  border-color: #fff;
+}
+
 @media (max-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1fr;
@@ -12526,9 +12611,9 @@ body.blog-page .pricing-grid .p-card .p-card-bot {
 }
 
 /* ========================================================== */
-/* ===== STRICTLY LAPTOP HERO SIZING (1025px to 1920px) ===== */
+/* ===== DESKTOP HERO SIZING (1025px and up) ============ */
 /* ========================================================== */
-@media (min-width: 1025px) and (max-width: 1920px) {
+@media (min-width: 1025px) {
 
   .hero-title,
   .ai-text,
