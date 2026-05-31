@@ -17,12 +17,13 @@
   <link rel="icon" type="image/webp" href="images/favicon.webp">
   <link rel="apple-touch-icon" href="images/favicon.webp">
   <title>Services - Innovaition Local Business Automation</title>
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/space-grotesk.css">
   <link rel="stylesheet" href="fonts/fa/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 </head>
 
 <body class="services-page dark-theme">
@@ -125,7 +126,7 @@
       </div>
 
       <canvas id="hero-canvas"></canvas>
-      <img src="images/new images/Ethereal Light Streaks.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+      <img loading="lazy" decoding="async" src="images/new images/Ethereal Light Streaks.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
       <div class="svc-hero-vignette"></div>
 
       <div class="svc-side-menu gs-reveal-up">
@@ -426,20 +427,20 @@
 
       <div class="split-right">
         <div class="split-card-item">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
-            alt="AI Voice Receptionist">
+          <img loading="lazy" decoding="async" src="images/svc-ai-receptionist.webp"
+            alt="AI voice receptionist">
         </div>
         <div class="split-card-item">
-          <img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?q=80&w=800&auto=format&fit=crop"
-            alt="Missed Call Text Back">
+          <img loading="lazy" decoding="async" src="images/svc-lead-rescue.webp"
+            alt="Missed call text back">
         </div>
         <div class="split-card-item">
-          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
-            alt="Booking Software Sync">
+          <img loading="lazy" decoding="async" src="images/svc-booking-sync.webp"
+            alt="Booking software sync">
         </div>
         <div class="split-card-item">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
-            alt="Financial Dashboard">
+          <img loading="lazy" decoding="async" src="images/svc-financial.webp"
+            alt="Financial dashboard">
         </div>
       </div>
     </div>
@@ -488,7 +489,7 @@
 
       <div class="approach-globe-wrap gs-reveal-up">
         <canvas id="d3-globe-canvas"></canvas>
-        <img src="images/new images/Glowing Glass Rings.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+        <img loading="lazy" decoding="async" src="images/new images/Glowing Glass Rings.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
         <div class="globe-hint">Drag to rotate • Scroll to zoom</div>
       </div>
     </div>
@@ -656,7 +657,7 @@
     </div>
 
     <canvas id="cta-globe-canvas"></canvas>
-    <img src="images/new images/Holographic Tree Glow.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+    <img loading="lazy" decoding="async" src="images/new images/Holographic Tree Glow.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
     <div class="glow-orb top-left"></div>
     <div class="glow-orb bottom-right"></div>
@@ -714,7 +715,7 @@
     <div class="footer-column-stack">
 
       <div class="fm-frame">
-        <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+        <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
         <p class="fm-tagline">
           <strong>We help local businesses harness the power of AI</strong> to automate workflows, capture every lead,
           and fill their calendars on autopilot.
@@ -801,7 +802,7 @@
       <div class="footer-top">
 
         <div class="footer-col brand-col">
-          <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+          <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
           <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
               style="color: #fff; font-weight: 600;">End-to-end AI automation for local
               businesses.</strong> Built to eliminate admin work and fill your calendar.</p>
@@ -895,12 +896,31 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/floating-paths.js"></script>
-  <!-- LeadConnector chat widget -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b3e8096c166bea6ef0637" data-source="WEB_USER"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/floating-paths.js"></script>
+  <!-- Deferred LeadConnector chat widget -->
+  <script>
+    (function () {
+      function loadChat() {
+        if (document.getElementById('leadconnector-widget')) return;
+        var s = document.createElement('script');
+        s.id = 'leadconnector-widget';
+        s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        s.setAttribute('data-widget-id', '6a1b3e8096c166bea6ef0637');
+        s.setAttribute('data-source', 'WEB_USER');
+        document.body.appendChild(s);
+      }
+      function defer(fn, delay) {
+        if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: delay });
+        else setTimeout(fn, delay);
+      }
+      if (document.readyState === 'complete') defer(loadChat, 2500);
+      else window.addEventListener('load', function () { defer(loadChat, 2500); });
+    })();
+  </script>
 </body>
 
 </html>

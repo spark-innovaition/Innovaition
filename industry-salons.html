@@ -17,11 +17,12 @@
     <link rel="icon" type="image/webp" href="images/favicon.webp">
     <link rel="apple-touch-icon" href="images/favicon.webp">
     <title>Salon & Barber Automation - Innovaition</title>
-    <link rel="stylesheet" href="fonts/space-grotesk.css">
+    <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/space-grotesk.css">
     <link rel="stylesheet" href="fonts/fa/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body class="pricing-page dark-theme">
@@ -127,7 +128,7 @@
         </div>
 
         <canvas id="hero-waves-canvas"></canvas>
-        <img src="images/new images/Hand Holding Glowing Orb.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+        <img loading="lazy" decoding="async" src="images/new images/Hand Holding Glowing Orb.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
         <div class="ph-content-wrapper">
             <div class="ph-badge">
@@ -667,7 +668,7 @@
 
         <canvas id="cta-warp-canvas"
             style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.85;"></canvas>
-        <img src="images/new images/Futuristic Glowing Pyramid.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+        <img loading="lazy" decoding="async" src="images/new images/Futuristic Glowing Pyramid.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
         <div class="react-glass-card gs-reveal-up" style="position: relative; z-index: 10;">
             <h1 class="react-title">Secure Your Bookings</h1>
@@ -712,7 +713,7 @@
         <div class="footer-column-stack">
 
             <div class="fm-frame">
-                <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+                <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
                 <p class="fm-tagline">
                     <strong>We help local businesses harness the power of AI</strong> to automate workflows, capture
                     every lead,
@@ -804,7 +805,7 @@
             <div class="footer-top">
 
                 <div class="footer-col brand-col">
-                    <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+                    <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
                     <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
                             style="color: #fff; font-weight: 600;">End-to-end AI automation for local
                             businesses.</strong> Built to eliminate admin work and fill your calendar.</p>
@@ -899,10 +900,10 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/glowy-waves.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/glowy-waves.js"></script>
 
     <script>
         {
@@ -1045,7 +1046,27 @@
         }
     </script>
   <!-- LeadConnector chat widget -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b3e8096c166bea6ef0637" data-source="WEB_USER"></script>
+  <!-- Deferred LeadConnector chat widget -->
+  <script>
+    (function () {
+      function loadChat() {
+        if (document.getElementById('leadconnector-widget')) return;
+        var s = document.createElement('script');
+        s.id = 'leadconnector-widget';
+        s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        s.setAttribute('data-widget-id', '6a1b3e8096c166bea6ef0637');
+        s.setAttribute('data-source', 'WEB_USER');
+        document.body.appendChild(s);
+      }
+      function defer(fn, delay) {
+        if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: delay });
+        else setTimeout(fn, delay);
+      }
+      if (document.readyState === 'complete') defer(loadChat, 2500);
+      else window.addEventListener('load', function () { defer(loadChat, 2500); });
+    })();
+  </script>
 </body>
 
 </html>

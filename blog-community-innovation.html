@@ -17,11 +17,12 @@
     <link rel="icon" type="image/webp" href="images/favicon.webp">
     <link rel="apple-touch-icon" href="images/favicon.webp">
     <title>Community Innovation: Empowering Indigenous Businesses - Innovaition</title>
+    <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="fonts/space-grotesk.css">
     <link rel="stylesheet" href="fonts/fa/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body class="blog-page light-theme">
@@ -160,7 +161,7 @@
             <span class="sf-line left"></span><span class="sf-line right"></span>
         </div>
         <div style="max-width: 1200px; margin: 0 auto;">
-            <img src="images/Blog page hero section images/blog-community-innovation.webp" alt="" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="images/Blog page hero section images/blog-community-innovation.webp" alt="" style="width: 100%; height: auto; display: block; border-radius: 8px;">
         </div>
     </section>
 
@@ -285,7 +286,7 @@
             <a href="blog-collision-toronto-recap.html" class="p-card light p-card-anim"
                 style="border: 1px solid rgba(0,0,0,0.1); background: #ffffff; text-decoration: none; padding: 40px; transition: transform 0.3s, box-shadow 0.3s;">
                 <div style="width: 100%; height: 220px; overflow: hidden; border-radius: 8px; margin-bottom: 30px;">
-                    <img src="images/Blog page hero section images/blog-collision-toronto-recap.webp"
+                    <img loading="lazy" decoding="async" src="images/Blog page hero section images/blog-collision-toronto-recap.webp"
                         style="width: 100%; height: 100%; object-fit: cover;" alt="Collision Recap">
                 </div>
                 <h3 class="p-plan-name" style="font-size: 1.3rem; margin-bottom: 16px; color: #000;">COLLISION TORONTO
@@ -303,7 +304,7 @@
             <a href="blog-vancouver-expo-recap.html" class="p-card light p-card-anim"
                 style="border: 1px solid rgba(0,0,0,0.1); background: #ffffff; text-decoration: none; padding: 40px; transition: transform 0.3s, box-shadow 0.3s;">
                 <div style="width: 100%; height: 220px; overflow: hidden; border-radius: 8px; margin-bottom: 30px;">
-                    <img src="images/Blog page hero section images/blog-vancouver-expo-recap.webp"
+                    <img loading="lazy" decoding="async" src="images/Blog page hero section images/blog-vancouver-expo-recap.webp"
                         style="width: 100%; height: 100%; object-fit: cover;" alt="Vancouver Expo">
                 </div>
                 <h3 class="p-plan-name" style="font-size: 1.3rem; margin-bottom: 16px; color: #000;">VANCOUVER EXPO
@@ -321,7 +322,7 @@
             <a href="blog-unified-inbox-strategy.html" class="p-card light p-card-anim"
                 style="border: 1px solid rgba(0,0,0,0.1); background: #ffffff; text-decoration: none; padding: 40px; border-right: 1px solid rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
                 <div style="width: 100%; height: 220px; overflow: hidden; border-radius: 8px; margin-bottom: 30px;">
-                    <img src="images/Blog page hero section images/blog-unified-inbox-strategy.webp"
+                    <img loading="lazy" decoding="async" src="images/Blog page hero section images/blog-unified-inbox-strategy.webp"
                         style="width: 100%; height: 100%; object-fit: cover;" alt="Unified Inbox">
                 </div>
                 <h3 class="p-plan-name" style="font-size: 1.3rem; margin-bottom: 16px; color: #000;">THE APP-HOPPING
@@ -356,7 +357,7 @@
         </div>
 
         <canvas id="cta-liquid-canvas"></canvas>
-        <img src="images/new images/Ethereal Orb Scene.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
+        <img loading="lazy" decoding="async" src="images/new images/Ethereal Orb Scene.webp" alt="" class="canvas-mobile-bg" aria-hidden="true">
 
         <div class="react-glass-card gs-reveal-up">
             <h1 class="react-title">Ready to Transform?</h1>
@@ -401,7 +402,7 @@
         <div class="footer-column-stack">
 
             <div class="fm-frame">
-                <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+                <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
                 <p class="fm-tagline">
                     <strong>We help local businesses harness the power of AI</strong> to automate workflows, capture
                     every lead,
@@ -493,7 +494,7 @@
             <div class="footer-top">
 
                 <div class="footer-col brand-col">
-                    <img src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+                    <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
                     <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
                             style="color: #fff; font-weight: 600;">End-to-end AI automation for local
                             businesses.</strong> Built to eliminate admin work and fill your calendar.</p>
@@ -588,11 +589,31 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="js/main.js"></script>
   <!-- LeadConnector chat widget -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b3e8096c166bea6ef0637" data-source="WEB_USER"></script>
+  <!-- Deferred LeadConnector chat widget -->
+  <script>
+    (function () {
+      function loadChat() {
+        if (document.getElementById('leadconnector-widget')) return;
+        var s = document.createElement('script');
+        s.id = 'leadconnector-widget';
+        s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        s.setAttribute('data-widget-id', '6a1b3e8096c166bea6ef0637');
+        s.setAttribute('data-source', 'WEB_USER');
+        document.body.appendChild(s);
+      }
+      function defer(fn, delay) {
+        if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: delay });
+        else setTimeout(fn, delay);
+      }
+      if (document.readyState === 'complete') defer(loadChat, 2500);
+      else window.addEventListener('load', function () { defer(loadChat, 2500); });
+    })();
+  </script>
 </body>
 
 </html>
