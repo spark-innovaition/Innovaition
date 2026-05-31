@@ -1640,19 +1640,15 @@ a {
 }
 
 .accordion-item:nth-child(1) .bg-image {
-  background-image: url('https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=600&auto=format&fit=crop');
+  background-image: url('../images/Home/industry-clinics-bg.webp');
 }
 
 .accordion-item:nth-child(2) .bg-image {
-  background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop');
+  background-image: url('../images/Home/industry-salons-bg.webp');
 }
 
 .accordion-item:nth-child(3) .bg-image {
-  background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop');
-}
-
-.accordion-item:nth-child(4) .bg-image {
-  background-image: url('https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=600&auto=format&fit=crop');
+  background-image: url('../images/Home/industry-services-bg.webp');
 }
 
 .tab-header {

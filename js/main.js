@@ -138,13 +138,13 @@ gsap.utils.toArray(".gs-reveal-up").forEach(elem => {
   gsap.from(elem, {
     scrollTrigger: {
       trigger: elem,
-      start: "top 85%",
+      start: "top 92%",
       toggleActions: "play none none none"
     },
-    y: 60,
+    y: 24,
     opacity: 0,
-    duration: 1,
-    ease: "power3.out"
+    duration: 0.45,
+    ease: "power2.out"
   });
 });
 
@@ -633,13 +633,13 @@ if (bentoGrid) {
   gsap.from(bentoGrid.querySelectorAll('.bento-card, .bento-split-col > div'), {
     scrollTrigger: {
       trigger: bentoGrid,
-      start: "top 80%",
+      start: "top 95%",
     },
-    y: 60,
+    y: 24,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: "power3.out"
+    duration: 0.4,
+    stagger: 0.04,
+    ease: "power2.out"
   });
 }
 
