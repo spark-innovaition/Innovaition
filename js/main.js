@@ -38,22 +38,43 @@ menuTl.from(".menu-nav-item", {
     stagger: 0.05
   }, 0.4);
 
+// Track scroll position across menu open/close so the page doesn't jump to top
+// when the scroll-lock styles are applied. position:fixed trick: pin body at -scrollY
+// while menu is open, then restore scroll on close.
+let savedScrollY = 0;
+
+const lockScroll = () => {
+  savedScrollY = window.scrollY || window.pageYOffset;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.documentElement.classList.add('menu-locked');
+  document.body.classList.add('menu-locked');
+};
+
+const unlockScroll = () => {
+  document.documentElement.classList.remove('menu-locked');
+  document.body.classList.remove('menu-locked');
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  window.scrollTo(0, savedScrollY);
+};
+
 if (menuBtn && menuOverlay) {
   menuBtn.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
 
     if (isMenuOpen) {
       menuOverlay.classList.add('active');
-      // FIX: Lock BOTH the HTML and Body elements to stop mobile scrolling
-      document.documentElement.classList.add('menu-locked');
-      document.body.classList.add('menu-locked');
+      lockScroll();
       setMenuBtnState(true);
       menuTl.timeScale(1).play();
     } else {
       menuOverlay.classList.remove('active');
-      // FIX: Unlock BOTH the HTML and Body elements
-      document.documentElement.classList.remove('menu-locked');
-      document.body.classList.remove('menu-locked');
+      unlockScroll();
       setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     }
@@ -63,9 +84,7 @@ if (menuBtn && menuOverlay) {
     link.addEventListener('click', () => {
       isMenuOpen = false;
       menuOverlay.classList.remove('active');
-      // FIX: Unlock BOTH the HTML and Body elements when a link is clicked
-      document.documentElement.classList.remove('menu-locked');
-      document.body.classList.remove('menu-locked');
+      unlockScroll();
       setMenuBtnState(false);
       menuTl.timeScale(2).reverse();
     });
