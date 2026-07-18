@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const computeThemeColors = () => {
         const rootStyles = getComputedStyle(document.documentElement);
-        
+
         const resolveColor = (vars, alpha = 1) => {
             for (const v of vars) {
                 const val = rootStyles.getPropertyValue(v).trim();
                 if (val && val !== "transparent") return val.includes('rgba') ? val : hexToRgba(val, alpha);
             }
-            return `rgba(255, 255, 255, ${alpha})`; 
+            return `rgba(255, 255, 255, ${alpha})`;
         };
 
         const hexToRgba = (hex, alpha) => {
             if (hex.startsWith('rgba')) return hex;
             if (hex.startsWith('var')) return hex; // Let CSS handle it if it's still a var
-            let r=255, g=255, b=255;
+            let r = 255, g = 255, b = 255;
             if (hex.startsWith('#')) {
                 const h = hex.replace('#', '');
                 r = parseInt(h.substring(0, 2), 16);
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const dy = (canvas.height / 2) - mouse.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             const influence = Math.max(0, 1 - distance / influenceRadius);
-            
+
             const mouseEffect = influence * mouseInfluence * Math.sin(time * 0.001 + x * 0.01 + wave.offset);
 
             const y = (canvas.height / 2) +
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mouse.y += (targetMouse.y - mouse.y) * 0.1;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         // Draw background gradient to ensure seamless look
         const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
         gradient.addColorStop(0, themeColors.backgroundTop);
@@ -123,19 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.2 } });
 
         tl.from(".ph-badge", { y: 30, opacity: 0, duration: 1 }, 0.2)
-          .from(".ph-title", { y: 40, opacity: 0 }, "-=0.8")
-          .from(".ph-desc", { y: 20, opacity: 0 }, "-=1")
-          .from(".ph-btn-group .btn-main, .ph-btn-group .btn-outline", { 
-              y: 20, opacity: 0, stagger: 0.15 
-          }, "-=0.8")
-          .from(".ph-highlights li", { 
-              y: 15, opacity: 0, stagger: 0.1 
-          }, "-=0.6")
-          .from(".ph-stats-card", { 
-              scale: 0.95, opacity: 0, duration: 1.5
-          }, "-=0.5")
-          .from(".ph-stat-item", { 
-              y: 20, opacity: 0, stagger: 0.1 
-          }, "-=1");
+            .from(".ph-title", { y: 40, opacity: 0 }, "-=0.8")
+            .from(".ph-desc", { y: 20, opacity: 0 }, "-=1")
+            .from(".ph-btn-group .btn-main, .ph-btn-group .btn-outline", {
+                y: 20, opacity: 0, stagger: 0.15
+            }, "-=0.8")
+            .from(".ph-highlights li", {
+                y: 15, opacity: 0, stagger: 0.1
+            }, "-=0.6")
+            .from(".ph-stats-card", {
+                scale: 0.95, opacity: 0, duration: 1.5
+            }, "-=0.5")
+            .from(".ph-stat-item", {
+                y: 20, opacity: 0, stagger: 0.1
+            }, "-=1");
     }
 });

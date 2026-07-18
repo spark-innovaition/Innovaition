@@ -87,8 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const contactSection = document.getElementById("contact");
-    // FIXED: Added window.innerWidth check to completely skip this initialization loop on mobile screens
-    if (contactSection && window.innerWidth > 768) {
+    if (contactSection) {
         createFloatingPaths("contact", 1);
         createFloatingPaths("contact", -1);
     }

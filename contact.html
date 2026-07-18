@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFBP0KV1TM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFBP0KV1TM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'G-DFBP0KV1TM');
-    </script>
+    gtag('config', 'G-DFBP0KV1TM');
+  </script>
   <meta charset="UTF-8">
   <meta name="p:domain_verify" content="30fd42789d47180ed36a83ac09399087" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,27 +156,26 @@
     <div class="contact-split-right gs-reveal-up">
       <h2 class="contact-form-heading">WE'D LOVE TO HEAR FROM YOU</h2>
 
-      <form class="c-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="70e0e170-41ad-41fa-bdee-9e61176ebb43">
+      <form class="c-form" id="supabase-contact-form">
         <div class="c-form-row">
           <div class="c-input-group">
             <label>Hey, I am*</label>
-            <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="text" name="name" id="form-name" placeholder="Enter your name" required>
           </div>
           <div class="c-input-group">
             <label>My business is</label>
-            <input type="text" name="business" placeholder="Enter your business name">
+            <input type="text" name="business" id="form-business" placeholder="Enter your business name">
           </div>
         </div>
 
         <div class="c-input-group">
           <label>My email is*</label>
-          <input type="email" name="email" placeholder="Enter your email" required>
+          <input type="email" name="email" id="form-email" placeholder="Enter your email" required>
         </div>
 
         <div class="c-input-group">
           <label>What software do you currently use for booking/invoicing?</label>
-          <input type="text" name="software" placeholder="e.g., JaneApp, Fresha, Jobber, QuickBooks">
+          <input type="text" name="software" id="form-software" placeholder="e.g., JaneApp, Fresha, Jobber, QuickBooks">
         </div>
 
         <div class="c-input-group">
@@ -199,13 +198,85 @@
 
         <div class="c-input-group">
           <label>What is your biggest operational bottleneck right now?</label>
-          <textarea name="message"
+          <textarea name="message" id="form-message"
             placeholder="e.g., Missing calls while with clients, calculating commissions, follow-ups..."
             rows="5"></textarea>
         </div>
 
-        <button type="submit" class="c-submit-btn">Send message</button>
+        <button type="submit" class="c-submit-btn" id="form-submit-btn">Send message</button>
+        <p id="form-status" style="margin-top: 15px; font-weight: 600; display: none;"></p>
       </form>
+
+      <script>
+        document.getElementById('supabase-contact-form').addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const submitBtn = document.getElementById('form-submit-btn');
+          const statusText = document.getElementById('form-status');
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          statusText.style.display = 'none';
+
+          // Split full name input into First and Last names
+          const fullName = document.getElementById('form-name').value.trim();
+          const nameParts = fullName.split(' ');
+          const firstName = nameParts[0];
+          const lastName = nameParts.slice(1).join(' ');
+
+          // Capture extra contextual fields to compound into the notes payload
+          const business = document.getElementById('form-business').value.trim();
+          const software = document.getElementById('form-software').value.trim();
+          const selectedIndustry = document.querySelector('input[name="service"]:checked')?.value || 'Not Specified';
+          const originalMessage = document.getElementById('form-message').value.trim();
+
+          // Construct a highly detailed context block for GHL Contact Notes
+          const combinedMessage = `
+Business Name: ${business || 'N/A'}
+Current Software: ${software || 'N/A'}
+Industry: ${selectedIndustry}
+Operational Bottleneck: ${originalMessage || 'None provided.'}
+          `.trim();
+
+          const payload = {
+            firstName: firstName,
+            lastName: lastName || '',
+            email: document.getElementById('form-email').value.trim(),
+            phone: '', // Forms does not feature a native phone element
+            message: combinedMessage
+          };
+
+          try {
+            // Replace the URL placeholder below with your actual deployed Supabase Edge Function endpoint
+            const response = await fetch('https://sshzxfhdiejvfhafmsdi.supabase.co/functions/v1/form-handler', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+              statusText.style.color = '#22c55e';
+              statusText.textContent = 'Thank you! Your message has been sent successfully.';
+              statusText.style.display = 'block';
+              document.getElementById('supabase-contact-form').reset();
+            } else {
+              throw new Error(result.error || 'Server processing error.');
+            }
+          } catch (error) {
+            statusText.style.color = '#ef4444';
+            statusText.textContent = 'Oops! Something went wrong. Please try again.';
+            statusText.style.display = 'block';
+            console.error('Submission error:', error);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+          }
+        });
+      </script>
     </div>
 
   </section>
@@ -307,7 +378,8 @@
     <div class="footer-column-stack">
 
       <div class="fm-frame">
-        <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+        <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition"
+          class="fm-footer-logo">
         <p class="fm-tagline">
           <strong>We help local businesses harness the power of AI</strong> to automate workflows, capture every lead,
           and fill their calendars on autopilot.
@@ -394,7 +466,8 @@
       <div class="footer-top">
 
         <div class="footer-col brand-col">
-          <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition" class="fm-footer-logo">
+          <img loading="lazy" decoding="async" src="images/logo for dark sections.webp" alt="Innovaition"
+            class="fm-footer-logo">
           <p style="font-size: 1.1rem; color: #888; line-height: 1.5;"><strong
               style="color: #fff; font-weight: 600;">End-to-end AI automation for local
               businesses.</strong> Built to eliminate admin work and fill your calendar.</p>

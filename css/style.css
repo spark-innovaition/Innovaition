@@ -5,8 +5,6 @@
   font-family: 'Geist';
   font-style: normal;
   font-weight: 400 600;
-  /* FIXED: Tells the browser to show standard text until the file loads */
-  font-display: swap;
   src: url(https://fonts.gstatic.com/s/geist/v4/gyByhwUxId8gMEwYGFWfOw.woff2) format('woff2');
 }
 
@@ -11818,12 +11816,10 @@ spline-viewer::part(logo) {
   display: none;
 }
 
-/* ============================================================= */
-/* ===== MOBILE OPTIMIZATION CRITICAL OVERRIDES            ===== */
-/* ============================================================= */
 @media (max-width: 768px) {
 
-  /* Hide heavy animated main-thread execution layers on mobile */
+  /* Hide every animated canvas + the homepage video on mobile.
+     JS init is also gated to skip on viewports ≤768px. */
   .excellence-section .exc-video-bg,
   #hero-canvas,
   #d3-globe-canvas,
@@ -11835,19 +11831,10 @@ spline-viewer::part(logo) {
   #beams-canvas,
   #zero-limits-canvas,
   #about-dither-canvas,
-  #cta-warp-canvas,
-  .floating-paths-container {
+  #cta-warp-canvas {
     display: none !important;
   }
 
-  /* Force clean containment on the horizontal sliders */
-  .timeline-window,
-  .process-slider-container {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  /* FIXED: Moved inside the media query so it doesn't display on desktop */
   /* Universal absolute-fill background for any mobile image fallback. */
   .canvas-mobile-bg,
   .exc-mobile-bg,
