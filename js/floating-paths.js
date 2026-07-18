@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bgContainer.style.overflow = "hidden";
         bgContainer.style.zIndex = "0";
         bgContainer.style.transform = "translateZ(0)"; // Prevents UI stutter and repaints
-        
+
         // Ensure the grid sits immediately above the paths securely
         const grid = container.querySelector('.contact-grid');
         if (grid) {
@@ -37,33 +37,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let i = 0; i < 36; i++) {
             const path = document.createElementNS(svgNS, "path");
-            const d = `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-                380 - i * 5 * position
-            } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-                152 - i * 5 * position
-            } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-                684 - i * 5 * position
-            } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`;
+            const d = `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position
+                } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position
+                } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position
+                } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`;
 
             path.setAttribute("d", d);
             path.setAttribute("stroke", "currentColor");
             path.style.color = "rgba(255, 255, 255, 1)";
             path.setAttribute("stroke-width", 0.5 + i * 0.03);
             path.setAttribute("stroke-opacity", 0.1 + i * 0.03);
-            
+
             // Normalize path length for highly performant CSS/GSAP dashoffset manipulation
             path.setAttribute("pathLength", "1");
-            
+
             // Replicate the framer motion path drawing logic smoothly
             path.style.strokeDasharray = "1 1";
-            
+
             svg.appendChild(path);
 
             // Animate using GSAP for buttery smooth cross-browser SVG animation 
             // bypassing standard CSS repaint bottlenecks
             if (typeof gsap !== "undefined") {
                 const duration = 20 + Math.random() * 10;
-                
+
                 // Set initial framer motion state (drastically reduced opacity for readability)
                 gsap.set(path, { opacity: 0.2, strokeDashoffset: 0.7 });
 
@@ -90,7 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const contactSection = document.getElementById("contact");
-    if (contactSection) {
+    // FIXED: Added window.innerWidth check to completely skip this initialization loop on mobile screens
+    if (contactSection && window.innerWidth > 768) {
         createFloatingPaths("contact", 1);
         createFloatingPaths("contact", -1);
     }
